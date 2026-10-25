@@ -5,7 +5,6 @@ Páginas con inteligencia artificial que atienden a tus clientes a cualquier hor
 🌿 VitalMaster: le escribes lo que buscas, como a un asesor, y te recomienda el producto con su precio.
 💪 Eros: en la zona de alumnos, Eros Virtual te ajusta el menú del día conversando.
 🌱 Vegan Garden: Kath te arma el pedido en segundos.
-🎉 Marbar: el Sr. Marbar te calcula el pedido para tu evento.
 
 Atienden, recomiendan y venden mientras tú trabajas. ¿Cómo se vería la tuya? Escríbenos 👇
 
