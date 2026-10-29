@@ -46,10 +46,11 @@ Yaku Makara, Eros, Centinela, Movil Shop, Cibercell, Plásticos Pioneros, Diana 
 
 ## Medición (estado al 29 oct)
 
-- Google Tag Manager `GTM-MHWB25JH` está en el sitio. Dentro **solo hay Microsoft Clarity**.
-  **No hay** Google Analytics 4 ni píxel de Meta.
+- Google Tag Manager `GTM-MHWB25JH` está en el sitio. Dentro **solo hay Microsoft Clarity** (sin activadores).
+- **Google Analytics 4** (ID de medición `G-MXREGM2TXH`, propiedad 544070872) y el **píxel de Meta `1447406940536370`** («Agencia Vectorial - Pixel») ya están en el sitio: se cargan desde `site-utils.js`, no desde GTM. Corregido por el Escritorio el 29 oct. Detalle en `informes/medicion.md`.
 - La landing ya empuja eventos al dataLayer: `generate_lead` (registro del diseño gratis), `ig_click`
   (toques hacia Instagram) y otros. Si existe `fbq`, también manda `Lead` y `SorteoInstagram` a Meta.
+  Aviso del Escritorio (29 oct): `generate_lead` e `ig_click` no llegan a GA4 (0 eventos clave) y `Lead` y `SorteoInstagram` todavía no aparecen en el píxel.
 - Registros de la landing: van a Google Sheets por un Apps Script (variables `SORTEOS_SHEETS_URL` y
   `SORTEOS_CLAVE` en Cloudflare Pages). **Sin confirmar si ya está conectado.** Guía: `SORTEOS-GOOGLE-SHEETS.md`.
 - El sitio corre en Cloudflare Pages desde el repo `agenciavectorial/agenciavectorial` (rama `main`).
