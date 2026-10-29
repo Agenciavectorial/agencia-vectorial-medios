@@ -57,4 +57,3 @@ Cubre las tareas 1, 2, 3 y 12 de TAREAS.md. Todo se revisó en vivo con las sesi
 3. Quitar de Sitemaps el envío erróneo https://www.agenciavectorial.com/.
 4. Hacer un registro de prueba marcado como PRUEBA en el formulario, para confirmar Sheets y el evento Lead de Meta.
 5. Corregir CONTEXTO.md: la Nube ya no tiene que instalar el píxel, ya está.
-6. 
