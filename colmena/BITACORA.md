@@ -2,6 +2,16 @@
 
 Lo más nuevo va arriba.
 
+## 2026-10-29 (tarde) · Nube
+- Qué hice: revisé las 70 páginas de agenciavectorial.com y publiqué la primera ronda de arreglos (PR #22 en
+  `agenciavectorial/agenciavectorial`): de tú en 11 páginas que tenían voseo, `noindex` en la propuesta de Bi You,
+  la lluvia de contenidos de Vet Más y las 3 copias con espacios, ícono de Instagram del inicio corregido,
+  página 404 nueva y sitemap de 36 a 51 enlaces (sin `/cotizador-paginas-web`, que no existía).
+- Regla nueva de Cristian: propuestas, planes, cobros y documentos de clientes van siempre ocultos para Google
+  (`noindex`); solo se ven con el enlace directo.
+- Google Ads: Cristian delega en Escritorio la investigación y también la creación de las campañas (tarea 6b),
+  en pausa hasta su aprobación. La Nube ajusta las páginas de aterrizaje (tarea 6c).
+
 ## 2026-10-29 · Escritorio
 - Qué hice: leí la colmena y revisé GTM, GA4, píxel de Meta, Search Console y Drive con las sesiones de Cristian. Informe completo en colmena/informes/medicion.md. No cambié nada en ninguna plataforma.
 - Qué encontré: CONTEXTO.md estaba desactualizado. El sitio ya carga GA4 (G-MXREGM2TXH, propiedad 544070872) y el píxel de Meta (1447406940536370) directo desde site-utils.js. GTM-MHWB25JH sí tiene solo Clarity. El píxel recibe PageView, CTAClick y Contactar, pero ningún Lead ni SorteoInstagram. En GA4 hay 0 eventos clave: generate_lead e ig_click se empujan al dataLayer y sin etiquetas en GTM no llegan. Search Console está verificado y el sitemap está correcto (36 páginas), con un envío sobrante con error. Google Sheets de los sorteos: sin confirmar.

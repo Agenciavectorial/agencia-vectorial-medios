@@ -9,7 +9,9 @@ Estados: **por hacer** · **haciendo** · **hecho** · **bloqueada** (decir por 
 | 3 | Píxel de Meta: crear o ubicar el ID y escribirlo en `CONTEXTO.md`. | Escritorio | hecho | ID `1447406940536370` (Agencia Vectorial - Pixel). Ya está instalado en el sitio. |
 | 4 | Instalar el píxel en la landing de sorteos (y en el sitio). | Nube | por hacer | El píxel ya está en `site-utils.js`. Falta comprobar que el formulario dispare `Lead` y `SorteoInstagram` (hoy no llegan) y ver la tarea 14. |
 | 5 | Investigación de mercado y palabras clave para Google Ads con $10.000 COP al día. Informe en `informes/google-ads.md`. | Escritorio | por hacer | Ver guía en el prompt. |
-| 6 | Propuesta de campaña de Google Ads (estructura, palabras, negativas, anuncios, extensiones). | Escritorio | por hacer | No activar sin aprobación. Textos de anuncios: la Nube los revisa si hace falta. |
+| 6 | Propuesta de campaña de Google Ads (estructura, palabras, negativas, anuncios, extensiones). | Escritorio | por hacer | Textos de anuncios: la Nube los revisa si hace falta. |
+| 6b | **Crear las campañas de Google Ads** en la cuenta, en pausa, con la propuesta de la tarea 6. Activarlas solo cuando Cristian diga «sí». | Escritorio | por hacer | Cristian lo delegó el 29 oct. Presupuesto $10.000 COP al día. |
+| 6c | Ajustar o crear las páginas de aterrizaje de cada grupo de anuncios de Google Ads. | Nube | bloqueada | Espera el informe `informes/google-ads.md`. |
 | 7 | Auditoría SEO con Search Console: páginas indexadas, consultas, errores, sitemap. Informe en `informes/seo.md`. | Escritorio | por hacer | |
 | 8 | Cambios SEO en el código del sitio (títulos, schema, páginas nuevas). | Nube | por hacer | Según el informe de la tarea 7. |
 | 9 | Perfil de Negocio de Google (ficha de Maps): revisar y unificar datos. Informe en `informes/ficha-google.md`. | Escritorio | por hacer | |
@@ -18,3 +20,5 @@ Estados: **por hacer** · **haciendo** · **hecho** · **bloqueada** (decir por 
 | 12 | Confirmar si Google Sheets de la landing está conectado. | Escritorio | haciendo | Sin confirmar. Falta un registro de prueba (sí de Cristian) o revisar las variables en Cloudflare. Drive está al 95 % de almacenamiento. |
 | 13 | Campaña de Meta para el sorteo de páginas web (Tráfico → luego Clientes potenciales). | Escritorio | por hacer | Plan en la bitácora del 29 oct. Aprobación de Cristian. |
 | 14 | Mandar `generate_lead` e `ig_click` a GA4 con `gtag('event', ...)` en /sorteos, junto a cada `dataLayer.push`. Después el Escritorio los marca como eventos clave. | Nube | por hacer | Espera el sí de Cristian. Ver `informes/medicion.md`. |
+| 14 | Revisión de las 70 páginas del sitio con Cristian (página «Revisión del sitio Vectorial» en claude.ai). Primera ronda de arreglos publicada. | Nube | haciendo | Falta lo que marque Cristian: menú, copias para borrar y ajustes. |
+| 15 | Verificar el enlace de Facebook del sitio (`facebook.com/agenciavectorial`): ¿es la página correcta? | Escritorio | por hacer | Va con la tabla de consistencia. |
