@@ -2,6 +2,11 @@
 
 Lo más nuevo va arriba.
 
+## 2026-10-29 (noche, 4) · Escritorio
+- Qué hice: creé 3 vínculos a sitios en la campaña de Google Ads (Micrositios, Catálogos y tiendas, Sitios profesionales; cada uno a su página de precios; en revisión de Google). Revisé TikTok y la ficha de Google.
+- Qué encontré: **TikTok Ads pide iniciar sesión en el Chrome de la extensión**, así que no pude ver ni crear el píxel (Cristian debe iniciar sesión en ads.tiktok.com y avisar). **Ficha de Google "Agencia Vectorial | Marketing y Automatización IA"**: verificada, de zona de servicio (Bello, Caldas y 7 áreas más), 727 vistas en el período, 150 personas la vieron el mes pasado; tiene una reseña nueva de 5 estrellas sin responder. La ficha tiene 6 negocios en el administrador (3 sin verificar: CIBER CELL JSC, Cocina La Catrina Mexicana, entre otros). El fragmento de Google del sitio dice "empezando desde $250.000 COP": no coincide con los precios de CONTEXTO.md (micrositio desde $790.000; Plan Mensual desde $99.900); la Nube debe corregir el título/descripción del sitio.
+- Qué falta / qué necesito: Cristian responde la reseña de 5 estrellas y aprueba que yo ponga UTM en el enlace del sitio de la ficha (utm_source=google&utm_medium=organic&utm_campaign=ficha) para medir sus clics en GA4. Mañana: eventos clave en GA4 (generate_lead, ig_click), importar conversiones a Google Ads, TikTok.
+
 ## 2026-10-29 (noche, 3) · Escritorio
 - Qué hice: comprobé en GA4 Tiempo real que los eventos de GTM llegan (sorteo_form_start y la vista de /sorteos aparecen; el 503 que mostraba la herramienta de red era un artefacto). El aviso de pago de Google Ads ya desapareció. Intenté importar conversiones de GA4 a Google Ads: la cuenta ya ve la propiedad 544070872 como vinculada, pero el asistente quedó sin completar (no hay ninguna acción de conversión creada todavía).
 - Qué encontré: generate_lead y sorteo_view aún no aparecen en la lista de eventos de GA4 (tarda horas). El asistente de conversiones de Google Ads es lento y se congela; conviene terminarlo con calma.
