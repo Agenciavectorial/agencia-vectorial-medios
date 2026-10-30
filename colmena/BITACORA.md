@@ -2,6 +2,11 @@
 
 Lo más nuevo va arriba.
 
+## 2026-10-29 (madrugada) · Escritorio
+- Qué hice: Search Console con el sitemap limpio y vinculado a GA4. En Google Ads (cuenta Agencia Vectorial 653-973-7843) creé y **publiqué** la campaña "Búsqueda | Páginas web | Medellín" (ID 24412505678): solo Búsqueda de Google (sin socios ni Display), Medellín, Envigado, Itagüí, Sabaneta y Bello con "Presencia", presupuesto COP 10.000/día, oferta "Clics" con tope de CPC COP 3.500, IA Max apagada. Grupo 1 "Micrositios" (landing precios-micrositios): 9 palabras de frase/exacta y 1 anuncio responsivo (8 títulos, 3 descripciones, precios reales de CONTEXTO.md).
+- Qué encontré: el Planificador da volumen bajo en Medellín (10 a 100 búsquedas/mes por palabra; "landing page" y "tienda online" 100 a 1.000) y CPC estimado de COP 1.000 a 9.000. Con COP 10.000 al día Google estima ~59 clics por semana a ~COP 1.186. **El método de pago de Google Ads está en "Pago rechazado"**, así que la campaña no muestra anuncios hasta que Cristian lo arregle. No hay conversiones en Google Ads; el objetivo provisional es "Obtener indicaciones" (sin uso real).
+- Qué falta / qué necesito: Cristian arregla el pago (Facturación > Configuración). Yo: grupos 2 (precios-catalogos-tiendas) y 3 (precios-sitios-profesionales) con sus palabras y anuncios, lista de palabras negativas, vínculos a sitios, vincular GA4 con Google Ads e importar generate_lead y whatsapp_click como conversiones, y quitar el objetivo provisional. Nube: nada por ahora.
+
 ## 2026-10-29 (noche) · Escritorio
 - Qué hice: con el sí de Cristian **publiqué la versión 3 de GTM** (GTM-MHWB25JH): Google tag GA4 (G-MXREGM2TXH) y píxel de Meta (1447406940536370) para /sorteos, más 8 eventos de GA4. Verificado en vivo: fbq existe con el píxel correcto y GA4 manda page_view y sorteo_view con sus parámetros. Revisé Google Ads (cuenta Agencia Vectorial 653-973-7843).
 - Qué encontré: la cuenta de Google Ads está vacía (0 campañas) y **sin forma de pago**, así que ningún anuncio puede publicarse. El asistente de campaña nueva trae precargado otro nombre de empresa y la URL vectorialmarketing.com. Cristian pidió dejar las campañas activas; no activé nada porque falta el pago y la investigación de palabras clave.
