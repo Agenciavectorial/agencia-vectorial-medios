@@ -2,6 +2,11 @@
 
 Lo más nuevo va arriba.
 
+## 2026-10-29 (noche, 5) · Escritorio
+- Qué hice: con el sí de Cristian puse UTM en el sitio web de la ficha de Google: https://agenciavectorial.com/?utm_source=google&utm_medium=organic&utm_campaign=ficha (queda "pendiente de revisión", hasta 10 minutos). Confirmé el píxel de Meta 1447406940536370 en Administrador de eventos: recibe PageView (181), CTAClick, Contactar y **Cliente potencial (Lead)**, todos por navegador. Cristian preguntó si el píxel de Facebook estaba conectado: sí, en todo el sitio (site-utils.js) y en /sorteos (GTM).
+- Qué encontré: el Lead que ve Meta es el de la prueba "PRUEBA 2". El píxel solo manda por navegador; no hay API de conversiones, ni verificación de dominio, ni medición agregada de eventos configurada (pendiente). Instagram @agencia.vectorial y la campaña de Meta (tarea 13) siguen sin hacerse.
+- Qué falta / qué necesito: Cristian aprueba el borrador de campaña de Meta cuando quiera (tarea 13). Yo: verificar el dominio en Meta, priorizar eventos (Lead, Contacto), y confirmar que la ficha ya muestre el sitio con UTM.
+
 ## 2026-10-29 (noche, 4) · Escritorio
 - Qué hice: creé 3 vínculos a sitios en la campaña de Google Ads (Micrositios, Catálogos y tiendas, Sitios profesionales; cada uno a su página de precios; en revisión de Google). Revisé TikTok y la ficha de Google.
 - Qué encontré: **TikTok Ads pide iniciar sesión en el Chrome de la extensión**, así que no pude ver ni crear el píxel (Cristian debe iniciar sesión en ads.tiktok.com y avisar). **Ficha de Google "Agencia Vectorial | Marketing y Automatización IA"**: verificada, de zona de servicio (Bello, Caldas y 7 áreas más), 727 vistas en el período, 150 personas la vieron el mes pasado; tiene una reseña nueva de 5 estrellas sin responder. La ficha tiene 6 negocios en el administrador (3 sin verificar: CIBER CELL JSC, Cocina La Catrina Mexicana, entre otros). El fragmento de Google del sitio dice "empezando desde $250.000 COP": no coincide con los precios de CONTEXTO.md (micrositio desde $790.000; Plan Mensual desde $99.900); la Nube debe corregir el título/descripción del sitio.
