@@ -22,3 +22,17 @@ Estados: **por hacer** · **haciendo** · **hecho** · **bloqueada** (decir por 
 | 14 | Mandar `generate_lead` e `ig_click` a GA4 con `gtag('event', ...)` en /sorteos, junto a cada `dataLayer.push`. Después el Escritorio los marca como eventos clave. | Nube | en pausa | Ya no hace falta si se publica el GTM de /sorteos (envía `generate_lead` e `ig_click` a GA4). No tocar el código. |
 | 14 | Revisión de las 70 páginas del sitio con Cristian (página «Revisión del sitio Vectorial» en claude.ai). Primera ronda de arreglos publicada. | Nube | haciendo | Falta lo que marque Cristian: menú, copias para borrar y ajustes. |
 | 15 | Verificar el enlace de Facebook del sitio (`facebook.com/agenciavectorial`): ¿es la página correcta? | Escritorio | por hacer | Va con la tabla de consistencia. |
+| 16 | **SEO: pedir indexación** en Search Console de las páginas nuevas y cambiadas, y reenviar `sitemap.xml` (56 enlaces). Lista abajo. | Escritorio | por hacer | Cristian lo delegó el 30 oct. |
+| 17 | Agregar `OPENAI_API_KEY` en Cloudflare Pages (Production) para que el asistente David use ChatGPT. | Cristian | por hacer | Lo hace Cristian o Escritorio con su sesión de Cloudflare. Nunca pegar la clave en el chat ni aquí. |
+| 18 | Revisar en GA4 y en Clarity, a la semana, qué negocios tocan más en el selector del inicio (`elegir_negocio`) y cuántos abren el chat. | Escritorio | por hacer | Informe corto en `informes/medicion.md`. |
+
+### Enlaces para pedir indexación (tarea 16)
+- https://agenciavectorial.com/ (inicio nuevo, 30 oct)
+- https://agenciavectorial.com/blog/caso-vegan-garden
+- https://agenciavectorial.com/blog/caso-pasabocas-marbar
+- https://agenciavectorial.com/blog/caso-el-buen-sabor
+- https://agenciavectorial.com/paginas-web-medellin
+- https://agenciavectorial.com/blog/cuanto-cuesta-pagina-web-medellin
+- https://agenciavectorial.com/blog
+- https://agenciavectorial.com/sorteos
+- Revisar en «Páginas» que las propuestas, planes y cobros de clientes **no** aparezcan indexados (llevan noindex).

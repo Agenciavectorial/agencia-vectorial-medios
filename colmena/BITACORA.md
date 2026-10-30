@@ -2,6 +2,17 @@
 
 Lo más nuevo va arriba.
 
+## 2026-10-30 · Nube
+- Qué hice: publiqué el inicio nuevo de agenciavectorial.com (PR #23): selector «¿Qué negocio tienes?» con 9
+  negocios que muestra la página real de un cliente en un celular, cohete guía, Plan Mensual en 3 pasos con
+  calculadora, videos de páginas con IA y del portafolio por dentro, precios y preguntas. Tres casos nuevos en el
+  blog (Vegan Garden, Marbar, El Buen Sabor). También publiqué las mejoras del 20 de octubre que estaban sin
+  publicar (asistente con IA en todo el sitio, blog renovado, página de Medellín).
+- Qué encontré: el sitio sí tiene píxel de Meta y GA4 (en site-utils.js). Corregido en CONTEXTO.
+  El asistente está en modo básico porque falta OPENAI_API_KEY en Cloudflare.
+- Para Escritorio: tarea 16 (indexación en Search Console) y tarea 3 (confirmar que el píxel recibe eventos).
+- Sin publicar todavía: rama `claude/dreamy-albattani-p1lds6` con el «Centro de Ventas» (/crm), de otra sesión.
+
 ## 2026-10-30 (madrugada) · Escritorio
 - **CORRECCIÓN:** en entradas anteriores dije que el pago de Google Ads ya estaba resuelto. Es falso. En Facturación > Configuración la cuenta 653-973-7843 sigue en **"Pago rechazado"** (Google Payments 4618-1251-0242-0645, pospago) y el banner "No se están publicando sus anuncios" sigue activo. La campaña 24412505678 está habilitada pero **no puede mostrar anuncios** hasta que el pago quede aprobado. Cristian vio "Forma de pago actualizada: Mastercard ••••6823", pero Google Ads todavía no la aplica; hay que usar "Solucionar el problema" o hacer un pago opcional/verificar la tarjeta.
 - Qué hice: intenté importar whatsapp_click (categoría Contacto) como conversión desde GA4; el asistente de Google Ads no completó el guardado (se queda en el mismo paso) y no hay ninguna conversión creada. GA4 sigue sin listar generate_lead.

@@ -12,7 +12,7 @@
 | WhatsApp / teléfono | +57 324 729 0699 (wa.me/573247290699) |
 | Correo | contacto@agenciavectorial.com |
 | Ciudad | Medellín, Antioquia. Atiende toda Colombia (todo por WhatsApp y videollamada). |
-| Instagram | @agencia.vectorial |
+| Instagram | @agencia.vectorial (https://www.instagram.com/agencia.vectorial/) |
 | Correo de la cuenta | agenciavectorialmarketing@gmail.com (solo para identificar cuentas; no publicar) |
 
 ## Qué vende
@@ -44,16 +44,19 @@ Yaku Makara, Eros, Centinela, Movil Shop, Cibercell, Plásticos Pioneros, Diana 
 - Enlace para anuncios: `https://agenciavectorial.com/sorteos?s=paginas&utm_source=facebook&utm_medium=paid&utm_campaign=sorteos&utm_content=NOMBRE`
 - Black Friday: viernes 27 de noviembre (campaña aparte, sin empezar).
 
-## Medición (estado al 29 oct)
+## Medición (corregido el 30 oct)
 
-- Google Tag Manager `GTM-MHWB25JH` está en el sitio. Dentro **solo hay Microsoft Clarity** (sin activadores).
-- **Google Analytics 4** (ID de medición `G-MXREGM2TXH`, propiedad 544070872) y el **píxel de Meta `1447406940536370`** («Agencia Vectorial - Pixel») ya están en el sitio: se cargan desde `site-utils.js`, no desde GTM. Corregido por el Escritorio el 29 oct. Detalle en `informes/medicion.md`.
-- La landing ya empuja eventos al dataLayer: `generate_lead` (registro del diseño gratis), `ig_click`
-  (toques hacia Instagram) y otros. Si existe `fbq`, también manda `Lead` y `SorteoInstagram` a Meta.
-  Aviso del Escritorio (29 oct): `generate_lead` e `ig_click` no llegan a GA4 (0 eventos clave) y `Lead` y `SorteoInstagram` todavía no aparecen en el píxel.
-- Registros de la landing: van a Google Sheets por un Apps Script (variables `SORTEOS_SHEETS_URL` y
-  `SORTEOS_CLAVE` en Cloudflare Pages). **Sin confirmar si ya está conectado.** Guía: `SORTEOS-GOOGLE-SHEETS.md`.
-- El sitio corre en Cloudflare Pages desde el repo `agenciavectorial/agenciavectorial` (rama `main`).
+- El sitio carga **`site-utils.js`** en casi todas las páginas públicas, con:
+  **píxel de Meta `1447406940536370`**, **Google Analytics 4 `G-MXREGM2TXH`** y **Microsoft Clarity `yfw3d9makv`**.
+  (El 29 oct la Nube dijo que no había píxel ni GA4 porque solo miró Tag Manager: estaban en `site-utils.js`.)
+- Google Tag Manager `GTM-MHWB25JH` también está, pero solo tiene Clarity.
+- Sorteos (`/sorteos`) ahora también carga `site-utils.js`: el registro del diseño gratis manda `Lead` al píxel y
+  `generate_lead` a GA4. Toques hacia Instagram: `SorteoInstagram` / `ig_click`.
+- Inicio nuevo: evento `elegir_negocio` (qué negocio tocó la persona) y `video_sonido`. El asistente manda
+  `ai_chat_open` y `ai_chat_whatsapp`.
+- Asistente con IA (David): `/api/chat` responde `ia: false` → **falta `OPENAI_API_KEY` en Cloudflare Pages**.
+  Mientras tanto contesta en modo básico con `asistente/conocimiento.js`.
+- Registros de la landing de sorteos: Google Sheets por Apps Script (`SORTEOS_SHEETS_URL`, `SORTEOS_CLAVE`). Sin confirmar.
 
 ## Inconsistencias conocidas (para unificar)
 
