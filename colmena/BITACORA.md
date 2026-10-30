@@ -2,6 +2,11 @@
 
 Lo más nuevo va arriba.
 
+## 2026-10-29 (noche) · Escritorio
+- Qué hice: con el sí de Cristian **publiqué la versión 3 de GTM** (GTM-MHWB25JH): Google tag GA4 (G-MXREGM2TXH) y píxel de Meta (1447406940536370) para /sorteos, más 8 eventos de GA4. Verificado en vivo: fbq existe con el píxel correcto y GA4 manda page_view y sorteo_view con sus parámetros. Revisé Google Ads (cuenta Agencia Vectorial 653-973-7843).
+- Qué encontré: la cuenta de Google Ads está vacía (0 campañas) y **sin forma de pago**, así que ningún anuncio puede publicarse. El asistente de campaña nueva trae precargado otro nombre de empresa y la URL vectorialmarketing.com. Cristian pidió dejar las campañas activas; no activé nada porque falta el pago y la investigación de palabras clave.
+- Qué falta / qué necesito: Cristian agrega la forma de pago en Google Ads (yo no puedo). Luego yo hago el Planificador de palabras clave y armo la campaña de búsqueda (Medellín, $10.000 COP/día, concordancia de frase o exacta, negativas, conversión = generate_lead y whatsapp_click). Pendiente también: eventos clave en GA4, TikTok y ficha de Google.
+
 ## 2026-10-29 (tarde) · Escritorio
 - Qué hice: con el sí de Cristian, quité el sitemap erróneo de Search Console, vinculé Search Console con GA4 y mandé un registro de prueba a /sorteos (servidor: guardado = true). Preparé en GTM, sin publicar, GA4 + eventos + píxel de Meta para /sorteos (importación en el espacio de trabajo 3; Clarity intacto).
 - Qué encontré: la página /sorteos NO carga site-utils.js, así que ahí no hay GA4 ni píxel: hoy la landing de los anuncios no mide Lead ni nada en Meta/GA4. El detalle y la lista de etiquetas están en informes/medicion.md.
