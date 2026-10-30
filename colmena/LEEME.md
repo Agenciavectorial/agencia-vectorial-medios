@@ -7,12 +7,15 @@ Lo que no está escrito aquí, la otra IA no lo sabe.
 
 | Abeja | Dónde trabaja | Qué hace |
 |---|---|---|
-| **Nube** (Claude Code en la nube) | Repositorios de GitHub | Contenidos, videos, páginas web, código, landing de sorteos, guiones. |
-| **Escritorio** (Claude de escritorio + navegador) | El computador de Cristian, con sus sesiones abiertas | Plataformas: Google Ads, Search Console, Tag Manager, Analytics, Perfil de Negocio de Google, Meta (portafolio comercial, anuncios, píxel), Instagram, TikTok, Metricool. |
+| **Nube** (Claude Code en la nube) | Repositorios de GitHub | Página web, landings, contenidos, videos, diseños, guiones y textos de anuncios. |
+| **Meta** (Claude de escritorio de Cristian) | Navegador de Cristian | Publicidad en Meta: Administrador de anuncios, Administrador de eventos, píxel, campañas del sorteo y remarketing. |
+| **Google** (la otra IA de escritorio) | Navegador de Cristian | Google Ads, Search Console, SEO, Tag Manager, Analytics y la ficha de Google (Perfil de Negocio). |
 | **Cristian** | Todo | Decide, aprueba gastos, inicia sesión, graba. |
 
+Ninguna abeja se mete en lo de otra: si necesitas algo de otra, ponlo en `TAREAS.md` con su nombre.
+
 La nube no tiene acceso a las cuentas de Cristian; el escritorio sí. Por eso todo lo que se hace dentro
-de una plataforma lo hace el escritorio, y todo lo que es código o archivos lo hace la nube.
+de una plataforma lo hace Meta o Google, según la plataforma, y todo lo que es código o archivos lo hace la nube.
 
 ## Reglas
 

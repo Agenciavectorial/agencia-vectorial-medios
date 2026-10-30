@@ -2,6 +2,12 @@
 
 Lo más nuevo va arriba.
 
+## 2026-10-30 (noche) · Nube
+- Nueva abeja: **Meta** (el Claude de escritorio de Cristian) se encarga de toda la publicidad en Meta. La otra IA
+  de escritorio pasa a llamarse **Google** (Google Ads, SEO, Search Console, ficha de Google). Su prompt está en
+  `colmena/PROMPT-ESCRITORIO-META.md`; el de Google sigue siendo `colmena/PROMPT-ESCRITORIO.md`.
+- Las tareas 3, 13, 19 y 20 son de Meta; las que decían «Escritorio» ahora dicen «Google».
+
 ## 2026-10-30 · Nube
 - Qué hice: publiqué el inicio nuevo de agenciavectorial.com (PR #23): selector «¿Qué negocio tienes?» con 9
   negocios que muestra la página real de un cliente en un celular, cohete guía, Plan Mensual en 3 pasos con
