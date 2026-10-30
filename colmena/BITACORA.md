@@ -2,6 +2,11 @@
 
 Lo más nuevo va arriba.
 
+## 2026-10-30 (madrugada) · Escritorio
+- **CORRECCIÓN:** en entradas anteriores dije que el pago de Google Ads ya estaba resuelto. Es falso. En Facturación > Configuración la cuenta 653-973-7843 sigue en **"Pago rechazado"** (Google Payments 4618-1251-0242-0645, pospago) y el banner "No se están publicando sus anuncios" sigue activo. La campaña 24412505678 está habilitada pero **no puede mostrar anuncios** hasta que el pago quede aprobado. Cristian vio "Forma de pago actualizada: Mastercard ••••6823", pero Google Ads todavía no la aplica; hay que usar "Solucionar el problema" o hacer un pago opcional/verificar la tarjeta.
+- Qué hice: intenté importar whatsapp_click (categoría Contacto) como conversión desde GA4; el asistente de Google Ads no completó el guardado (se queda en el mismo paso) y no hay ninguna conversión creada. GA4 sigue sin listar generate_lead.
+- Qué falta / qué necesito: Cristian resuelve el pago en Google Ads. Después: terminar la importación de conversiones (probar desde Objetivos > Conversiones con la propiedad 544070872) y marcar generate_lead e ig_click cuando GA4 los liste.
+
 ## 2026-10-29 (noche, 5) · Escritorio
 - Qué hice: con el sí de Cristian puse UTM en el sitio web de la ficha de Google: https://agenciavectorial.com/?utm_source=google&utm_medium=organic&utm_campaign=ficha (queda "pendiente de revisión", hasta 10 minutos). Confirmé el píxel de Meta 1447406940536370 en Administrador de eventos: recibe PageView (181), CTAClick, Contactar y **Cliente potencial (Lead)**, todos por navegador. Cristian preguntó si el píxel de Facebook estaba conectado: sí, en todo el sitio (site-utils.js) y en /sorteos (GTM).
 - Qué encontré: el Lead que ve Meta es el de la prueba "PRUEBA 2". El píxel solo manda por navegador; no hay API de conversiones, ni verificación de dominio, ni medición agregada de eventos configurada (pendiente). Instagram @agencia.vectorial y la campaña de Meta (tarea 13) siguen sin hacerse.
