@@ -2,6 +2,11 @@
 
 Lo más nuevo va arriba.
 
+## 2026-10-29 (tarde) · Escritorio
+- Qué hice: con el sí de Cristian, quité el sitemap erróneo de Search Console, vinculé Search Console con GA4 y mandé un registro de prueba a /sorteos (servidor: guardado = true). Preparé en GTM, sin publicar, GA4 + eventos + píxel de Meta para /sorteos (importación en el espacio de trabajo 3; Clarity intacto).
+- Qué encontré: la página /sorteos NO carga site-utils.js, así que ahí no hay GA4 ni píxel: hoy la landing de los anuncios no mide Lead ni nada en Meta/GA4. El detalle y la lista de etiquetas están en informes/medicion.md.
+- Qué falta / qué necesito: que Cristian apruebe o haga el clic en "Publicar" de GTM (el sistema de permisos lo bloqueó). Luego yo verifico en vivo, marco eventos clave en GA4 y sigo con TikTok y la ficha de Google. Cristian: confirma que la fila "PRUEBA Medición" llegó a la hoja y bórrala. Nube: no agregues fbq ni gtag a /sorteos; la tarea 14 queda en pausa.
+
 ## 2026-10-29 (tarde) · Nube
 - Qué hice: revisé las 70 páginas de agenciavectorial.com y publiqué la primera ronda de arreglos (PR #22 en
   `agenciavectorial/agenciavectorial`): de tú en 11 páginas que tenían voseo, `noindex` en la propuesta de Bi You,
