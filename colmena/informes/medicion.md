@@ -57,3 +57,25 @@ Cubre las tareas 1, 2, 3 y 12 de TAREAS.md. Todo se revisó en vivo con las sesi
 3. Quitar de Sitemaps el envío erróneo https://www.agenciavectorial.com/.
 4. Hacer un registro de prueba marcado como PRUEBA en el formulario, para confirmar Sheets y el evento Lead de Meta.
 5. Corregir CONTEXTO.md: la Nube ya no tiene que instalar el píxel, ya está.
+
+## Actualización · 29 oct 2026, tarde (con el sí de Cristian)
+
+Hecho en las plataformas:
+- Search Console: quité el envío erróneo https://www.agenciavectorial.com/ (era una página HTML, no un sitemap). Queda solo https://agenciavectorial.com/sitemap.xml (Correcto, 36 páginas).
+- GA4: **Search Console vinculado** a la propiedad 544070872 (vinculación creada con el flujo web de www.agenciavectorial.com).
+- Registro de prueba en /sorteos (nombre "PRUEBA Medición", WhatsApp de la agencia): el servidor respondió **guardado = true** y el dataLayer recibió generate_lead. **Hay que borrar esa fila de la hoja** si existe. No encontré la hoja en Drive por nombre; Cristian debe confirmar que la fila "PRUEBA Medición" llegó.
+
+**Hallazgo grave: la página /sorteos no carga site-utils.js.** Ahí fbq y gtag no existen. Solo corre GTM (con Clarity). O sea, la landing de los anuncios hoy NO mide en GA4 ni en Meta (ni Lead, ni SorteoInstagram). site-utils.js sí está en la home, el portafolio y las páginas de precios.
+
+Arreglo preparado en GTM (sin tocar código), **en el espacio de trabajo 3, sin publicar**:
+- Etiqueta de Google (G-MXREGM2TXH) solo en rutas que empiezan por /sorteos, así no duplica las páginas que ya tienen site-utils.js.
+- 8 etiquetas de evento de GA4 (generate_lead, ig_click, whatsapp_click, share, feed_open, sorteo_view, sorteo_form_start, sorteo_click) con sus parámetros (sorteo, accion, origen, tipo_negocio, ciudad, guardado, publicacion).
+- Píxel de Meta base (1447406940536370 + PageView) solo en /sorteos. El Lead y el SorteoInstagram los sigue mandando el código de la landing apenas existe fbq (por eso no hay etiquetas de Lead en GTM: se duplicarían). Más una etiqueta Contact para los toques a WhatsApp.
+- 10 activadores y 7 variables de capa de datos. Clarity quedó intacto.
+
+Falta (en este orden):
+1. **Publicar la versión de GTM**: el sistema de permisos bloqueó el clic en "Publicar". Cristian debe darlo o publicarlo él.
+2. Probar en vivo en /sorteos: fbq y gtag definidos, y ver Lead y PageView en Meta ("Probar eventos") y los eventos en GA4 Tiempo real.
+3. GA4: marcar como eventos clave generate_lead, whatsapp_click e ig_click, y crear dimensiones personalizadas (sorteo, accion, tipo_negocio, ciudad).
+4. TikTok (píxel / Events API), ficha de Google (vincular con GA4 y medir llamadas, rutas y clics al sitio con UTM) y las otras plataformas: no se tocaron todavía.
+5. Para la Nube: la tarea 14 deja de hacer falta si se publica el GTM. No agregar fbq ni gtag a /sorteos, o se duplicaría.
