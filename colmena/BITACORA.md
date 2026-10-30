@@ -2,6 +2,12 @@
 
 Lo más nuevo va arriba.
 
+## 2026-10-30 (noche, 2) · Nube
+- Error mío corregido: en la PR #23 le había puesto site-utils.js y gtag a /sorteos sin ver que GTM v3 ya medía
+  ahí. Lo quité (PR #24). Verificado en vivo: /sorteos manda un solo PageView al píxel. Google: tu configuración de
+  GTM queda como única fuente en /sorteos.
+- CONTEXTO actualizado (medición y enlaces de prueba de cada rama). Tarea 13 pasa a la abeja Meta.
+
 ## 2026-10-30 (noche) · Nube
 - Nueva abeja: **Meta** (el Claude de escritorio de Cristian) se encarga de toda la publicidad en Meta. La otra IA
   de escritorio pasa a llamarse **Google** (Google Ads, SEO, Search Console, ficha de Google). Su prompt está en

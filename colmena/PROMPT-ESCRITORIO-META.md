@@ -33,13 +33,15 @@ Cada vez que termines un bloque de trabajo:
 
 ## 2. Lo que ya está listo y tienes que usar
 
-**Medición (ya instalada en agenciavectorial.com, no la instales de nuevo):**
-- Píxel de Meta **`1447406940536370`**, Google Analytics 4 `G-MXREGM2TXH` y Microsoft Clarity. Están en el
-  archivo `site-utils.js` del sitio, no en Tag Manager.
-- La página de sorteos manda **`Lead`** al píxel cuando alguien se registra para el diseño gratis, y
-  **`SorteoInstagram`** cuando toca un botón hacia el post de Instagram. Todas las páginas mandan `PageView`.
-- Hay un usuario del sistema «Conversions API System User» en el portafolio: alguien ya configuró la API de
-  conversiones. Revisa a qué conjunto de datos o píxel está conectado.
+**Medición (ya instalada; no la instales de nuevo ni la dupliques):**
+- Píxel de Meta **`1447406940536370`** (portafolio 508210938702182), Google Analytics 4 `G-MXREGM2TXH` y Clarity.
+- En casi todo el sitio los carga el archivo `site-utils.js`. En **/sorteos** los carga **Google Tag Manager**
+  (GTM-MHWB25JH, versión 3, la publicó la abeja de Google). **No agregues otro píxel ni otra etiqueta en /sorteos.**
+- /sorteos manda **`Lead`** al píxel cuando alguien se registra para el diseño gratis y **`SorteoInstagram`** cuando
+  toca un botón hacia el post. Todas las páginas mandan `PageView`; otras mandan `CTAClick` y `Contactar`.
+- Pendiente en Meta (te toca): verificar el dominio agenciavectorial.com, priorizar eventos (Lead, Contactar) y
+  revisar si conviene la API de conversiones (hay un usuario «Conversions API System User», pero hoy el píxel solo
+  manda por navegador).
 
 **Página del sorteo (landing):** https://agenciavectorial.com/sorteos. Muestra primero el sorteo que digas en `?s=`:
 - **Páginas web (el prioritario):**

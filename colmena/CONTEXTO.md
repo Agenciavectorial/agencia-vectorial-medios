@@ -44,19 +44,19 @@ Yaku Makara, Eros, Centinela, Movil Shop, Cibercell, Plásticos Pioneros, Diana 
 - Enlace para anuncios: `https://agenciavectorial.com/sorteos?s=paginas&utm_source=facebook&utm_medium=paid&utm_campaign=sorteos&utm_content=NOMBRE`
 - Black Friday: viernes 27 de noviembre (campaña aparte, sin empezar).
 
-## Medición (corregido el 30 oct)
+## Medición (corregido el 30 oct, noche)
 
-- El sitio carga **`site-utils.js`** en casi todas las páginas públicas, con:
-  **píxel de Meta `1447406940536370`**, **Google Analytics 4 `G-MXREGM2TXH`** y **Microsoft Clarity `yfw3d9makv`**.
-  (El 29 oct la Nube dijo que no había píxel ni GA4 porque solo miró Tag Manager: estaban en `site-utils.js`.)
-- Google Tag Manager `GTM-MHWB25JH` también está, pero solo tiene Clarity.
-- Sorteos (`/sorteos`) ahora también carga `site-utils.js`: el registro del diseño gratis manda `Lead` al píxel y
-  `generate_lead` a GA4. Toques hacia Instagram: `SorteoInstagram` / `ig_click`.
-- Inicio nuevo: evento `elegir_negocio` (qué negocio tocó la persona) y `video_sonido`. El asistente manda
-  `ai_chat_open` y `ai_chat_whatsapp`.
-- Asistente con IA (David): `/api/chat` responde `ia: false` → **falta `OPENAI_API_KEY` en Cloudflare Pages**.
-  Mientras tanto contesta en modo básico con `asistente/conocimiento.js`.
-- Registros de la landing de sorteos: Google Sheets por Apps Script (`SORTEOS_SHEETS_URL`, `SORTEOS_CLAVE`). Sin confirmar.
+- **Páginas normales** (inicio, precios, landings, blog, portafolio): cargan **`site-utils.js`** con el
+  **píxel de Meta `1447406940536370`**, **GA4 `G-MXREGM2TXH`** (propiedad 544070872) y **Clarity `yfw3d9makv`**.
+- **/sorteos:** NO usa site-utils.js. Lo mide **GTM-MHWB25JH versión 3** (publicada por Google el 29 oct):
+  etiqueta de Google GA4 + 8 eventos y el píxel de Meta base solo en /sorteos. El código de la landing manda
+  `Lead` y `SorteoInstagram` al píxel apenas existe `fbq`. **Nadie agrega fbq, gtag ni site-utils.js a /sorteos**
+  (el 30 oct la Nube lo agregó por error y lo quitó el mismo día, PR #24; verificado: un solo PageView).
+- Inicio nuevo: eventos `elegir_negocio` y `video_sonido`; el asistente manda `ai_chat_open` y `ai_chat_whatsapp`.
+- Asistente con IA (David): `/api/chat` responde `ia: false` → falta `OPENAI_API_KEY` en Cloudflare Pages.
+- Google Sheets de los sorteos: el servidor guardó la prueba (`guardado = true`); falta que Cristian confirme y borre las filas de prueba.
+- Enlaces de prueba: cada rama del sitio tiene vista previa en `https://<rama-con-guiones>.agenciavectorial.pages.dev`
+  (por ejemplo `claude-sitio-mega.agenciavectorial.pages.dev`).
 
 ## Inconsistencias conocidas (para unificar)
 
