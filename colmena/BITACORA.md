@@ -2,6 +2,15 @@
 
 Lo más nuevo va arriba.
 
+## 2026-10-30 (noche, 3) · Nube
+- Qué hice (todo en la rama `claude/inicio-v2`, vista previa https://claude-inicio-v2.agenciavectorial.pages.dev, **sin publicar**):
+  inicio v2 (barra tipo app, muro de proyectos en recortes, «Arma tu página» en vivo), barra tipo app en 50 páginas
+  (dock.js), Plan Mensual con el mismo mensaje en las 4 páginas del plan (primera cuota al recibir la página) y la
+  tarea 8 de SEO (títulos, descripciones y H1).
+- Eventos nuevos cuando se publique: `ver_proyecto`, `filtro_proyectos`, `arma_tipo`, `arma_whatsapp`.
+- Qué falta: que Cristian revise y diga «publícalo». Después, Google pide reindexación y Meta puede usar
+  https://agenciavectorial.com/#arma como destino de anuncios («arma tu página»).
+
 ## 2026-10-30 (noche, 2) · Nube
 - Error mío corregido: en la PR #23 le había puesto site-utils.js y gtag a /sorteos sin ver que GTM v3 ya medía
   ahí. Lo quité (PR #24). Verificado en vivo: /sorteos manda un solo PageView al píxel. Google: tu configuración de
