@@ -38,3 +38,4 @@ Estados: **por hacer** · **haciendo** · **hecho** · **bloqueada** (decir por 
 - Revisar en «Páginas» que las propuestas, planes y cobros de clientes **no** aparezcan indexados (llevan noindex).
 | 19 | **Auditoría de las campañas de Meta que ya existen**: qué funciona, qué no, qué pausar y qué ajustar. Informe en `informes/meta-ads.md`. | Meta | por hacer | Cristian se lo delegó el 30 oct. |
 | 20 | Remarketing de quienes visitaron o se registraron en /sorteos, con la oferta de $99.900 al mes. | Meta | por hacer | Después del 22 de noviembre o antes si Cristian lo pide. |
+| 21 | Centro de Ventas (/crm): revisarlo en la vista previa (claude-inicio-v2.agenciavectorial.pages.dev/crm) y, si sirve, conectarlo a Cloudflare: KV `crm` con binding `CRM` y variable `CRM_CLAVE` (ver `CRM.md` del repo del sitio). | Cristian | por hacer | Sin eso funciona en modo local (solo en ese navegador). Con `CRM_BOT_CLAVE` la IA de Wapify puede registrar contactos por `POST /api/crm`. |

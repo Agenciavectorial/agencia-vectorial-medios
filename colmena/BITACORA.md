@@ -2,6 +2,11 @@
 
 Lo más nuevo va arriba.
 
+## 2026-10-30 (noche, 4) · Nube
+- Sumé a la vista previa (`claude/inicio-v2`) el Centro de Ventas (/crm) de otra sesión: embudo, seguimientos,
+  cobros, campañas, envío masivo y API para la IA; cada registro de /sorteos entra solo al CRM. Probado: carga sin
+  errores en modo local. Para guardarlo en la nube falta la tarea 21 (Cristian en Cloudflare).
+
 ## 2026-10-30 (noche, 3) · Nube
 - Qué hice (todo en la rama `claude/inicio-v2`, vista previa https://claude-inicio-v2.agenciavectorial.pages.dev, **sin publicar**):
   inicio v2 (barra tipo app, muro de proyectos en recortes, «Arma tu página» en vivo), barra tipo app en 50 páginas
