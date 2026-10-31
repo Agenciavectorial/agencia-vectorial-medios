@@ -18,7 +18,7 @@ Estados: **por hacer** · **haciendo** · **hecho** · **bloqueada** (decir por 
 | 10 | Consistencia de datos en todas partes: sitio, ficha de Google, Instagram, TikTok, Facebook, WhatsApp Business. | Google | por hacer | Tabla en `informes/consistencia.md`. |
 | 11 | Resolver las inconsistencias de `CONTEXTO.md` (años, número de páginas, rango de precios). | Cristian | por hacer | Con el dato real, la Nube corrige sitio y contenidos. |
 | 12 | Confirmar si Google Sheets de la landing está conectado. | Google | haciendo | Registro de prueba enviado: el servidor respondió `guardado = true`. Falta que Cristian confirme que la fila "PRUEBA Medición" llegó a la hoja y la borre. |
-| 13 | Campaña de Meta para el sorteo de páginas web (Tráfico → luego Clientes potenciales). | Meta | por hacer | Desde el 30 oct la hace la abeja Meta (Claude de escritorio de Cristian) en el Administrador de anuncios. Piezas y textos: la Nube si hacen falta. |
+| 13 | Campaña de Meta para el sorteo de páginas web (Tráfico → luego Clientes potenciales). | Meta | haciendo | Desde el 30 oct la hace la abeja Meta (Claude de escritorio de Cristian) en el Administrador de anuncios. Piezas y textos: la Nube si hacen falta. |
 | 14 | Mandar `generate_lead` e `ig_click` a GA4 con `gtag('event', ...)` en /sorteos, junto a cada `dataLayer.push`. Después el Escritorio los marca como eventos clave. | Nube | hecho por GTM | No hace falta: GTM v3 envía `generate_lead` e `ig_click` a GA4. No tocar el código de /sorteos. |
 | 14b | Revisión de las 70 páginas del sitio con Cristian (página «Revisión del sitio Vectorial» en claude.ai). Primera ronda de arreglos publicada. | Nube | haciendo | Falta lo que marque Cristian: menú, copias para borrar y ajustes. |
 | 15 | Verificar el enlace de Facebook del sitio (`facebook.com/agenciavectorial`): ¿es la página correcta? | Google | por hacer | Va con la tabla de consistencia. |
@@ -36,6 +36,10 @@ Estados: **por hacer** · **haciendo** · **hecho** · **bloqueada** (decir por 
 - https://agenciavectorial.com/blog
 - https://agenciavectorial.com/sorteos
 - Revisar en «Páginas» que las propuestas, planes y cobros de clientes **no** aparezcan indexados (llevan noindex).
-| 19 | **Auditoría de las campañas de Meta que ya existen**: qué funciona, qué no, qué pausar y qué ajustar. Informe en `informes/meta-ads.md`. | Meta | por hacer | Cristian se lo delegó el 30 oct. |
+| 19 | **Auditoría de las campañas de Meta que ya existen**: qué funciona, qué no, qué pausar y qué ajustar. Informe en `informes/meta-ads.md`. | Meta | hecho | Cristian se lo delegó el 30 oct. |
 | 20 | Remarketing de quienes visitaron o se registraron en /sorteos, con la oferta de $99.900 al mes. | Meta | por hacer | Después del 22 de noviembre o antes si Cristian lo pide. |
 | 21 | Centro de Ventas (/crm): revisarlo en la vista previa (claude-inicio-v2.agenciavectorial.pages.dev/crm) y, si sirve, conectarlo a Cloudflare: KV `crm` con binding `CRM` y variable `CRM_CLAVE` (ver `CRM.md` del repo del sitio). | Cristian | por hacer | Sin eso funciona en modo local (solo en ese navegador). Con `CRM_BOT_CLAVE` la IA de Wapify puede registrar contactos por `POST /api/crm`. |
+| 22 | Campaña WhatsApp «AV \| WhatsApp \| Tiendas online y catálogos \| Nov 2026» (ID 120256876569330360, $15.000/día): confirmar anuncios aprobados y gastando; el 2 y 3 de nov apagar el conjunto con conversación > $8.000. | Meta | haciendo | Ver `informes/meta-ads.md`. |
+| 23 | Terminar y publicar la campaña web «AV \| Web \| Visitas a la página \| Plan $99.900 \| Nov 2026» (ID 120256876914990360): URL, descripción, imagen N17 y 2 conjuntos más (catálogos N16 y sorteo N06). | Meta | por hacer | Pasos en `PROMPT-RELEVO-META.md`, punto 4. Tope total $30.000/día. |
+| 24 | Versiones historia (9:16) de N15, N16 y N17. | Nube | hecho | Ya existían; copiadas a `anuncios-meta/` con N06. |
+| 25 | Responder a La Esencia Luxury (preguntó el 19/10 si la pauta va aparte) y seguimiento a los contactos calientes de la base de WhatsApp con el Plan Mensual. | Cristian | por hacer | Base en el computador de Cristian (`base-contactos-whatsapp-meta.csv`, no se sube). |

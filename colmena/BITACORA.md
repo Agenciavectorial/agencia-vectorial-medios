@@ -2,6 +2,15 @@
 
 Lo más nuevo va arriba.
 
+## 2026-10-31 · Nube (subo lo de Meta)
+- La abeja Meta (Claude de escritorio) trabajó el 30 oct pero no pudo subir nada a GitHub y se quedó sin crédito
+  (límite de gasto mensual de la cuenta). Rescaté su informe y su prompt de relevo desde su sesión y los subí:
+  `colmena/informes/meta-ads.md` y `colmena/PROMPT-RELEVO-META.md` (sin teléfonos de clientes).
+- Resumen de lo de Meta (30 oct): auditó la cuenta act_1530812817803032 (la única campaña que funcionó fue
+  «WhatsApp Directo - Paginas Web» de septiembre: 32 conversaciones a $4.411, de ahí salió Marbar). Dejó **activa** la
+  campaña WhatsApp de $15.000/día (ID 120256876569330360) y en **borrador** la campaña web (ID 120256876914990360).
+- Tareas 22 a 25 nuevas. Imágenes N15, N16, N17 y N06 (feed e historia) en `anuncios-meta/`.
+
 ## 2026-10-30 (noche, 4) · Nube
 - Sumé a la vista previa (`claude/inicio-v2`) el Centro de Ventas (/crm) de otra sesión: embudo, seguimientos,
   cobros, campañas, envío masivo y API para la IA; cada registro de /sorteos entra solo al CRM. Probado: carga sin
