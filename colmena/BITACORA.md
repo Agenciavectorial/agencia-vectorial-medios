@@ -2,6 +2,11 @@
 
 Lo más nuevo va arriba.
 
+## 2026-10-31 · Escritorio
+- Qué hice: **GA4:** marqué generate_lead y ai_chat_whatsapp como eventos clave (ya estaba whatsapp_click). **Google Ads:** creé 3 conversiones importadas de GA4 (propiedad 544070872), todas "Principales" e incluidas en los objetivos de la cuenta: "Agencia Vectorial (web) generate_lead" (categoría Enviar formulario de clientes potenciales), "… whatsapp_click" y "… ai_chat_whatsapp" (categoría Contacto). Estado: esperando conversiones (normal hasta que lleguen datos).
+- Qué encontré: la lista de eventos de GA4 ya muestra generate_lead, sorteo_view, sorteo_form_start, ai_chat_open y ai_chat_whatsapp (el sitio tiene un chat de IA que manda eventos). ig_click aún no aparece en GA4. En Google Ads sigue la conversión provisional "Local actions - Directions" (Alojada en Google, principal): conviene pasarla a secundaria. **El pago de Google Ads seguía en "Pago rechazado" cuando lo revisé hoy** y aparece además "Verificación del anunciante" en Facturación (Cristian dijo que ya lo resolvió; si el banner persiste, puede ser que Google tarde o que pida verificar al anunciante).
+- Qué falta / qué necesito: Cristian completa la "Verificación del anunciante" y confirma que el estado de pago deje de decir rechazado. Escritorio: pasar "Local actions - Directions" a secundaria, subir a "Maximizar conversiones" cuando haya 15 o más conversiones, revisar términos de búsqueda a los 3 a 7 días, TikTok (sesión de Cristian). La Nube: tareas 8 y 13.
+
 ## 2026-10-31 · Nube (subo lo de Meta)
 - La abeja Meta (Claude de escritorio) trabajó el 30 oct pero no pudo subir nada a GitHub y se quedó sin crédito
   (límite de gasto mensual de la cuenta). Rescaté su informe y su prompt de relevo desde su sesión y los subí:
