@@ -4,10 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Propuesta CTA Colombia</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+@font-face{font-family:Archivo;font-weight:400;font-style:normal;font-display:swap;src:url(assets/fonts/archivo-400.woff2) format("woff2")}
+@font-face{font-family:Archivo;font-weight:500;font-style:normal;font-display:swap;src:url(assets/fonts/archivo-500.woff2) format("woff2")}
+@font-face{font-family:Archivo;font-weight:600;font-style:normal;font-display:swap;src:url(assets/fonts/archivo-600.woff2) format("woff2")}
+@font-face{font-family:Archivo;font-weight:700;font-style:normal;font-display:swap;src:url(assets/fonts/archivo-700.woff2) format("woff2")}
+@font-face{font-family:Archivo;font-weight:800;font-style:normal;font-display:swap;src:url(assets/fonts/archivo-800.woff2) format("woff2")}
+@font-face{font-family:Archivo;font-weight:900;font-style:normal;font-display:swap;src:url(assets/fonts/archivo-900.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:400;font-style:normal;font-display:swap;src:url(assets/fonts/inter-400.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:500;font-style:normal;font-display:swap;src:url(assets/fonts/inter-500.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:600;font-style:normal;font-display:swap;src:url(assets/fonts/inter-600.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:700;font-style:normal;font-display:swap;src:url(assets/fonts/inter-700.woff2) format("woff2")}
 :root{
   --navy:#111111;
   --navy-2:#1C1C1C;
@@ -330,6 +337,40 @@ h1,h2,h3,.display{font-family:Archivo,Inter,sans-serif;letter-spacing:-.02em}
 .cta .hz{position:absolute;left:0;right:0;bottom:0;height:7mm}
 .valid{position:absolute;right:16mm;top:27mm;font:600 7.5pt Archivo;color:#8C8C8C;letter-spacing:.06em}
 
+
+/* resumen */
+.band{height:64mm;position:relative;padding:16mm 16mm 0;background:#111 url(assets/f-torre3.jpg) center 38%/cover}
+.band::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(17,17,17,.92) 0%,rgba(17,17,17,.7) 55%,rgba(17,17,17,.35))}
+.band::after{content:"";position:absolute;left:0;right:0;top:0;height:8px;background:repeating-linear-gradient(-45deg,var(--yellow) 0 14px,#111 14px 28px)}
+.band>*{position:relative;z-index:1}
+.sum{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin-top:8mm}
+.sum .c{border:1px solid var(--line);border-radius:4mm;padding:5mm}
+.sum .c.add{border:2px solid var(--yellow)}
+.sum .c h3{font-size:12pt;font-weight:800;margin:3mm 0 1.5mm}
+.sum .c p{font-size:8.8pt;color:var(--muted);line-height:1.45}
+.bigprice{margin-top:8mm;background:var(--navy);color:#fff;border-radius:5mm;padding:7mm 8mm;display:grid;grid-template-columns:1.1fr 1fr;gap:7mm;align-items:center}
+.bigprice .lbl{font:800 8.5pt Archivo;letter-spacing:.16em;text-transform:uppercase;color:var(--yellow)}
+.bigprice .num{font:900 42pt Archivo;letter-spacing:-.03em;line-height:1;margin:2.5mm 0 3.5mm}
+.bigprice .tag{display:inline-block;background:var(--red);color:#fff;font:800 7.5pt Archivo;letter-spacing:.06em;text-transform:uppercase;padding:1.6mm 3mm;border-radius:99px}
+.bigprice .br{font-size:9pt;color:#B9B9B9;line-height:1.5;border-left:1px solid #3A3A3A;padding-left:7mm;display:grid;gap:2mm}
+.bigprice .br>div{display:flex;justify-content:space-between;gap:4mm}
+.bigprice .br b{color:#fff;font-family:Archivo;font-weight:800}
+.bigprice .br .alt{display:block;margin-top:1.5mm;padding-top:3mm;border-top:1px dashed #3A3A3A;color:#fff;font:700 9.5pt Archivo;line-height:1.5}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-top:8mm}
+.fact{background:var(--soft);border-radius:3.5mm;padding:4.5mm}
+.fact svg{width:6.5mm;height:6.5mm;color:var(--red)}
+.fact b{display:block;font:900 14pt Archivo;margin:2mm 0 .8mm;letter-spacing:-.02em}
+.fact span{font-size:8.3pt;color:var(--muted);line-height:1.4;display:block}
+.months{grid-template-columns:repeat(15,1fr)!important}
+.fin.alt .months i{background:#2B2B2B;color:#B9B9B9}.fin.alt .months i.first{background:var(--yellow);color:#111}
+/* PDF liviano: sin sombras difuminadas ni fondos de cuadrícula al imprimir */
+@media print{
+  .cover .grid-bg{display:none}
+  .phone,.browser,.pipe,.sheet,.pcard,.flyers img,.eco .node,.bubble{box-shadow:none!important}
+  .phone{outline:1px solid #2a2a2a}
+  .browser,.sheet{border:1px solid #D4D4D4}
+}
+
 /* =========== VISTA CELULAR (solo pantalla; el PDF no cambia) =========== */
 @media screen and (max-width:820px){
   html,body{background:#111111}
@@ -338,6 +379,14 @@ h1,h2,h3,.display{font-family:Archivo,Inter,sans-serif;letter-spacing:-.02em}
   .pad{padding:34px 18px 8px}
   .h2{font-size:30px}
   .h2 br,.cta h2 br{display:none}
+  .band{height:auto;padding:40px 18px 26px}
+  .sum,.bigprice{grid-template-columns:1fr}
+  .sum .c h3{font-size:18px}.sum .c p{font-size:14px}
+  .bigprice{padding:24px 20px}
+  .bigprice .num{font-size:46px}.bigprice .lbl{font-size:12px}.bigprice .tag{font-size:10.5px}
+  .bigprice .br{border-left:0;padding-left:0;font-size:14px}.bigprice .br .alt{font-size:15px}
+  .facts{grid-template-columns:1fr 1fr}
+  .fact b{font-size:20px}.fact span{font-size:13px}
   .today{grid-template-columns:1fr}.today p{font-size:14px}.today p b{font-size:17px}
   .cover .photo{width:100%;height:520px}
   .lead{font-size:15px;max-width:none}
@@ -526,10 +575,60 @@ h1,h2,h3,.display{font-family:Archivo,Inter,sans-serif;letter-spacing:-.02em}
 
   <div class="meta">
     <div>Preparado para<b>C.T.A Colombia SAS · Bucaramanga</b></div>
-    <div>Fecha<b>Noviembre 2026</b></div>
-    <div>Inversión desde<b>$250.000 de inicial</b></div>
+    <div>Entrega<b>En 7 días</b></div>
+    <div>Inversión total<b>$1.240.000 · pago único</b></div>
   </div>
   <div class="bottom hazard"></div>
+</section>
+
+<!-- ============ 2. RESUMEN ============ -->
+<section class="page">
+  <div class="band">
+    <div class="eyebrow" style="color:var(--yellow)">La propuesta en un minuto</div>
+    <h2 class="h2" style="color:#fff">Una sola plataforma. <br>Un solo precio. Suya para siempre.</h2>
+  </div>
+  <div class="pad" style="padding-top:8mm">
+    <p class="lead">Les entregamos la plataforma digital de C.T.A Colombia: su página web, su tienda de equipos y un espacio para que su comunidad publique productos. Todo conectado, con su marca y listo para compartir en sus grupos.</p>
+
+    <div class="sum">
+      <div class="c">
+        <div class="icobox"><svg><use href="#i-building"/></svg></div>
+        <h3>Página web</h3>
+        <p>Quiénes son, cursos, servicios, respaldo y contacto. La cara profesional de la marca.</p>
+      </div>
+      <div class="c">
+        <div class="icobox"><svg><use href="#i-store"/></svg></div>
+        <h3>Catálogo digital</h3>
+        <p>Tienda de equipos nuevos y usados, con carrito, pedido por WhatsApp y pago con Wompi.</p>
+      </div>
+      <div class="c add">
+        <div class="icobox y"><svg><use href="#i-users"/></svg></div>
+        <h3>Publica tu producto</h3>
+        <p>Su comunidad sube productos por un formulario conectado a Google Sheets. Ustedes aprueban.</p>
+      </div>
+    </div>
+
+    <div class="bigprice">
+      <div>
+        <div class="lbl">Inversión total</div>
+        <div class="num">$1.240.000</div>
+        <span class="tag">Pago único · sin mensualidades</span>
+      </div>
+      <div class="br">
+        <div><span>Página web + catálogo digital</span><b>$990.000</b></div>
+        <div><span>Módulo “Publica tu producto”</span><b>$250.000</b></div>
+        <div class="alt">¿Prefieren a cuotas?<br><span style="color:var(--yellow)">$250.000 de inicial + 14 cuotas de $99.900</span></div>
+      </div>
+    </div>
+
+    <div class="facts">
+      <div class="fact"><svg><use href="#i-clock"/></svg><b>7 días</b><span>Plataforma lista y publicada.</span></div>
+      <div class="fact"><svg><use href="#i-globe"/></svg><b>Dominio</b><span>Dominio y hosting incluidos el primer año.</span></div>
+      <div class="fact"><svg><use href="#i-star"/></svg><b>A la medida</b><span>Diseño con su marca. Nada de plantillas.</span></div>
+      <div class="fact"><svg><use href="#i-shield"/></svg><b>100 % suya</b><span>La plataforma queda a nombre de C.T.A Colombia.</span></div>
+    </div>
+  </div>
+  <div class="pfoot"><b>C.T.A Colombia SAS</b> · Propuesta Agencia Vectorial</div><div class="pnum">02</div>
 </section>
 
 <!-- ============ 2. LO QUE ENTENDIMOS ============ -->
@@ -537,7 +636,7 @@ h1,h2,h3,.display{font-family:Archivo,Inter,sans-serif;letter-spacing:-.02em}
   <div class="hazard hazard-thin"></div>
   <div class="pad">
     <div class="eyebrow">01 · Lo que entendimos</div>
-    <h2 class="h2">Dos negocios fuertes.<br>Un solo lugar para mostrarlos.</h2>
+    <h2 class="h2">Dos negocios fuertes. <br>Un solo lugar para mostrarlos.</h2>
     <p class="lead">C.T.A Colombia forma y certifica personal en trabajo en alturas y espacios confinados en Bucaramanga. Además, ya mueve un mercado real de equipos nuevos y de segunda mano —poleas, descendedores, eslingas, gas patrón— dentro de sus grupos y redes. La demanda existe; lo que falta es una vitrina ordenada.</p>
 
     <div class="quote">“El reto no es conseguir compradores: <span>ya los tienen en sus grupos.</span> El reto es que cada producto se vea bien, se encuentre rápido y se pueda comprar en minutos.”</div>
@@ -577,49 +676,6 @@ h1,h2,h3,.display{font-family:Archivo,Inter,sans-serif;letter-spacing:-.02em}
       <div class="stat"><b>24/7</b><span>Su vitrina abierta incluso cuando nadie está respondiendo el grupo.</span></div>
     </div>
   </div>
-  <div class="pfoot"><b>C.T.A Colombia SAS</b> · Propuesta Agencia Vectorial</div><div class="pnum">02</div>
-</section>
-
-<!-- ============ 3. LA SOLUCIÓN ============ -->
-<section class="page" style="background:var(--soft)">
-  <div class="hazard hazard-thin"></div>
-  <div class="pad">
-    <div class="eyebrow">02 · La solución</div>
-    <h2 class="h2">No es un catálogo.<br>Es su plataforma de venta.</h2>
-    <p class="lead">Tres piezas que trabajan juntas bajo la marca CTA Colombia: una vitrina que vende, una página que genera confianza y un sistema para que su comunidad alimente el catálogo con orden.</p>
-
-    <div class="eco">
-      <svg class="lines" viewBox="0 0 178 150" preserveAspectRatio="none">
-        <path d="M89 83 L30 22 M89 83 L148 22 M89 83 L89 140" stroke="#D0D0D0" stroke-width=".5" stroke-dasharray="2 1.5" fill="none"/>
-      </svg>
-      <div class="node" style="left:0;top:0">
-        <div class="icobox"><svg><use href="#i-store"/></svg></div>
-        <span class="num">01</span>
-        <h3>Catálogo digital</h3>
-        <p>Tienda en línea con categorías, productos nuevos y de segunda mano, carrito de pedido y pago.</p>
-      </div>
-      <div class="node" style="right:0;top:0">
-        <div class="icobox"><svg><use href="#i-building"/></svg></div>
-        <span class="num">02</span>
-        <h3>Página institucional</h3>
-        <p>Quiénes son, sus cursos y servicios, su respaldo y cómo contactarlos. La cara seria de la marca.</p>
-      </div>
-      <div class="center"><b>CTA<br>Colombia<br>digital</b><span>Una sola marca</span></div>
-      <div class="node" style="left:50%;bottom:0;transform:translateX(-50%);border:2px solid var(--yellow)">
-        <div class="icobox y"><svg><use href="#i-users"/></svg></div>
-        <span class="num">03</span>
-        <h3>Publica tu producto</h3>
-        <p>Personas de su círculo suben productos por un formulario conectado a Google Sheets. Ustedes aprueban.</p>
-      </div>
-    </div>
-
-    <div class="benefits">
-      <div class="benefit"><svg><use href="#i-grid"/></svg><b>Centraliza</b><span>Todo el inventario en un solo lugar, ordenado.</span></div>
-      <div class="benefit"><svg><use href="#i-share"/></svg><b>Comparte</b><span>Un enlace por producto, listo para los grupos.</span></div>
-      <div class="benefit"><svg><use href="#i-users"/></svg><b>Multiplica</b><span>Más productos sin más trabajo para ustedes.</span></div>
-      <div class="benefit"><svg><use href="#i-shield"/></svg><b>Respalda</b><span>Una imagen profesional que da confianza.</span></div>
-    </div>
-  </div>
   <div class="pfoot"><b>C.T.A Colombia SAS</b> · Propuesta Agencia Vectorial</div><div class="pnum">03</div>
 </section>
 
@@ -627,8 +683,8 @@ h1,h2,h3,.display{font-family:Archivo,Inter,sans-serif;letter-spacing:-.02em}
 <section class="page">
   <div class="hazard hazard-thin"></div>
   <div class="pad">
-    <div class="eyebrow">03 · Espacio 1 — Catálogo digital</div>
-    <h2 class="h2">Una vitrina tipo tienda,<br>pensada para el celular.</h2>
+    <div class="eyebrow">02 · Espacio 1 — Catálogo digital</div>
+    <h2 class="h2">Una vitrina tipo tienda, <br>pensada para el celular.</h2>
     <p class="lead">Sus clientes llegan desde el grupo, ven el producto con todos sus detalles y lo agregan al pedido sin escribir una sola pregunta.</p>
 
     <div class="split">
@@ -679,8 +735,8 @@ h1,h2,h3,.display{font-family:Archivo,Inter,sans-serif;letter-spacing:-.02em}
 <section class="page dark">
   <div class="hazard hazard-thin"></div>
   <div class="pad">
-    <div class="eyebrow">04 · Experiencia de compra</div>
-    <h2 class="h2">Del grupo al pedido<br>en cuatro toques.</h2>
+    <div class="eyebrow">03 · Experiencia de compra</div>
+    <h2 class="h2">Del grupo al pedido <br>en cuatro toques.</h2>
     <p class="lead">Ustedes ya tienen la audiencia. La solución convierte cada mensaje del grupo en una compra concreta, sin cadenas de preguntas ni pedidos perdidos.</p>
 
     <div class="flow">
@@ -711,12 +767,12 @@ h1,h2,h3,.display{font-family:Archivo,Inter,sans-serif;letter-spacing:-.02em}
         <p class="lead" style="margin-top:3mm;font-size:10pt">Nada de “¿cuál era el que te interesaba?”. Cada pedido llega completo, con productos, cantidades y total. Ambas opciones pueden convivir: el cliente elige.</p>
       </div>
       <div class="bubble">
-        <b>🛒 Nuevo pedido · CTA Tienda</b><br>
+        <b>Nuevo pedido · CTA Tienda</b><br>
         1 × Descendedor SIR (Usado) — $200.000<br>
         1 × Polea sencilla SOSEGA (Nuevo) — $70.000<br>
         <b>Total: $270.000</b><br>
         Nombre: Andrés P. · Ciudad: Bucaramanga
-        <small>10:42 a. m. ✓✓</small>
+        <small>10:42 a. m.</small>
       </div>
     </div>
   </div>
@@ -727,8 +783,8 @@ h1,h2,h3,.display{font-family:Archivo,Inter,sans-serif;letter-spacing:-.02em}
 <section class="page">
   <div class="hazard hazard-thin"></div>
   <div class="pad">
-    <div class="eyebrow">05 · Espacio 2 — Página institucional</div>
-    <h2 class="h2">La cara profesional<br>de CTA Colombia.</h2>
+    <div class="eyebrow">04 · Espacio 2 — Página institucional</div>
+    <h2 class="h2">La cara profesional <br>de CTA Colombia.</h2>
     <p class="lead">Quien compra un equipo de seguridad quiere saber a quién se lo compra. Proponemos renovar su presencia en ctacolombia.com: formación, servicios y tienda bajo un mismo sitio, moderno y coherente con su marca.</p>
 
     <div class="browser">
@@ -767,8 +823,8 @@ h1,h2,h3,.display{font-family:Archivo,Inter,sans-serif;letter-spacing:-.02em}
   <div class="hazard hazard-thin"></div>
   <div class="addon-badge">Funcionalidad adicional</div>
   <div class="pad">
-    <div class="eyebrow">06 · Publica tu producto</div>
-    <h2 class="h2">Su comunidad alimenta<br>el catálogo. Ustedes deciden.</h2>
+    <div class="eyebrow">05 · Publica tu producto</div>
+    <h2 class="h2">Su comunidad alimenta <br>el catálogo. Ustedes deciden.</h2>
     <p class="lead">Personas de su círculo de confianza pueden publicar sus propios equipos nuevos o usados. Todo queda registrado en Google Sheets y nada sale al catálogo sin la aprobación de CTA Colombia.</p>
 
     <div class="pipeline">
@@ -805,31 +861,29 @@ h1,h2,h3,.display{font-family:Archivo,Inter,sans-serif;letter-spacing:-.02em}
 <section class="page">
   <div class="hazard hazard-thin"></div>
   <div class="pad">
-    <div class="eyebrow">07 · Alcance</div>
-    <h2 class="h2">Todo lo que incluye.</h2>
-    <p class="lead">Un proyecto hecho a la medida, con la identidad de CTA Colombia, entregado y funcionando.</p>
+    <div class="eyebrow">06 · Qué incluye</div>
+    <h2 class="h2">Todo incluido. <br>Lista en 7 días.</h2>
+    <p class="lead">Un proyecto hecho a la medida, con la identidad de C.T.A Colombia, entregado y funcionando.</p>
 
     <div class="deliv">
       <div class="card">
         <h3><span class="icobox" style="width:9mm;height:9mm"><svg style="width:5mm;height:5mm"><use href="#i-store"/></svg></span>Catálogo digital</h3>
         <ul class="list">
-          <li><svg><use href="#i-check"/></svg><span>Diseño con la identidad visual de CTA Colombia.</span></li>
           <li><svg><use href="#i-check"/></svg><span>Hasta <b>100 productos</b> organizados por categorías.</span></li>
           <li><svg><use href="#i-check"/></svg><span>Etiquetas de <b>Nuevo / Segunda mano</b> y disponibilidad.</span></li>
           <li><svg><use href="#i-check"/></svg><span>Ficha por producto con fotos, descripción y precio.</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Carrito, pedido por WhatsApp e integración con <b>Wompi</b>.</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Enlaces individuales para compartir en grupos.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Carrito, pedido por WhatsApp y pago con <b>Wompi</b>.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Enlace propio por producto para los grupos.</span></li>
         </ul>
       </div>
       <div class="card">
-        <h3><span class="icobox" style="width:9mm;height:9mm"><svg style="width:5mm;height:5mm"><use href="#i-building"/></svg></span>Página institucional</h3>
+        <h3><span class="icobox" style="width:9mm;height:9mm"><svg style="width:5mm;height:5mm"><use href="#i-building"/></svg></span>Página web</h3>
         <ul class="list">
           <li><svg><use href="#i-check"/></svg><span>Inicio, quiénes somos, cursos y servicios.</span></li>
           <li><svg><use href="#i-check"/></svg><span>Respaldo (ICONTEC, resoluciones) y galería.</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Contacto con WhatsApp, mapa y redes sociales.</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Diseño adaptable a celular, tableta y computador.</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Estructura básica para aparecer en Google.</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Conexión directa con el catálogo.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Contacto con WhatsApp, mapa y redes.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Se ve perfecta en celular y computador.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Estructura lista para aparecer en Google.</span></li>
         </ul>
       </div>
       <div class="card" style="border:2px solid var(--yellow)">
@@ -837,28 +891,29 @@ h1,h2,h3,.display{font-family:Archivo,Inter,sans-serif;letter-spacing:-.02em}
         <ul class="list">
           <li><svg><use href="#i-check"/></svg><span>Formulario de publicación para la comunidad.</span></li>
           <li><svg><use href="#i-check"/></svg><span>Registro automático en <b>Google Sheets</b>.</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Flujo de aprobación antes de publicar.</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Estados: pendiente, aprobado, vendido, rechazado.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Aprobación de ustedes antes de publicar.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Control: pendiente, aprobado, vendido.</span></li>
         </ul>
       </div>
-      <div class="card" style="background:var(--soft);border-color:var(--soft)">
-        <h3><span class="icobox" style="width:9mm;height:9mm"><svg style="width:5mm;height:5mm"><use href="#i-star"/></svg></span>Acompañamiento</h3>
+      <div class="card" style="background:var(--navy);border-color:var(--navy);color:#fff">
+        <h3 style="color:#fff"><span class="icobox y" style="width:9mm;height:9mm"><svg style="width:5mm;height:5mm"><use href="#i-shield"/></svg></span>Nuestro compromiso</h3>
         <ul class="list">
-          <li><svg><use href="#i-check"/></svg><span>Carga inicial del catálogo con su información.</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Capacitación para administrar productos y pedidos.</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Soporte y ajustes después de la entrega.</span></li>
-          <li><svg><use href="#i-check"/></svg><span>La plataforma queda 100 % a nombre de CTA Colombia.</span></li>
+          <li style="color:#DADADA"><svg style="color:var(--yellow)"><use href="#i-check"/></svg><span><b style="color:#fff">Entrega en 7 días.</b></span></li>
+          <li style="color:#DADADA"><svg style="color:var(--yellow)"><use href="#i-check"/></svg><span>Dominio y hosting el primer año.</span></li>
+          <li style="color:#DADADA"><svg style="color:var(--yellow)"><use href="#i-check"/></svg><span>Carga del catálogo y capacitación.</span></li>
+          <li style="color:#DADADA"><svg style="color:var(--yellow)"><use href="#i-check"/></svg><span>Soporte y ajustes después de entregar.</span></li>
         </ul>
       </div>
     </div>
 
-    <div class="eyebrow" style="margin-top:7mm">Cómo trabajamos</div>
+    <div class="eyebrow" style="margin-top:7mm">Así son los 7 días</div>
     <div class="timeline">
-      <div class="tl"><div class="bar"></div><small>Paso 1</small><b>Arranque</b><span>Reunión, logo, fotos, inventario y textos.</span></div>
-      <div class="tl"><div class="bar"></div><small>Paso 2</small><b>Diseño</b><span>Propuesta visual del catálogo y la página para su aprobación.</span></div>
-      <div class="tl"><div class="bar"></div><small>Paso 3</small><b>Desarrollo</b><span>Construcción, Wompi, formulario y Google Sheets.</span></div>
-      <div class="tl"><div class="bar"></div><small>Paso 4</small><b>Lanzamiento</b><span>Pruebas, capacitación y enlace listo para sus grupos.</span></div>
+      <div class="tl"><div class="bar"></div><small>Día 1</small><b>Arranque</b><span>Recibimos logo, fotos, productos y textos.</span></div>
+      <div class="tl"><div class="bar"></div><small>Días 2 – 3</small><b>Diseño</b><span>Les mostramos el diseño para su aprobación.</span></div>
+      <div class="tl"><div class="bar"></div><small>Días 4 – 6</small><b>Desarrollo</b><span>Catálogo, Wompi, formulario y Google Sheets.</span></div>
+      <div class="tl"><div class="bar"></div><small>Día 7</small><b>Lanzamiento</b><span>Capacitación y enlace listo para sus grupos.</span></div>
     </div>
+    <p style="font-size:7.5pt;color:#A0A0A0;margin-top:3mm">Los 7 días empiezan a contar cuando recibimos la información completa (logo, fotos y lista de productos).</p>
   </div>
   <div class="pfoot"><b>C.T.A Colombia SAS</b> · Propuesta Agencia Vectorial</div><div class="pnum">08</div>
 </section>
@@ -867,56 +922,54 @@ h1,h2,h3,.display{font-family:Archivo,Inter,sans-serif;letter-spacing:-.02em}
 <section class="page dark">
   <div class="hazard hazard-thin"></div>
   <div class="pad">
-    <div class="eyebrow">08 · Inversión</div>
-    <h2 class="h2">Una inversión clara,<br>con cuotas que caben.</h2>
-    <p class="lead">Un solo proyecto con dos componentes. Sin costos ocultos: lo que ve es lo que paga.</p>
+    <div class="eyebrow">07 · Inversión</div>
+    <h2 class="h2">Un pago. <br>Una plataforma suya para siempre.</h2>
+    <p class="lead">Sin mensualidades de plataforma y sin comisiones nuestras por sus ventas. Lo que ve es lo que paga.</p>
 
     <div class="inv">
       <div class="inv-row">
-        <div><h3>Catálogo digital + página institucional</h3><p>Plan Catálogo Digital (hasta 100 productos): tienda por categorías, carrito, pedido por WhatsApp, integración con Wompi y página institucional.</p></div>
+        <div><h3>Página web + catálogo digital</h3><p>Sitio de la empresa y tienda de hasta 100 productos, con carrito, pedido por WhatsApp y pago con Wompi.</p></div>
         <div class="amt"><small>COP</small>$990.000</div>
       </div>
       <div class="inv-row">
-        <div><h3>Funcionalidad “Publica tu producto”</h3><p>Formulario para la comunidad conectado a Google Sheets, con flujo de aprobación y control de publicaciones.</p></div>
+        <div><h3>Módulo “Publica tu producto”</h3><p>Formulario para la comunidad conectado a Google Sheets, con aprobación y control de publicaciones.</p></div>
         <div class="amt"><small>COP</small>$250.000</div>
       </div>
-      <div class="inv-total"><span>Inversión total</span><b>$1.240.000</b></div>
+      <div class="inv-total"><span>Inversión total · pago único</span><b>$1.240.000</b></div>
     </div>
 
-    <div class="finance">
+    <div class="eyebrow" style="margin-top:8mm;color:var(--yellow)">Elijan cómo pagar</div>
+    <div class="finance" style="margin-top:4mm">
       <div class="fin">
-        <span class="ribbon">Recomendado</span>
-        <div class="lbl">Financiado a 12 meses</div>
-        <h3>Empiece hoy con la inicial</h3>
-        <div class="big"><b>$250.000</b><span>de inicial</span></div>
-        <div class="big" style="margin-top:1mm"><b style="font-size:18pt">+ 12 × $82.500</b><span>al mes</span></div>
+        <span class="ribbon">Mejor precio</span>
+        <div class="lbl">Opción 1</div>
+        <h3>Pago único</h3>
+        <div class="big"><b>$1.240.000</b></div>
         <div class="det">
-          <div><span>Cuota inicial</span><b>$250.000</b></div>
-          <div><span>Saldo financiado</span><b>$990.000</b></div>
-          <div><span>Plazo</span><b>12 meses</b></div>
-          <div><span>Cuota mensual</span><b>$82.500</b></div>
-        </div>
-        <div class="months">
-          <i class="first">INI</i><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i><i>9</i><i>10</i><i>11</i><i>12</i>
+          <div><span>50 % al iniciar</span><b>$620.000</b></div>
+          <div><span>50 % al entregar (día 7)</span><b>$620.000</b></div>
+          <div><span>Mensualidades</span><b>Ninguna</b></div>
         </div>
       </div>
       <div class="fin alt">
-        <div class="lbl">Pago de contado</div>
-        <h3>Un solo pago</h3>
-        <div class="big"><b>$1.240.000</b></div>
-        <p style="font-size:9pt;color:#B9B9B9;line-height:1.5;margin-top:3mm">Pago único del proyecto completo, dividido en dos momentos:</p>
+        <div class="lbl">Opción 2</div>
+        <h3>A cuotas</h3>
+        <div class="big"><b>$99.900</b><span>al mes</span></div>
         <div class="det">
-          <div><span>50 % al iniciar</span><b>$620.000</b></div>
-          <div><span>50 % al entregar</span><b>$620.000</b></div>
+          <div><span>Cuota inicial</span><b>$250.000</b></div>
+          <div><span>Cuotas mensuales</span><b>14 × $99.900</b></div>
+          <div><span>Al terminar de pagar</span><b>100 % suya</b></div>
         </div>
-        <p style="font-size:8.5pt;color:#B9B9B9;line-height:1.5;margin-top:5mm">Ideal si prefieren cerrar el proyecto sin cuotas pendientes.</p>
+        <div class="months">
+          <i class="first">INI</i><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i><i>9</i><i>10</i><i>11</i><i>12</i><i>13</i><i>14</i>
+        </div>
       </div>
     </div>
 
     <div class="notes">
-      <p><svg><use href="#i-check"/></svg>Las comisiones por transacción de Wompi las cobra directamente la pasarela.</p>
+      <p><svg><use href="#i-check"/></svg>Dominio y hosting incluidos el primer año; luego solo su renovación anual.</p>
+      <p><svg><use href="#i-check"/></svg>Las comisiones por transacción de Wompi las cobra la pasarela.</p>
       <p><svg><use href="#i-check"/></svg>Valores en pesos colombianos (COP).</p>
-      <p><svg><use href="#i-check"/></svg>Al terminar de pagar, la plataforma es 100 % de CTA Colombia.</p>
       <p><svg><use href="#i-check"/></svg>Propuesta válida por 15 días calendario.</p>
     </div>
   </div>
@@ -927,8 +980,8 @@ h1,h2,h3,.display{font-family:Archivo,Inter,sans-serif;letter-spacing:-.02em}
 <section class="page">
   <div class="hazard hazard-thin"></div>
   <div class="pad">
-    <div class="eyebrow">09 · Por qué Agencia Vectorial</div>
-    <h2 class="h2">Construimos la parte digital<br>de negocios reales.</h2>
+    <div class="eyebrow">08 · Por qué Agencia Vectorial</div>
+    <h2 class="h2">Construimos la parte digital <br>de negocios reales.</h2>
     <p class="lead">Somos una agencia de páginas web en Medellín. Hacemos páginas, tiendas online, catálogos digitales y apps a la medida para negocios en toda Colombia.</p>
 
     <div class="why">
@@ -940,9 +993,9 @@ h1,h2,h3,.display{font-family:Archivo,Inter,sans-serif;letter-spacing:-.02em}
 
     <div class="eyebrow" style="margin-top:11mm">Siguientes pasos</div>
     <div class="nextsteps">
-      <div class="ns"><i>01</i><div><b>Aprobación de la propuesta</b><span>Nos confirman la modalidad de pago: financiada o de contado.</span></div></div>
-      <div class="ns"><i>02</i><div><b>Cuota inicial y reunión de arranque</b><span>Recibimos logo, fotos, lista de productos y la información de la empresa.</span></div></div>
-      <div class="ns"><i>03</i><div><b>Manos a la obra</b><span>Diseñamos, construimos y les entregamos su catálogo listo para compartir.</span></div></div>
+      <div class="ns"><i>01</i><div><b>Aprobación de la propuesta</b><span>Nos confirman cómo prefieren pagar: pago único o a cuotas.</span></div></div>
+      <div class="ns"><i>02</i><div><b>Primer pago y envío de información</b><span>Nos comparten logo, fotos, lista de productos y datos de la empresa.</span></div></div>
+      <div class="ns"><i>03</i><div><b>En 7 días, su plataforma al aire</b><span>Página web, catálogo y módulo de comunidad listos para compartir en sus grupos.</span></div></div>
     </div>
   </div>
 
