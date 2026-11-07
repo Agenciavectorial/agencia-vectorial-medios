@@ -1,20 +1,16 @@
-# Propuesta · Ecosistema digital Eventos Antioquia
+# Propuesta · Ecosistema digital Eventos Campestres Antioquia
 
-- `index.html` — propuesta (mobile-first). Ábrela en el navegador o publícala.
-- `Propuesta-Eventos-Antioquia-Agencia-Vectorial.pdf` — PDF vertical en formato celular (430×932), 21 páginas.
-- `fotos/` — imágenes de ambientación (Unsplash) que **hay que cambiar por fotos reales** de las marcas antes de enviar.
+- `index.html`: propuesta mobile-first (22 secciones).
+- `Propuesta-Eventos-Antioquia-Agencia-Vectorial.pdf`: PDF vertical en formato celular (430×932), 22 páginas.
+- `fotos/`: fotos y piezas reales tomadas de @eventoscant, @eventosverum, @luismiguelplanner y @knonproducciones (vía Apify, 7 nov 2026).
 
-## Cambiar fotos por las reales de Instagram
-Guarda la foto real con **el mismo nombre de archivo** en `fotos/` (jpg, ~1200 px de ancho):
-
-| Archivo | Dónde aparece | Qué foto poner |
-|---|---|---|
-| portada.jpg | Portada | Mejor foto de un evento campestre (vertical u horizontal) |
-| campestre-ceremonia / -mesa / -kiosko / -pareja | Marca, Hub, landing | Salones de Copacabana, montajes, parejas (@EventosCant) |
-| verum-plato / -buffet / -montaje / -mesa | Verum | Platos, buffet, montajes (@EventosVerum) |
-| planner-salida / -velo / -ramo / -anillos | Luis Miguel Ríos | Bodas planeadas por él (@luismiguelPlanner) |
-| knon-luces / -pista / -tarima / -confeti | K-non y cierre | Miniteca, luces, pista (@knonproducciones) |
-| empresarial.jpg | (reserva) | Evento empresarial |
+## Datos usados (Instagram, 7 nov 2026)
+| Cuenta | Seguidores | Publicaciones | Enlace en biografía |
+|---|---|---|---|
+| @eventoscant | 10.881 | 326 | wa.me 313 715 9379 |
+| @luismiguelplanner | 9.670 | 588 | eventosantioquia.com.co (caída) |
+| @eventosverum | 3.204 | 360 | wa.me 318 401 6044 |
+| @knonproducciones | 385 | 13 | Facebook (sin biografía) |
 
 ## Regenerar el PDF
 ```bash
