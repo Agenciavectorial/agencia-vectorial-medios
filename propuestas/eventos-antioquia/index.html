@@ -1,0 +1,775 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ecosistema Digital · Eventos Antioquia</title>
+<meta name="description" content="Propuesta de Agencia Vectorial para Eventos Campestres Antioquia, Verum Eventos, Luis Miguel Ríos Wedding Planner y K-non Producciones.">
+<meta name="theme-color" content="#14160f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@300;400;500;600;700&family=Unbounded:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#14160f; --ink2:#1d2018; --cream:#f4eee3; --paper:#faf7f1; --line:rgba(20,22,15,.12);
+  --gold:#c3a56b; --gold2:#e2cf9f; --muted:#6f6b60;
+  --av:#7b3fe4; --av2:#b48cff;
+  --cant:#41603b; --cant2:#a9c19a;
+  --verum:#b48a4c; --verum2:#e9d4a6;
+  --lmr:#c4948b; --lmr2:#f1ddd6;
+  --knon:#ff2e88; --knon2:#22e3ff;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --display:"Unbounded","Inter",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:#0c0d09;color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+.deck{max-width:560px;margin:0 auto;background:var(--paper);box-shadow:0 0 80px rgba(0,0,0,.5)}
+
+/* ---------- slide base ---------- */
+.slide{position:relative;overflow:hidden;padding:56px 24px 48px;min-height:100svh;display:flex;flex-direction:column}
+.slide.auto{min-height:0}
+.dark{background:var(--ink);color:var(--cream)}
+.cream{background:var(--cream)}
+.paper{background:var(--paper)}
+.folio{position:absolute;top:22px;left:24px;right:24px;display:flex;justify-content:space-between;font-size:10px;letter-spacing:.22em;text-transform:uppercase;opacity:.55;font-weight:500}
+.eyebrow{font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--gold);margin-bottom:14px}
+.dark .eyebrow{color:var(--gold2)}
+h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.01em;line-height:1.02}
+h2{font-size:42px;margin-bottom:18px}
+h2 em,h1 em{font-style:italic;color:var(--gold)}
+.dark h2 em,.dark h1 em{color:var(--gold2)}
+h3{font-size:26px;line-height:1.1}
+.lead{font-size:17px;line-height:1.55;color:#3d3a33;font-weight:300}
+.dark .lead{color:rgba(244,238,227,.78)}
+p+p{margin-top:12px}
+.small{font-size:13px;color:var(--muted);line-height:1.5}
+.dark .small{color:rgba(244,238,227,.6)}
+.spacer{flex:1}
+.rule{height:1px;background:var(--line);margin:22px 0}
+.dark .rule{background:rgba(244,238,227,.14)}
+.tag{display:inline-block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;padding:6px 10px;border-radius:99px;border:1px solid currentColor}
+
+/* ---------- cover ---------- */
+.cover{padding:0;color:#fff;background:#111}
+.cover .bg{position:absolute;inset:0;background:url(fotos/portada.jpg) center/cover}
+.cover .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,11,8,.55) 0%,rgba(10,11,8,.05) 30%,rgba(10,11,8,.2) 50%,rgba(10,11,8,.92) 82%,#0c0d09 100%)}
+.cover .inner{position:relative;z-index:2;display:flex;flex-direction:column;min-height:100svh;padding:28px 24px 34px}
+.cover .top{display:flex;justify-content:space-between;align-items:center;font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
+.avmark{display:flex;align-items:center;gap:8px}
+.avmark i{width:18px;height:18px;border-radius:5px;background:linear-gradient(135deg,var(--av),#4a1fb0);display:inline-block;position:relative}
+.avmark i::after{content:"";position:absolute;inset:5px 4px 4px;border:2px solid #fff;border-top:0;border-right-color:transparent;transform:skewX(-14deg)}
+.cover h1{font-size:62px;line-height:.95;margin:14px 0 18px}
+.cover h1 em{color:var(--gold2)}
+.cover .for{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);font-weight:600}
+.cover .brands4{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:22px}
+.cover .brands4 span{font-size:12px;border-top:1px solid rgba(255,255,255,.3);padding-top:8px;color:rgba(255,255,255,.85)}
+.cover .brands4 b{display:block;font-weight:600;color:#fff;font-size:13px}
+.cover .meta{display:flex;justify-content:space-between;margin-top:24px;font-size:11px;color:rgba(255,255,255,.6);letter-spacing:.06em}
+
+/* ---------- brand cards ---------- */
+.brandgrid{display:grid;gap:10px;margin-top:18px}
+.bcard{display:grid;grid-template-columns:84px 1fr;gap:14px;align-items:center;background:#fff;border-radius:16px;padding:10px;border:1px solid var(--line)}
+.bcard img{width:84px;height:84px;object-fit:cover;border-radius:10px}
+.bcard .k{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700}
+.bcard h3{font-size:22px;margin:3px 0 4px}
+.bcard p{font-size:13px;color:var(--muted);line-height:1.4}
+.bcard .h{font-size:11px;color:var(--muted);margin-top:4px;font-weight:500}
+
+/* ---------- journey ---------- */
+.journey{margin-top:26px;position:relative}
+.journey::before{content:"";position:absolute;left:21px;top:20px;bottom:20px;width:1px;background:linear-gradient(var(--cant2),var(--lmr2),var(--verum2),var(--knon))}
+.step{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;padding:12px 0}
+.dot{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:20px;font-style:italic;color:#fff;position:relative;z-index:1}
+.step b{display:block;font-size:15px}
+.step span{font-size:13.5px;color:rgba(244,238,227,.66)}
+.callout{margin-top:22px;border-radius:16px;padding:18px;background:rgba(195,165,107,.12);border:1px solid rgba(226,207,159,.3)}
+.callout p{font-family:var(--serif);font-size:23px;line-height:1.2;font-style:italic;color:var(--gold2)}
+
+/* ---------- diagnosis ---------- */
+.browser{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#fff;margin:6px 0 20px;box-shadow:0 20px 40px -24px rgba(0,0,0,.35)}
+.browser .bar{display:flex;align-items:center;gap:6px;padding:9px 12px;background:#efebe2;font-size:11px;color:#6b665b}
+.browser .bar i{width:8px;height:8px;border-radius:50%;background:#d6d0c3;display:inline-block}
+.browser .url{margin-left:8px;flex:1;background:#fff;border-radius:6px;padding:4px 8px;display:flex;gap:6px;align-items:center}
+.browser .url s{color:#c0392b;text-decoration:none;font-weight:700}
+.browser .body{padding:22px 16px;text-align:center;font-size:12px;color:#8a857a;font-family:ui-monospace,Menlo,monospace;background:repeating-linear-gradient(45deg,#fafafa 0 10px,#f4f4f4 10px 20px)}
+.browser .body b{display:block;color:#3a3a3a;font-size:13px;margin-bottom:4px}
+.diag{display:grid;gap:10px}
+.diag div{display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:start;padding:12px 0;border-top:1px solid var(--line)}
+.diag div:first-child{border-top:0}
+.diag i{font-style:normal;width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font-size:14px;font-weight:700}
+.diag .r{background:#fbe3df;color:#b0392b}
+.diag .y{background:#f6ecd3;color:#9a7322}
+.diag b{display:block;font-size:15px;margin-bottom:2px}
+.diag span{font-size:13.5px;color:var(--muted);line-height:1.45}
+
+.serp{background:#fff;border-radius:14px;border:1px solid var(--line);padding:14px;margin-top:14px}
+.serp .q{display:flex;align-items:center;gap:8px;border:1px solid #e3ded3;border-radius:99px;padding:8px 12px;font-size:13px;margin-bottom:12px}
+.serp .q::before{content:"";width:12px;height:12px;border:2px solid #9a958b;border-radius:50%;flex:none}
+.serp .res{padding:8px 0;border-top:1px solid #f0ece4;font-size:12.5px}
+.serp .res b{color:#1a4fbf;font-weight:500;display:block;font-size:14px}
+.serp .res span{color:#5d7d4f;font-size:11px}
+.serp .you{background:#fff6f4;border:1px dashed #e7a99e;border-radius:10px;padding:10px;margin-top:6px;font-size:12.5px;color:#b0392b;text-align:center;font-weight:500}
+
+/* ---------- opportunity numbers ---------- */
+.opps{display:grid;gap:0;margin-top:20px}
+.opp{display:grid;grid-template-columns:62px 1fr;gap:14px;padding:16px 0;border-top:1px solid rgba(244,238,227,.14)}
+.opp .n{font-family:var(--serif);font-size:44px;line-height:.9;color:var(--gold2);font-style:italic}
+.opp b{display:block;font-size:16px;margin-bottom:3px}
+.opp span{font-size:13.5px;color:rgba(244,238,227,.66)}
+
+/* ---------- options compare ---------- */
+.optlist{display:grid;gap:10px;margin-top:18px}
+.opt{border-radius:16px;padding:16px;border:1px solid var(--line);background:#fff}
+.opt .t{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px}
+.opt b{font-size:15.5px}
+.opt p{font-size:13.5px;color:var(--muted);line-height:1.45}
+.opt .no{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#a23b2e;font-weight:700}
+.opt.win{background:var(--ink);color:var(--cream);border-color:var(--ink);box-shadow:0 24px 40px -20px rgba(20,22,15,.55)}
+.opt.win p{color:rgba(244,238,227,.75)}
+.opt.win .yes{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:var(--gold2);padding:5px 9px;border-radius:99px;font-weight:700}
+
+/* ---------- ecosystem map ---------- */
+.map{margin:16px -6px 0}
+.map svg{width:100%;height:auto;display:block}
+.legend{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;margin-top:14px}
+.legend div{font-size:12.5px;line-height:1.35;color:rgba(244,238,227,.75)}
+.legend b{display:block;color:#fff;font-size:13px;margin-bottom:2px}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:1px}
+
+/* ---------- development slides ---------- */
+.dev{padding-top:0}
+.dev .hero{margin:0 -24px;height:300px;position:relative;background:#222 center/cover}
+.dev .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,0) 35%,rgba(0,0,0,.1) 60%,var(--fade) 100%)}
+.dev .hero .num{position:absolute;top:22px;left:24px;z-index:2;color:#fff;font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
+.dev .hero .dom{position:absolute;top:18px;right:20px;z-index:2;font-size:11px;color:#fff;background:rgba(0,0,0,.45);backdrop-filter:blur(6px);padding:6px 10px;border-radius:99px;letter-spacing:.02em}
+.dev .head{position:relative;z-index:3;margin-top:-64px}
+.dev .kicker{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+.dev h2{font-size:40px;margin-bottom:10px}
+.dev .role{font-size:15.5px;line-height:1.5;margin-bottom:16px}
+.dev .cols{display:grid;grid-template-columns:1fr 132px;gap:16px;align-items:start}
+.secs{list-style:none;counter-reset:s}
+.secs li{counter-increment:s;font-size:13px;line-height:1.35;padding:7px 0;border-top:1px solid var(--dl,rgba(0,0,0,.1));display:grid;grid-template-columns:22px 1fr}
+.secs li::before{content:counter(s,decimal-leading-zero);font-size:10px;font-weight:700;opacity:.5;padding-top:2px}
+.secs li b{font-weight:600}
+.kw{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px}
+.kw span{font-size:11px;padding:5px 9px;border-radius:99px;background:var(--kwbg,rgba(0,0,0,.06))}
+.kwl{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;opacity:.55;margin-top:16px}
+
+/* phone mockup */
+.phone{width:132px;border-radius:22px;padding:5px;background:#0d0d0d;box-shadow:0 18px 30px -12px rgba(0,0,0,.5),inset 0 0 0 1px #333}
+.phone .scr{border-radius:17px;overflow:hidden;height:262px;position:relative;background:#fff;font-size:6px;line-height:1.3}
+.phone .notch{position:absolute;top:4px;left:50%;transform:translateX(-50%);width:38px;height:9px;border-radius:9px;background:#0d0d0d;z-index:5}
+.m-hero{height:120px;background:center/cover;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:8px}
+.m-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.1),rgba(0,0,0,.7))}
+.m-hero *{position:relative}
+.m-nav{position:absolute!important;top:15px;left:8px;right:8px;display:flex;justify-content:space-between;align-items:center;color:#fff;font-size:5.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+.m-nav i{width:10px;height:6px;border-top:1px solid #fff;border-bottom:1px solid #fff;display:block}
+.m-h{font-family:var(--serif);font-size:15px;line-height:1;color:#fff}
+.m-s{font-size:5.5px;color:rgba(255,255,255,.85);margin-top:3px}
+.m-btn{display:inline-block;margin-top:5px;padding:3px 6px;border-radius:9px;font-size:5.5px;font-weight:700}
+.m-body{padding:7px}
+.m-t{font-weight:700;font-size:6.5px;margin-bottom:4px}
+.m-g{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.m-g div{height:34px;border-radius:4px;background:center/cover}
+.m-row{display:flex;gap:4px;margin-top:5px}
+.m-row span{flex:1;padding:4px;border-radius:4px;font-size:5px;text-align:center;font-weight:600}
+.m-wa{position:absolute;right:7px;bottom:7px;width:18px;height:18px;border-radius:50%;background:#25d366;box-shadow:0 3px 6px rgba(0,0,0,.3)}
+.m-wa::after{content:"";position:absolute;inset:5px;border:1.5px solid #fff;border-radius:50% 50% 50% 2px}
+
+/* themes per development */
+.t-cant{background:#eef0e6;--fade:#eef0e6;--kwbg:rgba(65,96,59,.12)}
+.t-cant .kicker{color:var(--cant)}
+.t-verum{background:#121110;color:#efe6d6;--fade:#121110;--dl:rgba(233,212,166,.16);--kwbg:rgba(233,212,166,.12)}
+.t-verum .kicker{color:var(--verum2)}
+.t-verum h2{color:#f4ead6}
+.t-verum h2 em{color:var(--verum2)}
+.t-verum .role{color:rgba(239,230,214,.78)}
+.t-lmr{background:#fbf4f0;--fade:#fbf4f0;--kwbg:rgba(196,148,139,.16)}
+.t-lmr .kicker{color:#a46d63}
+.t-lmr h2 em{color:#b37a70}
+.t-knon{background:#0a0a12;color:#e9e9f5;--fade:#0a0a12;--dl:rgba(255,255,255,.12);--kwbg:rgba(34,227,255,.1)}
+.t-knon .kicker{color:var(--knon2)}
+.t-knon h2{font-family:var(--display);font-weight:800;font-size:32px;letter-spacing:-.02em;line-height:1.02;text-transform:uppercase}
+.t-knon h2 em{font-style:normal;background:linear-gradient(90deg,var(--knon),var(--knon2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.t-knon .role{color:rgba(233,233,245,.75)}
+.t-full{background:var(--ink);color:var(--cream);--fade:var(--ink);--dl:rgba(244,238,227,.14);--kwbg:rgba(226,207,159,.12)}
+.t-full .kicker{color:var(--gold2)}
+.t-full .role{color:rgba(244,238,227,.75)}
+
+/* quote flow */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:6px 0 16px}
+.flow div{background:rgba(244,238,227,.07);border:1px solid rgba(244,238,227,.14);border-radius:12px;padding:10px 8px;font-size:11px;line-height:1.3;color:rgba(244,238,227,.8)}
+.flow b{display:block;font-family:var(--serif);font-style:italic;font-size:22px;color:var(--gold2);font-weight:500;line-height:1;margin-bottom:4px}
+.route{display:grid;gap:6px}
+.route div{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;padding:9px 12px;border-radius:10px;background:rgba(244,238,227,.05)}
+.route span:last-child{font-size:11px;opacity:.7}
+.route i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px}
+
+/* ---------- features ---------- */
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.f{background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 12px}
+.f svg{width:22px;height:22px;stroke:var(--ink);stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round;margin-bottom:8px}
+.f b{display:block;font-size:13.5px;line-height:1.25;margin-bottom:3px}
+.f span{font-size:12px;color:var(--muted);line-height:1.38;display:block}
+.f.hl{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.f.hl svg{stroke:var(--gold2)}
+.f.hl span{color:rgba(244,238,227,.68)}
+
+.strip{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:6px;margin-top:16px}
+.strip div{height:120px;border-radius:12px;background:center/cover}
+.cream .f:not(.hl){background:#fffdf8}
+/* ---------- visual identity ---------- */
+.idgrid{display:grid;gap:10px;margin-top:16px}
+.idc{border-radius:16px;padding:14px;display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}
+.idc .nm{font-size:22px;line-height:1}
+.idc .ds{font-size:12px;margin-top:5px;opacity:.75}
+.sw{display:flex;gap:4px}
+.sw i{width:22px;height:22px;border-radius:50%;display:block;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+
+/* ---------- benefits ---------- */
+.bens{display:grid;gap:0;margin-top:14px}
+.ben{padding:15px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr;gap:3px}
+.ben b{font-family:var(--serif);font-size:24px;font-weight:500;line-height:1.1}
+.ben span{font-size:13.5px;color:var(--muted)}
+
+/* ---------- investment ---------- */
+.inv{background:var(--ink);color:var(--cream)}
+.lines{margin-top:16px;border-top:1px solid rgba(244,238,227,.14)}
+.ln{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:11px 0;border-bottom:1px solid rgba(244,238,227,.1);font-size:14px}
+.ln span:first-child{color:rgba(244,238,227,.82)}
+.ln span:first-child small{display:block;font-size:11.5px;color:rgba(244,238,227,.5)}
+.ln .v{font-variant-numeric:tabular-nums;color:rgba(244,238,227,.6);white-space:nowrap}
+.ln.sum{border-bottom:0;padding-top:14px}
+.ln.sum .v{text-decoration:line-through;text-decoration-color:#e06b5a;text-decoration-thickness:2px;font-size:17px;color:rgba(244,238,227,.75)}
+.price{margin-top:14px;border-radius:20px;padding:22px 20px;background:linear-gradient(140deg,#e9d6a7,#c3a56b 60%,#a8864a);color:var(--ink);position:relative;overflow:hidden}
+.price::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;border:1px solid rgba(20,22,15,.15)}
+.price .l{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+.price .big{font-family:var(--serif);font-size:58px;line-height:1;margin:6px 0 2px;font-weight:600;letter-spacing:-.02em}
+.price .big small{font-size:20px;font-family:var(--sans);font-weight:600;letter-spacing:0}
+.price .sub{font-size:13px;font-weight:500}
+.save{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.save div{border-radius:14px;padding:12px;background:rgba(244,238,227,.06);border:1px solid rgba(244,238,227,.14)}
+.save b{display:block;font-family:var(--serif);font-size:26px;color:var(--gold2);font-weight:500;line-height:1.05}
+.save span{font-size:11.5px;color:rgba(244,238,227,.65)}
+.pay{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.pay div{border-radius:12px;padding:10px 12px;border:1px dashed rgba(226,207,159,.35);font-size:12px;color:rgba(244,238,227,.75)}
+.pay b{display:block;font-size:15px;color:#fff}
+
+/* ---------- timeline ---------- */
+.tl{margin-top:18px;display:grid;gap:0}
+.wk{display:grid;grid-template-columns:70px 1fr;gap:14px;padding:14px 0;border-top:1px solid var(--line)}
+.wk .w{font-family:var(--serif);font-style:italic;font-size:24px;line-height:1;color:var(--gold)}
+.wk .w small{display:block;font-family:var(--sans);font-style:normal;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.wk b{display:block;font-size:15px;margin-bottom:3px}
+.wk span{font-size:13px;color:var(--muted)}
+
+/* ---------- conditions ---------- */
+.conds{display:grid;gap:0;margin-top:12px}
+.cond{display:grid;grid-template-columns:26px 1fr;gap:10px;padding:11px 0;border-top:1px solid var(--line);font-size:13.5px;line-height:1.45}
+.cond i{font-style:normal;font-weight:700;font-size:11px;color:var(--gold);padding-top:2px}
+.cond b{font-weight:600}
+.cond.key{background:#fff7e6;border:1px solid #ecd9a8;border-radius:12px;padding:12px;margin:4px 0 6px}
+.cond.key i{color:#9a7322}
+.notinc{margin-top:12px;font-size:12px;color:var(--muted);line-height:1.5}
+.notinc b{color:var(--ink)}
+
+/* ---------- closing ---------- */
+.close{padding:0;color:#fff;background:#0c0d09}
+.close .bg{position:absolute;inset:0;background:url(fotos/knon-confeti.jpg) center/cover;opacity:.55}
+.close .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0c0d09 0%,rgba(12,13,9,.55) 35%,rgba(12,13,9,.7) 60%,#0c0d09 100%)}
+.close .inner{position:relative;z-index:2;min-height:100svh;display:flex;flex-direction:column;padding:56px 24px 34px}
+.close h2{font-size:50px;line-height:.98}
+.close .lead{color:rgba(255,255,255,.82)}
+.cta{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:22px;background:#25d366;color:#06240f;font-weight:700;text-decoration:none;border-radius:99px;padding:16px 18px;font-size:16px}
+.cta svg{width:20px;height:20px;fill:#06240f}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.contact a,.contact div{display:block;text-decoration:none;color:#fff;border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:12px;font-size:13px}
+.contact small{display:block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;opacity:.6;margin-bottom:2px}
+.sign{margin-top:22px;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:rgba(255,255,255,.55)}
+
+/* desktop niceties */
+@media (min-width:600px){
+  body{padding:24px 0}
+  .deck{border-radius:28px;overflow:hidden}
+  .slide{min-height:auto;padding-top:72px;padding-bottom:64px}
+  .cover .inner,.close .inner{min-height:900px}
+  .dev{padding-top:0}
+}
+@media (max-width:370px){
+  h2{font-size:36px}.cover h1{font-size:52px}.dev .cols{grid-template-columns:1fr 112px}.phone{width:112px}.phone .scr{height:224px}
+}
+
+/* ---------- print / PDF: one phone-sized page per slide ---------- */
+@page{size:430px 932px;margin:0}
+@media print{
+  html,body{background:none;padding:0}
+  .deck{max-width:none;width:430px;box-shadow:none;border-radius:0}
+  .slide,.cover .inner,.close .inner{min-height:0}
+  .slide{height:932px;break-after:page;page-break-after:always}
+  .slide:last-child{break-after:auto;page-break-after:auto}
+  .cover .inner,.close .inner{height:932px}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .cta{background:#25d366!important}
+}
+</style>
+</head>
+<body>
+<main class="deck">
+
+<!-- 01 PORTADA -->
+<section class="slide cover" id="portada">
+  <div class="bg" role="img" aria-label="Pareja caminando en un paisaje de montaña al atardecer"></div>
+  <div class="inner">
+    <div class="top"><span class="avmark"><i></i>Agencia Vectorial</span><span>Propuesta · Nov 2026</span></div>
+    <div class="spacer"></div>
+    <div class="for">Ecosistema digital para</div>
+    <h1>Eventos <em>Antioquia</em></h1>
+    <p style="font-size:16px;line-height:1.5;color:rgba(255,255,255,.85);max-width:30ch;font-weight:300">Cuatro marcas que hacen posible un mismo evento. Una sola presencia digital que las haga vender juntas.</p>
+    <div class="brands4">
+      <span><b>Eventos Campestres Antioquia</b>Lugares y salones</span>
+      <span><b>Verum Eventos</b>Banquetes</span>
+      <span><b>Luis Miguel Ríos</b>Wedding Planner</span>
+      <span><b>K-non Producciones</b>Sonido, luces y miniteca</span>
+    </div>
+    <div class="meta"><span>Medellín · Copacabana</span><span>agenciavectorial.com</span></div>
+  </div>
+</section>
+
+<!-- 02 LA MARCA -->
+<section class="slide paper" id="marca">
+  <div class="folio"><span>01 · La marca</span><span>Eventos Antioquia</span></div>
+  <div class="eyebrow">Lo que encontramos</div>
+  <h2>No son una empresa de eventos. <em>Son cuatro.</em></h2>
+  <p class="lead">Detrás de Eventos Campestres Antioquia hay un grupo de marcas especializadas: el lugar, el banquete, la planeación y la fiesta. Cada una con su nicho, su público y su propio Instagram.</p>
+  <div class="brandgrid">
+    <div class="bcard"><img src="fotos/campestre-ceremonia.jpg" alt="Ceremonia campestre al aire libre"><div><div class="k" style="color:var(--cant)">Marca madre</div><h3>Eventos Campestres Antioquia</h3><p>Salones en Copacabana y eventos campestres en cualquier punto de Medellín y Antioquia.</p><div class="h">@EventosCant</div></div></div>
+    <div class="bcard"><img src="fotos/verum-plato.jpg" alt="Mesa de banquete servida"><div><div class="k" style="color:var(--verum)">Banquetes</div><h3>Verum Eventos</h3><p>Gastronomía y servicio de banquetes para bodas, XV años y eventos empresariales.</p><div class="h">@EventosVerum</div></div></div>
+    <div class="bcard"><img src="fotos/planner-ramo.jpg" alt="Novia con ramo"><div><div class="k" style="color:#a46d63">Wedding planner</div><h3>Luis Miguel Ríos</h3><p>Planeación y coordinación de bodas con sello personal.</p><div class="h">@luismiguelPlanner</div></div></div>
+    <div class="bcard"><img src="fotos/knon-luces.jpg" alt="Pista con luces y efectos"><div><div class="k" style="color:#d61f73">Producción</div><h3>K-non Producciones</h3><p>Miniteca, sonido, iluminación y ambientación para la fiesta.</p><div class="h">@knonproducciones</div></div></div>
+  </div>
+</section>
+
+<!-- 03 EL INSIGHT -->
+<section class="slide dark" id="insight">
+  <div class="folio"><span>02 · El insight</span><span>Eventos Antioquia</span></div>
+  <div class="eyebrow">Su mayor ventaja</div>
+  <h2>Un mismo cliente necesita <em>a las cuatro.</em></h2>
+  <p class="lead">Una pareja que se casa en el campo no busca “un salón”: busca resolver la boda entera. Ustedes ya tienen todas las piezas, pero hoy el cliente las encuentra por separado (o no las encuentra).</p>
+  <div class="journey">
+    <div class="step"><div class="dot" style="background:var(--cant)">1</div><div><b>“¿Dónde lo hacemos?”</b><span>Eventos Campestres Antioquia: salones en Copacabana o el lugar campestre que elijan.</span></div></div>
+    <div class="step"><div class="dot" style="background:#b37a70">2</div><div><b>“¿Quién nos ayuda a organizar?”</b><span>Luis Miguel Ríos, wedding planner: concepto, proveedores y coordinación del día.</span></div></div>
+    <div class="step"><div class="dot" style="background:var(--verum)">3</div><div><b>“¿Qué vamos a servir?”</b><span>Verum Eventos: menú, montaje y servicio de banquete.</span></div></div>
+    <div class="step"><div class="dot" style="background:var(--knon)">4</div><div><b>“¿Y la fiesta?”</b><span>K-non Producciones: miniteca, sonido, luces y efectos.</span></div></div>
+  </div>
+  <div class="spacer"></div>
+  <div class="callout"><p>La oportunidad no es tener más páginas. Es que cada marca le venda a las otras tres.</p></div>
+</section>
+
+<!-- 04 DIAGNOSTICO -->
+<section class="slide cream" id="diagnostico">
+  <div class="folio"><span>03 · Diagnóstico</span><span>Eventos Antioquia</span></div>
+  <div class="eyebrow">Presencia digital hoy</div>
+  <h2>Hoy, quien los busca en Google <em>no los encuentra.</em></h2>
+  <div class="browser" aria-label="Captura del estado actual del sitio">
+    <div class="bar"><i></i><i></i><i></i><div class="url"><s>⚠</s>eventosantioquia.com.co</div></div>
+    <div class="body"><b>Sitio no disponible</b>Página por defecto del hosting · certificado SSL no válido<br>Verificado el 7 de noviembre de 2026</div>
+  </div>
+  <div class="diag">
+    <div><i class="r">!</i><p><b>La web principal está caída</b><span>Todo enlace en Google, en la biografía de Instagram o en tarjetas lleva a una página vacía o a una alerta de “sitio no seguro”.</span></p></div>
+    <div><i class="y">4</i><p><b>Cuatro marcas, cero puntos de encuentro</b><span>Cada línea vive solo en su Instagram. No hay un lugar que muestre el portafolio completo ni que conecte una marca con la otra.</span></p></div>
+    <div><i class="y">@</i><p><b>Instagram no posiciona en Google</b><span>Es una gran vitrina para quien ya los sigue, pero no aparece cuando alguien busca “salón campestre en Copacabana”.</span></p></div>
+    <div><i class="y">↻</i><p><b>Cotizar depende del DM</b><span>Cada solicitud llega incompleta y hay que preguntar fecha, invitados y tipo de evento uno por uno.</span></p></div>
+  </div>
+</section>
+
+<!-- 05 COMPETENCIA EN GOOGLE -->
+<section class="slide paper" id="google">
+  <div class="folio"><span>03 · Diagnóstico</span><span>Eventos Antioquia</span></div>
+  <div class="eyebrow">Lo que pasa en Google</div>
+  <h2>La competencia ya está <em>ocupando su lugar.</em></h2>
+  <p class="lead">Hicimos las búsquedas que haría una pareja o una empresa. Los resultados los ocupan directorios y otros salones de la zona.</p>
+  <div class="serp">
+    <div class="q">salones campestres para eventos Copacabana</div>
+    <div class="res"><span>tusanagustin.com</span><b>Banquetes y salones en Copacabana</b></div>
+    <div class="res"><span>eventoscampestresvip.com</span><b>Eventos Campestres VIP · bodas y XV</b></div>
+    <div class="res"><span>aguasclaraseventos.com</span><b>Aguas Claras Centro de Eventos</b></div>
+    <div class="res"><span>banquete.com.co</span><b>Alquiler de salones para eventos Antioquia</b></div>
+    <div class="you">Eventos Campestres Antioquia: sin resultado propio</div>
+  </div>
+  <div class="spacer"></div>
+  <p class="small" style="margin-top:16px">Búsquedas de referencia realizadas en noviembre de 2026. Lo mismo ocurre con “banquetes para bodas Medellín”, “wedding planner Medellín” y “miniteca para fiestas Medellín”: ninguna de sus cuatro marcas tiene hoy una página que pueda aparecer.</p>
+</section>
+
+<!-- 06 OPORTUNIDADES -->
+<section class="slide dark" id="oportunidades">
+  <div class="folio"><span>04 · Oportunidades</span><span>Eventos Antioquia</span></div>
+  <div class="eyebrow">Hacia dónde crecer</div>
+  <h2>Cuatro oportunidades que <em>ya tienen a la mano.</em></h2>
+  <div class="opps">
+    <div class="opp"><div class="n">01</div><div><b>Volver a existir en Google</b><span>Recuperar eventosantioquia.com.co y posicionar cada marca en las búsquedas de su nicho, con SEO local para Medellín, Copacabana y el Valle de Aburrá.</span></div></div>
+    <div class="opp"><div class="n">02</div><div><b>Vender el evento completo</b><span>Un paquete “lugar + planeación + banquete + fiesta” que ningún salón de la competencia puede igualar con marcas propias.</span></div></div>
+    <div class="opp"><div class="n">03</div><div><b>Cada marca con voz propia</b><span>Una novia no lee igual que el gerente que organiza la fiesta de fin de año. Cada marca habla a su público, con su estética.</span></div></div>
+    <div class="opp"><div class="n">04</div><div><b>Cotizaciones que llegan listas</b><span>Un cotizador que pregunta fecha, invitados y tipo de evento, y envía todo por WhatsApp a la marca correcta.</span></div></div>
+  </div>
+</section>
+
+<!-- 07 CONCEPTO / OPCIONES -->
+<section class="slide cream" id="concepto">
+  <div class="folio"><span>05 · La solución</span><span>Eventos Antioquia</span></div>
+  <div class="eyebrow">Cómo lo decidimos</div>
+  <h2>Evaluamos tres caminos. <em>Elegimos el que vende.</em></h2>
+  <div class="optlist">
+    <div class="opt"><div class="t"><b>Una sola página para todo</b><span class="no">Descartado</span></div><p>Simple, pero diluye las marcas: Verum y K-non pierden identidad y no pueden posicionarse en sus propias búsquedas.</p></div>
+    <div class="opt"><div class="t"><b>Cuatro páginas sueltas</b><span class="no">Descartado</span></div><p>Cada marca brilla sola, pero nadie ve el grupo completo y se pierde la venta cruzada, que es su mayor ventaja.</p></div>
+    <div class="opt win"><div class="t"><b>Ecosistema: hub + micrositios</b><span class="yes">Recomendado</span></div><p>Una casa matriz que muestra el grupo completo y micrositios con identidad propia para cada marca, todos conectados entre sí y con un cotizador común. Cada marca vende sola y, además, vende a las otras.</p></div>
+  </div>
+  <div class="spacer"></div>
+  <p class="small" style="margin-top:16px">Mismo sistema de diseño y misma tecnología para todo el ecosistema: por eso podemos ofrecerlo a precio de proyecto integral.</p>
+</section>
+
+<!-- 08 MAPA -->
+<section class="slide dark" id="mapa">
+  <div class="folio"><span>05 · La solución</span><span>Eventos Antioquia</span></div>
+  <div class="eyebrow">Arquitectura del ecosistema</div>
+  <h2>Cinco espacios digitales, <em>un solo sistema.</em></h2>
+  <div class="map">
+    <svg viewBox="0 0 400 360" role="img" aria-label="Mapa del ecosistema: el hub central conecta tres micrositios y la landing Evento Completo">
+      <defs>
+        <linearGradient id="kg" x1="0" x2="1"><stop offset="0" stop-color="#ff2e88"/><stop offset="1" stop-color="#22e3ff"/></linearGradient>
+        <radialGradient id="hubg"><stop offset="0" stop-color="#5a7d52"/><stop offset="1" stop-color="#41603b"/></radialGradient>
+      </defs>
+      <g stroke="rgba(244,238,227,.25)" stroke-width="1" fill="none" stroke-dasharray="3 4">
+        <path d="M200 175 L72 62"/><path d="M200 175 L328 62"/><path d="M200 175 L72 292"/><path d="M200 175 L328 292"/>
+        <path d="M72 62 L328 62"/><path d="M72 292 L328 292"/><path d="M72 62 L72 292"/><path d="M328 62 L328 292"/>
+      </g>
+      <circle cx="200" cy="175" r="70" fill="none" stroke="rgba(226,207,159,.25)"/>
+      <circle cx="200" cy="175" r="54" fill="url(#hubg)"/>
+      <text x="200" y="164" text-anchor="middle" fill="#e2cf9f" font-family="Inter" font-size="7.5" letter-spacing="1.5" font-weight="700">HUB · CASA MATRIZ</text>
+      <text x="200" y="183" text-anchor="middle" fill="#fff" font-family="Cormorant Garamond" font-size="15" font-style="italic">Eventos Campestres</text>
+      <text x="200" y="199" text-anchor="middle" fill="rgba(255,255,255,.7)" font-family="Inter" font-size="7">eventosantioquia.com.co</text>
+
+      <circle cx="72" cy="62" r="40" fill="#121110" stroke="#b48a4c" stroke-width="1.5"/>
+      <text x="72" y="58" text-anchor="middle" fill="#e9d4a6" font-family="Cormorant Garamond" font-size="17" font-weight="600" letter-spacing="2">VERUM</text>
+      <text x="72" y="72" text-anchor="middle" fill="rgba(233,212,166,.7)" font-family="Inter" font-size="6.5">Banquetes</text>
+
+      <circle cx="328" cy="62" r="40" fill="#fbf4f0" stroke="#c4948b" stroke-width="1.5"/>
+      <text x="328" y="58" text-anchor="middle" fill="#3b2c28" font-family="Cormorant Garamond" font-size="11.5" font-style="italic">Luis Miguel Ríos</text>
+      <text x="328" y="72" text-anchor="middle" fill="#a46d63" font-family="Inter" font-size="6.5">Wedding Planner</text>
+
+      <circle cx="72" cy="292" r="40" fill="#0a0a12" stroke="url(#kg)" stroke-width="2"/>
+      <text x="72" y="290" text-anchor="middle" fill="#fff" font-family="Unbounded" font-size="11" font-weight="800">K-NON</text>
+      <text x="72" y="303" text-anchor="middle" fill="#22e3ff" font-family="Inter" font-size="5.6">Sonido · luces · miniteca</text>
+
+      <circle cx="328" cy="292" r="40" fill="#c3a56b"/>
+      <text x="328" y="288" text-anchor="middle" fill="#14160f" font-family="Inter" font-size="6.5" font-weight="700" letter-spacing="1">LANDING</text>
+      <text x="328" y="303" text-anchor="middle" fill="#14160f" font-family="Cormorant Garamond" font-size="12" font-style="italic" font-weight="600">Evento Completo</text>
+
+      <g font-family="Inter" font-size="7" fill="rgba(244,238,227,.55)" text-anchor="middle">
+        <text x="200" y="54">venta cruzada</text>
+        <text x="200" y="311">cotizador común + WhatsApp</text>
+      </g>
+    </svg>
+  </div>
+  <div class="legend">
+    <div><b><i style="background:var(--cant)"></i>1 Hub</b>Presenta el grupo, los salones y los tipos de evento.</div>
+    <div><b><i style="background:var(--verum)"></i>2 Verum</b>Micrositio de banquetes con menús y montajes.</div>
+    <div><b><i style="background:var(--lmr)"></i>3 Luis Miguel Ríos</b>Micrositio de marca personal para novios.</div>
+    <div><b><i style="background:var(--knon)"></i>4 K-non</b>Micrositio de producción, show y fiesta.</div>
+    <div style="grid-column:1/-1"><b><i style="background:var(--gold)"></i>5 Evento Completo</b>Landing que vende el paquete integral de las cuatro marcas y concentra el cotizador.</div>
+  </div>
+</section>
+
+<!-- 09 HUB -->
+<section class="slide dev t-cant" id="hub">
+  <div class="hero" style="background-image:url(fotos/campestre-mesa.jpg)"><span class="num">Espacio 01 · Hub</span><span class="dom">eventosantioquia.com.co</span></div>
+  <div class="head">
+    <div class="kicker">Sitio principal · Casa matriz</div>
+    <h2>Eventos Campestres <em>Antioquia</em></h2>
+    <p class="role">La puerta de entrada al grupo. Muestra los salones de Copacabana, los eventos campestres en cualquier punto de Medellín y conecta con las otras tres marcas.</p>
+  </div>
+  <div class="cols">
+    <div>
+      <ol class="secs">
+        <li><span><b>Inicio:</b> video o foto de impacto y botón “Cotiza tu evento”</span></li>
+        <li><span><b>Nuestros salones:</b> ficha por salón con capacidad, fotos y mapa</span></li>
+        <li><span><b>Tipos de evento:</b> bodas, XV años, empresariales, sociales</span></li>
+        <li><span><b>Nuestras marcas:</b> acceso a Verum, Luis Miguel y K-non</span></li>
+        <li><span><b>Galería</b> de eventos reales por categoría</span></li>
+        <li><span><b>Testimonios</b> y contacto con mapa</span></li>
+      </ol>
+    </div>
+    <div class="phone"><div class="scr"><span class="notch"></span>
+      <div class="m-hero" style="background-image:url(fotos/campestre-ceremonia.jpg)"><div class="m-nav"><span>Eventos Antioquia</span><i></i></div><div class="m-h">Celebra en el campo</div><div class="m-s">Salones en Copacabana · eventos en todo Medellín</div><span class="m-btn" style="background:#a9c19a;color:#14160f">Cotiza tu evento</span></div>
+      <div class="m-body"><div class="m-t">Nuestros salones</div><div class="m-g"><div style="background-image:url(fotos/campestre-kiosko.jpg)"></div><div style="background-image:url(fotos/campestre-pareja.jpg)"></div></div>
+      <div class="m-row"><span style="background:#e3e8d8">Bodas</span><span style="background:#e3e8d8">XV años</span><span style="background:#e3e8d8">Empresas</span></div>
+      <div class="m-t" style="margin-top:6px">Nuestras marcas</div><div class="m-row"><span style="background:#121110;color:#e9d4a6">Verum</span><span style="background:#f1ddd6">L. M. Ríos</span><span style="background:#0a0a12;color:#22e3ff">K-non</span></div></div>
+      <span class="m-wa"></span></div></div>
+  </div>
+  <div class="kwl">Búsquedas objetivo</div>
+  <div class="kw"><span>salones campestres Copacabana</span><span>fincas para eventos Medellín</span><span>salón para bodas Antioquia</span><span>eventos empresariales Medellín</span></div>
+</section>
+
+<!-- 10 VERUM -->
+<section class="slide dev t-verum" id="verum">
+  <div class="hero" style="background-image:url(fotos/verum-buffet.jpg)"><span class="num">Espacio 02 · Micrositio</span><span class="dom">verumeventos.com.co*</span></div>
+  <div class="head">
+    <div class="kicker">Banquetes</div>
+    <h2>Verum <em>Eventos</em></h2>
+    <p class="role">Un micrositio elegante, casi editorial, donde la comida es la protagonista. Pensado para quien ya tiene el lugar y busca el banquete, y para llevarlo de vuelta al grupo.</p>
+  </div>
+  <div class="cols">
+    <div>
+      <ol class="secs">
+        <li><span><b>Propuesta gastronómica</b> y estilo de servicio</span></li>
+        <li><span><b>Menús por tipo de evento:</b> emplatado, buffet, estaciones, pasabocas</span></li>
+        <li><span><b>Montajes:</b> mesas, mantelería y decoración</span></li>
+        <li><span><b>Galería</b> de platos y montajes reales</span></li>
+        <li><span><b>Cotiza por número de invitados</b> vía WhatsApp</span></li>
+        <li><span>“Completa tu evento” con salón, planner y fiesta</span></li>
+      </ol>
+    </div>
+    <div class="phone"><div class="scr" style="background:#121110;color:#efe6d6"><span class="notch"></span>
+      <div class="m-hero" style="background-image:url(fotos/verum-plato.jpg)"><div class="m-nav" style="color:#e9d4a6"><span style="letter-spacing:.3em">VERUM</span><i style="border-color:#e9d4a6"></i></div><div class="m-h" style="color:#f4ead6">El sabor de la verdad</div><div class="m-s">Banquetes para bodas y eventos</div><span class="m-btn" style="background:#b48a4c;color:#121110">Ver menús</span></div>
+      <div class="m-body"><div class="m-t" style="color:#e9d4a6">Nuestros menús</div><div class="m-g"><div style="background-image:url(fotos/verum-montaje.jpg)"></div><div style="background-image:url(fotos/verum-mesa.jpg)"></div></div>
+      <div class="m-row"><span style="border:1px solid #6e5a39">Emplatado</span><span style="border:1px solid #6e5a39">Buffet</span></div>
+      <div class="m-row"><span style="background:#b48a4c;color:#121110">Cotizar banquete</span></div></div>
+      <span class="m-wa"></span></div></div>
+  </div>
+  <div class="kwl">Búsquedas objetivo</div>
+  <div class="kw"><span>banquetes para bodas Medellín</span><span>catering eventos Antioquia</span><span>banquetes empresariales</span></div>
+</section>
+
+<!-- 11 LUIS MIGUEL -->
+<section class="slide dev t-lmr" id="planner">
+  <div class="hero" style="background-image:url(fotos/planner-velo.jpg);background-position:center 30%"><span class="num">Espacio 03 · Micrositio</span><span class="dom">luismiguelplanner.com*</span></div>
+  <div class="head">
+    <div class="kicker">Wedding planner · Marca personal</div>
+    <h2>Luis Miguel <em>Ríos</em></h2>
+    <p class="role">En las bodas, la gente contrata a una persona en la que confía. Este micrositio presenta a Luis Miguel, su forma de trabajar y las historias de las parejas que ya se casaron con él.</p>
+  </div>
+  <div class="cols">
+    <div>
+      <ol class="secs">
+        <li><span><b>Sobre Luis Miguel:</b> historia, estilo y forma de trabajar</span></li>
+        <li><span><b>Planes de servicio:</b> planeación completa, parcial, coordinación del día</span></li>
+        <li><span><b>Bodas reales:</b> historias con galería por pareja</span></li>
+        <li><span><b>El proceso,</b> paso a paso, de la primera cita al “sí”</span></li>
+        <li><span><b>Agenda tu cita</b> por WhatsApp</span></li>
+        <li><span>Lugares y proveedores del grupo recomendados</span></li>
+      </ol>
+    </div>
+    <div class="phone"><div class="scr" style="background:#fbf4f0"><span class="notch"></span>
+      <div class="m-hero" style="background-image:url(fotos/planner-salida.jpg);background-position:center 20%"><div class="m-nav"><span style="font-family:var(--serif);font-style:italic;text-transform:none;font-size:7px;letter-spacing:0">Luis Miguel Ríos</span><i></i></div><div class="m-h">Tu boda, sin preocupaciones</div><div class="m-s">Wedding planner en Medellín</div><span class="m-btn" style="background:#f1ddd6;color:#3b2c28">Agenda tu cita</span></div>
+      <div class="m-body"><div class="m-t" style="color:#a46d63">Bodas reales</div><div class="m-g"><div style="background-image:url(fotos/planner-anillos.jpg)"></div><div style="background-image:url(fotos/planner-ramo.jpg)"></div></div>
+      <div class="m-row"><span style="background:#f1ddd6">Planeación</span><span style="background:#f1ddd6">Coordinación</span></div></div>
+      <span class="m-wa"></span></div></div>
+  </div>
+  <div class="kwl">Búsquedas objetivo</div>
+  <div class="kw"><span>wedding planner Medellín</span><span>organizador de bodas Antioquia</span><span>bodas campestres Medellín</span></div>
+</section>
+
+<!-- 12 K-NON -->
+<section class="slide dev t-knon" id="knon">
+  <div class="hero" style="background-image:url(fotos/knon-pista.jpg)"><span class="num">Espacio 04 · Micrositio</span><span class="dom">knonproducciones.com*</span></div>
+  <div class="head">
+    <div class="kicker">Producción · Miniteca · Show</div>
+    <h2>K-non <em>Producciones</em></h2>
+    <p class="role">Un micrositio con energía de fiesta: oscuro, con luz y movimiento. Muestra el equipo, los paquetes de miniteca y el show en acción, con video.</p>
+  </div>
+  <div class="cols">
+    <div>
+      <ol class="secs">
+        <li><span><b>Paquetes de miniteca</b> por tamaño de evento</span></li>
+        <li><span><b>Sonido, iluminación</b> y efectos (pista, humo, chispas, confeti)</span></li>
+        <li><span><b>DJ y animación</b> para bodas, XV años y empresas</span></li>
+        <li><span><b>Videos</b> de fiestas reales (Reels integrados)</span></li>
+        <li><span><b>Arma tu fiesta</b> y cotiza por WhatsApp</span></li>
+        <li><span>Enlace a salón y banquete del grupo</span></li>
+      </ol>
+    </div>
+    <div class="phone"><div class="scr" style="background:#0a0a12;color:#e9e9f5"><span class="notch"></span>
+      <div class="m-hero" style="background-image:url(fotos/knon-tarima.jpg)"><div class="m-nav"><span style="font-family:var(--display)">K-NON</span><i></i></div><div class="m-h" style="font-family:var(--display);font-size:10px;font-weight:800;text-transform:uppercase">Que nadie se quede sentado</div><div class="m-s">Miniteca · sonido · luces</div><span class="m-btn" style="background:linear-gradient(90deg,#ff2e88,#22e3ff);color:#0a0a12">Arma tu fiesta</span></div>
+      <div class="m-body"><div class="m-t" style="color:#22e3ff">Paquetes</div>
+      <div class="m-row" style="margin-top:0"><span style="border:1px solid #ff2e88">Básico</span><span style="border:1px solid #22e3ff">Show</span><span style="background:#ff2e88;color:#0a0a12">Premium</span></div>
+      <div class="m-g" style="margin-top:5px"><div style="background-image:url(fotos/knon-luces.jpg)"></div><div style="background-image:url(fotos/knon-confeti.jpg)"></div></div></div>
+      <span class="m-wa"></span></div></div>
+  </div>
+  <div class="kwl">Búsquedas objetivo</div>
+  <div class="kw"><span>miniteca Medellín</span><span>sonido e iluminación para eventos</span><span>DJ para bodas Medellín</span></div>
+</section>
+
+<!-- 13 EVENTO COMPLETO -->
+<section class="slide dev t-full" id="evento-completo">
+  <div class="hero" style="background-image:url(fotos/campestre-pareja.jpg);background-position:center 35%"><span class="num">Espacio 05 · Landing</span><span class="dom">…/evento-completo</span></div>
+  <div class="head">
+    <div class="kicker">Paquete integral · Cotizador</div>
+    <h2>Tu evento, <em>completo.</em></h2>
+    <p class="role">Una landing de conversión para pauta y para la biografía de Instagram. Vende lo que solo ustedes pueden ofrecer: lugar, planeación, banquete y fiesta en un solo contrato.</p>
+  </div>
+  <div class="flow">
+    <div><b>1</b>Tipo de evento</div>
+    <div><b>2</b>Fecha e invitados</div>
+    <div><b>3</b>Qué necesita</div>
+    <div><b>4</b>Llega a WhatsApp</div>
+  </div>
+  <div class="route">
+    <div><span><i style="background:var(--cant)"></i>Solo salón</span><span>WhatsApp Eventos Campestres</span></div>
+    <div><span><i style="background:var(--verum)"></i>Solo banquete</span><span>WhatsApp Verum</span></div>
+    <div><span><i style="background:var(--lmr)"></i>Planeación de boda</span><span>WhatsApp Luis Miguel</span></div>
+    <div><span><i style="background:var(--knon)"></i>Solo fiesta</span><span>WhatsApp K-non</span></div>
+    <div style="background:rgba(226,207,159,.14)"><span><i style="background:var(--gold2)"></i>Evento completo</span><span>WhatsApp principal</span></div>
+  </div>
+  <p class="small" style="margin-top:12px">El cliente llega con la fecha, el número de invitados y el tipo de evento escritos. Menos preguntas, respuestas más rápidas.</p>
+</section>
+
+<!-- 14 FUNCIONALIDADES -->
+<section class="slide cream" id="incluye">
+  <div class="folio"><span>06 · Qué incluye</span><span>Eventos Antioquia</span></div>
+  <div class="eyebrow">Diseño y experiencia · en los cinco espacios</div>
+  <h2>Todo lo que necesitan <em>para vender.</em></h2>
+  <p class="lead" style="font-size:15.5px">Cada espacio se diseña desde cero, se adapta a cualquier pantalla y lleva al cliente directo a la conversación.</p>
+  <div class="feat">
+    <div class="f hl"><svg viewBox="0 0 24 24"><path d="M12 20l9-16H3z"/></svg><b>Diseño 100 % a la medida</b><span>Sin plantillas. Cada espacio con la identidad de su marca.</span></div>
+    <div class="f"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg><b>Responsive real</b><span>Diseñado primero para el celular; perfecto en tablet y computador.</span></div>
+    <div class="f"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-4-7.5L21 3l-1 4.5A9 9 0 0 1 21 12z"/></svg><b>WhatsApp por marca</b><span>Botón flotante y mensajes precargados que llegan al número correcto.</span></div>
+    <div class="f"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h6"/></svg><b>Cotizador inteligente</b><span>Formulario por pasos con fecha, invitados y servicios.</span></div>
+    <div class="f"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><b>SEO local inicial</b><span>Títulos, descripciones, estructura y datos para Google por marca.</span></div>
+    <div class="f"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 17l-5-5-8 7"/></svg><b>Galerías optimizadas</b><span>Fotos en formato liviano (WebP) para que carguen rápido.</span></div>
+  </div>
+  <div class="spacer"></div>
+  <div class="strip"><div style="background-image:url(fotos/campestre-kiosko.jpg)"></div><div style="background-image:url(fotos/verum-montaje.jpg)"></div><div style="background-image:url(fotos/knon-tarima.jpg)"></div></div>
+</section>
+
+<!-- 14b FUNCIONALIDADES 2 -->
+<section class="slide paper" id="funcionalidades">
+  <div class="folio"><span>06 · Qué incluye</span><span>Eventos Antioquia</span></div>
+  <div class="eyebrow">Funcionalidades de negocio</div>
+  <h2>Pensado para <em>cerrar eventos.</em></h2>
+  <div class="feat">
+    <div class="f"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><b>Fichas de salones</b><span>Capacidad, fotos, mapa y cómo llegar a Copacabana.</span></div>
+    <div class="f hl"><svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><b>Venta cruzada</b><span>Cada marca recomienda a las otras en el momento justo.</span></div>
+    <div class="f"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><b>Seguridad SSL</b><span>Candado de sitio seguro; adiós a la alerta de hoy.</span></div>
+    <div class="f"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 6-6"/></svg><b>Analítica y Search Console</b><span>Para saber de dónde llegan las visitas y qué buscan.</span></div>
+    <div class="f"><svg viewBox="0 0 24 24"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M16 6l-4-4-4 4M12 2v13"/></svg><b>Vista previa al compartir</b><span>Imagen y texto propios cuando el enlace se envía por WhatsApp.</span></div>
+    <div class="f"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg><b>Conexión con Instagram</b><span>Enlaces y contenido de las cuatro cuentas integrados.</span></div>
+  </div>
+  <div class="spacer"></div>
+  <div class="callout" style="background:var(--ink);border:0;margin-top:18px"><p style="font-size:21px">Desde la primera semana, eventosantioquia.com.co vuelve a estar en línea con una página temporal de contacto. No esperamos al lanzamiento para dejar de perder clientes.</p></div>
+</section>
+
+<!-- 15 LINEA GRAFICA -->
+<section class="slide cream" id="identidad">
+  <div class="folio"><span>07 · Línea gráfica</span><span>Eventos Antioquia</span></div>
+  <div class="eyebrow">Diseño e identidad</div>
+  <h2>Una familia de marcas, <em>cada una con su carácter.</em></h2>
+  <p class="lead" style="font-size:15.5px">Partimos de sus logos y de lo que ya publican en Instagram para crear la línea gráfica web de cada marca. Comparten un sistema común (estructura, botones, navegación) y se diferencian en color, tipografía y tono.</p>
+  <div class="idgrid">
+    <div class="idc" style="background:#e3e8d8"><div><div class="nm" style="font-family:var(--serif);color:#2c4228">Eventos Campestres</div><div class="ds">Natural, cálido, luz de tarde · Serif clásica</div></div><div class="sw"><i style="background:#41603b"></i><i style="background:#a9c19a"></i><i style="background:#f4eee3"></i></div></div>
+    <div class="idc" style="background:#121110;color:#efe6d6"><div><div class="nm" style="font-family:var(--serif);letter-spacing:.2em;color:#e9d4a6">VERUM</div><div class="ds">Elegante, editorial, gastronómico · Mayúsculas espaciadas</div></div><div class="sw"><i style="background:#121110;box-shadow:inset 0 0 0 1px #555"></i><i style="background:#b48a4c"></i><i style="background:#e9d4a6"></i></div></div>
+    <div class="idc" style="background:#fbf4f0"><div><div class="nm" style="font-family:var(--serif);font-style:italic;color:#3b2c28">Luis Miguel Ríos</div><div class="ds">Romántico, cercano, personal · Serif itálica</div></div><div class="sw"><i style="background:#c4948b"></i><i style="background:#f1ddd6"></i><i style="background:#3b2c28"></i></div></div>
+    <div class="idc" style="background:#0a0a12;color:#e9e9f5"><div><div class="nm" style="font-family:var(--display);font-weight:800;font-size:18px">K-NON</div><div class="ds">Enérgico, nocturno, en movimiento · Display gruesa</div></div><div class="sw"><i style="background:#ff2e88"></i><i style="background:#22e3ff"></i><i style="background:#0a0a12;box-shadow:inset 0 0 0 1px #444"></i></div></div>
+  </div>
+  <p class="small" style="margin-top:14px">Paletas de referencia para esta propuesta. En la reunión de inicio las ajustamos a sus logos y colores oficiales.</p>
+</section>
+
+<!-- 16 BENEFICIOS -->
+<section class="slide paper" id="beneficios">
+  <div class="folio"><span>08 · Beneficios</span><span>Eventos Antioquia</span></div>
+  <div class="eyebrow">Qué gana el negocio</div>
+  <h2>Más que páginas: <em>un sistema que vende.</em></h2>
+  <div class="bens">
+    <div class="ben"><b>Ticket más alto por cliente</b><span>Quien llega por el salón sale con banquete, planner y miniteca. Un evento, cuatro facturas del grupo.</span></div>
+    <div class="ben"><b>Clientes que hoy no los encuentran</b><span>Presencia en Google con cinco puertas de entrada, una por cada búsqueda de su nicho.</span></div>
+    <div class="ben"><b>Imagen de empresa grande</b><span>Un grupo con marcas especializadas y sitios profesionales transmite respaldo frente a un salón suelto.</span></div>
+    <div class="ben"><b>Menos tiempo cotizando</b><span>Solicitudes completas, dirigidas a la marca correcta, listas para responder.</span></div>
+    <div class="ben"><b>Una vitrina que sí es suya</b><span>Instagram cambia sus reglas; la web es un activo propio que trabaja 24/7, también para la pauta.</span></div>
+  </div>
+</section>
+
+<!-- 17 INVERSION -->
+<section class="slide inv" id="inversion">
+  <div class="folio"><span>09 · Inversión</span><span>Eventos Antioquia</span></div>
+  <div class="eyebrow">Precio de proyecto integral</div>
+  <h2 style="font-size:38px">Cinco espacios por el precio <em>de menos de tres.</em></h2>
+  <div class="lines">
+    <div class="ln"><span>Hub · Eventos Campestres Antioquia</span><span class="v">$790.000</span></div>
+    <div class="ln"><span>Micrositio · Verum Eventos</span><span class="v">$790.000</span></div>
+    <div class="ln"><span>Micrositio · Luis Miguel Ríos</span><span class="v">$790.000</span></div>
+    <div class="ln"><span>Micrositio · K-non Producciones</span><span class="v">$790.000</span></div>
+    <div class="ln"><span>Landing · Evento Completo + cotizador</span><span class="v">$790.000</span></div>
+    <div class="ln sum"><span>Valor por separado</span><span class="v">$3.950.000</span></div>
+  </div>
+  <div class="price">
+    <div class="l">Ecosistema completo</div>
+    <div class="big">$1.990.000 <small>COP</small></div>
+    <div class="sub">Pago único · los cinco espacios, la línea gráfica y el SEO inicial</div>
+  </div>
+  <div class="save">
+    <div><b>$1.960.000</b><span>de ahorro frente a contratar cada espacio por separado</span></div>
+    <div><b>$398.000</b><span>costo real por espacio digital (antes $790.000)</span></div>
+  </div>
+  <div class="pay">
+    <div><b>50 % · $995.000</b>Al iniciar el proyecto</div>
+    <div><b>50 % · $995.000</b>Al entregar el ecosistema</div>
+  </div>
+</section>
+
+<!-- 18 CRONOGRAMA -->
+<section class="slide cream" id="cronograma">
+  <div class="folio"><span>10 · Cronograma</span><span>Eventos Antioquia</span></div>
+  <div class="eyebrow">Cómo lo hacemos</div>
+  <h2>En línea en <em>cuatro semanas.</em></h2>
+  <div class="tl">
+    <div class="wk"><div class="w">Sem. 1<small>Inicio</small></div><div><b>Reunión de inicio y página temporal</b><span>Definimos marcas, servicios y dominios. Ponemos de nuevo en línea eventosantioquia.com.co con una página de contacto mientras construimos.</span></div></div>
+    <div class="wk"><div class="w">Sem. 2<small>Hub</small></div><div><b>Línea gráfica y sitio principal</b><span>Sistema de diseño común, paletas por marca y desarrollo del hub con salones y galerías.</span></div></div>
+    <div class="wk"><div class="w">Sem. 3<small>Marcas</small></div><div><b>Micrositios Verum, Luis Miguel y K-non</b><span>Contenidos, galerías, botones de WhatsApp y venta cruzada.</span></div></div>
+    <div class="wk"><div class="w">Sem. 4<small>Entrega</small></div><div><b>Landing, SEO y entrega</b><span>Cotizador, configuración SEO, analítica, pruebas en celulares y publicación.</span></div></div>
+  </div>
+  <div class="spacer"></div>
+  <p class="small" style="margin-top:12px">Los tiempos corren desde la entrega de logos, fotos e información de cada marca.</p>
+</section>
+
+<!-- 19 CONDICIONES -->
+<section class="slide paper" id="condiciones">
+  <div class="folio"><span>11 · Condiciones</span><span>Eventos Antioquia</span></div>
+  <div class="eyebrow">Para que todo quede claro</div>
+  <h2>Condiciones <em>del proyecto.</em></h2>
+  <div class="conds">
+    <div class="cond key"><i>01</i><span><b>Dominios a cargo del cliente.</b> El cliente compra y renueva a su nombre los dominios necesarios (por ejemplo, los de Verum, Luis Miguel y K-non). Nosotros recomendamos cuáles comprar, revisamos su disponibilidad y hacemos toda la configuración técnica. Si prefieren no comprar dominios nuevos, los micrositios pueden funcionar como subdominios de eventosantioquia.com.co sin costo adicional.</span></div>
+    <div class="cond"><i>02</i><span><b>Precio integral.</b> Los $1.990.000 cubren todo el ecosistema que se defina en la reunión de inicio, sean tres, cuatro o cinco espacios, o uno adicional si se necesita.</span></div>
+    <div class="cond"><i>03</i><span><b>Contenidos.</b> El cliente entrega logos, fotos, videos y la información de servicios de cada marca. Nosotros redactamos, organizamos y optimizamos los textos e imágenes.</span></div>
+    <div class="cond"><i>04</i><span><b>Ajustes.</b> Dos rondas de revisión por espacio antes de publicar.</span></div>
+    <div class="cond"><i>05</i><span><b>Acompañamiento.</b> 30 días de soporte técnico después de la entrega y una capacitación para actualizar fotos y textos.</span></div>
+    <div class="cond"><i>06</i><span><b>Pago.</b> 50 % para iniciar y 50 % contra entrega. Propuesta válida por 15 días.</span></div>
+  </div>
+  <p class="notinc"><b>No incluye:</b> compra o renovación de dominios, pauta publicitaria, manejo de redes sociales ni producción de fotografía o video. Podemos cotizarlos por aparte.</p>
+</section>
+
+<!-- 20 CIERRE -->
+<section class="slide close" id="cierre">
+  <div class="bg" role="img" aria-label="Fiesta con confeti y luces"></div>
+  <div class="inner">
+    <div class="eyebrow" style="color:var(--gold2)">Siguiente paso</div>
+    <h2>Su próximo evento puede empezar <em>en Google.</em></h2>
+    <p class="lead" style="margin-top:6px">Ya tienen el lugar, el banquete, la planeación y la fiesta. Démosle a las cuatro marcas la vitrina que merecen y hagamos que trabajen juntas.</p>
+    <div class="spacer"></div>
+    <a class="cta" href="https://wa.me/573247290699?text=Hola%2C%20queremos%20arrancar%20con%20el%20ecosistema%20digital%20de%20Eventos%20Antioquia">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.5-.3.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.2.5.1.6 0l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+      Arrancar por WhatsApp
+    </a>
+    <div class="contact">
+      <a href="https://wa.me/573247290699"><small>WhatsApp</small>324 729 0699</a>
+      <a href="https://agenciavectorial.com"><small>Web</small>agenciavectorial.com</a>
+      <a href="https://www.instagram.com/agencia.vectorial/"><small>Instagram</small>@agencia.vectorial</a>
+      <div><small>Ciudad</small>Medellín, Colombia</div>
+    </div>
+    <div class="sign"><span class="avmark"><i></i>Agencia Vectorial</span><span>Páginas web a la medida</span></div>
+  </div>
+</section>
+
+</main>
+</body>
+</html>
