@@ -54,8 +54,8 @@ p+p{margin-top:12px}
 
 /* ---------- cover ---------- */
 .cover{padding:0;color:#fff;background:#111}
-.cover .bg{position:absolute;inset:0;background:url(fotos/portada.jpg) center 20%/cover}
-.cover .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,11,8,.55) 0%,rgba(10,11,8,.05) 30%,rgba(10,11,8,.2) 50%,rgba(10,11,8,.92) 82%,#0c0d09 100%)}
+.cover .bg{position:absolute;inset:0;background:#0c0d09 url(fotos/portada-bg.jpg) center top/cover}
+.cover .bg::after{display:none;content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,11,8,.55) 0%,rgba(10,11,8,.05) 30%,rgba(10,11,8,.2) 50%,rgba(10,11,8,.92) 82%,#0c0d09 100%)}
 .cover .inner{position:relative;z-index:2;display:flex;flex-direction:column;min-height:100svh;padding:28px 24px 34px}
 .cover .top{display:flex;justify-content:space-between;align-items:center;font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
 .avmark{display:flex;align-items:center;gap:8px}
@@ -144,7 +144,7 @@ p+p{margin-top:12px}
 .dev .hero{margin:0 -24px;height:300px;position:relative;background:#222 center/cover}
 .dev .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,0) 35%,rgba(0,0,0,.1) 60%,var(--fade) 100%)}
 .dev .hero .num{position:absolute;top:22px;left:24px;z-index:2;color:#fff;font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
-.dev .hero .dom{position:absolute;top:18px;right:20px;z-index:2;font-size:11px;color:#fff;background:rgba(0,0,0,.45);backdrop-filter:blur(6px);padding:6px 10px;border-radius:99px;letter-spacing:.02em}
+.dev .hero .dom{position:absolute;top:18px;right:20px;z-index:2;font-size:11px;color:#fff;background:rgba(0,0,0,.45);padding:6px 10px;border-radius:99px;letter-spacing:.02em}
 .dev .head{position:relative;z-index:3;margin-top:-64px}
 .dev .kicker{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
 .dev h2{font-size:40px;margin-bottom:10px}
@@ -278,8 +278,8 @@ p+p{margin-top:12px}
 
 /* ---------- closing ---------- */
 .close{padding:0;color:#fff;background:#0c0d09}
-.close .bg{position:absolute;inset:0;background:url(fotos/lmr-xv-pista.jpg) center 30%/cover;opacity:.6}
-.close .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0c0d09 0%,rgba(12,13,9,.55) 35%,rgba(12,13,9,.7) 60%,#0c0d09 100%)}
+.close .bg{position:absolute;inset:0;background:#0c0d09 url(fotos/cierre-bg.jpg) center top/cover}
+.close .bg::after{display:none;content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0c0d09 0%,rgba(12,13,9,.55) 35%,rgba(12,13,9,.7) 60%,#0c0d09 100%)}
 .close .inner{position:relative;z-index:2;min-height:100svh;display:flex;flex-direction:column;padding:56px 24px 34px}
 .close h2{font-size:50px;line-height:.98}
 .close .lead{color:rgba(255,255,255,.82)}
@@ -411,9 +411,23 @@ h2{font-size:40px}
 .cl div{display:grid;grid-template-columns:26px 1fr;gap:10px;padding:13px 0;border-top:1px solid var(--line);font-size:15px;line-height:1.4}
 .cl div::before{content:"•";color:var(--gold);font-size:22px;line-height:1}
 .cl .key{background:#fff7e6;border:1px solid #ecd9a8;border-radius:14px;padding:14px 12px}
-.cover .for{display:inline-block;align-self:flex-start;background:rgba(12,13,9,.6);backdrop-filter:blur(4px);padding:7px 12px;border-radius:99px;color:#ecd28e}
-.cover h1{text-shadow:0 2px 18px rgba(0,0,0,.45)}
+.cover .for{display:inline-block;align-self:flex-start;background:#14160f;padding:7px 12px;border-radius:99px;color:#ecd28e}
+
 .space .ph{height:390px}
+.ini{display:flex;justify-content:space-between;align-items:center;margin-top:18px;padding:16px 18px;border-radius:16px;background:var(--ink);color:var(--cream);font-size:15px}
+.ini b{font-family:var(--serif);font-size:32px;color:var(--gold2);font-weight:600}
+.cq{display:grid;gap:10px;margin-top:10px}
+.cq>div{display:grid;grid-template-columns:86px 1fr;grid-template-rows:auto auto;gap:2px 12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.cq .n{grid-row:1/3;font-family:var(--serif);font-size:38px;line-height:.9;font-weight:600}
+.cq .n small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:4px}
+.cq .m b{font-size:22px;font-weight:700}
+.cq .m span{font-size:13px;color:var(--muted);margin-left:6px}
+.cq .t{font-size:13px;color:var(--muted)}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.vs div{border-radius:14px;padding:12px 14px;font-size:12.5px;line-height:1.3}
+.vs div:first-child{background:#e9d6a7}
+.vs div:last-child{background:#fbe3df;color:#7a2e25}
+.vs b{display:block;font-size:19px;margin-top:3px}
 </style>
 </head>
 <body>
@@ -460,11 +474,11 @@ h2{font-size:40px}
   <div class="eyebrow">Qué vamos a hacer</div>
   <h2>5 espacios web, <em>conectados.</em></h2>
   <div class="five">
-    <div class="sp"><img src="fotos/eca-logo.jpg" alt=""><div><span class="ty web">Página web</span><b>Eventos Campestres Antioquia</b><span class="d">eventosantioquia.com.co</span></div></div>
-    <div class="sp"><img src="fotos/verum-logo.jpg" alt=""><div><span class="ty micro">Micrositio</span><b>Verum Eventos</b><span class="d">Salones en Copacabana</span></div></div>
-    <div class="sp"><img src="fotos/lmr-retrato.jpg" alt="" style="object-position:center 20%"><div><span class="ty micro">Micrositio</span><b>Luis Miguel Ríos</b><span class="d">Event planner</span></div></div>
-    <div class="sp"><img src="fotos/knon-logo.jpg" alt=""><div><span class="ty micro">Micrositio</span><b>K-non Producciones</b><span class="d">Miniteca, sonido y luces</span></div></div>
-    <div class="sp"><img src="fotos/xv-rosa.jpg" alt="" style="object-position:center 25%"><div><span class="ty land">Landing</span><b>Mis XV</b><span class="d">Paquete de quince años + cotizador</span></div></div>
+    <div class="sp"><img src="fotos/sm/eca-logo.jpg" alt=""><div><span class="ty web">Página web</span><b>Eventos Campestres Antioquia</b><span class="d">eventosantioquia.com.co</span></div></div>
+    <div class="sp"><img src="fotos/sm/verum-logo.jpg" alt=""><div><span class="ty micro">Micrositio</span><b>Verum Eventos</b><span class="d">Salones en Copacabana</span></div></div>
+    <div class="sp"><img src="fotos/sm/lmr-retrato.jpg" alt="" style="object-position:center 20%"><div><span class="ty micro">Micrositio</span><b>Luis Miguel Ríos</b><span class="d">Event planner</span></div></div>
+    <div class="sp"><img src="fotos/sm/knon-logo.jpg" alt=""><div><span class="ty micro">Micrositio</span><b>K-non Producciones</b><span class="d">Miniteca, sonido y luces</span></div></div>
+    <div class="sp"><img src="fotos/sm/xv-rosa.jpg" alt="" style="object-position:center 25%"><div><span class="ty land">Landing</span><b>Mis XV</b><span class="d">Paquete de quince años + cotizador</span></div></div>
   </div>
   <div class="gloss">
     <div><b>Página web:</b> el sitio completo de la empresa.</div>
@@ -585,21 +599,21 @@ h2{font-size:40px}
   <h2>Cada marca, <em>con su estilo.</em></h2>
   <div class="phones">
     <div><div class="phone"><div class="scr" style="background:#f3eee2"><span class="notch"></span>
-      <div class="m-hero" style="background-image:url(fotos/portada.jpg);background-position:center 20%"><div class="m-nav"><span>ECA</span><i></i></div><div class="m-h">De la mano con tus sueños</div><span class="m-btn" style="background:#c9a24a;color:#14160f">Cotiza tu evento</span></div>
-      <div class="m-body"><div class="m-t" style="color:#24402c">Eventos</div><div class="m-g"><div style="background-image:url(fotos/verum-pareja.jpg)"></div><div style="background-image:url(fotos/xv-confeti.jpg)"></div></div></div><span class="m-wa"></span></div></div><div class="cap">Página web<small>Eventos Campestres</small></div></div>
+      <div class="m-hero" style="background-image:url(fotos/sm/portada.jpg);background-position:center 20%"><div class="m-nav"><span>ECA</span><i></i></div><div class="m-h">De la mano con tus sueños</div><span class="m-btn" style="background:#c9a24a;color:#14160f">Cotiza tu evento</span></div>
+      <div class="m-body"><div class="m-t" style="color:#24402c">Eventos</div><div class="m-g"><div style="background-image:url(fotos/sm/verum-pareja.jpg)"></div><div style="background-image:url(fotos/sm/xv-confeti.jpg)"></div></div></div><span class="m-wa"></span></div></div><div class="cap">Página web<small>Eventos Campestres</small></div></div>
     <div><div class="phone"><div class="scr" style="background:#0d0b07;color:#efe6d6"><span class="notch"></span>
-      <div class="m-hero" style="background-image:url(fotos/verum-beso.jpg)"><div class="m-nav" style="color:#ecd28e"><span style="font-family:var(--serif);font-style:italic;text-transform:none;font-size:8px;letter-spacing:0">Verum</span><i style="border-color:#ecd28e"></i></div><div class="m-h" style="color:#f4ead6">Salones de lujo</div><span class="m-btn" style="background:#c9a24a;color:#0d0b07">Ver salones</span></div>
-      <div class="m-body"><div class="m-t" style="color:#ecd28e">Sedes</div><div class="m-g"><div style="background-image:url(fotos/verum-deco.jpg)"></div><div style="background-image:url(fotos/verum-halloween.jpg)"></div></div></div><span class="m-wa"></span></div></div><div class="cap">Micrositio<small>Verum</small></div></div>
+      <div class="m-hero" style="background-image:url(fotos/sm/verum-beso.jpg)"><div class="m-nav" style="color:#ecd28e"><span style="font-family:var(--serif);font-style:italic;text-transform:none;font-size:8px;letter-spacing:0">Verum</span><i style="border-color:#ecd28e"></i></div><div class="m-h" style="color:#f4ead6">Salones de lujo</div><span class="m-btn" style="background:#c9a24a;color:#0d0b07">Ver salones</span></div>
+      <div class="m-body"><div class="m-t" style="color:#ecd28e">Sedes</div><div class="m-g"><div style="background-image:url(fotos/sm/verum-deco.jpg)"></div><div style="background-image:url(fotos/sm/verum-halloween.jpg)"></div></div></div><span class="m-wa"></span></div></div><div class="cap">Micrositio<small>Verum</small></div></div>
     <div><div class="phone"><div class="scr" style="background:#f7f2ea"><span class="notch"></span>
-      <div class="m-hero" style="background-image:url(fotos/lmr-arco.jpg);background-position:center 30%"><div class="m-nav"><span style="font-family:var(--serif);font-style:italic;text-transform:none;font-size:7px;letter-spacing:0">Luis Miguel</span><i></i></div><div class="m-h">Tú disfruta</div><span class="m-btn" style="background:#efe4d0;color:#1b1a18">Agenda tu cita</span></div>
-      <div class="m-body"><div class="m-t" style="color:#8a6d3b">Historias</div><div class="m-g"><div style="background-image:url(fotos/lmr-xv-pista.jpg)"></div><div style="background-image:url(fotos/lmr-pareja.jpg)"></div></div></div><span class="m-wa"></span></div></div><div class="cap">Micrositio<small>Luis Miguel</small></div></div>
+      <div class="m-hero" style="background-image:url(fotos/sm/lmr-arco.jpg);background-position:center 30%"><div class="m-nav"><span style="font-family:var(--serif);font-style:italic;text-transform:none;font-size:7px;letter-spacing:0">Luis Miguel</span><i></i></div><div class="m-h">Tú disfruta</div><span class="m-btn" style="background:#efe4d0;color:#1b1a18">Agenda tu cita</span></div>
+      <div class="m-body"><div class="m-t" style="color:#8a6d3b">Historias</div><div class="m-g"><div style="background-image:url(fotos/sm/lmr-xv-pista.jpg)"></div><div style="background-image:url(fotos/sm/lmr-pareja.jpg)"></div></div></div><span class="m-wa"></span></div></div><div class="cap">Micrositio<small>Luis Miguel</small></div></div>
   </div>
   <div class="phones phones2">
     <div><div class="phone"><div class="scr" style="background:#0b0d08;color:#eee"><span class="notch"></span>
-      <div class="m-hero" style="background-image:url(fotos/knon-cabina.jpg)"><div class="m-nav"><span style="font-family:var(--display);color:#a6e22e">K-NON</span><i></i></div><div class="m-h" style="font-family:var(--display);font-size:10px;font-weight:800;text-transform:uppercase">Gran impacto</div><span class="m-btn" style="background:#a6e22e;color:#0b0d08">Arma tu fiesta</span></div>
-      <div class="m-body"><div class="m-t" style="color:#a6e22e">Paquetes</div><div class="m-g"><div style="background-image:url(fotos/knon-barra.jpg)"></div><div style="background-image:url(fotos/knon-luces.jpg)"></div></div></div><span class="m-wa"></span></div></div><div class="cap">Micrositio<small>K-non</small></div></div>
+      <div class="m-hero" style="background-image:url(fotos/sm/knon-cabina.jpg)"><div class="m-nav"><span style="font-family:var(--display);color:#a6e22e">K-NON</span><i></i></div><div class="m-h" style="font-family:var(--display);font-size:10px;font-weight:800;text-transform:uppercase">Gran impacto</div><span class="m-btn" style="background:#a6e22e;color:#0b0d08">Arma tu fiesta</span></div>
+      <div class="m-body"><div class="m-t" style="color:#a6e22e">Paquetes</div><div class="m-g"><div style="background-image:url(fotos/sm/knon-barra.jpg)"></div><div style="background-image:url(fotos/sm/knon-luces.jpg)"></div></div></div><span class="m-wa"></span></div></div><div class="cap">Micrositio<small>K-non</small></div></div>
     <div><div class="phone"><div class="scr" style="background:#fbf1ef"><span class="notch"></span>
-      <div class="m-hero" style="background-image:url(fotos/xv-rosa.jpg);background-position:center 25%"><div class="m-nav"><span>Mis XV</span><i></i></div><div class="m-h">Tus XV, completos</div><span class="m-btn" style="background:#f3d6d1;color:#7a2e25">Cotizar</span></div>
+      <div class="m-hero" style="background-image:url(fotos/sm/xv-rosa.jpg);background-position:center 25%"><div class="m-nav"><span>Mis XV</span><i></i></div><div class="m-h">Tus XV, completos</div><span class="m-btn" style="background:#f3d6d1;color:#7a2e25">Cotizar</span></div>
       <div class="m-body"><div class="m-t" style="color:#b4574b">¿Cuántos invitados?</div><div class="m-row" style="margin-top:0"><span style="background:#f3d6d1">50</span><span style="background:#f3d6d1">100</span><span style="background:#b4574b;color:#fff">150+</span></div><div class="m-row"><span style="background:#25d366;color:#fff">Enviar por WhatsApp</span></div></div></div></div><div class="cap">Landing<small>Mis XV</small></div></div>
   </div>
 </section>
@@ -622,7 +636,7 @@ h2{font-size:40px}
     <div><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>30 días de soporte</div>
   </div>
   <div class="spacer"></div>
-  <div class="strip" style="margin-top:18px"><div style="background-image:url(fotos/verum-deco.jpg)"></div><div style="background-image:url(fotos/lmr-humo.jpg)"></div><div style="background-image:url(fotos/knon-barra.jpg)"></div></div>
+  <div class="strip" style="margin-top:18px"><div style="background-image:url(fotos/sm/verum-deco.jpg)"></div><div style="background-image:url(fotos/sm/lmr-humo.jpg)"></div><div style="background-image:url(fotos/sm/knon-barra.jpg)"></div></div>
 </section>
 
 <!-- 12 QUE SOLUCIONAMOS -->
@@ -656,7 +670,7 @@ h2{font-size:40px}
   <div class="price">
     <div class="l">Proyecto completo</div>
     <div class="big">$1.990.000 <small>COP</small></div>
-    <div class="sub">Ahorran $1.960.000 · pago único</div>
+    <div class="sub">De contado · ahorran $1.960.000</div>
   </div>
   <div class="pay">
     <div><b>50 %</b>$995.000 al iniciar</div>
@@ -664,20 +678,35 @@ h2{font-size:40px}
   </div>
 </section>
 
+<!-- 13b CUOTAS -->
+<section class="slide cream" id="cuotas">
+  <div class="folio"><span>06 · Inversión</span><span>Eventos Antioquia</span></div>
+  <div class="eyebrow">Otra opción de pago</div>
+  <h2>¿Prefiere pagar <em>a cuotas?</em></h2>
+  <div class="ini"><span>Inicial para empezar</span><b>$250.000</b></div>
+  <div class="cq">
+    <div><div class="n">12 <small>cuotas</small></div><div class="m"><b>$164.900</b><span>al mes</span></div><div class="t">Total $2.228.800</div></div>
+    <div><div class="n">18 <small>cuotas</small></div><div class="m"><b>$116.900</b><span>al mes</span></div><div class="t">Total $2.354.200</div></div>
+    <div><div class="n">24 <small>cuotas</small></div><div class="m"><b>$92.900</b><span>al mes</span></div><div class="t">Total $2.479.600</div></div>
+  </div>
+  <div class="vs"><div><span>De contado</span><b>$1.990.000</b></div><div><span>A cuotas pagaría hasta</span><b>$489.600 más</b></div></div>
+  <p class="small" style="margin-top:12px">Las cuotas incluyen financiación del 2 % mensual. Se pagan cada mes después de la entrega.</p>
+</section>
+
 <!-- 14 CONDICIONES -->
 <section class="slide paper" id="condiciones">
   <div class="folio"><span>07 · Condiciones</span><span>Eventos Antioquia</span></div>
   <div class="eyebrow">Tiempos y condiciones</div>
-  <h2>Listo en <em>4 semanas.</em></h2>
+  <h2>Listo en <em>7 días.</em></h2>
   <div class="weeks">
-    <div><b>1</b>Inicio y web temporal</div>
-    <div><b>2</b>Página web principal</div>
-    <div><b>3</b>Micrositios</div>
-    <div><b>4</b>Landing y entrega</div>
+    <div><b>Día 1</b>Inicio y web temporal</div>
+    <div><b>Días 2–3</b>Página web principal</div>
+    <div><b>Días 4–5</b>Micrositios</div>
+    <div><b>Días 6–7</b>Landing y entrega</div>
   </div>
   <div class="cl">
     <div class="key"><span><b>Los dominios los compra el cliente.</b> Nosotros le decimos cuáles y los configuramos. También pueden ser subdominios sin costo.</span></div>
-    <div><span>El cliente envía logos, fotos y videos; nosotros escribimos y organizamos los textos.</span></div>
+    <div><span>Los 7 días corren desde que recibimos logos, fotos y videos. Nosotros escribimos y organizamos los textos.</span></div>
     <div><span>Dos rondas de ajustes por espacio.</span></div>
     <div><span>Precio fijo aunque sean 3, 4 o 5 espacios.</span></div>
     <div><span>No incluye pauta, manejo de redes ni producción de fotos o video.</span></div>
