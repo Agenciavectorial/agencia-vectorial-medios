@@ -1,0 +1,948 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Propuesta CTA Colombia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B1626;
+  --navy-2:#13233A;
+  --navy-3:#1D3150;
+  --yellow:#FFC400;
+  --yellow-2:#FFD84D;
+  --orange:#FF6A13;
+  --ink:#0B1626;
+  --muted:#5B6678;
+  --line:#E3E7EE;
+  --paper:#FFFFFF;
+  --soft:#F4F6FA;
+  --green:#19B36B;
+  --purple:#7B3FE4;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#2A2F38}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+@page{size:A4;margin:0}
+.page{width:210mm;height:297mm;margin:10mm auto;background:var(--paper);position:relative;overflow:hidden;page-break-after:always;break-after:page}
+@media print{html,body{background:#fff}.page{margin:0}}
+h1,h2,h3,.display{font-family:Archivo,Inter,sans-serif;letter-spacing:-.02em}
+.pad{padding:16mm 16mm}
+.eyebrow{font:700 9pt Archivo,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:8px}
+.eyebrow::before{content:"";width:22px;height:3px;background:var(--yellow);display:inline-block}
+.h2{font-size:28pt;font-weight:900;line-height:1.02;margin:6px 0 10px}
+.lead{font-size:11pt;line-height:1.55;color:var(--muted);max-width:150mm}
+.hazard{background:repeating-linear-gradient(-45deg,var(--yellow) 0 14px,var(--navy) 14px 28px)}
+.hazard-thin{height:8px}
+.pnum{position:absolute;bottom:9mm;right:16mm;font:600 8pt Archivo;color:#9AA3B2;letter-spacing:.1em}
+.pfoot{position:absolute;bottom:9mm;left:16mm;font:600 8pt Archivo;color:#9AA3B2;letter-spacing:.1em;display:flex;gap:10px;align-items:center}
+.pfoot b{color:var(--ink)}
+.dark .pnum,.dark .pfoot{color:#6E7C92}.dark .pfoot b{color:#fff}
+.dark{background:var(--navy);color:#fff}
+.dark .lead{color:#AEB8C8}
+.chip{display:inline-flex;align-items:center;gap:6px;font:700 7.5pt Archivo;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:99px}
+.chip.new{background:#E3F8EE;color:#0E7A47}
+.chip.used{background:#FFF1D6;color:#9A5B00}
+.chip.y{background:var(--yellow);color:var(--navy)}
+.ico{width:1em;height:1em;display:inline-block;vertical-align:middle}
+
+/* ---------- COVER ---------- */
+.cover{background:var(--navy);color:#fff}
+.cover .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:10mm 10mm}
+.cover .glow{position:absolute;width:150mm;height:150mm;right:-50mm;top:40mm;border-radius:50%;background:radial-gradient(circle,rgba(255,196,0,.28),transparent 65%)}
+.cover .top{position:absolute;top:0;left:0;right:0;height:14mm}
+.cover .brandrow{position:absolute;top:24mm;left:16mm;right:16mm;display:flex;justify-content:space-between;align-items:center}
+.logo-cta{display:flex;align-items:center;gap:10px}
+.logo-cta .shield{width:44px;height:50px}
+.logo-cta .wm{font:900 18pt Archivo;letter-spacing:-.01em;line-height:.9}
+.logo-cta .wm small{display:block;font:600 7pt Archivo;letter-spacing:.22em;color:var(--yellow);margin-top:4px}
+.forby{font:600 8pt Archivo;letter-spacing:.16em;text-transform:uppercase;color:#8EA0BA;text-align:right;line-height:1.6}
+.forby b{color:#fff;font-weight:800;letter-spacing:.04em;font-size:10pt;text-transform:none}
+.cover h1{position:absolute;left:16mm;top:70mm;width:150mm;font-size:46pt;font-weight:900;line-height:.95}
+.cover h1 em{font-style:normal;color:var(--yellow)}
+.cover .sub{position:absolute;left:16mm;top:146mm;width:115mm;font-size:12pt;line-height:1.55;color:#C4CEDD}
+.cover .pills{position:absolute;left:16mm;top:182mm;display:flex;gap:8px;flex-wrap:wrap;width:120mm}
+.cover .pill{border:1px solid #2E4566;border-radius:99px;padding:7px 12px;font:600 8.5pt Archivo;color:#DDE5F0;display:flex;align-items:center;gap:7px}
+.cover .pill i{width:7px;height:7px;border-radius:50%;background:var(--yellow)}
+.cover .phone-wrap{position:absolute;right:14mm;top:118mm;transform:rotate(6deg)}
+.cover .meta{position:absolute;left:16mm;right:16mm;bottom:26mm;display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid #23395A;padding-top:6mm}
+.cover .meta div{font:600 8pt Archivo;letter-spacing:.14em;text-transform:uppercase;color:#7F90AA}
+.cover .meta b{display:block;color:#fff;font-size:11pt;letter-spacing:.01em;text-transform:none;margin-top:3px}
+.cover .bottom{position:absolute;left:0;right:0;bottom:0;height:12mm}
+
+/* ---------- PHONE MOCKUP ---------- */
+.phone{width:62mm;height:128mm;background:#05090F;border-radius:9mm;padding:2.6mm;box-shadow:0 30px 60px rgba(0,0,0,.45),0 0 0 1px #2B3A52 inset}
+.screen{width:100%;height:100%;background:#F4F6FA;border-radius:6.8mm;overflow:hidden;position:relative;color:var(--ink)}
+.notch{position:absolute;top:2mm;left:50%;transform:translateX(-50%);width:18mm;height:4.2mm;background:#05090F;border-radius:99px;z-index:3}
+.app-head{background:var(--navy);color:#fff;padding:8.5mm 3.5mm 3mm}
+.app-head .row{display:flex;justify-content:space-between;align-items:center}
+.app-head .mini-logo{font:900 8pt Archivo;display:flex;align-items:center;gap:4px}
+.app-head .mini-logo svg{width:12px;height:14px}
+.cart-ico{position:relative;width:16px;height:16px}
+.cart-ico b{position:absolute;top:-5px;right:-6px;background:var(--yellow);color:var(--navy);font:800 6pt Archivo;border-radius:99px;padding:1px 4px}
+.search{margin-top:2.5mm;background:#1C2D47;border-radius:2mm;padding:1.8mm 2.5mm;font-size:6pt;color:#8EA0BA}
+.cats{display:flex;gap:1.5mm;padding:2.5mm 3mm 1mm;overflow:hidden}
+.cats span{font:700 5.5pt Archivo;white-space:nowrap;padding:1.2mm 2.2mm;border-radius:99px;background:#fff;border:1px solid var(--line);color:var(--muted)}
+.cats span.on{background:var(--yellow);border-color:var(--yellow);color:var(--navy)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:2mm;padding:2mm 3mm}
+.pcard{background:#fff;border-radius:2.2mm;overflow:hidden;box-shadow:0 1px 2px rgba(11,22,38,.08)}
+.pcard .img{height:17mm;display:flex;align-items:center;justify-content:center;position:relative}
+.pcard .img svg{width:11mm;height:11mm}
+.pcard .img .tag{position:absolute;top:1.2mm;left:1.2mm;font:800 4.6pt Archivo;letter-spacing:.04em;text-transform:uppercase;padding:.6mm 1.4mm;border-radius:99px}
+.tag.n{background:#E3F8EE;color:#0E7A47}.tag.u{background:#FFF1D6;color:#9A5B00}
+.pcard .tx{padding:1.6mm 1.8mm 2mm}
+.pcard .tx p{font:600 5.6pt Inter;line-height:1.25;color:var(--ink);height:6.6mm;overflow:hidden}
+.pcard .tx b{display:flex;justify-content:space-between;align-items:center;font:800 6.4pt Archivo;margin-top:.8mm}
+.pcard .tx b i{width:4.2mm;height:4.2mm;border-radius:1.2mm;background:var(--navy);color:var(--yellow);font-style:normal;display:flex;align-items:center;justify-content:center;font-size:7pt}
+.bg1{background:linear-gradient(135deg,#FFE58A,#FFC400)}
+.bg2{background:linear-gradient(135deg,#D9E3F2,#AFC2DD)}
+.bg3{background:linear-gradient(135deg,#FFD3B8,#FF8F4D)}
+.bg4{background:linear-gradient(135deg,#CFEFDF,#8ED9B4)}
+.cartbar{position:absolute;left:3mm;right:3mm;bottom:3mm;background:var(--navy);color:#fff;border-radius:2.5mm;padding:2.4mm 3mm;display:flex;justify-content:space-between;align-items:center;font:700 6pt Archivo}
+.cartbar span{background:var(--yellow);color:var(--navy);padding:1mm 2mm;border-radius:1.5mm}
+
+/* ---------- GENERIC ---------- */
+.cols{display:grid;gap:6mm}
+.card{border:1px solid var(--line);border-radius:4mm;padding:6mm;background:#fff}
+.card h3{font-size:13pt;font-weight:800;margin:3mm 0 2mm}
+.card p{font-size:9.5pt;line-height:1.5;color:var(--muted)}
+.icobox{width:11mm;height:11mm;border-radius:3mm;background:var(--navy);display:flex;align-items:center;justify-content:center}
+.icobox svg{width:6mm;height:6mm;color:var(--yellow)}
+.icobox.y{background:var(--yellow)}.icobox.y svg{color:var(--navy)}
+.list{list-style:none;display:grid;gap:2.6mm}
+.list li{display:flex;gap:3mm;font-size:9.8pt;line-height:1.45;color:#2A3446}
+.list li svg{flex:none;width:4.6mm;height:4.6mm;margin-top:.3mm;color:var(--green)}
+.list li b{color:var(--ink)}
+
+/* page 2 */
+.quote{font:800 17pt Archivo;line-height:1.2;letter-spacing:-.01em;border-left:5px solid var(--yellow);padding-left:6mm;margin:8mm 0 9mm;max-width:160mm}
+.quote span{color:var(--orange)}
+.vs{display:grid;grid-template-columns:1fr 12mm 1fr;align-items:stretch}
+.vs .col{border-radius:4mm;padding:6mm}
+.vs .before{background:var(--soft)}
+.vs .after{background:var(--navy);color:#fff}
+.vs .after .list li{color:#D3DBE8}.vs .after .list li b{color:#fff}
+.vs .after .list li svg{color:var(--yellow)}
+.vs h3{font-size:12pt;font-weight:800;margin-bottom:4mm;display:flex;align-items:center;gap:3mm}
+.vs .arrow{display:flex;align-items:center;justify-content:center}
+.vs .arrow svg{width:8mm;height:8mm;color:var(--orange)}
+.xli li svg{color:#D64545!important}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:5mm;margin-top:9mm}
+.stat{border-top:3px solid var(--navy);padding-top:3.5mm}
+.stat b{font:900 26pt Archivo;display:block;letter-spacing:-.03em}
+.stat b small{font-size:13pt;color:var(--orange)}
+.stat span{font-size:9pt;color:var(--muted);line-height:1.45;display:block;margin-top:1mm}
+
+/* page 3: ecosystem */
+.eco{position:relative;height:166mm;margin-top:6mm}
+.eco .node{position:absolute;width:56mm;background:#fff;border-radius:5mm;padding:5mm;box-shadow:0 12px 30px rgba(11,22,38,.10);border:1px solid var(--line)}
+.eco .node h3{font-size:12pt;font-weight:800;margin:3mm 0 1.5mm}
+.eco .node p{font-size:8.6pt;color:var(--muted);line-height:1.45}
+.eco .node .num{position:absolute;top:4mm;right:5mm;font:900 18pt Archivo;color:#E8ECF2}
+.eco .center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:52mm;height:52mm;border-radius:50%;background:var(--navy);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 0 0 8mm rgba(255,196,0,.18),0 0 0 16mm rgba(255,196,0,.08)}
+.eco .center b{font:900 13pt Archivo;line-height:1.05}
+.eco .center span{font:600 7pt Archivo;letter-spacing:.16em;color:var(--yellow);text-transform:uppercase;margin-top:2mm}
+.eco svg.lines{position:absolute;inset:0;width:100%;height:100%}
+.benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-top:2mm}
+.benefit{background:var(--soft);border-radius:3.5mm;padding:4.5mm}
+.benefit b{font:800 10pt Archivo;display:block;margin:2.5mm 0 1mm}
+.benefit span{font-size:8.3pt;color:var(--muted);line-height:1.4;display:block}
+.benefit svg{width:6mm;height:6mm;color:var(--orange)}
+
+/* page 4: catalog */
+.split{display:grid;grid-template-columns:70mm 1fr;gap:10mm;align-items:start;margin-top:8mm}
+.catlist{display:grid;grid-template-columns:1fr 1fr;gap:2.5mm;margin-top:5mm}
+.catitem{display:flex;align-items:center;gap:2.5mm;background:var(--soft);border-radius:2.5mm;padding:2.6mm 3mm;font:700 8.5pt Archivo}
+.catitem svg{width:5mm;height:5mm;color:var(--orange)}
+.feat{display:grid;grid-template-columns:9mm 1fr;gap:3.5mm;padding:3.6mm 0;border-bottom:1px dashed var(--line)}
+.feat:last-child{border-bottom:0}
+.feat .n{width:9mm;height:9mm;border-radius:2.5mm;background:var(--yellow);font:900 10pt Archivo;display:flex;align-items:center;justify-content:center}
+.feat b{font:800 10.5pt Archivo;display:block;margin-bottom:.8mm}
+.feat span{font-size:9pt;color:var(--muted);line-height:1.45}
+.productsheet{margin-top:6mm;border:1px solid var(--line);border-radius:4mm;display:grid;grid-template-columns:38mm 1fr;overflow:hidden}
+.productsheet .pic{background:linear-gradient(135deg,#FFE58A,#FFC400);display:flex;align-items:center;justify-content:center;position:relative}
+.productsheet .pic svg{width:22mm;height:22mm}
+.productsheet .info{padding:4.5mm 5mm}
+.productsheet .info h4{font:800 11pt Archivo;margin:2mm 0 1mm}
+.productsheet .info .price{font:900 15pt Archivo;margin:1.5mm 0}
+.productsheet .info .spec{display:flex;gap:2mm;flex-wrap:wrap}
+.productsheet .info .spec span{font-size:7.5pt;background:var(--soft);border-radius:1.5mm;padding:1mm 2mm;color:var(--muted)}
+.productsheet .btns{display:flex;gap:2mm;margin-top:3mm}
+.btn{font:800 8pt Archivo;padding:2.3mm 3.5mm;border-radius:2mm;display:inline-flex;align-items:center;gap:1.5mm}
+.btn.dark{background:var(--navy);color:#fff}
+.btn.wa{background:#25D366;color:#fff}
+.btn.y{background:var(--yellow);color:var(--navy)}
+
+/* page 5: flow */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-top:10mm;position:relative}
+.flow::before{content:"";position:absolute;left:12mm;right:12mm;top:12mm;border-top:2px dashed #3A5274}
+.step{position:relative;text-align:left}
+.step .circle{width:24mm;height:24mm;border-radius:50%;background:var(--navy-2);border:2px solid #2E4566;display:flex;align-items:center;justify-content:center;position:relative;z-index:1}
+.step .circle svg{width:10mm;height:10mm;color:var(--yellow)}
+.step .circle i{position:absolute;top:-1mm;right:-1mm;width:7mm;height:7mm;border-radius:50%;background:var(--yellow);color:var(--navy);font:900 9pt Archivo;font-style:normal;display:flex;align-items:center;justify-content:center}
+.step b{font:800 11.5pt Archivo;display:block;margin:5mm 0 1.5mm;color:#fff}
+.step span{font-size:8.8pt;color:#AEB8C8;line-height:1.5;display:block}
+.paybox{display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin-top:12mm}
+.pay{border-radius:4mm;padding:6mm;background:var(--navy-2);border:1px solid #23395A}
+.pay h3{font-size:13pt;font-weight:800;margin:3mm 0 2mm}
+.pay p{font-size:9pt;color:#AEB8C8;line-height:1.5}
+.pay .methods{display:flex;gap:1.5mm;flex-wrap:wrap;margin-top:4mm}
+.pay .methods span{font:700 7pt Archivo;background:#0B1626;border:1px solid #2E4566;color:#DDE5F0;border-radius:1.5mm;padding:1.2mm 2.2mm}
+.pay.hl{background:var(--yellow);color:var(--navy);border-color:var(--yellow)}
+.pay.hl p{color:#3B3420}
+.pay.hl .methods span{background:rgba(11,22,38,.08);border-color:rgba(11,22,38,.15);color:var(--navy)}
+.wa-msg{margin-top:9mm;display:grid;grid-template-columns:1fr 1fr;gap:6mm;align-items:center}
+.bubble{background:#DCF8C6;color:#123;border-radius:3mm 3mm 3mm .5mm;padding:4mm 4.5mm;font-size:8.6pt;line-height:1.5;box-shadow:0 2px 0 rgba(0,0,0,.15);position:relative}
+.bubble b{font-weight:700}
+.bubble small{display:block;text-align:right;color:#5D7A5D;font-size:7pt;margin-top:1mm}
+
+/* page 6: browser */
+.browser{border-radius:4mm;overflow:hidden;box-shadow:0 20px 50px rgba(11,22,38,.18);border:1px solid var(--line);margin-top:7mm}
+.browser .bar{background:#E9EDF3;padding:2.4mm 3.5mm;display:flex;align-items:center;gap:2.2mm}
+.browser .bar i{width:2.6mm;height:2.6mm;border-radius:50%;background:#FF5F57}
+.browser .bar i:nth-child(2){background:#FEBC2E}.browser .bar i:nth-child(3){background:#28C840}
+.browser .bar span{flex:1;margin-left:3mm;background:#fff;border-radius:1.5mm;padding:1.2mm 3mm;font-size:7pt;color:var(--muted)}
+.site-nav{background:var(--navy);color:#fff;padding:3mm 6mm;display:flex;justify-content:space-between;align-items:center;font:600 7pt Archivo}
+.site-nav .links{display:flex;gap:4mm;color:#AEB8C8}
+.site-nav .links b{color:var(--navy);background:var(--yellow);padding:1mm 2.5mm;border-radius:1.2mm}
+.site-hero{background:var(--navy);color:#fff;padding:7mm 6mm 9mm;position:relative;overflow:hidden}
+.site-hero::after{content:"";position:absolute;right:-10mm;bottom:-10mm;width:70mm;height:70mm;border-radius:50%;background:radial-gradient(circle,rgba(255,196,0,.3),transparent 65%)}
+.site-hero h4{font:900 19pt Archivo;line-height:1;max-width:95mm;letter-spacing:-.02em}
+.site-hero h4 em{font-style:normal;color:var(--yellow)}
+.site-hero p{font-size:7.6pt;color:#AEB8C8;max-width:85mm;margin-top:2.5mm;line-height:1.5}
+.site-hero .ctas{display:flex;gap:2mm;margin-top:4mm}
+.site-hero .climber{position:absolute;right:10mm;top:4mm;width:46mm;height:46mm;z-index:1}
+.site-body{padding:5mm 6mm;display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;background:#fff}
+.svc{border:1px solid var(--line);border-radius:2.5mm;padding:3mm}
+.svc svg{width:5.5mm;height:5.5mm;color:var(--orange)}
+.svc b{font:800 7.6pt Archivo;display:block;margin:1.5mm 0 .8mm}
+.svc span{font-size:6.4pt;color:var(--muted);line-height:1.35;display:block}
+.sections{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin-top:8mm}
+.sec{padding:4.5mm;border-radius:3.5mm;background:var(--soft)}
+.sec b{font:800 10pt Archivo;display:flex;align-items:center;gap:2mm;margin-bottom:1.5mm}
+.sec b svg{width:4.6mm;height:4.6mm;color:var(--orange)}
+.sec span{font-size:8.5pt;color:var(--muted);line-height:1.45;display:block}
+
+/* page 7: community */
+.addon-badge{position:absolute;top:16mm;right:16mm;background:var(--yellow);color:var(--navy);font:900 8pt Archivo;letter-spacing:.14em;text-transform:uppercase;padding:2.5mm 4mm;border-radius:2mm}
+.pipeline{display:grid;grid-template-columns:1fr 7mm 1fr 7mm 1fr 7mm 1fr;align-items:stretch;margin-top:9mm}
+.pipe{background:#fff;border:1px solid var(--line);border-radius:3.5mm;padding:4.5mm 4mm;box-shadow:0 6px 18px rgba(11,22,38,.06)}
+.pipe .icobox{width:10mm;height:10mm}
+.pipe b{font:800 9.8pt Archivo;display:block;margin:3mm 0 1mm}
+.pipe span{font-size:8pt;color:var(--muted);line-height:1.4;display:block}
+.pipe-arrow{display:flex;align-items:center;justify-content:center;color:var(--orange)}
+.pipe-arrow svg{width:5mm;height:5mm}
+.sheet{margin-top:8mm;border-radius:3.5mm;overflow:hidden;border:1px solid #CFD8E3;box-shadow:0 14px 34px rgba(11,22,38,.12)}
+.sheet .sh-top{background:#188038;color:#fff;font:700 8pt Inter;padding:2.4mm 4mm;display:flex;align-items:center;gap:2.5mm}
+.sheet .sh-top svg{width:4.5mm;height:4.5mm}
+.sheet table{width:100%;border-collapse:collapse;font-size:7.6pt}
+.sheet th{background:#F1F3F4;color:#5F6368;font-weight:600;text-align:left;padding:1.8mm 2.5mm;border:1px solid #E0E3E7}
+.sheet td{padding:2mm 2.5mm;border:1px solid #E8EAED;color:#202124}
+.st{font:700 6.6pt Archivo;padding:.8mm 2mm;border-radius:99px;letter-spacing:.03em;white-space:nowrap}
+.st.p{background:#FFF1D6;color:#9A5B00}.st.a{background:#E3F8EE;color:#0E7A47}.st.v{background:#E7ECF5;color:#3B4C66}.st.r{background:#FDE7E7;color:#B42828}
+.control{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin-top:8mm}
+
+/* page 8 deliverables */
+.deliv{display:grid;grid-template-columns:1fr 1fr;gap:4.5mm;margin-top:6mm}
+.deliv .card{padding:5.5mm}
+.deliv .card h3{display:flex;align-items:center;gap:3mm;margin:0 0 4mm;font-size:12pt}
+.timeline{margin-top:5mm;display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.tl{padding:0 3mm 0 0}
+.tl .bar{height:3mm;border-radius:99px;background:var(--line);margin-bottom:3.5mm;position:relative;overflow:hidden}
+.tl .bar::after{content:"";position:absolute;inset:0;background:var(--yellow)}
+.tl:nth-child(2) .bar::after{background:var(--orange)}
+.tl:nth-child(3) .bar::after{background:var(--navy-3)}
+.tl:nth-child(4) .bar::after{background:var(--green)}
+.tl small{font:700 7.5pt Archivo;letter-spacing:.12em;text-transform:uppercase;color:var(--orange)}
+.tl b{font:800 10.5pt Archivo;display:block;margin:1mm 0 1mm}
+.tl span{font-size:8.4pt;color:var(--muted);line-height:1.45;display:block}
+
+/* page 9 investment */
+.inv{margin-top:8mm;border-radius:5mm;overflow:hidden;border:1px solid #23395A}
+.inv-row{display:grid;grid-template-columns:1fr auto;gap:6mm;align-items:center;padding:6mm 7mm;border-bottom:1px solid #23395A;background:var(--navy-2)}
+.inv-row h3{font-size:13pt;font-weight:800;color:#fff}
+.inv-row p{font-size:8.8pt;color:#AEB8C8;margin-top:1.2mm;line-height:1.45;max-width:110mm}
+.inv-row .amt{font:900 19pt Archivo;color:#fff;letter-spacing:-.02em;text-align:right}
+.inv-row .amt small{display:block;font:600 7pt Archivo;letter-spacing:.14em;color:#7F90AA;text-transform:uppercase}
+.inv-total{display:grid;grid-template-columns:1fr auto;align-items:center;padding:6.5mm 7mm;background:var(--yellow);color:var(--navy)}
+.inv-total span{font:800 10pt Archivo;letter-spacing:.14em;text-transform:uppercase}
+.inv-total b{font:900 30pt Archivo;letter-spacing:-.03em}
+.finance{display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin-top:7mm}
+.fin{border-radius:5mm;padding:6.5mm;background:#fff;color:var(--navy);position:relative}
+.fin.alt{background:var(--navy-2);color:#fff;border:1px solid #23395A}
+.fin .lbl{font:800 8pt Archivo;letter-spacing:.14em;text-transform:uppercase;color:var(--orange)}
+.fin.alt .lbl{color:var(--yellow)}
+.fin h3{font-size:14pt;font-weight:900;margin:2mm 0 4mm}
+.fin .big{display:flex;align-items:baseline;gap:2mm}
+.fin .big b{font:900 27pt Archivo;letter-spacing:-.03em}
+.fin .big span{font:700 10pt Archivo;color:var(--muted)}
+.fin.alt .big span{color:#AEB8C8}
+.fin .det{margin-top:4mm;border-top:1px dashed #CBD3DF;padding-top:3.5mm;display:grid;gap:2mm;font-size:9pt}
+.fin.alt .det{border-color:#2E4566}
+.fin .det div{display:flex;justify-content:space-between}
+.fin .det div span{color:var(--muted)}.fin.alt .det div span{color:#AEB8C8}
+.fin .det div b{font-weight:700}
+.fin .ribbon{position:absolute;top:5mm;right:5mm;background:var(--orange);color:#fff;font:800 7pt Archivo;letter-spacing:.1em;text-transform:uppercase;padding:1.3mm 2.6mm;border-radius:99px}
+.months{display:grid;grid-template-columns:repeat(13,1fr);gap:1.2mm;margin-top:4mm}
+.months i{height:6mm;border-radius:1.2mm;background:#E7ECF5;display:flex;align-items:center;justify-content:center;font:700 5.6pt Archivo;font-style:normal;color:#3B4C66}
+.months i.first{background:var(--yellow);color:var(--navy)}
+.notes{margin-top:7mm;display:grid;grid-template-columns:1fr 1fr;gap:3mm 8mm}
+.notes p{font-size:8.2pt;color:#8EA0BA;line-height:1.5;display:flex;gap:2mm}
+.notes p svg{flex:none;width:4mm;height:4mm;color:var(--yellow);margin-top:.3mm}
+
+/* page 10 closing */
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-top:8mm}
+.why .w{border-top:3px solid var(--yellow);padding-top:3.5mm}
+.why .w b{font:900 22pt Archivo;letter-spacing:-.03em;display:block}
+.why .w span{font-size:8.6pt;color:var(--muted);line-height:1.4;display:block;margin-top:1mm}
+.nextsteps{margin-top:10mm;display:grid;gap:3.5mm}
+.ns{display:grid;grid-template-columns:13mm 1fr;gap:4mm;align-items:center;background:var(--soft);border-radius:3.5mm;padding:4mm 5mm}
+.ns i{font:900 18pt Archivo;font-style:normal;color:var(--orange)}
+.ns b{font:800 10.5pt Archivo;display:block}
+.ns span{font-size:8.8pt;color:var(--muted);line-height:1.4}
+.cta{position:absolute;left:0;right:0;bottom:0;height:78mm;background:var(--navy);color:#fff;padding:12mm 16mm}
+.cta h2{font-size:26pt;font-weight:900;line-height:1;max-width:120mm}
+.cta h2 em{font-style:normal;color:var(--yellow)}
+.cta .contact{display:flex;gap:5mm;margin-top:8mm}
+.cta .contact div{background:var(--navy-2);border:1px solid #23395A;border-radius:3mm;padding:3.5mm 5mm;font:700 10pt Archivo;display:flex;align-items:center;gap:3mm}
+.cta .contact div svg{width:5.5mm;height:5.5mm;color:var(--yellow)}
+.cta .contact div small{display:block;font:600 6.5pt Archivo;letter-spacing:.14em;text-transform:uppercase;color:#7F90AA}
+.cta .agency{position:absolute;right:16mm;top:12mm;text-align:right}
+.av-logo{font:900 13pt Archivo;letter-spacing:-.01em;display:flex;align-items:center;gap:2.5mm;justify-content:flex-end}
+.av-logo i{width:7mm;height:7mm;border-radius:2mm;background:linear-gradient(135deg,#9B6BFF,#6A2FE0);display:inline-flex;align-items:center;justify-content:center}
+.av-logo i svg{width:4.5mm;height:4.5mm;color:#fff}
+.cta .agency small{display:block;font:600 7pt Archivo;letter-spacing:.14em;text-transform:uppercase;color:#7F90AA;margin-top:2mm}
+.cta .hz{position:absolute;left:0;right:0;bottom:0;height:7mm}
+.valid{position:absolute;right:16mm;top:27mm;font:600 7.5pt Archivo;color:#7F90AA;letter-spacing:.06em}
+
+/* =========== VISTA CELULAR (solo pantalla; el PDF no cambia) =========== */
+@media screen and (max-width:820px){
+  html,body{background:#0B1626}
+  body{font-size:15px}
+  .page{width:100%;height:auto;min-height:0;margin:0;padding-bottom:56px;overflow:hidden}
+  .pad{padding:34px 18px 8px}
+  .h2{font-size:30px}
+  .h2 br,.cta h2 br{display:none}
+  .lead{font-size:15px;max-width:none}
+  .eyebrow{font-size:11px}
+  .pfoot,.pnum{bottom:20px;font-size:10px}
+  .pfoot{left:18px}.pnum{right:18px}
+
+  /* portada */
+  .cover{display:flex;flex-direction:column;padding:0 18px 70px}
+  .cover .top{position:relative;height:30px;margin:0 -18px}
+  .cover .bottom{height:22px}
+  .cover .brandrow,.cover h1,.cover .sub,.cover .pills,.cover .phone-wrap,.cover .meta{position:relative;inset:auto;left:auto;right:auto;top:auto;bottom:auto;width:auto}
+  .cover .brandrow{margin-top:24px;flex-wrap:wrap;gap:14px}
+  .logo-cta .wm{font-size:19px}.logo-cta .wm small{font-size:8px}
+  .forby{text-align:left;font-size:10px}
+  .cover h1{font-size:42px;margin-top:40px}
+  .cover .sub{font-size:16px;margin-top:20px}
+  .cover .pills{margin-top:20px}
+  .cover .pill{font-size:12px}
+  .cover .phone-wrap{transform:none;margin:36px auto 0}
+  .cover .glow{top:380px;right:-120px}
+  .cover .meta{margin-top:36px;flex-wrap:wrap;gap:16px}
+  .cover .meta div{font-size:10px}.cover .meta b{font-size:15px}
+  .phone{width:250px;height:520px;border-radius:36px;padding:10px}
+  .screen{border-radius:28px}
+  .split .phone{width:270px!important;height:560px!important;margin:0 auto}
+
+  /* grillas → columnas */
+  .vs,.paybox,.wa-msg,.sections,.control,.deliv,.finance,.notes,.split{grid-template-columns:1fr}
+  .vs{gap:10px}.vs .arrow{transform:rotate(90deg);height:32px}
+  .vs h3{font-size:17px}.list li{font-size:14.5px}
+  .quote{font-size:21px;margin:24px 0}
+  .stats{grid-template-columns:1fr 1fr 1fr;gap:10px}
+  .stat b{font-size:28px}.stat b small{font-size:14px}.stat span{font-size:12px}
+
+  .eco{height:auto;display:grid;gap:14px;margin-top:24px}
+  .eco .node{position:relative;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;transform:none!important;width:auto}
+  .eco .center,.eco svg.lines{display:none}
+  .eco .node h3{font-size:18px}.eco .node p{font-size:14px}
+  .benefits{grid-template-columns:1fr 1fr;margin-top:20px}
+  .benefit b{font-size:15px}.benefit span{font-size:13px}
+
+  .feat b{font-size:16px}.feat span{font-size:14px}
+  .catitem{font-size:13px}
+  .split{gap:24px}
+
+  .flow{grid-template-columns:1fr 1fr;gap:26px 16px}
+  .flow::before{display:none}
+  .step b{font-size:17px}.step span{font-size:13.5px}
+  .pay h3{font-size:18px}.pay p{font-size:14px}.pay .methods span{font-size:11px}
+  .bubble{font-size:14px}
+
+  .browser .bar span{font-size:11px}
+  .site-nav .links span{display:none}
+  .site-nav{font-size:11px}
+  .site-hero .climber{display:none}
+  .site-hero h4{font-size:26px}.site-hero p{font-size:13px;max-width:none}
+  .site-body{grid-template-columns:1fr 1fr}
+  .svc b{font-size:13px}.svc span{font-size:11.5px}
+  .sec b{font-size:15px}.sec span{font-size:14px}
+  .btn{font-size:12px}
+
+  .addon-badge{position:static;display:inline-block;margin:28px 18px 0;font-size:11px}
+  .page .addon-badge + .pad{padding-top:14px}
+  .pipeline{grid-template-columns:1fr;gap:6px}
+  .pipe-arrow{transform:rotate(90deg);height:26px}
+  .pipe b{font-size:16px}.pipe span{font-size:14px}
+  .sheet{overflow-x:auto}
+  .sheet table{min-width:560px;font-size:12px}
+  .card h3{font-size:18px}.card p{font-size:14px}
+
+  .timeline{grid-template-columns:1fr 1fr;gap:20px 12px}
+  .tl b{font-size:16px}.tl span{font-size:13.5px}
+
+  .inv-row{grid-template-columns:1fr;gap:10px}
+  .inv-row h3{font-size:18px}.inv-row p{font-size:14px}
+  .inv-row .amt{text-align:left;font-size:28px}
+  .inv-total{grid-template-columns:1fr;gap:6px}
+  .inv-total span{font-size:13px}.inv-total b{font-size:38px}
+  .fin h3{font-size:20px}.fin .big b{font-size:36px}.fin .det{font-size:14px}
+  .months i{height:26px;font-size:10px}
+  .notes p{font-size:13px}
+
+  .why{grid-template-columns:1fr 1fr;gap:18px}
+  .why .w b{font-size:30px}.why .w span{font-size:13.5px}
+  .ns b{font-size:16px}.ns span{font-size:14px}.ns i{font-size:24px}
+  .cta{position:relative;height:auto;padding:36px 18px 60px;margin-top:30px}
+  .cta .agency{position:static;text-align:left;margin-bottom:22px}
+  .av-logo{justify-content:flex-start;font-size:18px}
+  .cta h2{font-size:30px}
+  .cta .contact{flex-direction:column;gap:10px}
+  .cta .contact div{font-size:16px}
+  .valid{position:static;display:block;margin-top:18px;font-size:11px}
+  .page:last-child{padding-bottom:0}
+  .page:last-child .pfoot{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ ICONS ============ -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="currentColor" opacity=".15"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="currentColor" opacity=".13"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-store" viewBox="0 0 24 24"><path d="M3 9l1.5-5h15L21 9M3 9h18M3 9c0 1.7 1.3 3 3 3s3-1.3 3-3m0 0c0 1.7 1.3 3 3 3s3-1.3 3-3m0 0c0 1.7 1.3 3 3 3s3-1.3 3-3M5 12v8h14v-8M10 20v-5h4v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><path d="M4 21V5l8-3v19M12 8h8v13M2 21h20M7 7h2M7 11h2M7 15h2M15 12h2M15 16h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="17" cy="9" r="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M17.5 14c2.2.3 3.6 2 4 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.8" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="6" cy="12" r="2.8" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="18" cy="19" r="2.8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 10.7l7-4.2M8.5 13.3l7 4.2" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><path d="M2 3h3l2.4 12.2a1.5 1.5 0 001.5 1.2h9.4a1.5 1.5 0 001.5-1.2L21 7H6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="20.5" r="1.4" fill="currentColor"/><circle cx="18" cy="20.5" r="1.4" fill="currentColor"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2 10h20M6 15h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2.5a9.5 9.5 0 00-8.2 14.3L2.5 21.5l4.8-1.3A9.5 9.5 0 1012 2.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.6 7.8c.3-.6.6-.6.9-.6h.6c.2 0 .5 0 .7.6l.8 1.9c.1.3 0 .5-.1.7l-.6.7c-.2.2-.2.4 0 .7.5.9 1.4 1.9 2.6 2.5.3.2.5.1.7-.1l.7-.9c.2-.2.4-.3.7-.2l1.9.9c.3.1.4.3.4.5 0 .6-.3 1.6-1.3 2-.9.4-2.2.4-4.3-.7-2.1-1.1-3.6-3.2-4-4-.5-.9-.7-2.2.2-3.4z" fill="currentColor"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a5 5 0 007.1 0l3-3a5 5 0 00-7.1-7.1l-1.2 1.2M14 10a5 5 0 00-7.1 0l-3 3a5 5 0 007.1 7.1l1.2-1.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-form" viewBox="0 0 24 24"><rect x="4" y="2.5" width="16" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-sheet" viewBox="0 0 24 24"><rect x="3.5" y="3" width="17" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 9h17M3.5 15h17M10 9v12" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.5l8 3v6c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10v-6l8-3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.5 12l2.4 2.4L15.8 9.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 21h18M6 17v-5M11 17V7M16 17v-8M21 17V4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10.5 18.5h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 12h19M12 2.5c2.6 2.6 3.8 5.8 3.8 9.5s-1.2 6.9-3.8 9.5c-2.6-2.6-3.8-5.8-3.8-9.5S9.4 5.1 12 2.5z" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3.5 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5L2 9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M6 11v5c2 2 10 2 12 0v-5M22 9v6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 14L7 22l5-2.5L17 22l-1.5-8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9L12 2.8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-vector" viewBox="0 0 24 24"><path d="M4 5l8 15 8-15" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-recycle" viewBox="0 0 24 24"><path d="M7 19H4.5a2 2 0 01-1.7-3l2.6-4.5M14 19h5.5a2 2 0 001.7-3l-1.4-2.4M9.4 6.2l1-1.7a2 2 0 013.4 0L16.5 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 16.5L7.5 19l2.5 2.5M5.5 8.8l-.3 3.4 3.2.9M17.6 6.3l-1.1 2.9-3.3-.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+
+    <!-- product illustrations -->
+    <symbol id="p-helmet" viewBox="0 0 64 64"><path d="M10 40c0-13 9.8-23 22-23s22 10 22 23" fill="#FFC400" stroke="#0B1626" stroke-width="2.5"/><path d="M27 17.6V12h10v5.6" fill="#FFD84D" stroke="#0B1626" stroke-width="2.5"/><path d="M32 18v22" stroke="#0B1626" stroke-width="2" opacity=".35"/><rect x="5" y="40" width="54" height="7" rx="3.5" fill="#FFC400" stroke="#0B1626" stroke-width="2.5"/></symbol>
+    <symbol id="p-harness" viewBox="0 0 64 64"><path d="M20 6l6 22M44 6l-6 22" stroke="#0B1626" stroke-width="4" stroke-linecap="round"/><path d="M20 6l6 22M44 6l-6 22" stroke="#FF6A13" stroke-width="2" stroke-linecap="round"/><rect x="22" y="26" width="20" height="8" rx="2" fill="#0B1626"/><path d="M16 36c4 4 28 4 32 0l2 10c-6 5-30 5-36 0z" fill="#FF6A13" stroke="#0B1626" stroke-width="2.5" stroke-linejoin="round"/><path d="M22 47l-4 13M42 47l4 13" stroke="#0B1626" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="22" r="4" fill="none" stroke="#0B1626" stroke-width="2.5"/></symbol>
+    <symbol id="p-carabiner" viewBox="0 0 64 64"><path d="M24 8h12c8 0 12 6 11 14l-5 28c-1 6-6 8-11 8h-2c-6 0-10-4-9-10l2-30" fill="none" stroke="#0B1626" stroke-width="7" stroke-linecap="round"/><path d="M24 8h12c8 0 12 6 11 14l-5 28c-1 6-6 8-11 8h-2c-6 0-10-4-9-10l2-30" fill="none" stroke="#B9C6D8" stroke-width="3.5" stroke-linecap="round"/><path d="M22 18l2 22" stroke="#FFC400" stroke-width="4" stroke-linecap="round"/></symbol>
+    <symbol id="p-gloves" viewBox="0 0 64 64"><path d="M18 58V36l-6-12c-1-2 2-4 4-2l6 8V12c0-3 5-3 5 0v14-18c0-3 5-3 5 0v18-15c0-3 5-3 5 0v16-11c0-3 5-3 5 0v26c0 6-2 10-6 14v4z" fill="#19B36B" stroke="#0B1626" stroke-width="2.5" stroke-linejoin="round"/><rect x="17" y="52" width="24" height="7" rx="1.5" fill="#0B1626"/></symbol>
+    <symbol id="p-rope" viewBox="0 0 64 64"><ellipse cx="32" cy="32" rx="22" ry="22" fill="none" stroke="#0B1626" stroke-width="7"/><ellipse cx="32" cy="32" rx="22" ry="22" fill="none" stroke="#FF6A13" stroke-width="4" stroke-dasharray="5 3"/><ellipse cx="32" cy="32" rx="12" ry="12" fill="none" stroke="#0B1626" stroke-width="6"/><ellipse cx="32" cy="32" rx="12" ry="12" fill="none" stroke="#FFC400" stroke-width="3" stroke-dasharray="4 3"/></symbol>
+    <symbol id="p-boot" viewBox="0 0 64 64"><path d="M14 8h20v22l14 6c5 2 8 6 8 11v5H10V14z" fill="#3B4C66" stroke="#0B1626" stroke-width="2.5" stroke-linejoin="round"/><rect x="8" y="50" width="50" height="7" rx="2" fill="#0B1626"/><path d="M34 22h-8M34 28h-8" stroke="#FFC400" stroke-width="2.5" stroke-linecap="round"/></symbol>
+    <symbol id="p-climber" viewBox="0 0 120 120"><path d="M60 0v52" stroke="#FFC400" stroke-width="2.5" stroke-dasharray="5 4"/><circle cx="60" cy="54" r="5" fill="none" stroke="#FFC400" stroke-width="3"/><circle cx="62" cy="68" r="9" fill="#FFC400"/><path d="M53 66c0-7 4-11 9-11s9 4 9 11" fill="#FF6A13"/><path d="M62 77v22M62 84l-14-8M62 84l15-5M62 99l-10 16M62 99l12 14" stroke="#fff" stroke-width="5" stroke-linecap="round"/><path d="M54 86h16l-2 8H56z" fill="#FF6A13"/></symbol>
+    <symbol id="shield-logo" viewBox="0 0 44 50"><path d="M22 1.5l19 6.5v14c0 13-8.3 22.3-19 26.5C11.3 44.3 3 35 3 22V8z" fill="#FFC400"/><path d="M22 6.5l14.5 5v10.8c0 10-6.4 17.4-14.5 20.8C13.9 39.7 7.5 32.3 7.5 22.3V11.5z" fill="#0B1626"/><text x="22" y="29" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="900" font-size="12" fill="#FFC400" letter-spacing="-.5">CTA</text></symbol>
+  </defs>
+</svg>
+
+<!-- ============ 1. PORTADA ============ -->
+<section class="page cover">
+  <div class="grid-bg"></div>
+  <div class="glow"></div>
+  <div class="top hazard"></div>
+
+  <div class="brandrow">
+    <!-- LOGO: reemplazar este bloque por <img src="logo-cta.png" style="height:14mm"> cuando se tenga el logo oficial -->
+    <div class="logo-cta">
+      <svg class="shield"><use href="#shield-logo"/></svg>
+      <div class="wm">CTA COLOMBIA<small>S.A.S · SEGURIDAD INDUSTRIAL</small></div>
+    </div>
+    <div class="forby">Propuesta comercial<br><b>Agencia Vectorial</b></div>
+  </div>
+
+  <h1>Su comunidad ya compra.<br><em>Ahora con vitrina propia.</em></h1>
+  <p class="sub">Una solución digital para centralizar sus productos nuevos y de segunda mano, vender más fácil en sus grupos, abrir el catálogo a su comunidad y presentar a CTA Colombia como lo que es: un referente en formación en seguridad industrial.</p>
+
+  <div class="pills">
+    <div class="pill"><i></i>Catálogo digital</div>
+    <div class="pill"><i></i>Página institucional</div>
+    <div class="pill"><i></i>Publicación por la comunidad</div>
+    <div class="pill"><i></i>Pagos con Wompi</div>
+  </div>
+
+  <div class="phone-wrap">
+    <div class="phone"><div class="screen">
+      <div class="notch"></div>
+      <div class="app-head">
+        <div class="row"><div class="mini-logo"><svg><use href="#shield-logo"/></svg>CTA Market</div>
+          <div class="cart-ico"><svg class="ico" style="width:16px;height:16px;color:#fff"><use href="#i-cart"/></svg><b>3</b></div></div>
+        <div class="search">Buscar arneses, cascos, eslingas…</div>
+      </div>
+      <div class="cats"><span class="on">Todo</span><span>Alturas</span><span>EPP</span><span>Rescate</span></div>
+      <div class="grid2">
+        <div class="pcard"><div class="img bg1"><span class="tag n">Nuevo</span><svg><use href="#p-helmet"/></svg></div><div class="tx"><p>Casco dieléctrico con barbuquejo</p><b>$68.000<i>+</i></b></div></div>
+        <div class="pcard"><div class="img bg3"><span class="tag u">Usado</span><svg><use href="#p-harness"/></svg></div><div class="tx"><p>Arnés multipropósito 4 argollas</p><b>$145.000<i>+</i></b></div></div>
+        <div class="pcard"><div class="img bg2"><span class="tag n">Nuevo</span><svg><use href="#p-carabiner"/></svg></div><div class="tx"><p>Mosquetón de acero cierre automático</p><b>$32.000<i>+</i></b></div></div>
+        <div class="pcard"><div class="img bg4"><span class="tag u">Usado</span><svg><use href="#p-rope"/></svg></div><div class="tx"><p>Línea de vida vertical 20 m</p><b>$210.000<i>+</i></b></div></div>
+      </div>
+      <div class="cartbar">3 productos · $245.000<span>Pedir</span></div>
+    </div></div>
+  </div>
+
+  <div class="meta">
+    <div>Preparado para<b>CTA Colombia S.A.S.</b></div>
+    <div>Fecha<b>Noviembre 2026</b></div>
+    <div>Inversión desde<b>$250.000 de inicial</b></div>
+  </div>
+  <div class="bottom hazard"></div>
+</section>
+
+<!-- ============ 2. LO QUE ENTENDIMOS ============ -->
+<section class="page">
+  <div class="hazard hazard-thin"></div>
+  <div class="pad">
+    <div class="eyebrow">01 · Lo que entendimos</div>
+    <h2 class="h2">Dos negocios fuertes.<br>Un solo lugar para mostrarlos.</h2>
+    <p class="lead">CTA Colombia forma personas para trabajar seguras. Además, ya tiene un mercado activo de equipos y productos de seguridad, nuevos y de segunda mano, que se mueve dentro de sus grupos y comunidades. La demanda existe; lo que falta es una vitrina ordenada.</p>
+
+    <div class="quote">“El reto no es conseguir compradores: <span>ya los tienen en sus grupos.</span> El reto es que cada producto se vea bien, se encuentre rápido y se pueda comprar en minutos.”</div>
+
+    <div class="vs">
+      <div class="col before">
+        <h3><svg class="ico" style="color:#D64545"><use href="#i-x"/></svg>Hoy</h3>
+        <ul class="list xli">
+          <li><svg><use href="#i-x"/></svg><span>Fotos y precios que se pierden entre mensajes del grupo.</span></li>
+          <li><svg><use href="#i-x"/></svg><span>Las mismas preguntas una y otra vez: <b>“¿precio?”, “¿aún lo tienen?”</b></span></li>
+          <li><svg><use href="#i-x"/></svg><span>Productos de terceros sin control: no se sabe qué está publicado, vendido o pendiente.</span></li>
+          <li><svg><use href="#i-x"/></svg><span>Pedidos y pagos coordinados a mano, uno por uno.</span></li>
+          <li><svg><use href="#i-x"/></svg><span>La parte de formación no tiene un espacio propio que la respalde.</span></li>
+        </ul>
+      </div>
+      <div class="arrow"><svg><use href="#i-arrow"/></svg></div>
+      <div class="col after">
+        <h3><svg class="ico" style="color:var(--yellow)"><use href="#i-check"/></svg>Con la solución</h3>
+        <ul class="list">
+          <li><svg><use href="#i-check"/></svg><span><b>Un enlace</b> para compartir en todos los grupos, siempre actualizado.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Cada producto con <b>fotos, estado, descripción y precio</b>.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>La comunidad <b>publica sus productos</b> y ustedes aprueban qué sale.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>El cliente <b>arma su pedido</b> y paga en línea o lo envía por WhatsApp.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Una <b>página institucional</b> que muestra quiénes son y qué enseñan.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>2 <small>en 1</small></b><span>Catálogo de productos y sitio institucional en una sola solución.</span></div>
+      <div class="stat"><b>&lt;100</b><span>Productos actuales: el tamaño ideal para nuestro plan Catálogo Digital.</span></div>
+      <div class="stat"><b>24/7</b><span>Su vitrina abierta incluso cuando nadie está respondiendo el grupo.</span></div>
+    </div>
+  </div>
+  <div class="pfoot"><b>CTA Colombia</b> · Propuesta Agencia Vectorial</div><div class="pnum">02</div>
+</section>
+
+<!-- ============ 3. LA SOLUCIÓN ============ -->
+<section class="page" style="background:var(--soft)">
+  <div class="hazard hazard-thin"></div>
+  <div class="pad">
+    <div class="eyebrow">02 · La solución</div>
+    <h2 class="h2">No es un catálogo.<br>Es su plataforma de venta.</h2>
+    <p class="lead">Tres piezas que trabajan juntas bajo la marca CTA Colombia: una vitrina que vende, una página que genera confianza y un sistema para que su comunidad alimente el catálogo con orden.</p>
+
+    <div class="eco">
+      <svg class="lines" viewBox="0 0 178 150" preserveAspectRatio="none">
+        <path d="M89 83 L30 22 M89 83 L148 22 M89 83 L89 140" stroke="#C7D0DD" stroke-width=".5" stroke-dasharray="2 1.5" fill="none"/>
+      </svg>
+      <div class="node" style="left:0;top:0">
+        <div class="icobox"><svg><use href="#i-store"/></svg></div>
+        <span class="num">01</span>
+        <h3>Catálogo digital</h3>
+        <p>Tienda en línea con categorías, productos nuevos y de segunda mano, carrito de pedido y pago.</p>
+      </div>
+      <div class="node" style="right:0;top:0">
+        <div class="icobox"><svg><use href="#i-building"/></svg></div>
+        <span class="num">02</span>
+        <h3>Página institucional</h3>
+        <p>Quiénes son, sus cursos y servicios, su respaldo y cómo contactarlos. La cara seria de la marca.</p>
+      </div>
+      <div class="center"><b>CTA<br>Colombia<br>digital</b><span>Una sola marca</span></div>
+      <div class="node" style="left:50%;bottom:0;transform:translateX(-50%);border:2px solid var(--yellow)">
+        <div class="icobox y"><svg><use href="#i-users"/></svg></div>
+        <span class="num">03</span>
+        <h3>Publica tu producto</h3>
+        <p>Personas de su círculo suben productos por un formulario conectado a Google Sheets. Ustedes aprueban.</p>
+      </div>
+    </div>
+
+    <div class="benefits">
+      <div class="benefit"><svg><use href="#i-grid"/></svg><b>Centraliza</b><span>Todo el inventario en un solo lugar, ordenado.</span></div>
+      <div class="benefit"><svg><use href="#i-share"/></svg><b>Comparte</b><span>Un enlace por producto, listo para los grupos.</span></div>
+      <div class="benefit"><svg><use href="#i-users"/></svg><b>Multiplica</b><span>Más productos sin más trabajo para ustedes.</span></div>
+      <div class="benefit"><svg><use href="#i-shield"/></svg><b>Respalda</b><span>Una imagen profesional que da confianza.</span></div>
+    </div>
+  </div>
+  <div class="pfoot"><b>CTA Colombia</b> · Propuesta Agencia Vectorial</div><div class="pnum">03</div>
+</section>
+
+<!-- ============ 4. CATÁLOGO ============ -->
+<section class="page">
+  <div class="hazard hazard-thin"></div>
+  <div class="pad">
+    <div class="eyebrow">03 · Espacio 1 — Catálogo digital</div>
+    <h2 class="h2">Una vitrina tipo tienda,<br>pensada para el celular.</h2>
+    <p class="lead">Sus clientes llegan desde el grupo, ven el producto con todos sus detalles y lo agregan al pedido sin escribir una sola pregunta.</p>
+
+    <div class="split">
+      <div>
+        <div class="phone" style="width:70mm;height:142mm"><div class="screen">
+          <div class="notch"></div>
+          <div class="app-head">
+            <div class="row"><div class="mini-logo"><svg><use href="#shield-logo"/></svg>CTA Market</div>
+              <div class="cart-ico"><svg class="ico" style="width:16px;height:16px;color:#fff"><use href="#i-cart"/></svg><b>2</b></div></div>
+            <div class="search">Buscar en el catálogo…</div>
+          </div>
+          <div class="cats"><span>Todo</span><span class="on">Trabajo en alturas</span><span>EPP</span></div>
+          <div class="grid2">
+            <div class="pcard"><div class="img bg3"><span class="tag n">Nuevo</span><svg><use href="#p-harness"/></svg></div><div class="tx"><p>Arnés de cuerpo completo certificado</p><b>$189.000<i>+</i></b></div></div>
+            <div class="pcard"><div class="img bg2"><span class="tag u">Usado</span><svg><use href="#p-carabiner"/></svg></div><div class="tx"><p>Kit 3 mosquetones · buen estado</p><b>$55.000<i>+</i></b></div></div>
+            <div class="pcard"><div class="img bg4"><span class="tag n">Nuevo</span><svg><use href="#p-rope"/></svg></div><div class="tx"><p>Eslinga de posicionamiento 1,8 m</p><b>$96.000<i>+</i></b></div></div>
+            <div class="pcard"><div class="img bg1"><span class="tag u">Usado</span><svg><use href="#p-helmet"/></svg></div><div class="tx"><p>Casco tipo II con barbuquejo</p><b>$40.000<i>+</i></b></div></div>
+            <div class="pcard"><div class="img bg4"><span class="tag n">Nuevo</span><svg><use href="#p-gloves"/></svg></div><div class="tx"><p>Guantes de nitrilo industrial</p><b>$18.000<i>+</i></b></div></div>
+            <div class="pcard"><div class="img bg2"><span class="tag u">Usado</span><svg><use href="#p-boot"/></svg></div><div class="tx"><p>Botas de seguridad punta de acero</p><b>$85.000<i>+</i></b></div></div>
+          </div>
+          <div class="cartbar">2 productos · $244.000<span>Ver pedido</span></div>
+        </div></div>
+      </div>
+
+      <div>
+        <div class="feat"><div class="n">1</div><div><b>Categorías claras</b><span>Productos organizados por tipo de equipo para que cada cliente encuentre lo suyo en segundos.</span></div></div>
+        <div class="feat"><div class="n">2</div><div><b>Nuevo o segunda mano, a la vista</b><span>Cada producto lleva su etiqueta de estado y una descripción del uso, para vender usado con transparencia.</span></div></div>
+        <div class="feat"><div class="n">3</div><div><b>Ficha completa por producto</b><span>Varias fotos, descripción, especificaciones, precio y disponibilidad.</span></div></div>
+        <div class="feat"><div class="n">4</div><div><b>Enlace propio para cada producto</b><span>Listo para pegar en WhatsApp, Facebook o Telegram con su vista previa.</span></div></div>
+        <div class="feat"><div class="n">5</div><div><b>Carrito y pedido</b><span>El cliente arma su pedido y lo paga o lo envía con un toque.</span></div></div>
+
+        <div class="catlist">
+          <div class="catitem"><svg><use href="#i-shield"/></svg>Trabajo en alturas</div>
+          <div class="catitem"><svg><use href="#i-shield"/></svg>EPP</div>
+          <div class="catitem"><svg><use href="#i-shield"/></svg>Rescate</div>
+          <div class="catitem"><svg><use href="#i-shield"/></svg>Espacios confinados</div>
+          <div class="catitem"><svg><use href="#i-recycle"/></svg>Segunda mano</div>
+          <div class="catitem"><svg><use href="#i-users"/></svg>De la comunidad</div>
+        </div>
+        <p style="font-size:7.5pt;color:#9AA3B2;margin-top:2.5mm">Categorías de ejemplo: se definen con ustedes según su inventario real.</p>
+      </div>
+    </div>
+  </div>
+  <div class="pfoot"><b>CTA Colombia</b> · Propuesta Agencia Vectorial</div><div class="pnum">04</div>
+</section>
+
+<!-- ============ 5. EXPERIENCIA DE COMPRA ============ -->
+<section class="page dark">
+  <div class="hazard hazard-thin"></div>
+  <div class="pad">
+    <div class="eyebrow">04 · Experiencia de compra</div>
+    <h2 class="h2">Del grupo al pedido<br>en cuatro toques.</h2>
+    <p class="lead">Ustedes ya tienen la audiencia. La solución convierte cada mensaje del grupo en una compra concreta, sin cadenas de preguntas ni pedidos perdidos.</p>
+
+    <div class="flow">
+      <div class="step"><div class="circle"><svg><use href="#i-share"/></svg><i>1</i></div><b>Comparten</b><span>Publican el enlace del catálogo o de un producto en sus grupos y comunidades.</span></div>
+      <div class="step"><div class="circle"><svg><use href="#i-eye"/></svg><i>2</i></div><b>Exploran</b><span>El interesado ve fotos, estado, precio y disponibilidad desde su celular.</span></div>
+      <div class="step"><div class="circle"><svg><use href="#i-cart"/></svg><i>3</i></div><b>Arman el pedido</b><span>Agregan uno o varios productos al carrito y revisan el total.</span></div>
+      <div class="step"><div class="circle"><svg><use href="#i-card"/></svg><i>4</i></div><b>Pagan o piden</b><span>Pagan en línea con Wompi o envían el pedido listo por WhatsApp.</span></div>
+    </div>
+
+    <div class="paybox">
+      <div class="pay hl">
+        <div class="icobox"><svg><use href="#i-card"/></svg></div>
+        <h3>Opción A · Pago en línea con Wompi</h3>
+        <p>Integración con la pasarela de pagos Wompi para que el cliente pague al instante y ustedes reciban la confirmación del pedido.</p>
+        <div class="methods"><span>Tarjetas</span><span>PSE</span><span>Nequi</span><span>Bancolombia</span></div>
+      </div>
+      <div class="pay">
+        <div class="icobox y"><svg><use href="#i-wa"/></svg></div>
+        <h3>Opción B · Pedido por WhatsApp</h3>
+        <p>El carrito genera un mensaje con el detalle completo del pedido. Ustedes confirman, acuerdan el pago y despachan.</p>
+        <div class="methods"><span>Sin comisiones</span><span>Transferencia</span><span>Contraentrega</span></div>
+      </div>
+    </div>
+
+    <div class="wa-msg">
+      <div>
+        <div class="eyebrow" style="color:var(--yellow)">Así le llega el pedido</div>
+        <p class="lead" style="margin-top:3mm;font-size:10pt">Nada de “¿cuál era el que te interesaba?”. Cada pedido llega completo, con productos, cantidades y total. Ambas opciones pueden convivir: el cliente elige.</p>
+      </div>
+      <div class="bubble">
+        <b>🛒 Nuevo pedido · CTA Market</b><br>
+        1 × Arnés cuerpo completo (Nuevo) — $189.000<br>
+        1 × Kit 3 mosquetones (Usado) — $55.000<br>
+        <b>Total: $244.000</b><br>
+        Nombre: Andrés P. · Ciudad: Medellín
+        <small>10:42 a. m. ✓✓</small>
+      </div>
+    </div>
+  </div>
+  <div class="pfoot"><b>CTA Colombia</b> · Propuesta Agencia Vectorial</div><div class="pnum">05</div>
+</section>
+
+<!-- ============ 6. PÁGINA INSTITUCIONAL ============ -->
+<section class="page">
+  <div class="hazard hazard-thin"></div>
+  <div class="pad">
+    <div class="eyebrow">05 · Espacio 2 — Página institucional</div>
+    <h2 class="h2">La cara profesional<br>de CTA Colombia.</h2>
+    <p class="lead">Quien compra un equipo de seguridad quiere saber a quién se lo compra. Esta página respalda el catálogo y además presenta su actividad principal: la formación en seguridad industrial.</p>
+
+    <div class="browser">
+      <div class="bar"><i></i><i></i><i></i><span>ctacolombia.com</span></div>
+      <div class="site-nav">
+        <div class="logo-cta" style="gap:6px"><svg style="width:16px;height:18px"><use href="#shield-logo"/></svg><span style="font:900 8pt Archivo">CTA COLOMBIA</span></div>
+        <div class="links"><span>Nosotros</span><span>Formación</span><span>Servicios</span><span>Contacto</span><b>Catálogo</b></div>
+      </div>
+      <div class="site-hero">
+        <svg class="climber"><use href="#p-climber"/></svg>
+        <h4>Formación que <em>protege vidas</em> en el trabajo.</h4>
+        <p>Centro de formación en seguridad industrial. Capacitamos a personas y empresas para trabajar de forma segura, con equipos y prácticas que cumplen la norma.</p>
+        <div class="ctas"><span class="btn y">Ver programas</span><span class="btn wa"><svg class="ico"><use href="#i-wa"/></svg>Escríbenos</span></div>
+      </div>
+      <div class="site-body">
+        <div class="svc"><svg><use href="#i-cap"/></svg><b>Formación</b><span>Cursos y certificaciones en seguridad industrial.</span></div>
+        <div class="svc"><svg><use href="#i-building"/></svg><b>Empresas</b><span>Programas para equipos de trabajo y contratistas.</span></div>
+        <div class="svc"><svg><use href="#i-store"/></svg><b>Equipos</b><span>Productos nuevos y de segunda mano.</span></div>
+        <div class="svc"><svg><use href="#i-award"/></svg><b>Respaldo</b><span>Instructores, instalaciones y experiencia.</span></div>
+      </div>
+    </div>
+
+    <div class="sections">
+      <div class="sec"><b><svg><use href="#i-building"/></svg>Quiénes somos</b><span>Historia, misión y el equipo detrás de CTA Colombia.</span></div>
+      <div class="sec"><b><svg><use href="#i-cap"/></svg>Formación y servicios</b><span>Cada programa con su descripción, duración y cómo inscribirse.</span></div>
+      <div class="sec"><b><svg><use href="#i-award"/></svg>Respaldo</b><span>Certificaciones, instalaciones, galería y testimonios.</span></div>
+      <div class="sec"><b><svg><use href="#i-store"/></svg>Acceso al catálogo</b><span>Puente directo a la tienda desde cualquier sección.</span></div>
+      <div class="sec"><b><svg><use href="#i-pin"/></svg>Contacto y ubicación</b><span>WhatsApp, mapa, horarios y redes sociales.</span></div>
+      <div class="sec"><b><svg><use href="#i-globe"/></svg>Visible en Google</b><span>Estructura optimizada para que los encuentren al buscar.</span></div>
+    </div>
+  </div>
+  <div class="pfoot"><b>CTA Colombia</b> · Propuesta Agencia Vectorial</div><div class="pnum">06</div>
+</section>
+
+<!-- ============ 7. COMUNIDAD ============ -->
+<section class="page" style="background:var(--soft)">
+  <div class="hazard hazard-thin"></div>
+  <div class="addon-badge">Funcionalidad adicional</div>
+  <div class="pad">
+    <div class="eyebrow">06 · Publica tu producto</div>
+    <h2 class="h2">Su comunidad alimenta<br>el catálogo. Ustedes deciden.</h2>
+    <p class="lead">Personas de su círculo de confianza pueden publicar sus propios equipos nuevos o usados. Todo queda registrado en Google Sheets y nada sale al catálogo sin la aprobación de CTA Colombia.</p>
+
+    <div class="pipeline">
+      <div class="pipe"><div class="icobox"><svg><use href="#i-form"/></svg></div><b>1. Publica</b><span>El miembro llena un formulario: fotos, descripción, estado, precio y contacto.</span></div>
+      <div class="pipe-arrow"><svg><use href="#i-arrow"/></svg></div>
+      <div class="pipe"><div class="icobox"><svg><use href="#i-sheet"/></svg></div><b>2. Se registra</b><span>La información llega organizada a una hoja de Google Sheets.</span></div>
+      <div class="pipe-arrow"><svg><use href="#i-arrow"/></svg></div>
+      <div class="pipe"><div class="icobox y"><svg><use href="#i-shield"/></svg></div><b>3. Ustedes aprueban</b><span>Revisan, ajustan si hace falta y cambian el estado a “Aprobado”.</span></div>
+      <div class="pipe-arrow"><svg><use href="#i-arrow"/></svg></div>
+      <div class="pipe"><div class="icobox"><svg><use href="#i-store"/></svg></div><b>4. Sale al catálogo</b><span>El producto aparece en la tienda con la etiqueta “De la comunidad”.</span></div>
+    </div>
+
+    <div class="sheet">
+      <div class="sh-top"><svg><use href="#i-sheet"/></svg>Control de publicaciones — CTA Colombia</div>
+      <table>
+        <tr><th>Fecha</th><th>Publicado por</th><th>Producto</th><th>Estado</th><th>Precio</th><th>Publicación</th></tr>
+        <tr><td>04/11</td><td>Carlos M.</td><td>Arnés dieléctrico</td><td><span class="chip used" style="font-size:6pt;padding:.6mm 2mm">Usado</span></td><td>$120.000</td><td><span class="st p">Pendiente</span></td></tr>
+        <tr><td>03/11</td><td>Laura G.</td><td>Trípode de rescate</td><td><span class="chip new" style="font-size:6pt;padding:.6mm 2mm">Nuevo</span></td><td>$1.450.000</td><td><span class="st a">Aprobado</span></td></tr>
+        <tr><td>02/11</td><td>Jhon R.</td><td>Detector de gases 4 en 1</td><td><span class="chip used" style="font-size:6pt;padding:.6mm 2mm">Usado</span></td><td>$890.000</td><td><span class="st v">Vendido</span></td></tr>
+        <tr><td>01/11</td><td>Ana T.</td><td>Casco sin fotos claras</td><td><span class="chip used" style="font-size:6pt;padding:.6mm 2mm">Usado</span></td><td>$25.000</td><td><span class="st r">Rechazado</span></td></tr>
+      </table>
+    </div>
+
+    <div class="control">
+      <div class="card"><div class="icobox"><svg><use href="#i-shield"/></svg></div><h3>Control total</h3><p>Ustedes deciden qué se publica, qué se edita y qué se retira. La calidad del catálogo se mantiene.</p></div>
+      <div class="card"><div class="icobox"><svg><use href="#i-chart"/></svg></div><h3>Todo registrado</h3><p>Quién publicó, cuándo, a qué precio y en qué estado está. Un historial claro de cada producto.</p></div>
+      <div class="card"><div class="icobox y"><svg><use href="#i-users"/></svg></div><h3>Más inventario</h3><p>El catálogo crece con productos de la comunidad sin que tengan que comprarlos o fotografiarlos.</p></div>
+    </div>
+  </div>
+  <div class="pfoot"><b>CTA Colombia</b> · Propuesta Agencia Vectorial</div><div class="pnum">07</div>
+</section>
+
+<!-- ============ 8. QUÉ INCLUYE ============ -->
+<section class="page">
+  <div class="hazard hazard-thin"></div>
+  <div class="pad">
+    <div class="eyebrow">07 · Alcance</div>
+    <h2 class="h2">Todo lo que incluye.</h2>
+    <p class="lead">Un proyecto hecho a la medida, con la identidad de CTA Colombia, entregado y funcionando.</p>
+
+    <div class="deliv">
+      <div class="card">
+        <h3><span class="icobox" style="width:9mm;height:9mm"><svg style="width:5mm;height:5mm"><use href="#i-store"/></svg></span>Catálogo digital</h3>
+        <ul class="list">
+          <li><svg><use href="#i-check"/></svg><span>Diseño con la identidad visual de CTA Colombia.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Hasta <b>100 productos</b> organizados por categorías.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Etiquetas de <b>Nuevo / Segunda mano</b> y disponibilidad.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Ficha por producto con fotos, descripción y precio.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Carrito, pedido por WhatsApp e integración con <b>Wompi</b>.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Enlaces individuales para compartir en grupos.</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><span class="icobox" style="width:9mm;height:9mm"><svg style="width:5mm;height:5mm"><use href="#i-building"/></svg></span>Página institucional</h3>
+        <ul class="list">
+          <li><svg><use href="#i-check"/></svg><span>Inicio, quiénes somos y formación / servicios.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Sección de respaldo: certificaciones y galería.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Contacto con WhatsApp, mapa y redes sociales.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Diseño adaptable a celular, tableta y computador.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Estructura básica para aparecer en Google.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Conexión directa con el catálogo.</span></li>
+        </ul>
+      </div>
+      <div class="card" style="border:2px solid var(--yellow)">
+        <h3><span class="icobox y" style="width:9mm;height:9mm"><svg style="width:5mm;height:5mm"><use href="#i-users"/></svg></span>Publica tu producto</h3>
+        <ul class="list">
+          <li><svg><use href="#i-check"/></svg><span>Formulario de publicación para la comunidad.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Registro automático en <b>Google Sheets</b>.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Flujo de aprobación antes de publicar.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Estados: pendiente, aprobado, vendido, rechazado.</span></li>
+        </ul>
+      </div>
+      <div class="card" style="background:var(--soft);border-color:var(--soft)">
+        <h3><span class="icobox" style="width:9mm;height:9mm"><svg style="width:5mm;height:5mm"><use href="#i-star"/></svg></span>Acompañamiento</h3>
+        <ul class="list">
+          <li><svg><use href="#i-check"/></svg><span>Carga inicial del catálogo con su información.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Capacitación para administrar productos y pedidos.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Soporte y ajustes después de la entrega.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>La plataforma queda 100 % a nombre de CTA Colombia.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="eyebrow" style="margin-top:7mm">Cómo trabajamos</div>
+    <div class="timeline">
+      <div class="tl"><div class="bar"></div><small>Paso 1</small><b>Arranque</b><span>Reunión, logo, fotos, inventario y textos.</span></div>
+      <div class="tl"><div class="bar"></div><small>Paso 2</small><b>Diseño</b><span>Propuesta visual del catálogo y la página para su aprobación.</span></div>
+      <div class="tl"><div class="bar"></div><small>Paso 3</small><b>Desarrollo</b><span>Construcción, Wompi, formulario y Google Sheets.</span></div>
+      <div class="tl"><div class="bar"></div><small>Paso 4</small><b>Lanzamiento</b><span>Pruebas, capacitación y enlace listo para sus grupos.</span></div>
+    </div>
+  </div>
+  <div class="pfoot"><b>CTA Colombia</b> · Propuesta Agencia Vectorial</div><div class="pnum">08</div>
+</section>
+
+<!-- ============ 9. INVERSIÓN ============ -->
+<section class="page dark">
+  <div class="hazard hazard-thin"></div>
+  <div class="pad">
+    <div class="eyebrow">08 · Inversión</div>
+    <h2 class="h2">Una inversión clara,<br>con cuotas que caben.</h2>
+    <p class="lead">Un solo proyecto con dos componentes. Sin costos ocultos: lo que ve es lo que paga.</p>
+
+    <div class="inv">
+      <div class="inv-row">
+        <div><h3>Catálogo digital + página institucional</h3><p>Plan Catálogo Digital (hasta 100 productos): tienda por categorías, carrito, pedido por WhatsApp, integración con Wompi y página institucional.</p></div>
+        <div class="amt"><small>COP</small>$990.000</div>
+      </div>
+      <div class="inv-row">
+        <div><h3>Funcionalidad “Publica tu producto”</h3><p>Formulario para la comunidad conectado a Google Sheets, con flujo de aprobación y control de publicaciones.</p></div>
+        <div class="amt"><small>COP</small>$250.000</div>
+      </div>
+      <div class="inv-total"><span>Inversión total</span><b>$1.240.000</b></div>
+    </div>
+
+    <div class="finance">
+      <div class="fin">
+        <span class="ribbon">Recomendado</span>
+        <div class="lbl">Financiado a 12 meses</div>
+        <h3>Empiece hoy con la inicial</h3>
+        <div class="big"><b>$250.000</b><span>de inicial</span></div>
+        <div class="big" style="margin-top:1mm"><b style="font-size:18pt">+ 12 × $82.500</b><span>al mes</span></div>
+        <div class="det">
+          <div><span>Cuota inicial</span><b>$250.000</b></div>
+          <div><span>Saldo financiado</span><b>$990.000</b></div>
+          <div><span>Plazo</span><b>12 meses</b></div>
+          <div><span>Cuota mensual</span><b>$82.500</b></div>
+        </div>
+        <div class="months">
+          <i class="first">INI</i><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i><i>9</i><i>10</i><i>11</i><i>12</i>
+        </div>
+      </div>
+      <div class="fin alt">
+        <div class="lbl">Pago de contado</div>
+        <h3>Un solo pago</h3>
+        <div class="big"><b>$1.240.000</b></div>
+        <p style="font-size:9pt;color:#AEB8C8;line-height:1.5;margin-top:3mm">Pago único del proyecto completo, dividido en dos momentos:</p>
+        <div class="det">
+          <div><span>50 % al iniciar</span><b>$620.000</b></div>
+          <div><span>50 % al entregar</span><b>$620.000</b></div>
+        </div>
+        <p style="font-size:8.5pt;color:#AEB8C8;line-height:1.5;margin-top:5mm">Ideal si prefieren cerrar el proyecto sin cuotas pendientes.</p>
+      </div>
+    </div>
+
+    <div class="notes">
+      <p><svg><use href="#i-check"/></svg>Las comisiones por transacción de Wompi las cobra directamente la pasarela.</p>
+      <p><svg><use href="#i-check"/></svg>Valores en pesos colombianos (COP).</p>
+      <p><svg><use href="#i-check"/></svg>Al terminar de pagar, la plataforma es 100 % de CTA Colombia.</p>
+      <p><svg><use href="#i-check"/></svg>Propuesta válida por 15 días calendario.</p>
+    </div>
+  </div>
+  <div class="pfoot"><b>CTA Colombia</b> · Propuesta Agencia Vectorial</div><div class="pnum">09</div>
+</section>
+
+<!-- ============ 10. CIERRE ============ -->
+<section class="page">
+  <div class="hazard hazard-thin"></div>
+  <div class="pad">
+    <div class="eyebrow">09 · Por qué Agencia Vectorial</div>
+    <h2 class="h2">Construimos la parte digital<br>de negocios reales.</h2>
+    <p class="lead">Somos una agencia de páginas web en Medellín. Hacemos páginas, tiendas online, catálogos digitales y apps a la medida para negocios en toda Colombia.</p>
+
+    <div class="why">
+      <div class="w"><b>6</b><span>años construyendo soluciones digitales.</span></div>
+      <div class="w"><b>+50</b><span>páginas y catálogos entregados.</span></div>
+      <div class="w"><b>+100</b><span>negocios acompañados en Colombia.</span></div>
+      <div class="w"><b>1:1</b><span>Hecho a la medida, no plantillas.</span></div>
+    </div>
+
+    <div class="eyebrow" style="margin-top:11mm">Siguientes pasos</div>
+    <div class="nextsteps">
+      <div class="ns"><i>01</i><div><b>Aprobación de la propuesta</b><span>Nos confirman la modalidad de pago: financiada o de contado.</span></div></div>
+      <div class="ns"><i>02</i><div><b>Cuota inicial y reunión de arranque</b><span>Recibimos logo, fotos, lista de productos y la información de la empresa.</span></div></div>
+      <div class="ns"><i>03</i><div><b>Manos a la obra</b><span>Diseñamos, construimos y les entregamos su catálogo listo para compartir.</span></div></div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <div class="agency">
+      <div class="av-logo"><i><svg><use href="#i-vector"/></svg></i>Agencia Vectorial</div>
+      <small>Páginas web · Catálogos · Apps</small>
+    </div>
+    <h2>¿Listos para que su comunidad <em>compre más fácil</em>?</h2>
+    <div class="contact">
+      <div><svg><use href="#i-wa"/></svg><span><small>WhatsApp</small>324 729 0699</span></div>
+      <div><svg><use href="#i-globe"/></svg><span><small>Web</small>agenciavectorial.com</span></div>
+      <div><svg><use href="#i-pin"/></svg><span><small>Desde</small>Medellín, Colombia</span></div>
+    </div>
+    <div class="valid">Propuesta válida por 15 días · Noviembre 2026</div>
+    <div class="hz hazard"></div>
+  </div>
+</section>
+
+</body>
+</html>
