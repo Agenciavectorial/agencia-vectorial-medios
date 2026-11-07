@@ -16,6 +16,6 @@ const path = require('path');
     return { id: e.id, content: Math.round(max + 24), h: Math.round(e.getBoundingClientRect().height) };
   }));
   over.forEach(o => console.log((o.content > o.h ? 'OVERFLOW ' : 'ok       ') + o.id.padEnd(18) + o.content + '/' + o.h));
-  await page.pdf({ path: path.join(root, 'Propuesta-Eventos-Antioquia-Agencia-Vectorial.pdf'), width: '430px', height: '932px', printBackground: true, preferCSSPageSize: true });
+  await page.pdf({ path: path.join(root, 'Propuesta Eventos Antioquia Agencia Vectorial.pdf'), width: '430px', height: '932px', printBackground: true, preferCSSPageSize: true });
   await browser.close();
 })();

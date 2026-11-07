@@ -1,7 +1,7 @@
 # Propuesta · Ecosistema digital Eventos Campestres Antioquia
 
 - `index.html`: propuesta mobile-first (16 páginas, una idea por página).
-- `Propuesta-Eventos-Antioquia-Agencia-Vectorial.pdf`: PDF vertical en formato celular (430×932), 16 páginas, ~2 MB.
+- `Propuesta Eventos Antioquia Agencia Vectorial.pdf`: PDF vertical en formato celular (430×932), 16 páginas, ~2 MB.
 - `fotos/`: fotos y piezas reales tomadas de @eventoscant, @eventosverum, @luismiguelplanner y @knonproducciones (vía Apify, 7 nov 2026).
 
 ## Datos usados (Instagram, 7 nov 2026)
