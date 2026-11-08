@@ -12,7 +12,7 @@
 | 4 feb 2027 | laberberia2006.ink | La Barbería 2006 | Spaceship | laberberia2006@gmail.com | |
 | 20 mar 2027 ✅ | barberiathefedex.com | Barbería The Fedex | Spaceship | creceyamkt@gmail.com | |
 | 11 jun 2027 ✅ | vetmasclinicaveterinaria.com | Vetmas Clínica Veterinaria | Spaceship | chrisxom220021@gmail.com | |
-| 22 jun 2027 | _(falta el dominio)_ | Diana Muñoz | Spaceship | agenciavectorialmarketing@gmail.com | |
+| 22 jun 2027 ✅ | dianamunozestetica.com | Diana Muñoz Estética | Spaceship | agenciavectorialmarketing@gmail.com | |
 | 23 jun 2027 ✅ | pupisbarber.com | Pupi's Barbershop | Spaceship | julyjoyas18k@gmail.com | |
 | 2 jul 2027 ✅ | elbuensaborfiambreria.com | El Buen Sabor | Spaceship | propulsasocial@gmail.com | |
 | 3 jul 2027 ✅ | amelianailspa.com | Amelian Nail Spa | Spaceship | vectorialmarketing@gmail.com | |
@@ -43,7 +43,6 @@
 ## Pendientes
 
 - [ ] **agenciavectorial.com**: renovar en IONOS hoy (vence 9 nov 2026, 2:45 p. m. hora Colombia) y luego transferir a Cloudflare.
-- [ ] Anotar el dominio de Diana Muñoz.
 - [ ] Anotar el dominio y la fecha de vencimiento de Bi You.
 - [ ] Confirmar la extensión del dominio de Marbar.
 - [ ] Escoger y comprar el dominio de Eros Shop.
