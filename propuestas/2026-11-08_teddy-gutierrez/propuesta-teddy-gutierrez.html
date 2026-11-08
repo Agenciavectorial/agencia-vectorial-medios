@@ -14,7 +14,6 @@
 @font-face{font-family:Inter;font-weight:500;src:url(assets/fonts/inter-500.woff2) format("woff2")}
 @font-face{font-family:Inter;font-weight:600;src:url(assets/fonts/inter-600.woff2) format("woff2")}
 @font-face{font-family:Inter;font-weight:700;src:url(assets/fonts/inter-700.woff2) format("woff2")}
-@font-face{font-family:Montserrat;font-weight:500;src:url(assets/fonts/montserrat-500.woff2) format("woff2")}
 @font-face{font-family:Montserrat;font-weight:600;src:url(assets/fonts/montserrat-600.woff2) format("woff2")}
 @font-face{font-family:Montserrat;font-weight:700;src:url(assets/fonts/montserrat-700.woff2) format("woff2")}
 @font-face{font-family:Montserrat;font-weight:800;src:url(assets/fonts/montserrat-800.woff2) format("woff2")}
@@ -23,494 +22,350 @@
 @font-face{font-family:Fraunces;font-weight:600;font-style:italic;src:url(assets/fonts/fraunces-600-italic.woff2) format("woff2")}
 
 :root{
-  --ink:#0F1020;--ink-2:#1A1B2E;--ink-3:#26283F;
-  --muted:#5E6072;--line:#E6E6EE;--soft:#F5F5F8;
-  --gold:#E8B04B;
-  /* P1 – línea financiera (inspiración Solventa) */
-  --p1:#6B2378;--p1-d:#3B1E4F;--p1-l:#F3E9F5;--p1-g:#3CB87A;
-  /* P2 – plataforma de pedidos */
-  --p2:#FF4A1C;--p2-d:#16161A;--p2-l:#FFF0EA;--p2-y:#FFC93C;
-  /* P3 – restaurante autosostenible */
-  --p3:#2F5D3A;--p3-d:#1F3A26;--p3-l:#F4EFE3;--p3-e:#C7834A;--p3-b:#3D8FA8;
-  --wa:#25D366;
+  --ink:#0F1020;--ink2:#1B1C30;--muted:#5E6072;--line:#E4E4EC;--soft:#F4F4F8;--gold:#E8B04B;--ok:#19A463;--wa:#25D366;
+  --p1:#6B2378;--p1d:#3B1E4F;--p1l:#F4EAF6;--p1g:#3CB87A;
+  --p2:#FF4A1C;--p2d:#141418;--p2c:#1F1F25;--p2l:#FFF0EA;--p2y:#FFC93C;
+  --p3:#2F5D3A;--p3d:#1F3A26;--p3l:#F4EFE3;--p3e:#C7834A;--p3b:#3D8FA8;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{background:#2A2B33}
+html,body{background:#24252E}
 body{font-family:Inter,system-ui,sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
-@page{size:A4;margin:0}
-.page{width:210mm;height:297mm;margin:10mm auto;background:#fff;position:relative;overflow:hidden;page-break-after:always;break-after:page}
+@page{size:540px 960px;margin:0}
+.page{width:540px;height:960px;margin:24px auto;background:#fff;position:relative;overflow:hidden;break-after:page;page-break-after:always}
 @media print{html,body{background:#fff}.page{margin:0}}
-h1,h2,h3,h4{font-family:Archivo,Inter,sans-serif;letter-spacing:-.02em}
-.pad{padding:16mm}
-.eyebrow{font:700 8.5pt Archivo,sans-serif;letter-spacing:.18em;text-transform:uppercase;display:flex;align-items:center;gap:8px;color:var(--muted)}
-.eyebrow::before{content:"";width:22px;height:3px;background:currentColor;display:inline-block}
-.h2{font-size:28pt;font-weight:900;line-height:1.02;margin:6px 0 10px}
-.lead{font-size:11pt;line-height:1.55;color:var(--muted);max-width:155mm}
-.pfoot{position:absolute;bottom:9mm;left:16mm;font:600 8pt Archivo;color:#9A9BAA;letter-spacing:.1em}
-.pfoot b{color:var(--ink)}
-.pnum{position:absolute;bottom:9mm;right:16mm;font:600 8pt Archivo;color:#9A9BAA;letter-spacing:.1em}
-.dark .pfoot b,.p2bg .pfoot b{color:#fff}
-.list{list-style:none;display:grid;gap:2.4mm}
-.list li{display:flex;gap:2.6mm;font-size:9.6pt;line-height:1.45;color:#33354A}
-.list li svg{flex:none;width:4.4mm;height:4.4mm;margin-top:.4mm}
-.list li b{color:var(--ink)}
-.ico{width:1em;height:1em;display:inline-block;vertical-align:middle}
-.tgmark{display:inline-flex;align-items:center;gap:3mm}
-.tgmark i{width:11mm;height:11mm;border-radius:3mm;background:linear-gradient(135deg,var(--gold),#C98A22);display:flex;align-items:center;justify-content:center;font:900 13pt Archivo;font-style:normal;color:var(--ink);letter-spacing:-.04em}
-.tgmark span{font:800 12pt Archivo;letter-spacing:-.01em;line-height:1}
-.tgmark span small{display:block;font:600 6.5pt Archivo;letter-spacing:.2em;text-transform:uppercase;color:#9A9BAA;margin-top:1.2mm}
+.in{padding:84px 40px 0}
+.in.top{padding-top:56px}
+.kick{font:800 13px Archivo;letter-spacing:.16em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.kick::before{content:"";width:26px;height:4px;border-radius:2px;background:currentColor}
+.h{font:900 44px/1.02 Archivo;letter-spacing:-.025em;margin:12px 0 16px}
+.lead{font-size:18.5px;line-height:1.5;color:var(--muted)}
+.foot{position:absolute;left:40px;right:40px;bottom:24px;display:flex;justify-content:space-between;font:600 12px Archivo;color:#9A9BAA;letter-spacing:.06em}
+.foot b{color:inherit;font-weight:800}
+.phead{position:absolute;top:0;left:0;right:0;height:42px;display:flex;align-items:center;justify-content:space-between;gap:12px;white-space:nowrap;padding:0 40px;font:800 11px Archivo;letter-spacing:.1em;text-transform:uppercase;color:#fff;z-index:5}
+.phead i{font-style:normal;opacity:.75}
+.ph1{background:var(--p1)}.ph2{background:var(--p2)}.ph3{background:var(--p3)}
+.chk{list-style:none;display:grid;gap:12px}
+.chk li{display:grid;grid-template-columns:24px 1fr;gap:12px;font-size:17px;line-height:1.4;color:#2E3044}
+.chk li svg{width:24px;height:24px}
+.chk li b{color:var(--ink)}
+svg.i{width:1em;height:1em}
+.av{display:inline-flex;align-items:center;gap:10px;font:900 18px Archivo;letter-spacing:-.01em}
+.av i{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,#9B6BFF,#6A2FE0);display:inline-flex;align-items:center;justify-content:center}
+.av i svg{width:20px;height:20px;color:#fff}
 
-/* ===== mockups ===== */
-.phone{width:62mm;height:128mm;background:#0B0B10;border-radius:9mm;padding:2.6mm;outline:1px solid #2A2A35}
-.screen{width:100%;height:100%;background:#fff;border-radius:6.8mm;overflow:hidden;position:relative}
-.notch{position:absolute;top:2mm;left:50%;transform:translateX(-50%);width:17mm;height:4mm;background:#0B0B10;border-radius:99px;z-index:5}
-.browser{border-radius:4mm;overflow:hidden;border:1px solid #D9D9E3;background:#fff}
-.browser .bar{background:#ECECF2;padding:2.3mm 3.5mm;display:flex;align-items:center;gap:2mm}
-.browser .bar i{width:2.5mm;height:2.5mm;border-radius:50%;background:#FF5F57}
-.browser .bar i:nth-child(2){background:#FEBC2E}.browser .bar i:nth-child(3){background:#28C840}
-.browser .bar span{flex:1;margin-left:3mm;background:#fff;border-radius:1.5mm;padding:1.1mm 3mm;font-size:6.8pt;color:var(--muted)}
+/* phone mock */
+.phone{width:230px;height:470px;background:#0B0B10;border-radius:38px;padding:10px;position:relative}
+.screen{width:100%;height:100%;border-radius:29px;overflow:hidden;position:relative;background:#fff}
+.notch{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:70px;height:18px;border-radius:99px;background:#0B0B10;z-index:3}
 
 /* ===== COVER ===== */
 .cover{background:var(--ink);color:#fff}
-.cover .mesh{position:absolute;inset:0;background:
-  radial-gradient(80mm 80mm at 85% 18%,rgba(107,35,120,.55),transparent 70%),
-  radial-gradient(70mm 70mm at 15% 70%,rgba(255,74,28,.28),transparent 70%),
-  radial-gradient(80mm 80mm at 90% 85%,rgba(47,93,58,.55),transparent 70%)}
-.cover .top{position:absolute;top:16mm;left:16mm;right:16mm;display:flex;justify-content:space-between;align-items:center}
-.cover .forby{font:600 7.5pt Archivo;letter-spacing:.16em;text-transform:uppercase;color:#9A9BAA;text-align:right;line-height:1.6}
-.cover .forby b{color:#fff;font-size:10pt;letter-spacing:.02em;text-transform:none}
-.cover h1{position:absolute;left:16mm;top:52mm;width:170mm;font-size:44pt;font-weight:900;line-height:.98}
-.cover h1 em{font-style:normal;background:linear-gradient(90deg,#C77BD6,#FF8A5C 50%,#7CC48C);-webkit-background-clip:text;background-clip:text;color:transparent}
-.cover .sub{position:absolute;left:16mm;top:100mm;width:150mm;font-size:12pt;line-height:1.55;color:#C9CAD6}
-.cover .tiles{position:absolute;left:16mm;right:16mm;top:138mm;display:grid;grid-template-columns:repeat(3,1fr);gap:4mm}
-.tile{border-radius:5mm;padding:5mm;height:104mm;position:relative;overflow:hidden;display:flex;flex-direction:column}
-.tile .n{font:900 30pt Archivo;opacity:.25;line-height:1}
-.tile h3{font-size:13.5pt;font-weight:800;line-height:1.1;margin-top:auto}
-.tile p{font-size:8.6pt;line-height:1.45;margin-top:2mm;opacity:.85}
-.tile .pr{margin-top:3.5mm;font:800 10pt Archivo;display:flex;justify-content:space-between;border-top:1px solid rgba(255,255,255,.25);padding-top:3mm}
-.tile.t1{background:linear-gradient(160deg,#8A2E9A,var(--p1-d))}
-.tile.t2{background:linear-gradient(160deg,#FF6A3D,#B62A0B)}
-.tile.t3{background:linear-gradient(160deg,#4C8A57,var(--p3-d))}
-.tile svg.art{position:absolute;right:-4mm;top:-4mm;width:34mm;height:34mm;opacity:.22}
-.cover .meta{position:absolute;left:16mm;right:16mm;bottom:16mm;display:flex;justify-content:space-between;border-top:1px solid #2C2E46;padding-top:5mm}
-.cover .meta div{font:600 7.5pt Archivo;letter-spacing:.14em;text-transform:uppercase;color:#8A8BA0}
-.cover .meta b{display:block;color:#fff;font-size:10.5pt;letter-spacing:.01em;text-transform:none;margin-top:1.2mm}
+.cover .glow{position:absolute;inset:0;background:radial-gradient(300px 300px at 90% 8%,rgba(107,35,120,.6),transparent 70%),radial-gradient(280px 280px at 0% 62%,rgba(255,74,28,.35),transparent 70%),radial-gradient(300px 300px at 100% 100%,rgba(47,93,58,.6),transparent 70%)}
+.cover .in{position:relative;padding-top:56px}
+.cover .for{margin-top:70px;font:800 14px Archivo;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.cover .for b{display:block;color:#fff;font-size:30px;letter-spacing:-.01em;text-transform:none;margin-top:6px}
+.cover h1{font:900 58px/.98 Archivo;letter-spacing:-.03em;margin-top:34px}
+.cover h1 em{font-style:normal;background:linear-gradient(90deg,#D08BDF,#FF8A5C 55%,#7CC48C);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cover .sub{font-size:19px;line-height:1.5;color:#C9CAD6;margin-top:22px}
+.cover .three{display:grid;gap:12px;margin-top:34px}
+.cover .three div{display:grid;grid-template-columns:46px 1fr auto;align-items:center;gap:14px;border-radius:16px;padding:14px 18px;font:800 18px Archivo}
+.cover .three div i{font-style:normal;font:900 26px Archivo;opacity:.55}
+.cover .three div span{font:700 15px Archivo;opacity:.9}
+.c1{background:var(--p1)}.c2{background:var(--p2)}.c3{background:var(--p3)}
+.cover .bot{position:absolute;left:40px;right:40px;bottom:30px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #2C2E46;padding-top:18px;font:600 14px Archivo;color:#9A9BAA}
 
-/* ===== RESUMEN ===== */
-.rtable{margin-top:9mm;display:grid;gap:5mm}
-.rrow{display:grid;grid-template-columns:9mm 1fr 50mm;gap:5mm;align-items:center;border:1px solid var(--line);border-radius:4.5mm;padding:5mm 5.5mm;position:relative;overflow:hidden}
-.rrow::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2mm}
-.rrow.r1::before{background:var(--p1)}.rrow.r2::before{background:var(--p2)}.rrow.r3::before{background:var(--p3)}
-.rrow .num{font:900 20pt Archivo;color:#D5D6E0}
-.rrow h3{font-size:13pt;font-weight:800}
-.rrow h3 small{font:700 7.2pt Archivo;letter-spacing:.12em;text-transform:uppercase;padding:1mm 2.4mm;border-radius:99px;margin-left:2mm;vertical-align:middle}
-.r1 h3 small{background:var(--p1-l);color:var(--p1)}.r2 h3 small{background:var(--p2-l);color:#C2360F}.r3 h3 small{background:var(--p3-l);color:var(--p3)}
-.rrow p{font-size:9pt;color:var(--muted);line-height:1.45;margin-top:1.2mm}
-.rrow .tags{display:flex;gap:1.5mm;flex-wrap:wrap;margin-top:2.2mm}
-.rrow .tags span{font:600 7.2pt Inter;background:var(--soft);border-radius:1.5mm;padding:.9mm 2mm;color:#45475C}
-.rrow .price{text-align:right}
-.rrow .price b{display:block;font:900 17pt Archivo;letter-spacing:-.02em}
-.rrow .price span{display:block;font-size:7.8pt;color:var(--muted);line-height:1.45}
-.rrow .price i{font-style:normal;display:inline-block;margin-top:1.2mm;font:700 7.5pt Archivo;background:var(--ink);color:#fff;border-radius:99px;padding:.8mm 2.4mm}
-.promise{margin-top:9mm;display:grid;grid-template-columns:repeat(4,1fr);gap:4mm}
-.promise div{background:var(--soft);border-radius:3.5mm;padding:4.5mm}
-.promise svg{width:6mm;height:6mm;color:var(--ink)}
-.promise b{display:block;font:800 10.5pt Archivo;margin:2mm 0 .8mm}
-.promise span{font-size:8.2pt;color:var(--muted);line-height:1.4;display:block}
+/* ===== INDEX ===== */
+.idx{display:grid;gap:12px;margin-top:20px}
+.ix{border-radius:22px;padding:18px 22px;color:#fff;position:relative;overflow:hidden}
+.ix small{font:800 12.5px Archivo;letter-spacing:.16em;text-transform:uppercase;opacity:.8}
+.ix b{display:block;font:900 26px/1.05 Archivo;margin:6px 0 8px;letter-spacing:-.015em;max-width:290px}
+.ix p{font-size:16px;line-height:1.45;opacity:.9;max-width:330px}
+.ix .pr{position:absolute;right:22px;top:22px;text-align:right;font:900 22px Archivo}
+.ix .pr span{display:block;font:700 12px Archivo;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
+.ix svg.bg{position:absolute;right:-16px;bottom:-22px;width:120px;height:120px;opacity:.16}
+.ixend{margin-top:14px;background:var(--soft);border-radius:18px;padding:18px 22px;font-size:16.5px;line-height:1.45;color:#2E3044}
+.ixend b{color:var(--ink)}
 
-/* ===== P1 – FINANCIERA (Montserrat, morado + verde) ===== */
-.f1{font-family:Montserrat,Inter,sans-serif}
-.f1 h1,.f1 h2,.f1 h3,.f1 h4{font-family:Montserrat,sans-serif;letter-spacing:-.01em}
-.p1hero{background:linear-gradient(135deg,var(--p1) 0%,#4A1A57 60%,var(--p1-d));color:#fff;padding:16mm 16mm 0;height:164mm;position:relative;overflow:hidden}
-.p1hero::after{content:"";position:absolute;width:120mm;height:120mm;border-radius:50%;right:-40mm;top:-40mm;background:radial-gradient(circle,rgba(60,184,122,.35),transparent 65%)}
-.p1hero .eyebrow{color:#D9B8E0}
-.p1hero .h2{font-weight:800;font-size:27pt;max-width:150mm}
-.p1hero .h2 em{font-style:normal;color:#7BE3AA}
-.p1hero .lead{color:#E2CFE6;max-width:150mm}
-.p1hero .browser{position:absolute;left:16mm;right:16mm;bottom:-6mm;z-index:2}
-.fsite-nav{background:#fff;display:flex;justify-content:space-between;align-items:center;padding:2.8mm 5mm;border-bottom:1px solid #EEE}
-.fsite-logo{display:flex;align-items:center;gap:2mm;font:800 8.5pt Montserrat;color:var(--p1)}
-.fsite-logo i{width:5.5mm;height:5.5mm;border-radius:1.6mm;background:var(--p1);color:#fff;display:flex;align-items:center;justify-content:center;font:800 6.5pt Montserrat;font-style:normal}
-.fsite-nav .links{display:flex;gap:3.5mm;font:600 6.4pt Montserrat;color:#55556A;align-items:center}
-.fsite-nav .links b{background:var(--p1-g);color:#fff;padding:1.3mm 2.6mm;border-radius:99px}
-.fsite-hero{display:grid;grid-template-columns:1.1fr 1fr;gap:5mm;padding:6mm 6mm 7mm;background:linear-gradient(180deg,#FBF6FC,#fff)}
-.fsite-hero h4{font:800 15pt Montserrat;color:var(--p1-d);line-height:1.1;letter-spacing:-.01em}
-.fsite-hero h4 em{font-style:normal;color:var(--p1)}
-.fsite-hero p{font-size:7pt;color:#66667A;line-height:1.5;margin-top:2mm}
-.fsite-hero .chips{display:flex;gap:1.5mm;margin-top:3mm;flex-wrap:wrap}
-.fsite-hero .chips span{font:700 6pt Montserrat;color:var(--p1);background:var(--p1-l);padding:1mm 2.2mm;border-radius:99px}
-.calc{background:#fff;border-radius:3.5mm;border:1px solid #EADCEE;padding:4mm;box-shadow:0 6px 16px rgba(107,35,120,.12)}
-.calc .t{font:800 7.6pt Montserrat;color:var(--p1-d)}
-.calc .lbl{display:flex;justify-content:space-between;font:600 6.2pt Montserrat;color:#77778A;margin-top:2.6mm}
-.calc .lbl b{color:var(--p1-d);font-weight:800}
-.slider{height:1.6mm;border-radius:99px;background:#EEE3F0;margin-top:1.6mm;position:relative}
-.slider span{position:absolute;left:0;top:0;bottom:0;border-radius:99px;background:var(--p1)}
-.slider span::after{content:"";position:absolute;right:-2mm;top:50%;transform:translateY(-50%);width:4mm;height:4mm;border-radius:50%;background:#fff;border:1.2mm solid var(--p1)}
-.calc .res{margin-top:3mm;background:var(--p1-l);border-radius:2mm;padding:2.4mm 3mm;display:flex;justify-content:space-between;align-items:center}
-.calc .res span{font:600 6pt Montserrat;color:#77778A}
-.calc .res b{font:800 11pt Montserrat;color:var(--p1)}
-.calc .btn{margin-top:2.6mm;background:var(--p1-g);color:#fff;text-align:center;border-radius:99px;font:800 7pt Montserrat;padding:2.2mm}
-.calc small{display:block;font-size:5.2pt;color:#9A9AAA;margin-top:1.8mm;line-height:1.35}
+/* ===== DIVIDERS ===== */
+.div1{background:linear-gradient(160deg,#8A2E9A 0%,var(--p1) 40%,var(--p1d) 100%);color:#fff}
+.div2{background:var(--p2d);color:#fff}
+.div3{background:var(--p3l);color:var(--p3d)}
+.dv{position:absolute;left:40px;right:40px;top:120px}
+.dv .n{font:900 150px/.8 Archivo;letter-spacing:-.06em;opacity:.18}
+.dv small{display:block;font:800 15px Archivo;letter-spacing:.18em;text-transform:uppercase;margin-top:18px}
+.dv h2{font:900 54px/.98 Archivo;letter-spacing:-.03em;margin-top:10px}
+.dv p{font-size:20px;line-height:1.45;margin-top:18px;opacity:.88}
+.dv .pill{display:inline-flex;gap:10px;align-items:center;margin-top:26px;border-radius:99px;padding:12px 20px;font:800 17px Archivo}
+.div1 .dv h2{font-family:Montserrat,sans-serif;font-weight:800}
+.div3 .dv h2{font-family:Fraunces,serif;font-weight:700}
+.div3 .dv h2 em{font-style:italic;font-weight:600;color:var(--p3e)}
 
-.p1body{padding:14mm 16mm 0}
-.steps4{display:grid;grid-template-columns:repeat(4,1fr);gap:3.5mm;margin-top:5mm}
-.st4{background:var(--p1-l);border-radius:4mm;padding:4.5mm;position:relative}
-.st4 i{font:800 18pt Montserrat;font-style:normal;color:var(--p1);opacity:.35;position:absolute;top:3mm;right:4mm}
-.st4 svg{width:7mm;height:7mm;color:var(--p1)}
-.st4 b{display:block;font:800 9.6pt Montserrat;color:var(--p1-d);margin:2.5mm 0 1mm}
-.st4 span{font-size:8pt;color:#5F5370;line-height:1.4;display:block}
+/* floating stickers */
+.st{position:absolute}
+.st svg{width:100%;height:100%;display:block}
 
-.feat2{display:grid;grid-template-columns:1fr 1fr;gap:3.5mm;margin-top:6mm}
-.fcard{border:1px solid #ECE3EF;border-radius:4mm;padding:4.5mm;display:grid;grid-template-columns:10mm 1fr;gap:3.5mm}
-.fcard .ib{width:10mm;height:10mm;border-radius:3mm;background:var(--p1);display:flex;align-items:center;justify-content:center}
-.fcard .ib svg{width:5.6mm;height:5.6mm;color:#fff}
-.fcard .ib.g{background:var(--p1-g)}
-.fcard b{display:block;font:800 9.8pt Montserrat;color:var(--p1-d);margin-bottom:.8mm}
-.fcard span{font-size:8.3pt;color:var(--muted);line-height:1.42;display:block}
-.trust{margin-top:6mm;display:grid;grid-template-columns:62mm 1fr;gap:7mm;align-items:center}
-.p1phone .screen{background:#FBF6FC}
-.p1phone .ph-head{background:var(--p1);color:#fff;padding:9mm 4mm 4mm}
-.p1phone .ph-head b{font:800 9pt Montserrat;display:block}
-.p1phone .ph-head span{font-size:6.2pt;opacity:.85}
-.form{padding:3.5mm}
-.form .f{background:#fff;border:1px solid #E8DDEB;border-radius:2mm;padding:2.2mm 2.6mm;margin-bottom:2mm}
-.form .f small{display:block;font:600 5.2pt Montserrat;color:#99A;text-transform:uppercase;letter-spacing:.08em}
-.form .f b{font:700 7.4pt Montserrat;color:var(--p1-d)}
-.form .chk{display:flex;gap:1.6mm;align-items:flex-start;font-size:5.6pt;color:#66667A;line-height:1.35;margin:2.6mm 0}
-.form .chk i{flex:none;width:3mm;height:3mm;border-radius:.8mm;background:var(--p1-g);display:flex;align-items:center;justify-content:center;color:#fff;font-style:normal;font-size:5pt}
-.form .send{background:var(--wa);color:#fff;border-radius:99px;text-align:center;font:800 7pt Montserrat;padding:2.4mm;display:flex;align-items:center;justify-content:center;gap:1.5mm}
-.form .send svg{width:3.6mm;height:3.6mm}
-.form .ok{margin-top:3mm;background:#E6F7EE;border-radius:2mm;padding:2.4mm;font-size:5.8pt;color:#1E7A4D;line-height:1.4}
+/* ===== P1 (Montserrat) ===== */
+.f1 .h{font-family:Montserrat,sans-serif;font-weight:800;letter-spacing:-.015em}
+.f1 .kick{color:var(--p1)}
+.q4{display:grid;gap:14px;margin-top:22px}
+.q{display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:start;background:var(--p1l);border-radius:20px;padding:20px}
+.q .ib{width:52px;height:52px;border-radius:15px;background:var(--p1);display:flex;align-items:center;justify-content:center}
+.q .ib.g{background:var(--p1g)}
+.q .ib svg{width:28px;height:28px;color:#fff}
+.q b{display:block;font:800 19px Montserrat;color:var(--p1d);margin-bottom:4px}
+.q span{font-size:16.5px;line-height:1.45;color:#4A3F57;display:block}
+.p1scr .top{background:var(--p1);color:#fff;padding:36px 16px 26px}
+.p1scr .brand{display:flex;align-items:center;gap:8px;font:800 13px Montserrat}
+.p1scr .brand i{width:22px;height:22px;border-radius:7px;background:#fff;color:var(--p1);font:800 10px Montserrat;font-style:normal;display:flex;align-items:center;justify-content:center}
+.p1scr h4{font:800 19px/1.1 Montserrat;margin-top:12px}
+.p1scr h4 em{font-style:normal;color:#8FF0BC}
+.calc{margin:0 12px;background:#fff;border-radius:16px;padding:14px;position:relative;top:-16px;border:1px solid #EADCEE}
+.calc .t{font:800 13px Montserrat;color:var(--p1d)}
+.calc .l{display:flex;justify-content:space-between;font:600 10.5px Montserrat;color:#77778A;margin-top:10px}
+.calc .l b{color:var(--p1d);font-weight:800}
+.sl{height:6px;border-radius:99px;background:#EEE3F0;margin-top:7px;position:relative}
+.sl span{position:absolute;left:0;top:0;bottom:0;border-radius:99px;background:var(--p1)}
+.sl span::after{content:"";position:absolute;right:-7px;top:50%;transform:translateY(-50%);width:14px;height:14px;border-radius:50%;background:#fff;border:4px solid var(--p1);box-sizing:border-box}
+.calc .r{margin-top:12px;background:var(--p1l);border-radius:10px;padding:10px 12px;display:flex;justify-content:space-between;align-items:center}
+.calc .r span{font:600 10px Montserrat;color:#77778A}
+.calc .r b{font:800 19px Montserrat;color:var(--p1)}
+.calc .btn{margin-top:10px;background:var(--p1g);color:#fff;text-align:center;border-radius:99px;font:800 12.5px Montserrat;padding:10px}
+.calc small{display:block;font-size:8.5px;color:#9A9AAA;margin-top:7px;line-height:1.35}
+.p1scr .chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px;margin-top:-6px}
+.p1scr .chips span{font:700 9.5px Montserrat;color:var(--p1);background:var(--p1l);padding:5px 9px;border-radius:99px}
+.side{display:grid;gap:14px}
+.side>div{display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:center}
+.side>div>i{width:40px;height:40px;border-radius:12px;background:var(--p1l);display:flex;align-items:center;justify-content:center;font-style:normal}
+.side>div>i svg{width:22px;height:22px;color:var(--p1)}
+.side b{display:block;font:800 16px Montserrat;color:var(--p1d)}
+.side span{font-size:14px;color:var(--muted);line-height:1.35;display:block}
+.steps{display:grid;gap:12px;margin-top:22px}
+.stp{display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:center;border:2px solid var(--p1l);border-radius:20px;padding:16px 18px}
+.stp i{width:56px;height:56px;border-radius:50%;background:var(--p1);color:#fff;font:800 24px Montserrat;font-style:normal;display:flex;align-items:center;justify-content:center}
+.stp b{display:block;font:800 19px Montserrat;color:var(--p1d)}
+.stp span{font-size:16px;color:var(--muted);line-height:1.4;display:block;margin-top:2px}
+.bubble{background:#DCF8C6;border-radius:18px 18px 18px 4px;padding:16px 18px;font-size:15.5px;line-height:1.55;color:#1F2A1F}
+.bubble small{display:block;text-align:right;font-size:12px;color:#5D7A5D}
 
-/* investment strip used per project */
-.pinv{position:absolute;left:16mm;right:16mm;bottom:20mm;border-radius:5mm;display:grid;grid-template-columns:1fr 1fr 1fr;overflow:hidden}
-.pinv>div{padding:5mm 5.5mm}
-.pinv small{display:block;font:700 7pt Archivo;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
-.pinv b{display:block;font:900 19pt Archivo;letter-spacing:-.02em;margin-top:1mm}
-.pinv span{display:block;font-size:8pt;opacity:.85;margin-top:.8mm;line-height:1.35}
-.pinv.i1{background:var(--p1-d);color:#fff}.pinv.i1>div:first-child{background:var(--p1)}
-.pinv.i2{background:var(--p2-d);color:#fff}.pinv.i2>div:first-child{background:var(--p2)}
-.pinv.i3{background:var(--p3-d);color:#fff}.pinv.i3>div:first-child{background:var(--p3)}
+/* price box */
+.price{position:absolute;left:40px;right:40px;bottom:64px;border-radius:24px;overflow:hidden}
+.price .a{padding:22px 24px}
+.price .a small{font:800 12.5px Archivo;letter-spacing:.16em;text-transform:uppercase;opacity:.8}
+.price .a b{display:block;font:900 50px/1 Archivo;letter-spacing:-.03em;margin-top:6px}
+.price .a span{display:block;font:600 15px Inter;opacity:.85;margin-top:6px}
+.price .bb{display:grid;grid-template-columns:1fr 1fr}
+.price .bb div{padding:18px 24px}
+.price .bb small{font:800 11.5px Archivo;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.price .bb b{display:block;font:900 22px Archivo;margin-top:4px}
+.price .bb span{font-size:14px;opacity:.85;display:block;margin-top:2px}
+.pr1 .a{background:var(--p1);color:#fff}.pr1 .bb{background:var(--p1d);color:#fff}
+.pr2 .a{background:var(--p2);color:#fff}.pr2 .bb{background:#000;color:#fff}
+.pr3 .a{background:var(--p3);color:#fff}.pr3 .bb{background:var(--p3d);color:#fff}
+.price .bb div+div{border-left:1px solid rgba(255,255,255,.12)}
+.closing{font:800 13px Archivo;letter-spacing:.14em;text-transform:uppercase;text-align:center;position:absolute;left:40px;right:40px;bottom:28px}
 
-/* ===== P2 – PLATAFORMA DE PEDIDOS ===== */
-.p2bg{background:var(--p2-d);color:#fff}
-.p2bg .eyebrow{color:var(--p2)}
-.p2bg .lead{color:#B9B9C4}
-.p2bg .h2 em{font-style:normal;color:var(--p2)}
-.p2grid{display:grid;grid-template-columns:1fr 64mm;gap:8mm;margin-top:6mm;align-items:start}
-.problem{display:grid;gap:3.5mm}
-.pb{background:#222228;border:1px solid #2E2E36;border-radius:4mm;padding:4.5mm;display:grid;grid-template-columns:9mm 1fr;gap:3.5mm}
-.pb .ib{width:9mm;height:9mm;border-radius:2.6mm;background:var(--p2);display:flex;align-items:center;justify-content:center}
-.pb .ib.y{background:var(--p2-y)}
-.pb .ib svg{width:5mm;height:5mm;color:#fff}.pb .ib.y svg{color:#16161A}
-.pb b{display:block;font:800 10.5pt Archivo;margin-bottom:.8mm}
-.pb span{font-size:8.6pt;color:#B9B9C4;line-height:1.45;display:block}
-.p2phone .screen{background:#F6F6F8}
-.app2-head{background:var(--p2);color:#fff;padding:9mm 3.5mm 3.5mm}
-.app2-head .row{display:flex;justify-content:space-between;align-items:center}
-.app2-head b{font:900 9pt Archivo;letter-spacing:-.01em}
-.app2-head .loc{font-size:5.8pt;opacity:.9;margin-top:.6mm}
-.app2-head .search{margin-top:2.4mm;background:#fff;border-radius:2mm;padding:1.8mm 2.4mm;font-size:5.8pt;color:#999}
-.cat2{display:flex;gap:1.5mm;padding:2.6mm 3mm 1mm}
-.cat2 span{display:flex;flex-direction:column;align-items:center;gap:.8mm;font:700 5.2pt Archivo;color:#444}
-.cat2 span i{width:9mm;height:9mm;border-radius:2.6mm;background:#fff;display:flex;align-items:center;justify-content:center;font-style:normal;border:1px solid #EEE}
-.cat2 span i svg{width:5mm;height:5mm}
-.biz{margin:2mm 3mm;background:#fff;border-radius:2.6mm;overflow:hidden;border:1px solid #EEE}
-.biz .img{height:15mm;position:relative}
-.biz .img .pill{position:absolute;left:1.6mm;top:1.6mm;background:#fff;border-radius:99px;font:800 4.8pt Archivo;padding:.6mm 1.6mm;color:#16161A}
-.biz .img .sec{position:absolute;right:1.6mm;top:1.6mm;background:rgba(22,22,26,.8);color:#fff;border-radius:99px;font:700 4.6pt Archivo;padding:.6mm 1.6mm;display:flex;gap:.8mm;align-items:center}
-.biz .tx{padding:1.8mm 2.2mm;display:flex;justify-content:space-between;align-items:center}
-.biz .tx b{font:800 6.6pt Archivo;display:block;color:#16161A}
-.biz .tx span{font-size:5.2pt;color:#888}
-.biz .tx i{font-style:normal;font:800 5.4pt Archivo;color:var(--p2)}
-.food1{background:linear-gradient(135deg,#FFB547,#FF6A3D)}
-.food2{background:linear-gradient(135deg,#7AD1A3,#2E9E6A)}
-.food3{background:linear-gradient(135deg,#9AA7FF,#5B4BD6)}
-.food svg{position:absolute;right:3mm;bottom:1.5mm;width:12mm;height:12mm;opacity:.9}
+/* ===== P2 ===== */
+.f2{background:var(--p2d);color:#fff}
+.f2 .kick,.f2w .kick{color:var(--p2)}
+.f2 .lead{color:#B9B9C4}
+.f2 .h em,.f2w .h em{font-style:normal;color:var(--p2)}
+.f2 .foot{color:#6C6C78}
+.big-q{font:900 36px/1.08 Archivo;letter-spacing:-.02em;margin-top:22px;padding-right:70px}
+.big-q em{font-style:normal;color:var(--p2)}
+.pain{display:grid;gap:12px;margin-top:24px}
+.pain>div{display:grid;grid-template-columns:50px 1fr;gap:14px;align-items:center;background:var(--p2c);border:1px solid #2E2E36;border-radius:18px;padding:16px 18px}
+.pain>div>i{width:50px;height:50px;border-radius:14px;background:#2A2A32;display:flex;align-items:center;justify-content:center;font-style:normal}
+.pain>div>i svg{width:26px;height:26px;color:var(--p2)}
+.pain b{display:block;font:800 18px Archivo}
+.pain span{font-size:15.5px;color:#B9B9C4;line-height:1.4;display:block;margin-top:2px}
+.opp{margin-top:18px;background:var(--p2);border-radius:20px;padding:20px 22px;font:800 21px/1.3 Archivo}
+.opp small{display:block;font:800 12px Archivo;letter-spacing:.16em;text-transform:uppercase;opacity:.85;margin-bottom:6px}
+.flow3{display:grid;grid-template-columns:1fr 30px 1fr 30px 1fr;align-items:center;margin-top:24px}
+.fn{background:var(--p2c);border:1px solid #2E2E36;border-radius:20px;padding:18px 8px;text-align:center}
+.fn i{width:56px;height:56px;margin:0 auto 10px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-style:normal}
+.fn i svg{width:30px;height:30px}
+.fn b{display:block;font:800 15px Archivo}
+.fn span{font-size:12.5px;color:#B9B9C4;line-height:1.35;display:block;margin-top:4px}
+.fa{display:flex;justify-content:center;color:var(--p2)}.fa svg{width:24px;height:24px}
+.sol{display:grid;gap:14px;margin-top:24px}
+.sol>div{display:grid;grid-template-columns:26px 1fr;gap:12px;font-size:17px;line-height:1.42;color:#DADAE2}
+.sol>div svg{width:26px;height:26px;color:var(--p2)}
+.sol b{color:#fff}
+.app{background:#F6F6F8}
+.app .hd{background:var(--p2);color:#fff;padding:36px 14px 14px}
+.app .hd b{font:900 15px Archivo;display:flex;justify-content:space-between;align-items:center}
+.app .hd small{display:block;font-size:10px;opacity:.9;margin-top:3px}
+.app .hd .s{margin-top:10px;background:#fff;border-radius:10px;padding:8px 10px;font-size:10.5px;color:#999}
+.app .cats{display:flex;gap:8px;padding:12px 12px 4px}
+.app .cats span{display:flex;flex-direction:column;align-items:center;gap:4px;font:700 9px Archivo;color:#444}
+.app .cats i{width:40px;height:40px;border-radius:12px;background:#fff;border:1px solid #EEE;display:flex;align-items:center;justify-content:center;font-style:normal}
+.app .cats i svg{width:28px;height:28px}
+.bz{margin:8px 12px;background:#fff;border-radius:14px;overflow:hidden;border:1px solid #EEE}
+.bz .im{height:66px;position:relative}
+.bz .im svg{position:absolute;right:12px;bottom:4px;width:56px;height:56px}
+.bz .im .t{position:absolute;left:8px;top:8px;background:#fff;border-radius:99px;font:800 9px Archivo;padding:3px 8px;color:#141418}
+.bz .im .p{position:absolute;left:8px;bottom:8px;background:rgba(20,20,24,.85);color:#fff;border-radius:99px;font:700 8.5px Archivo;padding:3px 8px}
+.bz .tx{padding:7px 10px;display:flex;justify-content:space-between;align-items:center;color:#141418}
+.bz .tx b{font:800 11.5px Archivo;display:block}
+.bz .tx span{font-size:9.5px;color:#888}
+.bz .tx i{font-style:normal;font:800 10px Archivo;color:var(--p2)}
+.g1{background:linear-gradient(135deg,#FFB547,#FF6A3D)}.g2{background:linear-gradient(135deg,#7AD1A3,#2E9E6A)}.g4{background:linear-gradient(135deg,#FFD66B,#E89B2C)}
+.catlist{display:grid;gap:12px}
+.catlist>div{display:grid;grid-template-columns:46px 1fr;gap:12px;align-items:center}
+.catlist>div>i{width:46px;height:46px;border-radius:13px;background:var(--p2c);border:1px solid #2E2E36;display:flex;align-items:center;justify-content:center;font-style:normal}
+.catlist>div>i svg{width:32px;height:32px}
+.catlist b{font:800 16.5px Archivo;display:block}
+.catlist span{font-size:13.5px;color:#B9B9C4;display:block;line-height:1.3}
+.ben{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+.bn{border-radius:20px;padding:18px;background:#fff;border:1px solid var(--line)}
+.bn i{width:48px;height:48px;border-radius:14px;background:var(--p2l);display:flex;align-items:center;justify-content:center;font-style:normal}
+.bn i svg{width:26px;height:26px;color:var(--p2)}
+.bn b{display:block;font:800 17.5px/1.15 Archivo;margin:12px 0 6px}
+.bn span{font-size:14.5px;color:var(--muted);line-height:1.4;display:block}
+.bn.hl{background:var(--p2);border-color:var(--p2);color:#fff}
+.bn.hl i{background:rgba(255,255,255,.18)}.bn.hl i svg{color:#fff}.bn.hl span{color:#FFE2D8}
+.pitch{margin-top:30px;background:#fff;color:var(--p2d);border-radius:22px;padding:26px 24px 22px;position:relative}
+.pitch::before{content:"“";position:absolute;left:18px;top:-30px;font:900 90px/1 Archivo;color:var(--p2)}
+.pitch p{font:800 22px/1.3 Archivo;letter-spacing:-.01em}
+.pitch small{display:block;margin-top:10px;font:700 13px Archivo;letter-spacing:.12em;text-transform:uppercase;color:var(--p2)}
+.how3{display:grid;gap:12px;margin-top:22px}
+.how3>div{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center}
+.how3>div>i{width:44px;height:44px;border-radius:50%;background:var(--p2);font:900 19px Archivo;font-style:normal;display:flex;align-items:center;justify-content:center}
+.how3 b{font:800 17px Archivo;display:block}
+.how3 span{font-size:14.5px;color:#B9B9C4;display:block;line-height:1.35}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.pl{background:var(--p2c);border:1px solid #2E2E36;border-radius:18px;padding:16px 18px}
+.pl.hl{background:var(--p2y);border-color:var(--p2y);color:#141418}
+.pl small{font:800 11.5px Archivo;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.pl b{display:block;font:900 26px Archivo;margin:4px 0 2px}
+.pl span{font-size:13.5px;line-height:1.35;display:block;opacity:.85}
+.earn{margin-top:20px;display:grid;gap:12px}
+.er{display:grid;grid-template-columns:1fr auto;align-items:center;border-radius:18px;padding:16px 22px;background:#fff;border:1px solid var(--line)}
+.er span{font:700 17px Archivo;color:#33354A}
+.er span small{display:block;font:500 13.5px Inter;color:var(--muted);margin-top:3px}
+.er b{font:900 28px Archivo;letter-spacing:-.02em}
+.er.hl{background:var(--p2);border-color:var(--p2);color:#fff}.er.hl span,.er.hl span small{color:#fff}
+.admin{margin-top:16px;background:var(--p2d);color:#fff;border-radius:20px;padding:20px 22px}
+.admin>b{font:800 18px Archivo;display:block;margin-bottom:12px}
+.admin .chk li{color:#DADAE2;font-size:16px}.admin .chk li svg{color:var(--p2y)}
+.users{display:grid;gap:12px;margin-top:20px}
+.us{border-radius:20px;padding:18px 20px;display:grid;grid-template-columns:50px 1fr;gap:14px;align-items:start;background:#fff;border:1px solid var(--line)}
+.us>i{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-style:normal}
+.us>i svg{width:26px;height:26px;color:#fff}
+.us b{display:block;font:800 18px Archivo}
+.us span{font-size:15px;color:var(--muted);line-height:1.4;display:block;margin-top:3px}
+.track{display:grid;grid-template-columns:repeat(5,1fr);margin-top:22px;position:relative}
+.track::before{content:"";position:absolute;left:30px;right:30px;top:22px;height:3px;background:repeating-linear-gradient(90deg,var(--p2) 0 6px,transparent 6px 12px)}
+.track>div{text-align:center;position:relative}
+.track i{width:46px;height:46px;margin:0 auto;border-radius:50%;background:#fff;border:3px solid var(--p2);display:flex;align-items:center;justify-content:center;font-style:normal;position:relative;z-index:1}
+.track i svg{width:22px;height:22px;color:var(--p2)}
+.track>div:last-child i{background:var(--p2)}.track>div:last-child i svg{color:#fff}
+.track b{display:block;font:800 13.5px Archivo;margin-top:8px}
 
-.actors{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin-top:6mm}
-.actor{border-radius:4.5mm;padding:5mm;border:1px solid var(--line);background:#fff}
-.actor .hd{display:flex;align-items:center;gap:3mm;margin-bottom:3.5mm}
-.actor .hd i{width:10mm;height:10mm;border-radius:3mm;display:flex;align-items:center;justify-content:center;font-style:normal}
-.actor .hd i svg{width:5.5mm;height:5.5mm;color:#fff}
-.actor .hd b{font:800 11pt Archivo;display:block;line-height:1.1}
-.actor .hd small{font:600 7pt Archivo;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.actor .list li{font-size:8.6pt}
-.a1 .list svg{color:var(--p2)}.a2 .list svg{color:#16161A}.a3 .list svg{color:#D9A21B}
-.a1 .hd i{background:var(--p2)}.a2 .hd i{background:#16161A}.a3 .hd i{background:var(--p2-y)}.a3 .hd i svg{color:#16161A}
-.status{margin-top:6mm;display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
-.status::before{content:"";position:absolute;left:6mm;right:6mm;top:5mm;height:2px;background:repeating-linear-gradient(90deg,var(--p2) 0 4px,transparent 4px 8px)}
-.status div{position:relative;text-align:center;padding:0 1.5mm}
-.status div i{width:10mm;height:10mm;margin:0 auto;border-radius:50%;background:#fff;border:2px solid var(--p2);display:flex;align-items:center;justify-content:center;font-style:normal;position:relative;z-index:1}
-.status div i svg{width:5mm;height:5mm;color:var(--p2)}
-.status div:last-child i{background:var(--p2)}.status div:last-child i svg{color:#fff}
-.status b{display:block;font:800 8.6pt Archivo;margin-top:2mm}
-.status span{font-size:7.4pt;color:var(--muted);line-height:1.35;display:block;margin-top:.6mm}
-.money{margin-top:6mm;background:var(--p2-l);border-radius:4.5mm;padding:5mm 6mm;display:grid;grid-template-columns:1.15fr 1fr;gap:6mm;align-items:center}
-.money h3{font-size:12.5pt;font-weight:800;margin-bottom:2mm}
-.money .opts{display:grid;gap:1.8mm}
-.money .opts div{display:flex;gap:2mm;font-size:8.6pt;color:#4A3A35;line-height:1.4}
-.money .opts div b{color:#16161A}
-.money .opts svg{flex:none;width:4.2mm;height:4.2mm;color:var(--p2);margin-top:.3mm}
-.money .calcx{background:#fff;border-radius:3.5mm;padding:4.5mm;text-align:center}
-.money .calcx small{font:700 7pt Archivo;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.money .calcx .eq{font:700 9.5pt Archivo;margin:2mm 0 1mm;color:#16161A}
-.money .calcx b{display:block;font:900 22pt Archivo;color:var(--p2);letter-spacing:-.02em}
-.money .calcx span{font-size:7.2pt;color:var(--muted);line-height:1.35;display:block;margin-top:1mm}
+/* ===== P3 (Fraunces) ===== */
+.f3{background:var(--p3l)}
+.f3 .kick{color:var(--p3)}
+.f3 .h{font-family:Fraunces,serif;font-weight:700;letter-spacing:-.01em}
+.f3 .h em{font-style:italic;font-weight:600;color:var(--p3e)}
+.f3 .foot{color:#A39C86}
+.idea3{display:grid;gap:14px;margin-top:22px}
+.i3{background:#fff;border:1px solid #E6DFCC;border-radius:20px;padding:20px;display:grid;grid-template-columns:52px 1fr;gap:16px}
+.i3>i{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-style:normal}
+.i3>i svg{width:28px;height:28px;color:#fff}
+.i3 b{display:block;font:700 20px Fraunces;color:var(--p3d);margin-bottom:4px}
+.i3 span{font-size:16.5px;line-height:1.45;color:#6A6553;display:block}
+.do{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+.d{border-radius:22px;overflow:hidden;background:#fff;border:1px solid #E6DFCC}
+.d .art{height:130px;display:flex;align-items:center;justify-content:center;position:relative}
+.d .art svg{width:76px;height:76px}
+.d .art i{position:absolute;left:12px;top:12px;font:700 13px Fraunces;font-style:italic;color:#fff;background:rgba(0,0,0,.22);border-radius:99px;padding:3px 10px}
+.d .tx{padding:14px 16px 18px}
+.d b{display:block;font:700 19px Fraunces;color:var(--p3d)}
+.d span{font-size:14.5px;line-height:1.4;color:#6A6553;display:block;margin-top:4px}
+.a-h{background:linear-gradient(160deg,#7FB069,#3E7A3E)}.a-p{background:linear-gradient(160deg,#6FB7CF,#2C6E86)}.a-c{background:linear-gradient(160deg,#E2A15E,#B5652C)}.a-m{background:linear-gradient(160deg,#C9A27A,#7A5638)}
+.p3scr{background:#FBF8F1}
+.p3scr .hero{height:150px;background:linear-gradient(180deg,rgba(31,58,38,.1),rgba(31,58,38,.9)),linear-gradient(160deg,#7FB069,#2F5D3A);position:relative;padding:14px;color:#fff;display:flex;flex-direction:column;justify-content:flex-end}
+.p3scr .hero b{font:700 19px/1.05 Fraunces}
+.p3scr .hero b em{font-style:italic;font-weight:600;color:#F4D7A8}
+.p3scr .hero span{font-size:10px;opacity:.9;margin-top:3px}
+.p3scr .hero svg{position:absolute;right:14px;top:36px;width:54px;height:54px;opacity:.55}
+.p3scr .tabs{display:flex;gap:5px;padding:10px 10px 4px}
+.p3scr .tabs span{font:700 9.5px Inter;padding:4px 8px;border-radius:99px;background:#fff;border:1px solid #E6DFCC;color:#6A6553}
+.p3scr .tabs span.on{background:var(--p3);color:#fff;border-color:var(--p3)}
+.dish{display:grid;grid-template-columns:52px 1fr;gap:9px;background:#fff;margin:7px 10px;border-radius:12px;padding:7px;border:1px solid #EEE7D6}
+.dish .im{height:52px;border-radius:9px;display:flex;align-items:center;justify-content:center}
+.dish .im svg{width:34px;height:34px}
+.dish b{font:700 12px Fraunces;color:var(--p3d);display:block}
+.dish span{font-size:9px;color:#7A7462;display:block}
+.dish .o{display:inline-block;margin-top:3px;font:700 8px Inter;color:var(--p3);background:#E8F1E4;border-radius:99px;padding:1px 6px}
+.dish .pr{font:800 11px Inter;color:var(--p3d);margin-top:2px}
+.p3scr .cart{position:absolute;left:10px;right:10px;bottom:10px;background:var(--p3d);color:#fff;border-radius:12px;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;font:700 11px Inter}
+.p3scr .cart span{background:#F4D7A8;color:var(--p3d);border-radius:8px;padding:4px 9px}
 
-/* ===== P3 – RESTAURANTE AUTOSOSTENIBLE ===== */
-.p3bg{background:var(--p3-l)}
-.f3 h2,.f3 h3,.f3 h4{font-family:Fraunces,Georgia,serif;letter-spacing:-.01em}
-.f3 .h2{font-weight:700;font-size:29pt}
-.f3 .h2 em{font-style:italic;font-weight:600;color:var(--p3-e)}
-.f3 .eyebrow{color:var(--p3)}
-.journey{display:grid;grid-template-columns:repeat(4,1fr);gap:3.5mm;margin-top:7mm}
-.jr{background:#fff;border-radius:4.5mm;overflow:hidden;border:1px solid #E6DFCC}
-.jr .art{height:30mm;display:flex;align-items:center;justify-content:center;position:relative}
-.jr .art svg{width:20mm;height:20mm}
-.jr .art i{position:absolute;top:2.5mm;left:2.5mm;font:700 8pt Fraunces;font-style:italic;color:#fff;background:rgba(0,0,0,.25);border-radius:99px;padding:.6mm 2.2mm}
-.jr .tx{padding:3.5mm 4mm 4.5mm}
-.jr b{display:block;font:700 11pt Fraunces;color:var(--p3-d)}
-.jr span{font-size:8pt;color:#6A6553;line-height:1.42;display:block;margin-top:1mm}
-.a-huerta{background:linear-gradient(160deg,#7FB069,#3E7A3E)}
-.a-pesca{background:linear-gradient(160deg,#6FB7CF,#2C6E86)}
-.a-cocina{background:linear-gradient(160deg,#E2A15E,#B5652C)}
-.a-mesa{background:linear-gradient(160deg,#C9A27A,#7A5638)}
-.p3split{display:grid;grid-template-columns:64mm 1fr;gap:8mm;margin-top:7mm;align-items:start}
-.p3phone .screen{background:#FBF8F1}
-.r3-hero{height:40mm;background:linear-gradient(180deg,rgba(31,58,38,.15),rgba(31,58,38,.85)),linear-gradient(160deg,#7FB069,#2F5D3A);position:relative;padding:9mm 3.5mm 3mm;color:#fff;display:flex;flex-direction:column;justify-content:flex-end}
-.r3-hero b{font:700 11pt Fraunces;line-height:1.05}
-.r3-hero b em{font-style:italic;font-weight:600;color:#F4D7A8}
-.r3-hero span{font-size:5.6pt;opacity:.9;margin-top:1mm}
-.r3-hero svg{position:absolute;right:3mm;top:9mm;width:14mm;height:14mm;opacity:.5}
-.r3-tabs{display:flex;gap:1.4mm;padding:2.6mm 3mm 1.2mm}
-.r3-tabs span{font:700 5.4pt Inter;padding:1mm 2.2mm;border-radius:99px;background:#fff;border:1px solid #E6DFCC;color:#6A6553}
-.r3-tabs span.on{background:var(--p3);color:#fff;border-color:var(--p3)}
-.dish{display:grid;grid-template-columns:13mm 1fr;gap:2.2mm;background:#fff;margin:1.8mm 3mm;border-radius:2.4mm;padding:1.8mm;border:1px solid #EEE7D6}
-.dish .im{height:13mm;border-radius:1.8mm;display:flex;align-items:center;justify-content:center}
-.dish .im svg{width:8mm;height:8mm}
-.dish b{font:700 6.6pt Fraunces;color:var(--p3-d);display:block}
-.dish span{font-size:5.1pt;color:#7A7462;line-height:1.3;display:block;margin-top:.4mm}
-.dish .orig{display:inline-block;margin-top:.8mm;font:700 4.6pt Inter;color:var(--p3);background:#E8F1E4;border-radius:99px;padding:.4mm 1.4mm}
-.dish .pr{font:800 6.4pt Inter;color:var(--p3-d);margin-top:.6mm}
-.r3-cart{position:absolute;left:3mm;right:3mm;bottom:3mm;background:var(--p3-d);color:#fff;border-radius:2.6mm;padding:2.3mm 3mm;display:flex;justify-content:space-between;font:700 6pt Inter;align-items:center}
-.r3-cart span{background:#F4D7A8;color:var(--p3-d);border-radius:1.5mm;padding:.9mm 2mm}
-.sec3{display:grid;gap:3mm}
-.s3{background:#fff;border-radius:4mm;padding:4.2mm 4.6mm;display:grid;grid-template-columns:9mm 1fr;gap:3.5mm;border:1px solid #E6DFCC}
-.s3 .ib{width:9mm;height:9mm;border-radius:50%;background:var(--p3);display:flex;align-items:center;justify-content:center}
-.s3 .ib.e{background:var(--p3-e)}.s3 .ib.b{background:var(--p3-b)}
-.s3 .ib svg{width:5mm;height:5mm;color:#fff}
-.s3 b{display:block;font:700 10.5pt Fraunces;color:var(--p3-d);margin-bottom:.6mm}
-.s3 span{font-size:8.3pt;color:#6A6553;line-height:1.42;display:block}
-
-/* ===== INVERSIÓN CONSOLIDADA ===== */
-.invt{margin-top:7mm;border-radius:5mm;overflow:hidden;border:1px solid var(--line)}
-.invt table{width:100%;border-collapse:collapse}
-.invt th{background:var(--ink);color:#fff;font:700 7.6pt Archivo;letter-spacing:.1em;text-transform:uppercase;text-align:left;padding:3.4mm 4mm}
-.invt th:not(:first-child),.invt td:not(:first-child){text-align:right}
-.invt td:nth-child(3),.invt td:nth-child(4){white-space:nowrap}
-.invt td{padding:4.2mm 4mm;border-top:1px solid var(--line);font-size:9pt;color:#33354A;vertical-align:top}
-.invt td b{font:800 11pt Archivo;color:var(--ink)}
-.invt td .dot{display:inline-block;width:3mm;height:3mm;border-radius:50%;margin-right:2mm;vertical-align:middle}
-.invt td small{display:block;font-size:7.6pt;color:var(--muted);margin-top:.6mm}
-.invt tr.tot td{background:var(--soft);font-weight:700}
-.invt tr.tot td b{font-size:13pt}
-.payways{display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin-top:6mm}
-.pw{border-radius:4.5mm;padding:5.5mm}
-.pw.a{background:var(--ink);color:#fff}
-.pw.b{background:var(--soft)}
-.pw small{font:800 7.5pt Archivo;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
-.pw.b small{color:#8A6B1F}
-.pw h3{font-size:13pt;font-weight:800;margin:1.5mm 0 3mm}
-.pw .list li{font-size:8.8pt}
-.pw.a .list li{color:#D0D1DC}.pw.a .list li b{color:#fff}
-.includes{margin-top:6mm;display:grid;grid-template-columns:repeat(3,1fr);gap:3mm}
-.includes div{display:flex;gap:2.5mm;align-items:flex-start;font-size:8.6pt;color:#33354A;line-height:1.4}
-.includes svg{flex:none;width:4.6mm;height:4.6mm;color:var(--p1-g)}
-.notes{margin-top:6mm;font-size:7.8pt;color:var(--muted);line-height:1.55}
-
-/* ===== ROADMAP ===== */
-.road{margin-top:8mm;position:relative;display:grid;gap:5mm}
-.road::before{content:"";position:absolute;left:7mm;top:6mm;bottom:6mm;width:2px;background:linear-gradient(var(--p1),var(--p3) 50%,var(--p2))}
-.rd{display:grid;grid-template-columns:14mm 1fr;gap:5mm;position:relative}
-.rd i{width:14mm;height:14mm;border-radius:50%;display:flex;align-items:center;justify-content:center;font:900 12pt Archivo;font-style:normal;color:#fff;z-index:1}
-.rd .box{border:1px solid var(--line);border-radius:4.5mm;padding:4.5mm 5mm}
-.rd .box small{font:800 7.2pt Archivo;letter-spacing:.14em;text-transform:uppercase}
-.rd .box b{display:block;font:800 12pt Archivo;margin:1mm 0}
-.rd .box span{font-size:8.8pt;color:var(--muted);line-height:1.45;display:block}
-
-/* ===== CIERRE ===== */
-.why{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-top:7mm}
-.why div{border-top:3px solid var(--gold);padding-top:3.5mm}
-.why b{font:900 21pt Archivo;letter-spacing:-.03em;display:block}
-.why span{font-size:8.4pt;color:var(--muted);line-height:1.4;display:block;margin-top:1mm}
-.next{margin-top:9mm;display:grid;gap:3mm}
-.nx{display:grid;grid-template-columns:12mm 1fr;gap:4mm;align-items:center;background:var(--soft);border-radius:3.5mm;padding:4mm 5mm}
-.nx i{font:900 17pt Archivo;font-style:normal;color:var(--gold)}
-.nx b{font:800 10.5pt Archivo;display:block}
-.nx span{font-size:8.7pt;color:var(--muted);line-height:1.4}
-.cta{position:absolute;left:0;right:0;bottom:0;height:76mm;background:var(--ink);color:#fff;padding:12mm 16mm}
-.cta h2{font-size:25pt;font-weight:900;line-height:1.02;max-width:118mm}
+/* ===== FINAL ===== */
+.tot{display:grid;gap:12px;margin-top:22px}
+.tr{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;border:1px solid var(--line);border-left-width:8px;border-radius:20px;padding:18px 20px}
+.tr.t1{border-left-color:var(--p1)}.tr.t2{border-left-color:var(--p2)}.tr.t3{border-left-color:var(--p3)}
+.tr small{font:800 11.5px Archivo;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.tr b{display:block;font:800 19px Archivo;margin-top:2px}
+.tr span{font-size:14px;color:var(--muted);display:block;margin-top:3px}
+.tr .v{text-align:right}
+.tr .v b{font:900 24px Archivo}
+.pack{margin-top:18px;background:var(--ink);color:#fff;border-radius:24px;padding:24px;position:relative;overflow:hidden}
+.pack::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(232,176,75,.4),transparent 65%)}
+.pack small{font:800 12.5px Archivo;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.pack h3{font:800 22px Archivo;margin:6px 0 12px}
+.pack .n{font:900 52px/1 Archivo;letter-spacing:-.03em}
+.pack .n span{font:700 17px Archivo;color:#B9BACB;letter-spacing:0}
+.pack .n2{font:800 20px Archivo;margin-top:8px}.pack .n2 b{color:var(--gold)}
+.pack p{font-size:15px;color:#C9CAD6;line-height:1.5;margin-top:12px;position:relative;z-index:1}
+.cmp{display:grid;gap:14px;margin-top:16px}
+.cr b.t{font:800 18px Archivo;display:flex;align-items:center;gap:8px}
+.cr b.t i{width:12px;height:12px;border-radius:50%;display:inline-block}
+.bar{height:30px;border-radius:9px;margin-top:8px;display:flex;align-items:center;justify-content:space-between;padding:0 12px;font:800 14px Archivo;white-space:nowrap}
+.bar.m{background:#E9E9EF;color:#77788A}.bar.m s{color:#55566A}
+.bar.v{color:#fff}
+.cr .sv{font:800 15px Archivo;color:var(--ok);margin-top:6px}
+.save{margin-top:16px;border-radius:24px;background:var(--ok);color:#fff;padding:22px 24px;display:grid;grid-template-columns:1fr auto;align-items:center}
+.save small{font:800 12.5px Archivo;letter-spacing:.16em;text-transform:uppercase;opacity:.85}
+.save b{display:block;font:900 46px/1 Archivo;letter-spacing:-.03em;margin-top:6px}
+.save span{font:700 15px Archivo;opacity:.9}
+.save .m{text-align:right;font:700 15px Archivo;line-height:1.6}
+.save .m s{opacity:.75}
+.roi{margin-top:14px;background:var(--soft);border-radius:20px;padding:18px 20px;display:grid;grid-template-columns:62px 1fr;gap:14px;align-items:center}
+.roi b{font:900 44px Archivo;color:var(--p2);text-align:center}
+.roi span{font-size:15.5px;line-height:1.45;color:#33354A}
+.road{display:grid;gap:14px;margin-top:22px}
+.rd{display:grid;grid-template-columns:54px 1fr;gap:14px;align-items:center}
+.rd i{width:54px;height:54px;border-radius:50%;color:#fff;font:900 22px Archivo;font-style:normal;display:flex;align-items:center;justify-content:center}
+.rd b{display:block;font:800 18px Archivo}
+.rd span{font-size:15px;color:var(--muted);line-height:1.4;display:block}
+.cta{position:absolute;left:0;right:0;bottom:0;height:430px;background:var(--ink);color:#fff;padding:36px 40px}
+.cta h2{font:900 38px/1.05 Archivo;letter-spacing:-.02em}
 .cta h2 em{font-style:normal;color:var(--gold)}
-.cta .contact{display:flex;gap:4mm;margin-top:7mm}
-.cta .contact div{background:var(--ink-2);border:1px solid #2C2E46;border-radius:3mm;padding:3.4mm 4.5mm;font:700 9.6pt Archivo;display:flex;align-items:center;gap:3mm}
-.cta .contact svg{width:5.5mm;height:5.5mm;color:var(--gold)}
-.cta .contact small{display:block;font:600 6.4pt Archivo;letter-spacing:.14em;text-transform:uppercase;color:#8A8BA0}
-.cta .agency{position:absolute;right:16mm;top:12mm;text-align:right}
-.av-logo{font:900 13pt Archivo;display:flex;align-items:center;gap:2.5mm;justify-content:flex-end}
-.av-logo i{width:7mm;height:7mm;border-radius:2mm;background:linear-gradient(135deg,#9B6BFF,#6A2FE0);display:inline-flex;align-items:center;justify-content:center}
-.av-logo i svg{width:4.5mm;height:4.5mm;color:#fff}
-.cta .agency small{display:block;font:600 7pt Archivo;letter-spacing:.14em;text-transform:uppercase;color:#8A8BA0;margin-top:2mm}
-.cta .valid{position:absolute;right:16mm;top:27mm;font:600 7.4pt Archivo;color:#8A8BA0}
+.cta .ct{display:grid;gap:10px;margin-top:22px}
+.cta .ct div{display:flex;align-items:center;gap:14px;background:var(--ink2);border:1px solid #2C2E46;border-radius:14px;padding:12px 16px;font:800 18px Archivo}
+.cta .ct svg{width:24px;height:24px;color:var(--gold)}
+.cta .ct small{display:block;font:700 11px Archivo;letter-spacing:.14em;text-transform:uppercase;color:#8A8BA0}
+.cta .val{margin-top:16px;font:600 13px Archivo;color:#8A8BA0}
 
-.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin-top:7mm}
-.kpis div{border-top:3px solid var(--p1-g);padding-top:3mm}
-.kpis b{display:block;font:800 17pt Montserrat;color:var(--p1)}
-.kpis span{font-size:8.4pt;color:var(--muted);line-height:1.4;display:block;margin-top:.8mm}
-.arrive{display:grid;grid-template-columns:1fr 1.15fr;gap:5mm;margin-top:3.5mm;align-items:center}
-.bubble{background:#DCF8C6;border-radius:3mm 3mm 3mm .6mm;padding:4mm 4.5mm;font-size:8.4pt;line-height:1.55;color:#1F2A1F}
-.bubble small{display:block;text-align:right;font-size:6.8pt;color:#5D7A5D;margin-top:1mm}
-.msheet{border:1px solid #D7DCE2;border-radius:3mm;overflow:hidden;font-size:7.6pt}
-.msheet .h{background:#188038;color:#fff;font:700 7.6pt Inter;padding:2.2mm 3mm;display:flex;gap:2mm;align-items:center}
-.msheet .h svg{width:4mm;height:4mm}
-.msheet .r{display:grid;grid-template-columns:.7fr 1.2fr 1.1fr 1.1fr;border-top:1px solid #E8EAED}
-.msheet .r span{padding:1.8mm 2.4mm;border-right:1px solid #E8EAED}
-.msheet .r.th{background:#F1F3F4;color:#5F6368;font-weight:600}
-.s{font-style:normal;font:700 6.4pt Inter;padding:.6mm 1.8mm;border-radius:99px}
-.s.n{background:var(--p1-l);color:var(--p1)}.s.c{background:#FFF1D6;color:#9A5B00}.s.a{background:#E3F8EE;color:#0E7A47}
-.ideal{margin-top:6mm;display:flex;flex-wrap:wrap;gap:2mm;align-items:center}
-.ideal span{font:800 8pt Archivo;letter-spacing:.12em;text-transform:uppercase;color:var(--p2-y);margin-right:1mm}
-.ideal i{font-style:normal;font:600 8.6pt Inter;color:#E6E6EE;border:1px solid #3A3A44;border-radius:99px;padding:1.6mm 3.4mm}
-.r3web{margin-top:6mm}
-.r3w .nav{display:flex;align-items:center;gap:4mm;padding:2.8mm 5mm;background:#FBF8F1;border-bottom:1px solid #EEE7D6;font:600 6.6pt Inter;color:#6A6553}
-.r3w .nav b{font:700 10pt Fraunces;color:var(--p3-d);margin-right:auto}
-.r3w .nav em{font-style:normal;background:var(--p3);color:#fff;border-radius:99px;padding:1.2mm 3mm;font-weight:700}
-.r3w .hero{display:grid;grid-template-columns:1fr 1.05fr;gap:5mm;padding:5mm 5mm;background:var(--p3-d);color:#fff;align-items:center}
-.r3w h4{font:700 17pt Fraunces;line-height:1.05}
-.r3w h4 em{font-style:italic;font-weight:600;color:#F4D7A8}
-.r3w p{font-size:7.2pt;color:#CFDCCB;line-height:1.5;margin-top:2mm}
-.r3w .b{display:flex;gap:2mm;margin-top:3mm}
-.r3w .b span{font:700 6.8pt Inter;background:#F4D7A8;color:var(--p3-d);border-radius:99px;padding:1.6mm 3.2mm}
-.r3w .b span.o{background:transparent;border:1px solid #F4D7A8;color:#F4D7A8}
-.r3w .pics{display:grid;grid-template-columns:1.3fr 1fr;grid-template-rows:1fr 1fr;gap:2mm;height:30mm}
-.r3w .pics div{border-radius:2.5mm;display:flex;align-items:center;justify-content:center}
-.r3w .pics div:first-child{grid-row:span 2}
-.r3w .pics svg{width:12mm;height:12mm}
-.road3{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin-top:3.5mm}
-.road3 div{border-top:3px solid;background:var(--soft);border-radius:0 0 3mm 3mm;padding:3.5mm 4mm}
-.road3 small{font:800 7.2pt Archivo;letter-spacing:.12em;text-transform:uppercase}
-.road3 b{display:block;font:800 10pt Archivo;margin:1mm 0 .6mm}
-.road3 span{font-size:8pt;color:var(--muted);line-height:1.4;display:block}
-
-.tile .sec{font:800 7pt Archivo;letter-spacing:.16em;text-transform:uppercase;opacity:.85;margin-top:auto}
-.tile .sec + h3{margin-top:1.2mm}
-.cover .av-logo{font-size:12pt}
-.ptab{position:absolute;right:0;top:0;bottom:0;width:7mm;z-index:6;display:flex;align-items:center;justify-content:center}
-.ptab span{writing-mode:vertical-rl;transform:rotate(180deg);font:800 6.8pt Archivo;letter-spacing:.24em;text-transform:uppercase;color:#fff;white-space:nowrap}
-.pt1{background:var(--p1)}.pt2{background:var(--p2)}.pt3{background:var(--p3)}
-.cmp{margin-top:8mm;display:grid;gap:5mm}
-.cr{display:grid;grid-template-columns:44mm 1fr 30mm;gap:5mm;align-items:center}
-.cl b{font:800 10.5pt Archivo;display:inline}
-.cl small{display:block;font-size:7.8pt;color:var(--muted);margin:.8mm 0 0 5mm}
-.cl .dot{display:inline-block;width:3mm;height:3mm;border-radius:50%;margin-right:2mm}
-.bars{display:grid;gap:1.6mm}
-.bm,.bv{height:8mm;border-radius:1.8mm;display:flex;align-items:center;justify-content:space-between;padding:0 2.6mm;font-size:7.4pt;white-space:nowrap}
-.bm{background:#E9E9EF;color:#77788A}.bm b{color:#55566A;text-decoration:line-through;font:700 8pt Archivo}
-.bv{color:#fff;justify-content:flex-end}.bv b{font:800 8.6pt Archivo}
-.sv{text-align:right}.sv small{display:block;font:700 7pt Archivo;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.sv b{font:900 14pt Archivo;color:#19A463}
-.savebig{margin-top:7mm;display:grid;grid-template-columns:1fr 1fr 1.2fr;border-radius:5mm;overflow:hidden;border:1px solid var(--line)}
-.savebig>div{padding:5mm 6mm}
-.savebig small{display:block;font:700 7.2pt Archivo;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.savebig s{font:800 18pt Archivo;color:#9A9BAA;display:block;margin-top:1mm}
-.savebig b{font:900 20pt Archivo;display:block;margin-top:1mm;letter-spacing:-.02em}
-.savebig .hl{background:#19A463;color:#fff}.savebig .hl small{color:#D5F5E4}
-.savebig .hl b{font-size:24pt}.savebig .hl span{font:700 8.4pt Archivo;opacity:.9}
-.pack{margin-top:6mm;display:grid;grid-template-columns:1.25fr 1fr;gap:5mm}
-.pk1{background:var(--ink);color:#fff;border-radius:5mm;padding:6mm;position:relative;overflow:hidden}
-.pk1::after{content:"";position:absolute;right:-20mm;top:-20mm;width:60mm;height:60mm;border-radius:50%;background:radial-gradient(circle,rgba(232,176,75,.35),transparent 65%)}
-.pk1 small,.pk2 small{font:800 7.4pt Archivo;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
-.pk1 h3{font-size:13pt;font-weight:800;margin:1.5mm 0 3mm}
-.pk-n{display:flex;align-items:baseline;gap:2mm}.pk-n b{font:900 28pt Archivo;letter-spacing:-.03em}.pk-n span{font:700 10pt Archivo;color:#B9BACB}
-.pk-n2{font:700 12pt Archivo;margin-top:1mm}.pk-n2 b{color:var(--gold);font-weight:900}
-.pk1 p{font-size:8.6pt;color:#C9CAD6;line-height:1.5;margin-top:3.5mm;position:relative;z-index:1}
-.pk2{background:var(--soft);border-radius:5mm;padding:6mm}
-.pk2 small{color:#8A6B1F}
-.roi{display:grid;grid-template-columns:13mm 1fr;gap:3mm;align-items:center;margin-top:4mm}
-.roi b{font:900 24pt Archivo;color:var(--p2);text-align:center}
-.roi span{font-size:8.8pt;color:#33354A;line-height:1.45}
-
-/* ===== VISTA CELULAR (solo pantalla) ===== */
-@media screen and (max-width:820px){
-  html,body{background:var(--ink)}
-  .page{width:100%;height:auto;margin:0;padding-bottom:56px}
-  .pad,.p1body{padding:34px 18px 8px}
-  .h2{font-size:30px}.h2 br{display:none}
-  .lead{font-size:15px;max-width:none}
-  .eyebrow{font-size:11px}
-  .pfoot,.pnum{bottom:20px;font-size:10px}.pfoot{left:18px}.pnum{right:18px}
-  .list li{font-size:14px}
-  .cover{padding:0 18px 70px;display:flex;flex-direction:column}
-  .cover .top,.cover h1,.cover .sub,.cover .tiles,.cover .meta{position:relative;inset:auto;left:auto;right:auto;top:auto;bottom:auto;width:auto}
-  .cover .top{margin-top:28px;flex-wrap:wrap;gap:14px}.cover .forby{text-align:left}
-  .cover h1{font-size:40px;margin-top:40px}
-  .cover .sub{font-size:16px;margin-top:18px}
-  .cover .tiles{grid-template-columns:1fr;margin-top:26px}
-  .tile{height:auto;min-height:170px}.tile h3{font-size:20px;margin-top:14px}.tile p{font-size:14px}.tile .pr{font-size:15px}
-  .cover .meta{margin-top:30px;flex-wrap:wrap;gap:14px}.cover .meta b{font-size:15px}
-  .rrow{grid-template-columns:1fr;gap:10px}.rrow .num{display:none}.rrow .price{text-align:left}
-  .rrow h3{font-size:18px}.rrow p{font-size:14px}.rrow .price b{font-size:24px}.rrow .price span{font-size:12px}
-  .promise,.why{grid-template-columns:1fr 1fr}
-  .promise b{font-size:15px}.promise span{font-size:13px}
-  .p1hero{height:auto;padding:34px 18px 26px}
-  .p1hero .h2{font-size:30px}
-  .p1hero .browser{position:relative;left:auto;right:auto;bottom:auto;margin-top:24px}
-  .fsite-hero{grid-template-columns:1fr}.fsite-nav .links span{display:none}
-  .fsite-hero h4{font-size:22px}.fsite-hero p{font-size:12px}
-  .calc .t{font-size:13px}.calc .lbl{font-size:11px}.calc .res b{font-size:20px}.calc .res span{font-size:11px}.calc .btn{font-size:13px}.calc small{font-size:10px}
-  .steps4{grid-template-columns:1fr 1fr}.st4 b{font-size:15px}.st4 span{font-size:13px}
-  .feat2,.trust,.p2grid,.actors,.p3split,.payways,.includes,.money{grid-template-columns:1fr}
-  .fcard b,.pb b,.s3 b{font-size:16px}.fcard span,.pb span,.s3 span{font-size:14px}
-  .phone{width:250px;height:520px;margin:0 auto;border-radius:36px;padding:10px}.screen{border-radius:28px}
-  .pinv{position:relative;left:auto;right:auto;bottom:auto;margin:26px 18px 0;grid-template-columns:1fr}
-  .pinv b{font-size:26px}.pinv span{font-size:13px}.pinv small{font-size:11px}
-  .status{grid-template-columns:1fr 1fr 1fr;gap:16px 4px}.status::before{display:none}
-  .status b{font-size:13px}.status span{font-size:11.5px}
-  .actor .hd b{font-size:17px}.actor .list li{font-size:14px}
-  .money .calcx b{font-size:30px}.money h3{font-size:18px}.money .opts div{font-size:14px}
-  .journey{grid-template-columns:1fr 1fr}.jr b{font-size:16px}.jr span{font-size:13px}
-  .f3 .h2{font-size:32px}
-  .invt{overflow-x:auto}.invt table{min-width:560px}.invt td,.invt th{font-size:12px}
-  .pw h3{font-size:18px}.includes div,.notes{font-size:13px}
-  .rd .box b{font-size:17px}.rd .box span{font-size:14px}
-  .why b{font-size:28px}.why span{font-size:13px}
-  .nx b{font-size:16px}.nx span{font-size:14px}
-  .cta{position:relative;height:auto;padding:36px 18px 50px;margin-top:30px}
-  .cta .agency{position:static;text-align:left;margin-bottom:20px}.av-logo{justify-content:flex-start}
-  .cta h2{font-size:28px}.cta .contact{flex-direction:column}.cta .contact div{font-size:16px}
-  .cta .valid{position:static;display:block;margin-top:16px;font-size:11px}
-  .kpis,.arrive,.road3,.r3w .hero{grid-template-columns:1fr}
-  .r3pad{margin-top:0!important}
-  .kpis b{font-size:24px}.kpis span,.road3 span{font-size:13px}.road3 b{font-size:16px}
-  .bubble{font-size:13px}.msheet{font-size:11px}.msheet .h{font-size:12px}
-  .ideal i{font-size:13px}.ideal span{font-size:11px}
-  .r3w .nav span{display:none}.r3w h4{font-size:24px}.r3w p{font-size:13px}
-  .ptab{display:none}
-  .cr{grid-template-columns:1fr;gap:8px}.sv{text-align:left}
-  .cl b{font-size:16px}.cl small{font-size:12px}.bm,.bv{height:30px;font-size:11px}.bm b,.bv b{font-size:12px}.sv b{font-size:20px}
-  .savebig,.pack{grid-template-columns:1fr}.savebig b{font-size:26px}.savebig .hl b{font-size:32px}
-  .pk-n b{font-size:38px}.pk-n2{font-size:17px}.pk1 p,.roi span{font-size:14px}.pk1 h3{font-size:19px}
-  .page:last-child .pfoot{display:none}
+/* pantalla: escala fiel en celulares */
+@media screen and (max-width:600px){
+  .page{margin:0 auto 10px;zoom:var(--z,1)}
 }
 </style>
+<script>
+(function(){function f(){var w=Math.min(window.innerWidth,document.documentElement.clientWidth||window.innerWidth);if(w<600){document.documentElement.style.setProperty('--z',(w/540).toFixed(4));}else{document.documentElement.style.removeProperty('--z');}}
+f();window.addEventListener('resize',f);})();
+</script>
 </head>
 <body>
 
 <svg width="0" height="0" style="position:absolute">
 <defs>
-  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="currentColor" opacity=".15"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="currentColor" opacity=".16"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-calc" viewBox="0 0 24 24"><rect x="4" y="2.5" width="16" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="7" y="5.5" width="10" height="4" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 13h.01M12 13h.01M16 13h.01M8 17h.01M12 17h.01M16 17h.01" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
-  <symbol id="i-form" viewBox="0 0 24 24"><rect x="4" y="2.5" width="16" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
   <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2.5a9.5 9.5 0 00-8.2 14.3L2.5 21.5l4.8-1.3A9.5 9.5 0 1012 2.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.6 7.8c.3-.6.6-.6.9-.6h.6c.2 0 .5 0 .7.6l.8 1.9c.1.3 0 .5-.1.7l-.6.7c-.2.2-.2.4 0 .7.5.9 1.4 1.9 2.6 2.5.3.2.5.1.7-.1l.7-.9c.2-.2.4-.3.7-.2l1.9.9c.3.1.4.3.4.5 0 .6-.3 1.6-1.3 2-.9.4-2.2.4-4.3-.7-2.1-1.1-3.6-3.2-4-4-.5-.9-.7-2.2.2-3.4z" fill="currentColor"/></symbol>
   <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.5l8 3v6c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10v-6l8-3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.5 12l2.4 2.4L15.8 9.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 10.5V7.5a4 4 0 018 0v3" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="15.5" r="1.5" fill="currentColor"/></symbol>
@@ -521,600 +376,548 @@ h1,h2,h3,h4{font-family:Archivo,Inter,sans-serif;letter-spacing:-.02em}
   <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3l9.5 17h-19L12 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10v4.5M12 17.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
   <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 2.5h8l4 4V21.5H6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 2.5v4h4M9 12h6M9 16h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/></symbol>
   <symbol id="i-money" viewBox="0 0 24 24"><rect x="2.5" y="6" width="19" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M6 9.5v5M18 9.5v5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
-  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10.5 18.5h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="5.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="1.8" fill="currentColor"/></symbol>
+  <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2M3 12.5h18" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
   <symbol id="i-store" viewBox="0 0 24 24"><path d="M3 9l1.5-5h15L21 9M3 9h18M3 9c0 1.7 1.3 3 3 3s3-1.3 3-3m0 0c0 1.7 1.3 3 3 3s3-1.3 3-3m0 0c0 1.7 1.3 3 3 3s3-1.3 3-3M5 12v8h14v-8M10 20v-5h4v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
   <symbol id="i-cart" viewBox="0 0 24 24"><path d="M2 3h3l2.4 12.2a1.5 1.5 0 001.5 1.2h9.4a1.5 1.5 0 001.5-1.2L21 7H6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="20.5" r="1.4" fill="currentColor"/><circle cx="18" cy="20.5" r="1.4" fill="currentColor"/></symbol>
   <symbol id="i-bike" viewBox="0 0 24 24"><circle cx="5.5" cy="17" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="18.5" cy="17" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5.5 17l4-8h5l4 8M9.5 9L8 6H6M14.5 9l-3 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-chef" viewBox="0 0 24 24"><path d="M7 14.5V20h10v-5.5M7 14.5a4 4 0 01-.6-7.9A5 5 0 0112 3a5 5 0 015.6 3.6 4 4 0 01-.6 7.9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M7 17h10" stroke="currentColor" stroke-width="1.8"/></symbol>
-  <symbol id="i-box" viewBox="0 0 24 24"><path d="M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z M3 7.5l9 4.5 9-4.5M12 12v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
   <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-2 4 2 4H5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M5 2.5h14v19l-2.3-1.5-2.4 1.5-2.3-1.5-2.3 1.5-2.4-1.5L5 21.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.5 8h7M8.5 12h7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
-  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 21h18M6 17v-5M11 17V7M16 17v-8M21 17V4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
   <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14 9l2 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
-  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
   <symbol id="i-eyeoff" viewBox="0 0 24 24"><path d="M3 3l18 18M10.6 5.2A9.8 9.8 0 0112 5c6.4 0 10 7 10 7a17 17 0 01-3.2 4.1M6.6 6.6C3.9 8.4 2 12 2 12s3.6 7 10 7c1.6 0 3-.4 4.3-1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-trend" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M15 7h6v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 14L7 22l5-2.5L17 22l-1.5-8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M3 10v4h3l7 5V5L6 10H3zM17 8.5a5 5 0 010 7M19.5 6a8.5 8.5 0 010 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><path d="M3 6l6-2.5 6 2.5 6-2.5v14.5l-6 2.5-6-2.5-6 2.5z M9 3.5v14.5M15 6v14.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10.5 18.5h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
   <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-9 6-14 15-14 0 9-5 15-14 15M5 19c3-4 6-6.5 10-8.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  <symbol id="i-fish" viewBox="0 0 24 24"><path d="M2.5 12c3-4.5 7-6 10.5-6 4.5 0 7.5 3 8.5 6-1 3-4 6-8.5 6-3.5 0-7.5-1.5-10.5-6zM2.5 12L1 8.5M2.5 12L1 15.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="16.5" cy="11" r="1.2" fill="currentColor"/></symbol>
-  <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 8.5l5.5 3.5-5.5 3.5z" fill="currentColor"/></symbol>
-  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="16.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
   <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 12h19M12 2.5c2.6 2.6 3.8 5.8 3.8 9.5s-1.2 6.9-3.8 9.5c-2.6-2.6-3.8-5.8-3.8-9.5S9.4 5.1 12 2.5z" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
-  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3.5 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
   <symbol id="i-vector" viewBox="0 0 24 24"><path d="M4 5l8 15 8-15" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  <symbol id="i-sheet" viewBox="0 0 24 24"><rect x="3.5" y="3" width="17" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 9h17M3.5 15h17M10 9v12" stroke="currentColor" stroke-width="1.8"/></symbol>
-  <!-- food art -->
-  <symbol id="a-burger" viewBox="0 0 48 48"><path d="M8 22c0-8 7-13 16-13s16 5 16 13z" fill="#FFE2B8"/><rect x="6" y="24" width="36" height="5" rx="2.5" fill="#6B3A1E"/><path d="M6 31h36l-3 3H9z" fill="#7BD07A"/><path d="M8 35h32c0 3-2 5-5 5H13c-3 0-5-2-5-5z" fill="#FFE2B8"/></symbol>
-  <symbol id="a-bowl" viewBox="0 0 48 48"><path d="M5 22h38c0 10-8.5 17-19 17S5 32 5 22z" fill="#fff"/><circle cx="16" cy="18" r="5" fill="#FF8A5C"/><circle cx="25" cy="15" r="5" fill="#9BE07F"/><circle cx="33" cy="19" r="4.5" fill="#FFD25C"/></symbol>
-  <symbol id="a-coffee" viewBox="0 0 48 48"><path d="M9 17h26v12c0 7-5.5 12-13 12S9 36 9 29z" fill="#fff"/><path d="M35 21h3a5 5 0 010 10h-3" fill="none" stroke="#fff" stroke-width="3"/><path d="M17 6c-2 3 2 4 0 7M24 6c-2 3 2 4 0 7" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/></symbol>
+
+  <!-- stickers -->
+  <symbol id="s-burger" viewBox="0 0 100 100"><ellipse cx="50" cy="92" rx="34" ry="5" fill="#000" opacity=".25"/><path d="M14 46c0-18 16-30 36-30s36 12 36 30z" fill="#F7B955"/><circle cx="34" cy="30" r="2.2" fill="#FFF3D6"/><circle cx="50" cy="25" r="2.2" fill="#FFF3D6"/><circle cx="64" cy="32" r="2.2" fill="#FFF3D6"/><path d="M10 50h80l-6 8H16z" fill="#6FCB5B"/><rect x="12" y="56" width="76" height="12" rx="6" fill="#7A3B1E"/><path d="M12 68h76l-4 6H16z" fill="#FFD23F"/><path d="M14 74h72c0 7-5 12-12 12H26c-7 0-12-5-12-12z" fill="#F0A845"/></symbol>
+  <symbol id="s-pizza" viewBox="0 0 100 100"><ellipse cx="50" cy="93" rx="30" ry="4.5" fill="#000" opacity=".25"/><path d="M50 88L12 20c24-12 52-12 76 0z" fill="#FFD36B"/><path d="M12 20c24-12 52-12 76 0l-4 8c-22-10-46-10-68 0z" fill="#E59A3A"/><circle cx="40" cy="38" r="7" fill="#E2483B"/><circle cx="60" cy="44" r="6" fill="#E2483B"/><circle cx="50" cy="62" r="5.5" fill="#E2483B"/><circle cx="62" cy="30" r="2.5" fill="#3E7A3E"/><circle cx="36" cy="54" r="2.5" fill="#3E7A3E"/></symbol>
+  <symbol id="s-bag" viewBox="0 0 100 100"><ellipse cx="50" cy="93" rx="30" ry="4.5" fill="#000" opacity=".25"/><path d="M22 32h56l6 54H16z" fill="#FF4A1C"/><path d="M22 32h56l2 10H20z" fill="#D63A10"/><path d="M36 38V28a14 14 0 0128 0v10" fill="none" stroke="#7A1E05" stroke-width="5" stroke-linecap="round"/><circle cx="50" cy="62" r="11" fill="#fff"/><path d="M45 62l3.5 3.5L56 58" fill="none" stroke="#FF4A1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="s-bike" viewBox="0 0 120 100"><ellipse cx="60" cy="92" rx="48" ry="5" fill="#000" opacity=".25"/><circle cx="26" cy="72" r="16" fill="#2A2A32"/><circle cx="26" cy="72" r="7" fill="#9A9AA6"/><circle cx="94" cy="72" r="16" fill="#2A2A32"/><circle cx="94" cy="72" r="7" fill="#9A9AA6"/><path d="M26 72l18-26h30l20 26" fill="none" stroke="#FF4A1C" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/><rect x="36" y="20" width="34" height="26" rx="5" fill="#FFC93C"/><path d="M36 30h34" stroke="#E0A400" stroke-width="3"/><path d="M74 46l8-18h10" fill="none" stroke="#D9D9E0" stroke-width="6" stroke-linecap="round"/></symbol>
+  <symbol id="s-shield" viewBox="0 0 100 100"><ellipse cx="50" cy="93" rx="28" ry="4.5" fill="#000" opacity=".25"/><path d="M50 8l34 12v26c0 22-14 38-34 44C30 84 16 68 16 46V20z" fill="#2E9E6A"/><path d="M50 16l26 9v21c0 17-11 30-26 35-15-5-26-18-26-35V25z" fill="#3CC486"/><path d="M36 48l10 10 18-20" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="s-coffee" viewBox="0 0 100 100"><ellipse cx="46" cy="93" rx="30" ry="4.5" fill="#000" opacity=".25"/><path d="M18 36h56v28c0 14-12 24-28 24S18 78 18 64z" fill="#fff"/><path d="M74 44h6a10 10 0 010 20h-6" fill="none" stroke="#fff" stroke-width="7"/><path d="M18 36h56v8H18z" fill="#8B5A2B"/><path d="M34 12c-4 6 4 8 0 14M48 12c-4 6 4 8 0 14" stroke="#C9C9D2" stroke-width="4" fill="none" stroke-linecap="round"/></symbol>
+  <symbol id="s-store" viewBox="0 0 100 100"><ellipse cx="50" cy="93" rx="38" ry="4.5" fill="#000" opacity=".25"/><rect x="16" y="42" width="68" height="46" fill="#fff"/><path d="M10 24h80l-4 20H14z" fill="#FF4A1C"/><path d="M26 24l-4 20M42 24l-2 20M58 24l2 20M74 24l4 20" stroke="#fff" stroke-width="5"/><rect x="40" y="58" width="20" height="30" fill="#FFC93C"/><rect x="22" y="54" width="12" height="12" rx="2" fill="#BFE3FF"/><rect x="66" y="54" width="12" height="12" rx="2" fill="#BFE3FF"/></symbol>
+  <symbol id="s-coins" viewBox="0 0 100 100"><ellipse cx="50" cy="93" rx="32" ry="4.5" fill="#000" opacity=".25"/><ellipse cx="50" cy="80" rx="28" ry="9" fill="#C98A1A"/><rect x="22" y="62" width="56" height="18" fill="#E8B04B"/><ellipse cx="50" cy="62" rx="28" ry="9" fill="#FFD06A"/><rect x="22" y="44" width="56" height="18" fill="#E8B04B"/><ellipse cx="50" cy="44" rx="28" ry="9" fill="#FFD06A"/><path d="M46 44h8M50 40v8" stroke="#C98A1A" stroke-width="3" stroke-linecap="round"/></symbol>
+  <symbol id="s-phone" viewBox="0 0 100 100"><ellipse cx="50" cy="94" rx="24" ry="4" fill="#000" opacity=".25"/><rect x="28" y="8" width="44" height="82" rx="9" fill="#2A2A32"/><rect x="32" y="16" width="36" height="66" rx="4" fill="#fff"/><rect x="36" y="22" width="28" height="14" rx="3" fill="#FF4A1C"/><rect x="36" y="40" width="28" height="6" rx="2" fill="#EEE"/><rect x="36" y="50" width="28" height="6" rx="2" fill="#EEE"/><rect x="36" y="66" width="28" height="10" rx="5" fill="#2E9E6A"/></symbol>
+  <symbol id="s-bread" viewBox="0 0 100 100"><ellipse cx="50" cy="92" rx="34" ry="4.5" fill="#000" opacity=".25"/><path d="M14 66c0-24 16-40 36-40s36 16 36 40c0 10-8 18-18 18H32c-10 0-18-8-18-18z" fill="#E59A3A"/><path d="M34 44l8 12M48 40l6 14M62 44l4 12" stroke="#FFD9A0" stroke-width="5" stroke-linecap="round"/></symbol>
+  <symbol id="s-calc" viewBox="0 0 100 100"><ellipse cx="50" cy="94" rx="26" ry="4" fill="#000" opacity=".25"/><rect x="24" y="8" width="52" height="80" rx="10" fill="#fff"/><rect x="32" y="16" width="36" height="16" rx="4" fill="#3B1E4F"/><rect x="48" y="21" width="16" height="6" rx="2" fill="#8FF0BC"/><g fill="#E9DDEE"><rect x="32" y="40" width="10" height="10" rx="3"/><rect x="45" y="40" width="10" height="10" rx="3"/><rect x="58" y="40" width="10" height="10" rx="3"/><rect x="32" y="54" width="10" height="10" rx="3"/><rect x="45" y="54" width="10" height="10" rx="3"/><rect x="32" y="68" width="10" height="10" rx="3"/><rect x="45" y="68" width="10" height="10" rx="3"/></g><rect x="58" y="54" width="10" height="24" rx="3" fill="#3CB87A"/></symbol>
+  <symbol id="s-sprout" viewBox="0 0 100 100"><ellipse cx="50" cy="92" rx="30" ry="4.5" fill="#000" opacity=".2"/><path d="M26 70h48l-6 20H32z" fill="#C7834A"/><rect x="22" y="64" width="56" height="8" rx="4" fill="#A86A36"/><path d="M50 64V40" stroke="#3E7A3E" stroke-width="5"/><path d="M50 46c-16 0-22-10-22-22 14 0 22 8 22 22zM50 42c0-16 9-24 24-24 0 15-9 24-24 24z" fill="#6FBF5A"/></symbol>
+  <symbol id="s-fish" viewBox="0 0 100 100"><ellipse cx="50" cy="92" rx="34" ry="4.5" fill="#000" opacity=".2"/><path d="M14 50c12-18 26-24 40-24 18 0 30 12 34 24-4 12-16 24-34 24-14 0-28-6-40-24z" fill="#3D8FA8"/><path d="M14 50L4 36v28z" fill="#2C6E86"/><path d="M40 34c4 10 4 22 0 32" stroke="#6FB7CF" stroke-width="4" fill="none"/><circle cx="72" cy="46" r="4.5" fill="#fff"/><circle cx="73" cy="46" r="2" fill="#141418"/></symbol>
+  <symbol id="s-plate" viewBox="0 0 100 100"><ellipse cx="50" cy="92" rx="36" ry="4.5" fill="#000" opacity=".2"/><circle cx="50" cy="52" r="36" fill="#fff"/><circle cx="50" cy="52" r="26" fill="none" stroke="#EADFCC" stroke-width="3"/><path d="M32 50c8-12 28-12 36 0-8 10-28 10-36 0z" fill="#E2A15E"/><path d="M38 62c4-5 20-5 24 0" stroke="#6FBF5A" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="44" cy="44" r="3" fill="#E2483B"/></symbol>
+
+  <!-- arte pequeño -->
   <symbol id="a-sprout" viewBox="0 0 64 64"><path d="M10 52h44" stroke="#fff" stroke-width="3" stroke-linecap="round"/><path d="M32 52V30" stroke="#fff" stroke-width="3"/><path d="M32 34c-12 0-16-8-16-16 10 0 16 6 16 16zM32 30c0-12 7-18 18-18 0 11-7 18-18 18z" fill="#fff"/></symbol>
-  <symbol id="a-fish" viewBox="0 0 64 64"><path d="M6 32c8-12 18-16 28-16 12 0 20 8 24 16-4 8-12 16-24 16-10 0-20-4-28-16z" fill="#fff"/><path d="M6 32L1 22M6 32L1 42" stroke="#fff" stroke-width="3" stroke-linecap="round"/><circle cx="46" cy="29" r="3" fill="#2C6E86"/><path d="M8 54c6-3 10 3 16 0s10 3 16 0 10 3 16 0" stroke="#fff" stroke-width="2.5" fill="none" opacity=".7"/></symbol>
-  <symbol id="a-pan" viewBox="0 0 64 64"><ellipse cx="28" cy="38" rx="20" ry="8" fill="#fff"/><path d="M48 36l14-4" stroke="#fff" stroke-width="4" stroke-linecap="round"/><path d="M20 22c-3 4 3 6 0 10M28 18c-3 4 3 6 0 10M36 22c-3 4 3 6 0 10" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round"/></symbol>
-  <symbol id="a-plate" viewBox="0 0 64 64"><circle cx="32" cy="34" r="22" fill="#fff"/><circle cx="32" cy="34" r="15" fill="none" stroke="#E6D6C2" stroke-width="2"/><path d="M22 32c4-6 16-6 20 0-4 5-16 5-20 0z" fill="#E2A15E"/><path d="M26 39c2-3 10-3 12 0" stroke="#7FB069" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M6 10v14M10 10v14M8 24v30M58 10c-4 2-4 10 0 14v30" stroke="#fff" stroke-width="2.5" stroke-linecap="round" fill="none"/></symbol>
+  <symbol id="a-cart" viewBox="0 0 64 64"><path d="M6 10h8l7 30h28l6-20H18" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="25" cy="50" r="4" fill="#fff"/><circle cx="46" cy="50" r="4" fill="#fff"/></symbol>
+  <symbol id="a-cal" viewBox="0 0 64 64"><rect x="10" y="14" width="44" height="40" rx="6" fill="#fff"/><rect x="10" y="14" width="44" height="12" rx="6" fill="#BFE3F0"/><path d="M20 8v12M44 8v12" stroke="#fff" stroke-width="4" stroke-linecap="round"/><path d="M24 40l6 6 12-12" fill="none" stroke="#2C6E86" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="a-tour" viewBox="0 0 64 64"><path d="M32 58S14 40 14 26a18 18 0 0136 0c0 14-18 32-18 32z" fill="#fff"/><path d="M32 30c-6 0-8-4-8-9 5 0 8 3 8 9zM32 28c0-6 4-9 9-9 0 5-4 9-9 9z" fill="#3E7A3E"/></symbol>
   <symbol id="a-salad" viewBox="0 0 48 48"><path d="M5 22h38c0 10-8.5 17-19 17S5 32 5 22z" fill="#FBF8F1" stroke="#2F5D3A" stroke-width="1.5"/><path d="M12 22c0-6 5-9 9-6M20 22c1-7 8-9 11-5M28 22c2-5 8-6 10-2" fill="#7FB069"/><circle cx="17" cy="19" r="2.5" fill="#E2604A"/></symbol>
   <symbol id="a-fishplate" viewBox="0 0 48 48"><ellipse cx="24" cy="30" rx="20" ry="10" fill="#FBF8F1" stroke="#2C6E86" stroke-width="1.5"/><path d="M10 29c5-6 11-8 16-8 6 0 10 4 12 8-2 4-6 7-12 7-5 0-11-2-16-7z" fill="#E2A15E"/><circle cx="33" cy="28" r="1.4" fill="#5B3A1E"/></symbol>
   <symbol id="a-juice" viewBox="0 0 48 48"><path d="M13 12h22l-3 30H16z" fill="#FFC86B" stroke="#C7834A" stroke-width="1.5"/><path d="M25 12l6-9" stroke="#2F5D3A" stroke-width="2.5" stroke-linecap="round"/><circle cx="33" cy="12" r="5" fill="#7FB069"/></symbol>
 </defs>
 </svg>
 
-<!-- ================= 1. PORTADA ================= -->
+<!-- ============ PORTADA ============ -->
 <section class="page cover">
-  <div class="mesh"></div>
-  <div class="top">
-    <div class="av-logo" style="justify-content:flex-start"><i><svg><use href="#i-vector"/></svg></i>Agencia Vectorial</div>
-    <div class="forby">Propuesta comercial para<br><b>Teddy Gutiérrez</b></div>
-  </div>
-  <h1>Tres ideas.<br><em>Tres negocios digitales.</em></h1>
-  <p class="sub">Una sola propuesta para tres sectores: un micrositio de créditos que genera confianza, una plataforma de pedidos que protege a los negocios y un restaurante que cuenta su historia del cultivo a la mesa.</p>
-
-  <div class="tiles">
-    <div class="tile t1">
-      <svg class="art"><use href="#i-calc"/></svg>
-      <span class="n">01</span>
-      <small class="sec">Sector financiero</small><h3>Micrositio de créditos</h3>
-      <p>Calculadora, solicitud en línea y confianza para convertir visitas en clientes.</p>
-      <div class="pr"><span>Contado</span><span>$790.000</span></div>
-    </div>
-    <div class="tile t2">
-      <svg class="art"><use href="#i-bike"/></svg>
-      <span class="n">02</span>
-      <small class="sec">Mercados ocultos</small><h3>Plataforma de pedidos para negocios</h3>
-      <p>Catálogos, pedidos y domicilios para negocios que quieren vender sin exponerse.</p>
-      <div class="pr"><span>Contado</span><span>$1.500.000</span></div>
-    </div>
-    <div class="tile t3">
-      <svg class="art"><use href="#i-leaf"/></svg>
-      <span class="n">03</span>
-      <small class="sec">Restaurante</small><h3>Restaurante autosostenible</h3>
-      <p>Micrositio + catálogo digital que muestra la huerta, la pesca y el menú.</p>
-      <div class="pr"><span>Contado</span><span>$990.000</span></div>
+  <div class="glow"></div>
+  <div class="in">
+    <div class="av"><i><svg><use href="#i-vector"/></svg></i>Agencia Vectorial</div>
+    <div class="for">Propuesta comercial para<b>Teddy Gutiérrez</b></div>
+    <h1>De la idea<br><em>al negocio digital.</em></h1>
+    <p class="sub">Usted tiene tres ideas. Aquí le mostramos cómo se verían, cómo funcionarían, cuánto cuestan y por dónde empezar.</p>
+    <div class="three">
+      <div class="c1"><i>01</i>Sector financiero<span>$790.000</span></div>
+      <div class="c2"><i>02</i>Mercados ocultos<span>$1.500.000</span></div>
+      <div class="c3"><i>03</i>Restaurante sostenible<span>$990.000</span></div>
     </div>
   </div>
-
-  <div class="meta">
-    <div>Preparado para<b>Teddy Gutiérrez</b></div>
-    <div>Fecha<b>Noviembre 2026</b></div>
-    <div>Los 3 proyectos desde<b>$850.000 de inicial</b></div>
-  </div>
+  <div class="bot"><span>Noviembre 2026</span><span>Los 3 desde $850.000 de inicial</span></div>
 </section>
 
-<!-- ================= 2. RESUMEN ================= -->
+<!-- ============ CÓMO LEERLA ============ -->
 <section class="page">
-  <div class="pad">
-    <div class="eyebrow">La propuesta en un minuto</div>
-    <h2 class="h2">Tres proyectos, cada uno<br>con su precio y su plazo.</h2>
-    <p class="lead">Cada proyecto es independiente: pueden arrancar con uno y sumar los demás cuando quieran. Todos son a la medida, quedan a su nombre y se pagan una sola vez.</p>
-
-    <div class="rtable">
-      <div class="rrow r1">
-        <span class="num">01</span>
-        <div>
-          <h3>Sector financiero <small>Micrositio de créditos</small></h3>
-          <p>Página que genera confianza, calcula la cuota y recibe solicitudes para contactar a cada cliente.</p>
-          <div class="tags"><span>Calculadora de crédito</span><span>Solicitud a WhatsApp</span><span>Requisitos y FAQ</span><span>Aviso legal</span></div>
-        </div>
-        <div class="price"><b>$790.000</b><span>o $250.000 + 8 cuotas de $99.900</span><i>Entrega en 7 días</i></div>
-      </div>
-      <div class="rrow r2">
-        <span class="num">02</span>
-        <div>
-          <h3>Mercados ocultos <small>Plataforma de pedidos</small></h3>
-          <p>Directorio de negocios con su propio catálogo, carrito, pedidos y domicilios, administrado por usted.</p>
-          <div class="tags"><span>Multinegocio</span><span>Panel de pedidos</span><span>Accesos por negocio</span><span>Mensualidad o comisión</span></div>
-        </div>
-        <div class="price"><b>$1.500.000</b><span>o $350.000 + 16 cuotas de $99.900</span><i>Entrega en 20 días</i></div>
-      </div>
-      <div class="rrow r3">
-        <span class="num">03</span>
-        <div>
-          <h3>Restaurante autosostenible <small>Página + catálogo</small></h3>
-          <p>Micrositio + catálogo digital: el proceso del cultivo y la pesca, el menú con precios y pedidos.</p>
-          <div class="tags"><span>Historia del proceso</span><span>Menú digital</span><span>Pedidos y reservas</span><span>Galería y video</span></div>
-        </div>
-        <div class="price"><b>$990.000</b><span>o $250.000 + 10 cuotas de $99.900</span><i>Entrega en 7 días</i></div>
-      </div>
+  <div class="in top">
+    <div class="kick" style="color:var(--muted)">Cómo leer esta propuesta</div>
+    <h2 class="h">Tres propuestas.<br>Cada una completa.</h2>
+    <p class="lead">Cada idea tiene su color y su sección: qué es, para quién, cómo funciona y cuánto cuesta. Puede empezar con una y sumar las otras después.</p>
+    <div class="idx">
+      <div class="ix c1"><svg class="bg"><use href="#i-calc"/></svg><small>Propuesta 01</small><b>Sector financiero</b><p>Micrositio con calculadora para que le pidan créditos o asesoría con confianza.</p><div class="pr"><span>Desde</span>$790.000</div></div>
+      <div class="ix c2"><svg class="bg"><use href="#i-bike"/></svg><small>Propuesta 02 · La principal</small><b>Mercados ocultos</b><p>Plataforma de pedidos para que los negocios vendan sin exponerse.</p><div class="pr"><span>Desde</span>$1.500.000</div></div>
+      <div class="ix c3"><svg class="bg"><use href="#i-leaf"/></svg><small>Propuesta 03</small><b>Restaurante sostenible</b><p>Página + catálogo para pedir, reservar y visitar la finca.</p><div class="pr"><span>Desde</span>$990.000</div></div>
     </div>
-
-    <div class="promise">
-      <div><svg><use href="#i-key"/></svg><b>100 % suyo</b><span>Cada proyecto queda a su nombre.</span></div>
-      <div><svg><use href="#i-money"/></svg><b>Pago único</b><span>Sin mensualidades de plataforma.</span></div>
-      <div><svg><use href="#i-globe"/></svg><b>Dominio y hosting</b><span>Incluidos el primer año.</span></div>
-      <div><svg><use href="#i-star"/></svg><b>A la medida</b><span>Diseño propio, nada de plantillas.</span></div>
-    </div>
+    <div class="ixend"><b>Al final:</b> el resumen de inversión, cuánto se ahorra frente al mercado y cómo tener los tres proyectos con una sola inicial.</div>
   </div>
-  <div class="pfoot"><b>Teddy Gutiérrez</b> · Propuesta Agencia Vectorial</div><div class="pnum">02</div>
+  <div class="foot"><span><b>Teddy Gutiérrez</b> · Agencia Vectorial</span><span>02</span></div>
 </section>
 
-<!-- ================= 3. P1 HERO ================= -->
-<section class="page f1">
-  <div class="ptab pt1"><span>Proyecto 01 · Sector financiero</span></div>
-  <div class="p1hero">
-    <div class="eyebrow">Proyecto 01 · Sector financiero</div>
-    <h2 class="h2">Que lo encuentren, <em>confíen</em> y le pidan el crédito.</h2>
-    <p class="lead">En los préstamos, la confianza lo es todo. Este micrositio presenta su marca con la seriedad de una fintech: el cliente simula su crédito y le envía la solicitud lista para que usted lo contacte.</p>
+<!-- ================= PROPUESTA 01 ================= -->
+<section class="page div1">
+  <div class="st" style="width:160px;height:160px;right:30px;top:640px;transform:rotate(10deg)"><svg><use href="#s-calc"/></svg></div>
+  <div class="st" style="width:120px;height:120px;right:190px;top:730px;transform:rotate(-12deg)"><svg><use href="#s-coins"/></svg></div>
+  <div class="st" style="width:100px;height:100px;left:36px;top:760px;transform:rotate(-6deg)"><svg><use href="#s-shield"/></svg></div>
+  <div class="dv">
+    <div class="n">01</div>
+    <small>Propuesta 01</small>
+    <h2>Sector financiero</h2>
+    <p>Su servicio financiero en línea: que lo encuentren, confíen en usted y le pidan el crédito o la asesoría desde el celular.</p>
+    <div class="pill" style="background:#fff;color:var(--p1)">Micrositio con calculadora · $790.000</div>
+  </div>
+  <div class="foot" style="color:#D9B8E0"><span><b>Teddy Gutiérrez</b> · Agencia Vectorial</span><span>03</span></div>
+</section>
 
-    <div class="browser">
-      <div class="bar"><i></i><i></i><i></i><span>tumarcadecreditos.com</span></div>
-      <div class="fsite-nav">
-        <div class="fsite-logo"><i>TM</i>Tu Marca Créditos</div>
-        <div class="links"><span>Cómo funciona</span><span>Requisitos</span><span>Preguntas</span><span>Contacto</span><b>Solicitar crédito</b></div>
-      </div>
-      <div class="fsite-hero">
-        <div>
-          <h4>Tu crédito, <em>rápido y sin enredos.</em></h4>
-          <p>Simula tu préstamo, conoce tu cuota y envía tu solicitud en minutos. Un asesor te contacta el mismo día.</p>
-          <div class="chips"><span>Respuesta el mismo día</span><span>Tasas claras</span><span>Sin pagos por adelantado</span></div>
-        </div>
+<section class="page f1">
+  <div class="phead ph1"><span>Propuesta 01 · Sector financiero</span><i>La idea</i></div>
+  <div class="in">
+    <div class="kick">Su idea, organizada</div>
+    <h2 class="h">Así funcionaría su servicio en internet.</h2>
+    <div class="q4">
+      <div class="q"><div class="ib"><svg><use href="#i-globe"/></svg></div><div><b>¿Qué es?</b><span>Una página corta y profesional (micrositio) con su marca, sus servicios y una calculadora de crédito.</span></div></div>
+      <div class="q"><div class="ib g"><svg><use href="#i-users"/></svg></div><div><b>¿Para quién?</b><span>Personas que necesitan un crédito o asesoría y quieren saber cuánto pagarían antes de escribirle.</span></div></div>
+      <div class="q"><div class="ib"><svg><use href="#i-target"/></svg></div><div><b>¿Para qué?</b><span>Para generar confianza y recibir solicitudes listas. Usted solo llama a personas realmente interesadas.</span></div></div>
+      <div class="q"><div class="ib g"><svg><use href="#i-briefcase"/></svg></div><div><b>¿Y usted como independiente?</b><span>No necesita oficina ni app: con un enlace en sus redes y WhatsApp tiene su “sucursal” digital abierta 24/7.</span></div></div>
+    </div>
+    <p style="font-size:14.5px;color:#9A9BAA;margin-top:16px;line-height:1.45">¿Créditos, asesoría financiera o bancaria? El micrositio se adapta a lo que usted ofrezca.</p>
+  </div>
+  <div class="foot"><span><b>Teddy Gutiérrez</b> · Agencia Vectorial</span><span>04</span></div>
+</section>
+
+<section class="page f1">
+  <div class="phead ph1"><span>Propuesta 01 · Sector financiero</span><i>Lo que ve su cliente</i></div>
+  <div class="in">
+    <div class="kick">Lo que verá su cliente</div>
+    <h2 class="h">Simula, confía<br>y le escribe.</h2>
+    <div style="display:grid;grid-template-columns:230px 1fr;gap:22px;margin-top:20px;align-items:start">
+      <div class="phone"><div class="screen p1scr">
+        <div class="notch"></div>
+        <div class="top"><div class="brand"><i>SM</i>Su Marca</div><h4>Tu crédito, <em>rápido y sin enredos.</em></h4></div>
         <div class="calc">
           <div class="t">Simula tu crédito</div>
-          <div class="lbl"><span>¿Cuánto necesitas?</span><b>$1.000.000</b></div>
-          <div class="slider"><span style="width:38%"></span></div>
-          <div class="lbl"><span>¿En cuántas cuotas?</span><b>6 meses</b></div>
-          <div class="slider"><span style="width:45%"></span></div>
-          <div class="res"><span>Cuota mensual aprox.</span><b>$178.500</b></div>
+          <div class="l"><span>¿Cuánto necesitas?</span><b>$1.000.000</b></div>
+          <div class="sl"><span style="width:38%"></span></div>
+          <div class="l"><span>¿En cuántas cuotas?</span><b>6 meses</b></div>
+          <div class="sl"><span style="width:45%"></span></div>
+          <div class="r"><span>Cuota aprox.</span><b>$178.500</b></div>
           <div class="btn">Solicitar ahora</div>
-          <small>Valores de ejemplo. Sujeto a estudio de crédito. Tasa dentro de los límites legales vigentes.</small>
+          <small>Valores de ejemplo. Sujeto a estudio de crédito.</small>
         </div>
+        <div class="chips"><span>Respuesta el mismo día</span><span>Tasas claras</span></div>
+      </div></div>
+      <div class="side">
+        <div><i><svg><use href="#i-calc"/></svg></i><div><b>Calculadora</b><span>Monto, plazo y cuota al instante.</span></div></div>
+        <div><i><svg><use href="#i-doc"/></svg></i><div><b>Requisitos</b><span>Qué documentos necesita.</span></div></div>
+        <div><i><svg><use href="#i-star"/></svg></i><div><b>Testimonios</b><span>Clientes que ya confiaron.</span></div></div>
+        <div><i><svg><use href="#i-help"/></svg></i><div><b>Preguntas</b><span>Dudas resueltas antes de escribir.</span></div></div>
+        <div><i><svg><use href="#i-alert"/></svg></i><div><b>Antifraude</b><span>“Nunca pedimos dinero por adelantado”.</span></div></div>
+        <div><i><svg><use href="#i-lock"/></svg></i><div><b>Datos protegidos</b><span>Autorización de datos (Ley 1581).</span></div></div>
       </div>
     </div>
+    <p style="font-size:13px;color:#9A9BAA;margin-top:18px;line-height:1.45">Estilo inspirado en las fintech de crédito en línea (morado, verde, letra redondeada). “Su Marca” es un nombre de ejemplo.</p>
   </div>
-
-  <div class="p1body" style="padding-top:16mm">
-    <div class="eyebrow" style="color:var(--p1)">Así funciona para su cliente</div>
-    <div class="steps4">
-      <div class="st4"><i>1</i><svg><use href="#i-calc"/></svg><b>Simula</b><span>Elige monto y plazo y ve su cuota al instante.</span></div>
-      <div class="st4"><i>2</i><svg><use href="#i-form"/></svg><b>Solicita</b><span>Llena un formulario corto con sus datos.</span></div>
-      <div class="st4"><i>3</i><svg><use href="#i-wa"/></svg><b>Lo contactan</b><span>La solicitud llega a su WhatsApp y su base de datos.</span></div>
-      <div class="st4"><i>4</i><svg><use href="#i-money"/></svg><b>Recibe</b><span>Usted estudia el caso y desembolsa.</span></div>
-    </div>
-    <div class="kpis">
-      <div><b>24/7</b><span>Recibe solicitudes aunque esté ocupado o dormido.</span></div>
-      <div><b>1 base</b><span>Todos sus prospectos ordenados en Google Sheets.</span></div>
-      <div><b>+ confianza</b><span>Una marca seria vende más que un perfil o un volante.</span></div>
-    </div>
-    <p style="font-size:7.4pt;color:#9A9BAA;margin-top:5mm">Línea gráfica inspirada en el estilo de las fintech de crédito en línea (morado, verde y tipografía redondeada), adaptada a su marca. “Tu Marca Créditos” es un nombre de ejemplo.</p>
-  </div>
-  <div class="pfoot"><b>Teddy Gutiérrez</b> · Propuesta Agencia Vectorial</div><div class="pnum">03</div>
+  <div class="foot"><span><b>Teddy Gutiérrez</b> · Agencia Vectorial</span><span>05</span></div>
 </section>
 
-<!-- ================= 4. P1 FUNCIONES + INVERSIÓN ================= -->
 <section class="page f1">
-  <div class="ptab pt1"><span>Proyecto 01 · Sector financiero</span></div>
-  <div class="p1body">
-    <div class="eyebrow" style="color:var(--p1)">Proyecto 01 · Sector financiero · Lo que incluye</div>
-    <h2 class="h2" style="font-size:25pt;color:var(--p1-d)">Todo lo que necesita una marca de créditos para vender confianza.</h2>
+  <div class="phead ph1"><span>Propuesta 01 · Sector financiero</span><i>Cómo funciona</i></div>
+  <div class="in">
+    <div class="kick">Cómo funciona</div>
+    <h2 class="h">De la visita<br>a la solicitud.</h2>
+    <div class="steps">
+      <div class="stp"><i>1</i><div><b>Simula</b><span>Elige monto y plazo, y ve su cuota.</span></div></div>
+      <div class="stp"><i>2</i><div><b>Solicita</b><span>Deja sus datos en un formulario corto.</span></div></div>
+      <div class="stp"><i>3</i><div><b>Usted lo contacta</b><span>La solicitud le llega a su WhatsApp.</span></div></div>
+      <div class="stp"><i>4</i><div><b>Cierra el negocio</b><span>Estudia el caso y desembolsa o asesora.</span></div></div>
+    </div>
+    <div class="kick" style="margin-top:26px">Así le llega cada solicitud</div>
+    <div class="bubble" style="margin-top:12px"><b>Nueva solicitud de crédito</b><br>Carolina Martínez · CC 1.045.***.***<br>Monto: $1.000.000 · Plazo: 6 cuotas<br>Ocupación: independiente · Barranquilla<small>9:14 a. m.</small></div>
+    <p style="font-size:15px;color:var(--muted);margin-top:12px;line-height:1.45">Y queda guardada en Google Sheets: su base de clientes, ordenada.</p>
+  </div>
+  <div class="foot"><span><b>Teddy Gutiérrez</b> · Agencia Vectorial</span><span>06</span></div>
+</section>
 
-    <div class="trust">
-      <div class="phone p1phone"><div class="screen">
+<section class="page f1">
+  <div class="phead ph1"><span>Propuesta 01 · Sector financiero</span><i>Inversión</i></div>
+  <div class="in">
+    <div class="kick">Qué incluye</div>
+    <h2 class="h">Todo listo<br>en 7 días.</h2>
+    <ul class="chk" style="color:var(--p1g)">
+      <li><svg><use href="#i-check"/></svg><span><b>Micrositio</b> con su marca, servicios y contacto.</span></li>
+      <li><svg><use href="#i-check"/></svg><span><b>Calculadora</b> de crédito con sus montos y plazos.</span></li>
+      <li><svg><use href="#i-check"/></svg><span><b>Formulario</b> que llega a WhatsApp y Google Sheets.</span></li>
+      <li><svg><use href="#i-check"/></svg><span>Requisitos, preguntas, testimonios y antifraude.</span></li>
+      <li><svg><use href="#i-check"/></svg><span>Aviso legal y autorización de datos.</span></li>
+      <li><svg><use href="#i-check"/></svg><span><b>Dominio y hosting</b> el primer año.</span></li>
+    </ul>
+  </div>
+  <div class="price pr1">
+    <div class="a"><small>Pago único</small><b>$790.000</b><span>50 % al iniciar · 50 % al entregar</span></div>
+    <div class="bb"><div><small>A cuotas</small><b>$250.000</b><span>+ 8 cuotas de $99.900</span></div><div><small>Entrega</small><b>7 días</b><span>100 % suyo</span></div></div>
+  </div>
+  <div class="closing" style="color:var(--p1)">Fin de la propuesta 01</div>
+</section>
+
+<!-- ================= PROPUESTA 02 ================= -->
+<section class="page div2">
+  <div style="position:absolute;inset:0;background:radial-gradient(320px 320px at 85% 25%,rgba(255,74,28,.45),transparent 70%),radial-gradient(260px 260px at 10% 90%,rgba(255,201,60,.22),transparent 70%)"></div>
+  <div class="st" style="width:130px;height:130px;right:28px;top:56px;transform:rotate(12deg)"><svg><use href="#s-burger"/></svg></div>
+  <div class="st" style="width:100px;height:100px;right:170px;top:140px;transform:rotate(-14deg)"><svg><use href="#s-pizza"/></svg></div>
+  <div class="st" style="width:80px;height:80px;left:40px;top:70px;transform:rotate(-10deg)"><svg><use href="#s-coffee"/></svg></div>
+  <div class="st" style="width:120px;height:120px;left:30px;top:720px;transform:rotate(-8deg)"><svg><use href="#s-bag"/></svg></div>
+  <div class="st" style="width:180px;height:150px;right:22px;top:700px;transform:rotate(4deg)"><svg viewBox="0 0 120 100"><use href="#s-bike"/></svg></div>
+  <div class="st" style="width:96px;height:96px;left:170px;top:790px;transform:rotate(8deg)"><svg><use href="#s-shield"/></svg></div>
+  <div class="dv" style="top:260px">
+    <div class="n" style="color:var(--p2);opacity:.4">02</div>
+    <small style="color:var(--p2)">Propuesta 02 · La principal</small>
+    <h2>Mercados<br>Ocultos</h2>
+    <p>El canal para que los negocios vendan, muestren su marca y despachen a domicilio… sin exponerse.</p>
+    <div class="pill" style="background:var(--p2);color:#fff">Plataforma de pedidos · $1.500.000</div>
+  </div>
+  <div class="foot" style="color:#6C6C78"><span><b>Teddy Gutiérrez</b> · Agencia Vectorial</span><span>08</span></div>
+</section>
+
+<section class="page f2">
+  <div class="phead ph2"><span>Propuesta 02 · Mercados ocultos</span><i>El problema</i></div>
+  <div class="st" style="width:84px;height:84px;right:30px;top:120px;transform:rotate(14deg)"><svg><use href="#s-store"/></svg></div>
+  <div class="in">
+    <div class="kick">El problema</div>
+    <p class="big-q">En Barranquilla, muchos negocios <em>pagan por existir.</em></p>
+    <p class="lead" style="margin-top:14px">La extorsión golpea a restaurantes, tiendas, panaderías y mercados de barrio. Un local a la vista se vuelve un blanco.</p>
+    <div class="pain">
+      <div><i><svg><use href="#i-eyeoff"/></svg></i><div><b>Exponerse es un riesgo</b><span>Mostrar el local y crecer llama la atención equivocada.</span></div></div>
+      <div><i><svg><use href="#i-money"/></svg></i><div><b>La “vacuna” se come la ganancia</b><span>Pagar para poder trabajar deja menos para el negocio.</span></div></div>
+      <div><i><svg><use href="#i-map"/></svg></i><div><b>Ventas solo en el barrio</b><span>Sin un canal propio, venden a los mismos de siempre.</span></div></div>
+    </div>
+    <div class="opp"><small>La oportunidad para usted</small>Darles un canal para vender a toda la ciudad sin depender de un local a la vista.</div>
+  </div>
+  <div class="foot"><span><b>Teddy Gutiérrez</b> · Agencia Vectorial</span><span>09</span></div>
+</section>
+
+<section class="page f2">
+  <div class="phead ph2"><span>Propuesta 02 · Mercados ocultos</span><i>La solución</i></div>
+  <div class="in">
+    <div class="kick">La solución</div>
+    <h2 class="h">Una app de pedidos<br><em>que protege al negocio.</em></h2>
+    <p class="lead">Como las apps de domicilios que todos conocen, pero pensada para negocios que quieren vender con menos exposición.</p>
+    <div class="flow3">
+      <div class="fn"><i style="background:#2A2A32"><svg style="color:var(--p2y)"><use href="#i-store"/></svg></i><b>El negocio</b><span>Sube su menú y productos</span></div>
+      <div class="fa"><svg><use href="#i-arrow"/></svg></div>
+      <div class="fn" style="border-color:var(--p2)"><i style="background:var(--p2)"><svg style="color:#fff"><use href="#i-shield"/></svg></i><b>La plataforma</b><span>Muestra y recibe pedidos</span></div>
+      <div class="fa"><svg><use href="#i-arrow"/></svg></div>
+      <div class="fn"><i style="background:#2A2A32"><svg style="color:#7AD1A3"><use href="#i-user"/></svg></i><b>El cliente</b><span>Pide y recibe en casa</span></div>
+    </div>
+    <div class="sol">
+      <div><svg><use href="#i-check"/></svg><span><b>Marca visible, dirección protegida:</b> el cliente ve el negocio, no dónde queda.</span></div>
+      <div><svg><use href="#i-check"/></svg><span><b>Cada negocio con su vitrina:</b> logo, fotos, menú, precios y horarios.</span></div>
+      <div><svg><use href="#i-check"/></svg><span><b>Pedidos y domicilios</b> organizados en un solo lugar.</span></div>
+      <div><svg><use href="#i-check"/></svg><span><b>Usted administra todo:</b> quién entra, cuánto paga y qué se vende.</span></div>
+    </div>
+  </div>
+  <div class="st" style="width:110px;height:110px;right:30px;bottom:44px;transform:rotate(-10deg)"><svg><use href="#s-phone"/></svg></div>
+  <div class="foot"><span><b>Teddy Gutiérrez</b> · Agencia Vectorial</span><span>10</span></div>
+</section>
+
+<section class="page f2">
+  <div class="phead ph2"><span>Propuesta 02 · Mercados ocultos</span><i>Lo que encuentra el cliente</i></div>
+  <div class="in">
+    <div class="kick">Lo que encuentra el cliente</div>
+    <h2 class="h" style="font-size:40px">Todo el barrio,<br><em>en una sola app.</em></h2>
+    <div style="display:grid;grid-template-columns:230px 1fr;gap:20px;margin-top:18px;align-items:start">
+      <div class="phone"><div class="screen app">
         <div class="notch"></div>
-        <div class="ph-head"><b>Solicita tu crédito</b><span>Te respondemos el mismo día</span></div>
-        <div class="form">
-          <div class="f"><small>Monto y plazo</small><b>$1.000.000 · 6 cuotas</b></div>
-          <div class="f"><small>Nombre completo</small><b>Carolina Martínez</b></div>
-          <div class="f"><small>Cédula</small><b>1.045.***.***</b></div>
-          <div class="f"><small>Celular</small><b>300 *** ** 12</b></div>
-          <div class="f"><small>Ocupación</small><b>Independiente</b></div>
-          <div class="chk"><i><svg style="width:2.4mm;height:2.4mm;color:#fff"><use href="#i-check"/></svg></i>Autorizo el tratamiento de mis datos personales (Ley 1581 de 2012).</div>
-          <div class="send"><svg><use href="#i-wa"/></svg>Enviar solicitud</div>
-          <div class="ok">Solicitud recibida. Un asesor te escribirá por WhatsApp.</div>
+        <div class="hd"><b>Mercados Ocultos<svg class="i" style="width:16px;height:16px"><use href="#i-cart"/></svg></b><small>Entregar en: El Prado, Barranquilla</small><div class="s">¿Qué se te antoja hoy?</div></div>
+        <div class="cats">
+          <span><i><svg viewBox="0 0 100 100"><use href="#s-burger"/></svg></i>Comida</span>
+          <span><i><svg viewBox="0 0 100 100"><use href="#s-store"/></svg></i>Mercados</span>
+          <span><i><svg viewBox="0 0 100 100"><use href="#s-bread"/></svg></i>Panadería</span>
+          <span><i><svg viewBox="0 0 100 100"><use href="#s-pizza"/></svg></i>Rápidas</span>
         </div>
+        <div class="bz"><div class="im g1"><span class="t">25–35 min</span><span class="p">Entrega protegida</span><svg viewBox="0 0 100 100"><use href="#s-burger"/></svg></div><div class="tx"><div><b>La Parrilla del Barrio</b><span>Domicilio $4.000</span></div><i>4,8</i></div></div>
+        <div class="bz"><div class="im g4"><span class="t">20–30 min</span><svg viewBox="0 0 100 100"><use href="#s-bread"/></svg></div><div class="tx"><div><b>Panadería La Espiga</b><span>Domicilio $3.000</span></div><i>4,9</i></div></div>
+        <div class="bz"><div class="im g2"><span class="t">30–40 min</span><svg viewBox="0 0 100 100"><use href="#s-store"/></svg></div><div class="tx"><div><b>Mercado Don Pepe</b><span>Domicilio $5.000</span></div><i>4,7</i></div></div>
       </div></div>
-
-      <div class="feat2" style="margin-top:0">
-        <div class="fcard"><div class="ib"><svg><use href="#i-calc"/></svg></div><div><b>Calculadora de crédito</b><span>Monto y plazo ajustables; usted define tasas, montos y plazos.</span></div></div>
-        <div class="fcard"><div class="ib g"><svg><use href="#i-form"/></svg></div><div><b>Solicitud en línea</b><span>Llega a su WhatsApp y queda guardada en Google Sheets.</span></div></div>
-        <div class="fcard"><div class="ib"><svg><use href="#i-doc"/></svg></div><div><b>Requisitos claros</b><span>Qué documentos se piden y cómo es el proceso.</span></div></div>
-        <div class="fcard"><div class="ib g"><svg><use href="#i-star"/></svg></div><div><b>Testimonios</b><span>Clientes reales que ya recibieron su crédito.</span></div></div>
-        <div class="fcard"><div class="ib"><svg><use href="#i-help"/></svg></div><div><b>Preguntas frecuentes</b><span>Responde las dudas antes de que escriban.</span></div></div>
-        <div class="fcard"><div class="ib g"><svg><use href="#i-alert"/></svg></div><div><b>Guía antifraude</b><span>“Nunca pedimos dinero por adelantado”: genera confianza.</span></div></div>
-        <div class="fcard"><div class="ib"><svg><use href="#i-lock"/></svg></div><div><b>Datos protegidos</b><span>Autorización de datos personales y aviso legal visibles.</span></div></div>
-        <div class="fcard"><div class="ib g"><svg><use href="#i-globe"/></svg></div><div><b>Listo para Google</b><span>Estructura para aparecer cuando busquen “créditos”.</span></div></div>
+      <div class="catlist">
+        <div><i><svg viewBox="0 0 100 100"><use href="#s-burger"/></svg></i><div><b>Restaurantes</b><span>Almuerzos, asados, típicos.</span></div></div>
+        <div><i><svg viewBox="0 0 100 100"><use href="#s-pizza"/></svg></i><div><b>Comidas rápidas</b><span>Hamburguesas, pizzas.</span></div></div>
+        <div><i><svg viewBox="0 0 100 100"><use href="#s-store"/></svg></i><div><b>Mercados y tiendas</b><span>El mercado a domicilio.</span></div></div>
+        <div><i><svg viewBox="0 0 100 100"><use href="#s-bread"/></svg></i><div><b>Panaderías</b><span>Pan, tortas y postres.</span></div></div>
+        <div><i><svg viewBox="0 0 100 100"><use href="#s-coffee"/></svg></i><div><b>Cafés y bebidas</b><span>Jugos, café y más.</span></div></div>
+        <div><i><svg viewBox="0 0 100 100"><use href="#s-bag"/></svg></i><div><b>Emprendimientos</b><span>Negocios desde casa.</span></div></div>
       </div>
     </div>
+    <p style="font-size:13px;color:#77778A;margin-top:16px">Negocios del ejemplo ilustrativos. “Mercados Ocultos” es nombre de trabajo.</p>
   </div>
-
-  <div class="p1body" style="padding-top:0">
-    <div class="eyebrow" style="color:var(--p1);margin-top:6mm">Así le llega cada solicitud</div>
-    <div class="arrive">
-      <div class="bubble"><b>Nueva solicitud · Micrositio de créditos</b><br>Carolina Martínez · CC 1.045.***.***<br>Monto: $1.000.000 · Plazo: 6 cuotas<br>Ocupación: Independiente · Barranquilla<small>9:14 a. m.</small></div>
-      <div class="msheet">
-        <div class="h"><svg><use href="#i-sheet"/></svg>Solicitudes de crédito</div>
-        <div class="r th"><span>Fecha</span><span>Nombre</span><span>Monto</span><span>Estado</span></div>
-        <div class="r"><span>08/11</span><span>Carolina M.</span><span>$1.000.000</span><span><i class="s n">Nueva</i></span></div>
-        <div class="r"><span>07/11</span><span>Jorge P.</span><span>$600.000</span><span><i class="s c">Contactado</i></span></div>
-        <div class="r"><span>07/11</span><span>Luisa R.</span><span>$2.000.000</span><span><i class="s a">Aprobado</i></span></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="pinv i1">
-    <div><small>Pago único</small><b>$790.000</b><span>50 % al iniciar · 50 % al entregar</span></div>
-    <div><small>A cuotas</small><b>$250.000</b><span>de inicial + 8 cuotas de $99.900</span></div>
-    <div><small>Entrega</small><b>7 días</b><span>Dominio y hosting el primer año</span></div>
-  </div>
-  <div class="pfoot"><b>Teddy Gutiérrez</b> · Propuesta Agencia Vectorial</div><div class="pnum">04</div>
+  <div class="foot"><span><b>Teddy Gutiérrez</b> · Agencia Vectorial</span><span>11</span></div>
 </section>
 
-<!-- ================= 5. P2 CONCEPTO ================= -->
-<section class="page p2bg">
-  <div class="ptab pt2"><span>Proyecto 02 · Mercados ocultos</span></div>
-  <div class="pad">
-    <div class="eyebrow">Proyecto 02 · Mercados ocultos</div>
-    <h2 class="h2">Vender sin exponerse.<br><em>Pedir sin complicarse.</em></h2>
-    <p class="lead">En Barranquilla muchos restaurantes y negocios pequeños prefieren no exhibirse por miedo a la extorsión. Esta plataforma les da una vitrina digital para vender su menú y sus productos, recibir pedidos y despachar a domicilio, sin depender de un local a la vista.</p>
+<section class="page f2w">
+  <div class="phead ph2"><span>Propuesta 02 · Mercados ocultos</span><i>Para los negocios</i></div>
+  <div class="in">
+    <div class="kick">Lo que gana cada negocio</div>
+    <h2 class="h">¿Por qué un negocio<br><em>querría estar ahí?</em></h2>
+    <div class="ben">
+      <div class="bn hl"><i><svg><use href="#i-shield"/></svg></i><b>Vender sin exponerse</b><span>Su marca se ve; su local no queda en la vitrina.</span></div>
+      <div class="bn"><i><svg><use href="#i-trend"/></svg></i><b>Un nuevo canal de ventas</b><span>Pedidos de toda la ciudad, no solo del barrio.</span></div>
+      <div class="bn"><i><svg><use href="#i-megaphone"/></svg></i><b>Mostrar su marca</b><span>Logo, fotos y menú con presentación profesional.</span></div>
+      <div class="bn"><i><svg><use href="#i-award"/></svg></i><b>Posicionamiento y credibilidad</b><span>Estar en una plataforma seria genera confianza.</span></div>
+      <div class="bn"><i><svg><use href="#i-bike"/></svg></i><b>Domicilios organizados</b><span>Cada pedido con su estado y su dirección.</span></div>
+      <div class="bn"><i><svg><use href="#i-phone"/></svg></i><b>Sin montar su propia app</b><span>Entra con un usuario y empieza a vender.</span></div>
+    </div>
+  </div>
+  <div class="foot"><span><b>Teddy Gutiérrez</b> · Agencia Vectorial</span><span>12</span></div>
+</section>
 
-    <div class="p2grid">
-      <div class="problem">
-        <div class="pb"><div class="ib"><svg><use href="#i-eyeoff"/></svg></div><div><b>Marca visible, dirección protegida</b><span>El cliente ve el negocio, su menú y sus precios. La ubicación exacta solo la conoce quien despacha.</span></div></div>
-        <div class="pb"><div class="ib y"><svg><use href="#i-store"/></svg></div><div><b>Cada negocio con su catálogo</b><span>Logo, fotos, menú, precios, horarios y zonas de entrega, dentro del mismo estilo de la plataforma.</span></div></div>
-        <div class="pb"><div class="ib"><svg><use href="#i-cart"/></svg></div><div><b>El cliente arma su pedido</b><span>Elige el negocio, agrega productos al carrito y envía el pedido en segundos.</span></div></div>
-        <div class="pb"><div class="ib y"><svg><use href="#i-bike"/></svg></div><div><b>Domicilios organizados</b><span>Cada pedido con su estado, dirección de entrega y valor del domicilio.</span></div></div>
-        <div class="pb"><div class="ib"><svg><use href="#i-key"/></svg></div><div><b>Usted tiene el control</b><span>Da y quita accesos, aprueba negocios y define cuánto cobra a cada uno.</span></div></div>
-      </div>
+<section class="page f2">
+  <div class="phead ph2"><span>Propuesta 02 · Mercados ocultos</span><i>Cómo venderla</i></div>
+  <div class="in">
+    <div class="kick">Cómo se la vende a los negocios</div>
+    <div class="pitch"><p>Le ofrezco un canal para vender más, a toda la ciudad, sin tener que exponer su local.</p><small>Su mensaje a cada negocio</small></div>
+    <div class="how3">
+      <div><i>1</i><div><b>Lo contacta</b><span>Visita o escribe a restaurantes y tiendas.</span></div></div>
+      <div><i>2</i><div><b>Lo sube a la plataforma</b><span>Con su logo, menú y precios, en minutos.</span></div></div>
+      <div><i>3</i><div><b>Empieza a recibir pedidos</b><span>Y le paga a usted su plan cada mes.</span></div></div>
+    </div>
+    <div class="kick" style="margin-top:26px;color:var(--p2y)">Planes para los negocios (ejemplo)</div>
+    <div class="plans">
+      <div class="pl"><small>Plan Vitrina</small><b>$50.000</b><span>al mes · aparece en la app con su menú</span></div>
+      <div class="pl hl"><small>Plan Destacado</small><b>$90.000</b><span>al mes · sale primero y en la portada</span></div>
+    </div>
+    <p style="font-size:14.5px;color:#9A9AA6;margin-top:12px;line-height:1.45">O una comisión por cada pedido. Usted define los precios.</p>
+  </div>
+  <div class="st" style="width:120px;height:120px;left:40px;top:745px;transform:rotate(-8deg)"><svg><use href="#s-store"/></svg></div>
+  <div class="st" style="width:96px;height:96px;left:190px;top:770px;transform:rotate(10deg)"><svg><use href="#s-bag"/></svg></div>
+  <div class="st" style="width:110px;height:110px;right:40px;top:750px;transform:rotate(-6deg)"><svg><use href="#s-phone"/></svg></div>
+  <div class="foot"><span><b>Teddy Gutiérrez</b> · Agencia Vectorial</span><span>13</span></div>
+</section>
 
-      <div class="phone p2phone"><div class="screen">
+<section class="page f2w">
+  <div class="phead ph2"><span>Propuesta 02 · Mercados ocultos</span><i>Cómo gana usted</i></div>
+    <div class="in">
+    <div class="kick">Cómo gana usted</div>
+    <h2 class="h">Una plataforma<br><em>que le paga cada mes.</em></h2>
+    <p class="lead">Si cada negocio paga, por ejemplo, $60.000 al mes:</p>
+    <div class="earn">
+      <div class="er"><span>10 negocios<small>El arranque</small></span><b>$600.000</b></div>
+      <div class="er"><span>25 negocios<small>Un barrio activo</small></span><b>$1.500.000</b></div>
+      <div class="er hl"><span>50 negocios<small>Media ciudad</small></span><b>$3.000.000</b></div>
+    </div>
+    <div class="admin"><b>Usted tiene el control</b>
+      <ul class="chk">
+        <li><svg><use href="#i-check"/></svg><span>Aprueba y activa cada negocio.</span></li>
+        <li><svg><use href="#i-check"/></svg><span>Da o suspende accesos.</span></li>
+        <li><svg><use href="#i-check"/></svg><span>Ve todos los pedidos y cobra los planes.</span></li>
+      </ul>
+    </div>
+    <p style="font-size:13px;color:#9A9BAA;margin-top:12px">Valores ilustrativos al mes. Los ingresos dependen de los negocios que usted vincule.</p>
+  </div>
+  <div class="st" style="width:120px;height:120px;right:44px;top:770px;transform:rotate(8deg)"><svg><use href="#s-coins"/></svg></div>
+  <div class="foot"><span><b>Teddy Gutiérrez</b> · Agencia Vectorial</span><span>14</span></div>
+</section>
+
+<section class="page f2w">
+  <div class="phead ph2"><span>Propuesta 02 · Mercados ocultos</span><i>Cómo funciona</i></div>
+  <div class="in">
+    <div class="kick">Cómo funciona por dentro</div>
+    <h2 class="h">Tres usuarios,<br><em>una plataforma.</em></h2>
+    <div class="users">
+      <div class="us"><i style="background:var(--p2)"><svg><use href="#i-user"/></svg></i><div><b>El cliente</b><span>Explora negocios, arma su carrito y paga en línea o contraentrega.</span></div></div>
+      <div class="us"><i style="background:#141418"><svg><use href="#i-store"/></svg></i><div><b>El negocio</b><span>Entra con su usuario, actualiza su menú y gestiona sus pedidos.</span></div></div>
+      <div class="us"><i style="background:var(--p2y)"><svg style="color:#141418"><use href="#i-key"/></svg></i><div><b>Usted, el administrador</b><span>Controla negocios, accesos, pedidos y cobros.</span></div></div>
+    </div>
+    <div class="kick" style="margin-top:28px">El recorrido de cada pedido</div>
+    <div class="track">
+      <div><i><svg><use href="#i-receipt"/></svg></i><b>Recibido</b></div>
+      <div><i><svg><use href="#i-check"/></svg></i><b>Confirmado</b></div>
+      <div><i><svg><use href="#i-chef"/></svg></i><b>Preparando</b></div>
+      <div><i><svg><use href="#i-bike"/></svg></i><b>En camino</b></div>
+      <div><i><svg><use href="#i-flag"/></svg></i><b>Entregado</b></div>
+    </div>
+  </div>
+  <div class="foot"><span><b>Teddy Gutiérrez</b> · Agencia Vectorial</span><span>15</span></div>
+</section>
+
+<section class="page f2">
+  <div class="phead ph2"><span>Propuesta 02 · Mercados ocultos</span><i>Inversión</i></div>
+  <div class="in">
+    <div class="kick">Qué incluye</div>
+    <h2 class="h">Su plataforma,<br><em>lista en 20 días.</em></h2>
+    <ul class="chk" style="color:var(--p2)">
+      <li style="color:#DADAE2"><svg><use href="#i-check"/></svg><span><b style="color:#fff">App web</b> con vitrina de negocios por categoría.</span></li>
+      <li style="color:#DADAE2"><svg><use href="#i-check"/></svg><span>Catálogo propio para cada negocio.</span></li>
+      <li style="color:#DADAE2"><svg><use href="#i-check"/></svg><span>Carrito, pedidos y estados del domicilio.</span></li>
+      <li style="color:#DADAE2"><svg><use href="#i-check"/></svg><span>Acceso con usuario para cada negocio.</span></li>
+      <li style="color:#DADAE2"><svg><use href="#i-check"/></svg><span><b style="color:#fff">Panel de administrador</b> para usted.</span></li>
+      <li style="color:#DADAE2"><svg><use href="#i-check"/></svg><span>Dominio y hosting el primer año.</span></li>
+    </ul>
+  </div>
+  <div class="price pr2">
+    <div class="a"><small>Pago único</small><b>$1.500.000</b><span>50 % al iniciar · 50 % al entregar</span></div>
+    <div class="bb"><div><small>A cuotas</small><b>$350.000</b><span>+ 16 cuotas de $99.900</span></div><div><small>Entrega</small><b>20 días</b><span>100 % suya</span></div></div>
+  </div>
+  <div class="closing" style="color:var(--p2)">Fin de la propuesta 02</div>
+</section>
+
+<!-- ================= PROPUESTA 03 ================= -->
+<section class="page div3">
+  <div class="st" style="width:150px;height:150px;right:30px;top:56px;transform:rotate(8deg)"><svg><use href="#s-sprout"/></svg></div>
+  <div class="st" style="width:160px;height:160px;left:26px;top:720px;transform:rotate(-8deg)"><svg><use href="#s-fish"/></svg></div>
+  <div class="st" style="width:160px;height:160px;right:36px;top:700px;transform:rotate(6deg)"><svg><use href="#s-plate"/></svg></div>
+  <div class="dv" style="top:230px">
+    <div class="n" style="color:var(--p3)">03</div>
+    <small style="color:var(--p3e)">Propuesta 03</small>
+    <h2>Restaurante<br><em>sostenible</em></h2>
+    <p style="color:#6A6553">Del cultivo y el estanque, directo a la mesa. Una página para contar el proceso y un catálogo para pedir, reservar y visitar.</p>
+    <div class="pill" style="background:var(--p3);color:#fff">Página + catálogo · $990.000</div>
+  </div>
+  <div class="foot" style="color:#A39C86"><span><b>Teddy Gutiérrez</b> · Agencia Vectorial</span><span>17</span></div>
+</section>
+
+<section class="page f3">
+  <div class="phead ph3"><span>Propuesta 03 · Restaurante sostenible</span><i>La idea</i></div>
+  <div class="in">
+    <div class="kick">Su idea, organizada</div>
+    <h2 class="h">Un restaurante que <em>se cuenta solo.</em></h2>
+    <div class="idea3">
+      <div class="i3"><i style="background:var(--p3)"><svg><use href="#i-globe"/></svg></i><div><b>¿Qué es?</b><span>Una página web con catálogo: muestra la experiencia y vende el menú en un solo lugar.</span></div></div>
+      <div class="i3"><i style="background:var(--p3e)"><svg><use href="#i-leaf"/></svg></i><div><b>¿Qué lo hace único?</b><span>Cultivan su propia comida y tienen su pescadería. Eso hay que mostrarlo.</span></div></div>
+      <div class="i3"><i style="background:var(--p3b)"><svg><use href="#i-target"/></svg></i><div><b>¿Para qué?</b><span>Para que la gente quiera vivir la experiencia: pedir, reservar o ir a conocer.</span></div></div>
+      <div class="i3"><i style="background:var(--p3d)"><svg><use href="#i-users"/></svg></i><div><b>¿Para quién?</b><span>Familias, parejas y turistas que buscan comida fresca y una experiencia distinta.</span></div></div>
+    </div>
+  </div>
+  <div class="foot"><span><b>Teddy Gutiérrez</b> · Agencia Vectorial</span><span>18</span></div>
+</section>
+
+<section class="page f3">
+  <div class="phead ph3"><span>Propuesta 03 · Restaurante sostenible</span><i>Lo que encuentra la gente</i></div>
+  <div class="in">
+    <div class="kick">Lo que va a encontrar la gente</div>
+    <h2 class="h">Cuatro formas de <em>vivir el restaurante.</em></h2>
+    <div class="do">
+      <div class="d"><div class="art a-h"><i>01</i><svg><use href="#a-sprout"/></svg></div><div class="tx"><b>Conocer el proceso</b><span>La huerta, el estanque y la cocina en fotos y video.</span></div></div>
+      <div class="d"><div class="art a-c"><i>02</i><svg><use href="#a-cart"/></svg></div><div class="tx"><b>Armar su pedido</b><span>Menú con precios y pedido directo a WhatsApp.</span></div></div>
+      <div class="d"><div class="art a-p"><i>03</i><svg><use href="#a-cal"/></svg></div><div class="tx"><b>Reservar mesa</b><span>Elige día y hora para ir a comer.</span></div></div>
+      <div class="d"><div class="art a-m"><i>04</i><svg><use href="#a-tour"/></svg></div><div class="tx"><b>Visitar la finca</b><span>Recorridos por la huerta y la pesca.</span></div></div>
+    </div>
+  </div>
+  <div class="foot"><span><b>Teddy Gutiérrez</b> · Agencia Vectorial</span><span>19</span></div>
+</section>
+
+<section class="page f3">
+  <div class="phead ph3"><span>Propuesta 03 · Restaurante sostenible</span><i>Así se vería</i></div>
+  <div class="in">
+    <div class="kick">Así se vería</div>
+    <h2 class="h">Cada plato dice <em>de dónde viene.</em></h2>
+    <div style="display:grid;grid-template-columns:230px 1fr;gap:22px;margin-top:18px;align-items:start">
+      <div class="phone"><div class="screen p3scr">
         <div class="notch"></div>
-        <div class="app2-head">
-          <div class="row"><b>Mercados Ocultos</b><svg class="ico" style="width:14px;height:14px;color:#fff"><use href="#i-cart"/></svg></div>
-          <div class="loc">Entregar en: Barrio El Prado, Barranquilla</div>
-          <div class="search">¿Qué se te antoja hoy?</div>
-        </div>
-        <div class="cat2">
-          <span><i><svg style="color:#FF4A1C"><use href="#i-chef"/></svg></i>Comida</span>
-          <span><i><svg style="color:#2E9E6A"><use href="#i-leaf"/></svg></i>Saludable</span>
-          <span><i><svg style="color:#5B4BD6"><use href="#i-box"/></svg></i>Tiendas</span>
-          <span><i><svg style="color:#C7834A"><use href="#i-store"/></svg></i>Postres</span>
-        </div>
-        <div class="biz"><div class="img food food1"><span class="pill">25–35 min</span><span class="sec">Entrega protegida</span><svg><use href="#a-burger"/></svg></div><div class="tx"><div><b>La Parrilla del Barrio</b><span>Hamburguesas · Domicilio $4.000</span></div><i>4,8</i></div></div>
-        <div class="biz"><div class="img food food2"><span class="pill">20–30 min</span><svg><use href="#a-bowl"/></svg></div><div class="tx"><div><b>Verde Bowl</b><span>Saludable · Domicilio $3.500</span></div><i>4,9</i></div></div>
-        <div class="biz"><div class="img food food3"><span class="pill">15–25 min</span><svg><use href="#a-coffee"/></svg></div><div class="tx"><div><b>Café de la Esquina</b><span>Café y postres · Domicilio $3.000</span></div><i>4,7</i></div></div>
+        <div class="hero"><svg><use href="#a-sprout"/></svg><b>Raíz · <em>cocina de origen</em></b><span>Cultivamos lo que servimos</span></div>
+        <div class="tabs"><span>Historia</span><span class="on">Menú</span><span>Reservas</span><span>Visitas</span></div>
+        <div class="dish"><div class="im" style="background:#E8F1E4"><svg><use href="#a-salad"/></svg></div><div><b>Ensalada de la huerta</b><span>Cosechada esta mañana</span><span class="o">De la huerta</span><div class="pr">$24.000</div></div></div>
+        <div class="dish"><div class="im" style="background:#E3F0F4"><svg><use href="#a-fishplate"/></svg></div><div><b>Mojarra del estanque</b><span>Con patacón y arroz de coco</span><span class="o" style="color:#2C6E86;background:#E3F0F4">Pesca del día</span><div class="pr">$38.000</div></div></div>
+        <div class="dish"><div class="im" style="background:#FBEBD3"><svg><use href="#a-juice"/></svg></div><div><b>Jugo de la finca</b><span>Fruta de temporada</span><span class="o">De la huerta</span><div class="pr">$9.000</div></div></div>
+        <div class="cart">2 platos · $62.000<span>Pedir</span></div>
       </div></div>
+      <ul class="chk" style="color:var(--p3);margin-top:6px">
+        <li><svg><use href="#i-check"/></svg><span><b>Etiqueta de origen</b> en cada plato.</span></li>
+        <li><svg><use href="#i-check"/></svg><span><b>Pedido</b> armado y enviado a WhatsApp.</span></li>
+        <li><svg><use href="#i-check"/></svg><span><b>Reservas</b> de mesa y visitas.</span></li>
+        <li><svg><use href="#i-check"/></svg><span><b>Galería</b> del proceso.</span></li>
+        <li><svg><use href="#i-check"/></svg><span><b>Ubicación</b>, horarios y redes.</span></li>
+      </ul>
     </div>
-    <div class="ideal">
-      <span>Ideal para:</span><i>Restaurantes</i><i>Comidas rápidas</i><i>Panaderías</i><i>Cocinas ocultas</i><i>Tiendas de barrio</i><i>Emprendimientos desde casa</i>
-    </div>
-    <p style="font-size:7.4pt;color:#77778A;margin-top:5mm">“Mercados Ocultos” es el nombre de trabajo del proyecto; los negocios del ejemplo son ilustrativos.</p>
+    <p style="font-size:13px;color:#A39C86;margin-top:16px">“Raíz” es un nombre de ejemplo; se usará la marca real del restaurante.</p>
   </div>
-  <div class="pfoot"><b>Teddy Gutiérrez</b> · Propuesta Agencia Vectorial</div><div class="pnum">05</div>
+  <div class="foot"><span><b>Teddy Gutiérrez</b> · Agencia Vectorial</span><span>20</span></div>
 </section>
 
-<!-- ================= 6. P2 CÓMO FUNCIONA + NEGOCIO ================= -->
+<section class="page f3">
+  <div class="phead ph3"><span>Propuesta 03 · Restaurante sostenible</span><i>Inversión</i></div>
+  <div class="in">
+    <div class="kick">Qué incluye</div>
+    <h2 class="h">La experiencia,<br><em>lista en 7 días.</em></h2>
+    <ul class="chk" style="color:var(--p3)">
+      <li><svg><use href="#i-check"/></svg><span><b>Página</b> con la historia y el proceso.</span></li>
+      <li><svg><use href="#i-check"/></svg><span><b>Catálogo</b> de hasta 100 productos o platos.</span></li>
+      <li><svg><use href="#i-check"/></svg><span>Carrito y pedido directo a WhatsApp.</span></li>
+      <li><svg><use href="#i-check"/></svg><span>Sección de reservas y visitas.</span></li>
+      <li><svg><use href="#i-check"/></svg><span>Actualización fácil desde Google Sheets.</span></li>
+      <li><svg><use href="#i-check"/></svg><span><b>Dominio y hosting</b> el primer año.</span></li>
+    </ul>
+  </div>
+  <div class="price pr3">
+    <div class="a"><small>Pago único</small><b>$990.000</b><span>50 % al iniciar · 50 % al entregar</span></div>
+    <div class="bb"><div><small>A cuotas</small><b>$250.000</b><span>+ 10 cuotas de $99.900</span></div><div><small>Entrega</small><b>7 días</b><span>100 % suya</span></div></div>
+  </div>
+  <div class="closing" style="color:var(--p3)">Fin de la propuesta 03</div>
+</section>
+
+<!-- ================= CIERRE ================= -->
 <section class="page">
-  <div class="ptab pt2"><span>Proyecto 02 · Mercados ocultos</span></div>
-  <div class="pad">
-    <div class="eyebrow" style="color:var(--p2)">Proyecto 02 · Mercados ocultos · Cómo funciona</div>
-    <h2 class="h2">Tres tipos de usuario,<br>una sola plataforma.</h2>
-
-    <div class="actors">
-      <div class="actor a1">
-        <div class="hd"><i><svg><use href="#i-user"/></svg></i><div><small>Para</small><b>El cliente</b></div></div>
-        <ul class="list" style="color:var(--p2)">
-          <li><svg><use href="#i-check"/></svg><span>Explora negocios por categoría.</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Ve el menú con fotos y precios.</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Arma su pedido en un carrito.</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Paga en línea o contraentrega.</span></li>
-        </ul>
-      </div>
-      <div class="actor a2">
-        <div class="hd"><i><svg><use href="#i-store"/></svg></i><div><small>Para</small><b>El negocio</b></div></div>
-        <ul class="list" style="color:#16161A">
-          <li><svg><use href="#i-check"/></svg><span>Acceso propio con usuario.</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Actualiza menú, precios y horarios.</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Recibe y gestiona sus pedidos.</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Marca cada pedido como despachado.</span></li>
-        </ul>
-      </div>
-      <div class="actor a3">
-        <div class="hd"><i><svg><use href="#i-key"/></svg></i><div><small>Para</small><b>Usted (administrador)</b></div></div>
-        <ul class="list" style="color:#B8860B">
-          <li><svg><use href="#i-check"/></svg><span>Aprueba y activa negocios.</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Da o suspende accesos.</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Ve todos los pedidos y ventas.</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Controla pagos de cada negocio.</span></li>
-        </ul>
-      </div>
+  <div class="in top">
+    <div class="kick" style="color:var(--muted)">Las tres propuestas, juntas</div>
+    <h2 class="h">Lo que cuesta cada una.</h2>
+    <div class="tot">
+      <div class="tr t1"><div><small>01</small><b>Sector financiero</b><span>o $250.000 + 8 × $99.900</span></div><div class="v"><b>$790.000</b><span>7 días</span></div></div>
+      <div class="tr t2"><div><small>02</small><b>Mercados ocultos</b><span>o $350.000 + 16 × $99.900</span></div><div class="v"><b>$1.500.000</b><span>20 días</span></div></div>
+      <div class="tr t3"><div><small>03</small><b>Restaurante sostenible</b><span>o $250.000 + 10 × $99.900</span></div><div class="v"><b>$990.000</b><span>7 días</span></div></div>
     </div>
-
-    <div class="eyebrow" style="color:var(--p2);margin-top:8mm">El recorrido de cada pedido</div>
-    <div class="status">
-      <div><i><svg><use href="#i-receipt"/></svg></i><b>Recibido</b><span>Llega al negocio al instante.</span></div>
-      <div><i><svg><use href="#i-check"/></svg></i><b>Confirmado</b><span>El negocio lo acepta.</span></div>
-      <div><i><svg><use href="#i-chef"/></svg></i><b>Preparando</b><span>Se alista el pedido.</span></div>
-      <div><i><svg><use href="#i-bike"/></svg></i><b>En camino</b><span>Sale con el domiciliario.</span></div>
-      <div><i><svg><use href="#i-flag"/></svg></i><b>Entregado</b><span>Pedido cerrado.</span></div>
-    </div>
-
-    <div class="money">
-      <div>
-        <h3>Un negocio para usted, no solo una página</h3>
-        <div class="opts">
-          <div><svg><use href="#i-check"/></svg><span><b>Mensualidad</b> fija por cada negocio en la plataforma.</span></div>
-          <div><svg><use href="#i-check"/></svg><span><b>Comisión</b> por pedido, si lo prefiere.</span></div>
-          <div><svg><use href="#i-check"/></svg><span><b>Destacados:</b> cobro extra por aparecer primero.</span></div>
-        </div>
-      </div>
-      <div class="calcx">
-        <small>Ejemplo ilustrativo</small>
-        <div class="eq">25 negocios × $60.000 al mes</div>
-        <b>$1.500.000/mes</b>
-        <span>La plataforma podría pagarse con el primer mes de mensualidades.</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="pinv i2">
-    <div><small>Pago único</small><b>$1.500.000</b><span>50 % al iniciar · 50 % al entregar</span></div>
-    <div><small>A cuotas</small><b>$350.000</b><span>de inicial + 16 cuotas de $99.900</span></div>
-    <div><small>Entrega</small><b>20 días</b><span>Dominio y hosting el primer año</span></div>
-  </div>
-  <div class="pfoot"><b>Teddy Gutiérrez</b> · Propuesta Agencia Vectorial</div><div class="pnum">06</div>
-</section>
-
-<!-- ================= 7. P3 EXPERIENCIA ================= -->
-<section class="page p3bg f3">
-  <div class="ptab pt3"><span>Proyecto 03 · Restaurante autosostenible</span></div>
-  <div class="pad">
-    <div class="eyebrow">Proyecto 03 · Restaurante autosostenible</div>
-    <h2 class="h2">Del cultivo y el estanque<br><em>directo a la mesa.</em></h2>
-    <p class="lead" style="color:#6A6553">Un restaurante que cultiva su propia comida merece una página que lo cuente. Fusionamos un micrositio, que muestra el proceso y la experiencia, con un catálogo digital, donde está el menú y se hacen los pedidos.</p>
-
-    <div class="journey">
-      <div class="jr"><div class="art a-huerta"><i>01</i><svg><use href="#a-sprout"/></svg></div><div class="tx"><b>La huerta</b><span>Lo que sembramos y cosechamos cada temporada.</span></div></div>
-      <div class="jr"><div class="art a-pesca"><i>02</i><svg><use href="#a-fish"/></svg></div><div class="tx"><b>La pescadería</b><span>Nuestros estanques y la pesca del día.</span></div></div>
-      <div class="jr"><div class="art a-cocina"><i>03</i><svg><use href="#a-pan"/></svg></div><div class="tx"><b>La cocina</b><span>Recetas que respetan el producto fresco.</span></div></div>
-      <div class="jr"><div class="art a-mesa"><i>04</i><svg><use href="#a-plate"/></svg></div><div class="tx"><b>La mesa</b><span>El plato final y la experiencia de comer aquí.</span></div></div>
-    </div>
-
-    <div class="p3split">
-      <div class="phone p3phone"><div class="screen">
-        <div class="notch"></div>
-        <div class="r3-hero"><svg><use href="#a-sprout"/></svg><b>Raíz · <em>cocina de origen</em></b><span>Cultivamos lo que servimos</span></div>
-        <div class="r3-tabs"><span>Nuestra historia</span><span class="on">Menú</span><span>Reservas</span></div>
-        <div class="dish"><div class="im" style="background:#E8F1E4"><svg><use href="#a-salad"/></svg></div><div><b>Ensalada de la huerta</b><span>Hojas cosechadas esta mañana</span><span class="orig">De nuestra huerta</span><div class="pr">$24.000</div></div></div>
-        <div class="dish"><div class="im" style="background:#E3F0F4"><svg><use href="#a-fishplate"/></svg></div><div><b>Mojarra del estanque</b><span>Con patacón y arroz de coco</span><span class="orig" style="color:#2C6E86;background:#E3F0F4">Pesca del día</span><div class="pr">$38.000</div></div></div>
-        <div class="dish"><div class="im" style="background:#FBEBD3"><svg><use href="#a-juice"/></svg></div><div><b>Jugo de la finca</b><span>Fruta de temporada</span><span class="orig">De nuestra huerta</span><div class="pr">$9.000</div></div></div>
-        <div class="r3-cart">2 platos · $62.000<span>Pedir</span></div>
-      </div></div>
-
-      <div class="sec3">
-        <div class="s3"><div class="ib"><svg><use href="#i-leaf"/></svg></div><div><b>Nuestra historia</b><span>Quiénes son, la filosofía autosostenible y por qué cultivan lo que sirven.</span></div></div>
-        <div class="s3"><div class="ib b"><svg><use href="#i-play"/></svg></div><div><b>El proceso en fotos y video</b><span>Siembra, cosecha, pesca y cocina: la experiencia antes de llegar.</span></div></div>
-        <div class="s3"><div class="ib e"><svg><use href="#i-receipt"/></svg></div><div><b>Menú digital con origen</b><span>Cada plato con foto, precio y una etiqueta que dice de dónde viene.</span></div></div>
-        <div class="s3"><div class="ib"><svg><use href="#i-cart"/></svg></div><div><b>Pedidos por WhatsApp</b><span>El cliente arma su pedido y llega listo al restaurante.</span></div></div>
-        <div class="s3"><div class="ib b"><svg><use href="#i-cal"/></svg></div><div><b>Reservas y experiencias</b><span>Reserva de mesa o visitas guiadas a la huerta y los estanques.</span></div></div>
-        <div class="s3"><div class="ib e"><svg><use href="#i-pin"/></svg></div><div><b>Ubicación y Google</b><span>Mapa, horarios y estructura para aparecer en búsquedas.</span></div></div>
-      </div>
-    </div>
-    <p style="font-size:7.4pt;color:#8F8873;margin-top:4mm">“Raíz” es un nombre de ejemplo para visualizar la propuesta; se usará la marca real del restaurante.</p>
-  </div>
-
-  <div class="pfoot"><b>Teddy Gutiérrez</b> · Propuesta Agencia Vectorial</div><div class="pnum">07</div>
-</section>
-
-<!-- ================= 8. P3 INCLUYE + INVERSIÓN ================= -->
-<section class="page p3bg f3">
-  <div class="ptab pt3"><span>Proyecto 03 · Restaurante autosostenible</span></div>
-  <div class="pad">
-    <div class="eyebrow">Proyecto 03 · Restaurante · Lo que incluye</div>
-    <h2 class="h2">Una experiencia que se ve,<br><em>se antoja y se pide.</em></h2>
-    <p class="lead" style="color:#6A6553">Plan Catálogo Digital con funciones de micrositio: la historia que enamora y el menú que vende, en un solo lugar.</p>
-
-    <div class="payways" style="margin-top:8mm">
-      <div class="pw" style="background:#fff;border:1px solid #E6DFCC">
-        <small style="color:var(--p3)">Micrositio · la experiencia</small>
-        <h3 style="font-family:Fraunces">Contar el proceso</h3>
-        <ul class="list" style="color:var(--p3)">
-          <li><svg><use href="#i-check"/></svg><span>Portada con la propuesta del restaurante.</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Recorrido: huerta, pescadería, cocina y mesa.</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Galería de fotos y videos del proceso.</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Sección de reservas y visitas.</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Ubicación, horarios y redes sociales.</span></li>
-        </ul>
-      </div>
-      <div class="pw" style="background:var(--p3-d);color:#fff">
-        <small style="color:#F4D7A8">Catálogo · el menú</small>
-        <h3 style="font-family:Fraunces">Vender el plato</h3>
-        <ul class="list" style="color:#F4D7A8">
-          <li style="color:#DCE6DA"><svg><use href="#i-check"/></svg><span>Hasta <b style="color:#fff">100 productos</b> por categorías.</span></li>
-          <li style="color:#DCE6DA"><svg><use href="#i-check"/></svg><span>Foto, descripción, precio y origen de cada plato.</span></li>
-          <li style="color:#DCE6DA"><svg><use href="#i-check"/></svg><span>Carrito y pedido directo a WhatsApp.</span></li>
-          <li style="color:#DCE6DA"><svg><use href="#i-check"/></svg><span>Actualización fácil desde Google Sheets.</span></li>
-          <li style="color:#DCE6DA"><svg><use href="#i-check"/></svg><span>Productos de la finca para llevar (opcional).</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="journey" style="grid-template-columns:repeat(3,1fr);margin-top:6mm">
-      <div class="s3"><div class="ib"><svg><use href="#i-phone"/></svg></div><div><b>Pensada para celular</b><span>Rápida y fácil de usar desde cualquier teléfono.</span></div></div>
-      <div class="s3"><div class="ib e"><svg><use href="#i-star"/></svg></div><div><b>Diseño a la medida</b><span>Con la identidad del restaurante, no una plantilla.</span></div></div>
-      <div class="s3"><div class="ib b"><svg><use href="#i-key"/></svg></div><div><b>100 % suya</b><span>Dominio y hosting el primer año.</span></div></div>
-    </div>
-  </div>
-
-  <div class="pad r3pad" style="padding-top:0;margin-top:-12mm">
-    <div class="browser r3web">
-      <div class="bar"><i></i><i></i><i></i><span>raizrestaurante.com</span></div>
-      <div class="r3w">
-        <div class="nav"><b>Raíz</b><span>Historia</span><span>Proceso</span><span>Menú</span><span>Reservas</span><em>Pedir ahora</em></div>
-        <div class="hero"><div><h4>Cultivamos lo que <em>servimos.</em></h4><p>Huerta propia, pesca del día y cocina de origen. Ven a vivir la experiencia o pide a domicilio.</p><div class="b"><span>Ver menú</span><span class="o">Reservar mesa</span></div></div>
-          <div class="pics"><div class="a-huerta"><svg><use href="#a-sprout"/></svg></div><div class="a-pesca"><svg><use href="#a-fish"/></svg></div><div class="a-mesa"><svg><use href="#a-plate"/></svg></div></div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="pinv i3">
-    <div><small>Pago único</small><b>$990.000</b><span>50 % al iniciar · 50 % al entregar</span></div>
-    <div><small>A cuotas</small><b>$250.000</b><span>de inicial + 10 cuotas de $99.900</span></div>
-    <div><small>Entrega</small><b>7 días</b><span>Dominio y hosting el primer año</span></div>
-  </div>
-  <div class="pfoot"><b>Teddy Gutiérrez</b> · Propuesta Agencia Vectorial</div><div class="pnum">08</div>
-</section>
-
-<!-- ================= 9. INVERSIÓN CONSOLIDADA ================= -->
-<section class="page">
-  <div class="pad">
-    <div class="eyebrow">Inversión</div>
-    <h2 class="h2">Precios claros.<br>Un pago y es suyo para siempre.</h2>
-    <p class="lead">Cada proyecto se contrata por separado. Elija pago único o a cuotas; en ambos casos el proyecto queda 100 % a su nombre.</p>
-
-    <div class="invt">
-      <table>
-        <tr><th>Proyecto</th><th>Pago único</th><th>A cuotas</th><th>Entrega</th></tr>
-        <tr><td><span class="dot" style="background:var(--p1)"></span><b>01 · Sector financiero</b><small>Calculadora, solicitud, requisitos, FAQ y aviso legal</small></td><td><b>$790.000</b></td><td>$250.000 + 8 × $99.900</td><td>7 días</td></tr>
-        <tr><td><span class="dot" style="background:var(--p2)"></span><b>02 · Mercados ocultos</b><small>Multinegocio, pedidos, domicilios y panel de administración</small></td><td><b>$1.500.000</b></td><td>$350.000 + 16 × $99.900</td><td>20 días</td></tr>
-        <tr><td><span class="dot" style="background:var(--p3)"></span><b>03 · Restaurante autosostenible</b><small>Micrositio de experiencia + catálogo digital del menú</small></td><td><b>$990.000</b></td><td>$250.000 + 10 × $99.900</td><td>7 días</td></tr>
-        <tr class="tot"><td><b>Los tres proyectos</b></td><td><b>$3.280.000</b></td><td>$850.000 + 16 × $212.300</td><td>—</td></tr>
-      </table>
-    </div>
-
-    <div class="payways">
-      <div class="pw a">
-        <small>Pago único · mejor precio</small>
-        <h3>Se paga una vez</h3>
-        <ul class="list" style="color:var(--gold)">
-          <li><svg><use href="#i-check"/></svg><span><b>50 %</b> al iniciar y <b>50 %</b> al entregar.</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Sin mensualidades de plataforma.</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Sin comisiones nuestras por sus ventas.</span></li>
-        </ul>
-      </div>
-      <div class="pw b">
-        <small>A cuotas</small>
-        <h3>Empiece con la inicial</h3>
-        <ul class="list" style="color:#B8860B">
-          <li><svg><use href="#i-check"/></svg><span>Cuotas mensuales de <b>$99.900</b>.</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Soporte y ajustes incluidos durante el plan.</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Al terminar de pagar, <b>100 % suyo</b>.</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="includes">
-      <div><svg><use href="#i-check"/></svg><span>Diseño a la medida</span></div>
-      <div><svg><use href="#i-check"/></svg><span>Dominio y hosting el primer año</span></div>
-      <div><svg><use href="#i-check"/></svg><span>Versión para celular y computador</span></div>
-      <div><svg><use href="#i-check"/></svg><span>Botón y pedidos por WhatsApp</span></div>
-      <div><svg><use href="#i-check"/></svg><span>Capacitación para administrarlo</span></div>
-      <div><svg><use href="#i-check"/></svg><span>Soporte después de entregar</span></div>
-    </div>
-
-    <div class="eyebrow" style="margin-top:7mm">Hoja de ruta sugerida</div>
-    <div class="road3">
-      <div style="border-top-color:var(--p1)"><small style="color:var(--p1)">1 · Primero</small><b>Micrositio de créditos</b><span>El más rápido y el que antes genera clientes.</span></div>
-      <div style="border-top-color:var(--p3)"><small style="color:var(--p3)">2 · Después</small><b>Restaurante</b><span>Muestra el proceso y recibe pedidos y reservas.</span></div>
-      <div style="border-top-color:var(--p2)"><small style="color:var(--p2)">3 · Luego</small><b>Plataforma de pedidos</b><span>Arranca con negocios aliados y crece con ellos.</span></div>
-    </div>
-
-    <p class="notes">Valores en pesos colombianos (COP). Desde el segundo año, solo la renovación anual de dominio y hosting. Las comisiones de pasarelas de pago las cobra cada pasarela. Los plazos de entrega cuentan desde que recibimos la información completa (logo, textos, fotos y productos). Propuesta válida por 15 días calendario.</p>
-  </div>
-  <div class="pfoot"><b>Teddy Gutiérrez</b> · Propuesta Agencia Vectorial</div><div class="pnum">09</div>
-</section>
-
-<!-- ================= 10. AHORRO + PAQUETE ================= -->
-<section class="page">
-  <div class="pad">
-    <div class="eyebrow">Lo que se ahorra</div>
-    <h2 class="h2">Lo mismo en el mercado<br>cuesta casi el doble.</h2>
-    <p class="lead">Comparamos cada proyecto con lo que cobra normalmente una agencia por un alcance similar. La diferencia es plata que queda en su bolsillo.</p>
-
-    <div class="cmp">
-      <div class="cr">
-        <div class="cl"><span class="dot" style="background:var(--p1)"></span><b>Sector financiero</b><small>Micrositio con calculadora</small></div>
-        <div class="bars">
-          <div class="bm" style="width:48%"><span>Mercado</span><b>desde $1.200.000</b></div>
-          <div class="bv" style="width:31.6%;background:var(--p1)"><b>$790.000</b></div>
-        </div>
-        <div class="sv"><small>Ahorra</small><b>$410.000</b></div>
-      </div>
-      <div class="cr">
-        <div class="cl"><span class="dot" style="background:var(--p2)"></span><b>Mercados ocultos</b><small>Plataforma tipo app de domicilios</small></div>
-        <div class="bars">
-          <div class="bm" style="width:100%"><span>Mercado</span><b>desde $2.500.000</b></div>
-          <div class="bv" style="width:60%;background:var(--p2)"><b>$1.500.000</b></div>
-        </div>
-        <div class="sv"><small>Ahorra</small><b>$1.000.000</b></div>
-      </div>
-      <div class="cr">
-        <div class="cl"><span class="dot" style="background:var(--p3)"></span><b>Restaurante</b><small>Página + catálogo de experiencia</small></div>
-        <div class="bars">
-          <div class="bm" style="width:80%"><span>Mercado</span><b>desde $2.000.000</b></div>
-          <div class="bv" style="width:39.6%;background:var(--p3)"><b>$990.000</b></div>
-        </div>
-        <div class="sv"><small>Ahorra</small><b>$1.010.000</b></div>
-      </div>
-    </div>
-
-    <div class="savebig">
-      <div><small>En el mercado</small><s>$5.700.000</s></div>
-      <div><small>Con Agencia Vectorial</small><b>$3.280.000</b></div>
-      <div class="hl"><small>Ahorro total</small><b>$2.420.000</b><span>42 % menos</span></div>
-    </div>
-
     <div class="pack">
-      <div class="pk1">
-        <small>Los 3 proyectos, financiados</small>
-        <h3>Empiece los tres con una sola inicial</h3>
-        <div class="pk-n"><b>$850.000</b><span>de inicial</span></div>
-        <div class="pk-n2">+ 16 cuotas de <b>$212.300</b></div>
-        <p>Incluso financiado ($4.246.800 en total), paga menos que el precio de contado en el mercado ($5.700.000). Y al terminar, los tres proyectos son 100 % suyos.</p>
-      </div>
-      <div class="pk2">
-        <small>¿Y cuánto le puede producir?</small>
-        <div class="roi"><b>4</b><span>negocios pagando $60.000 al mes en la plataforma de pedidos ya cubren la cuota mensual del paquete.</span></div>
-        <div class="roi"><b>+</b><span>Cada crédito que llega por el micrositio y cada pedido del restaurante suman a favor.</span></div>
-      </div>
+      <small>Los 3 proyectos, con una sola inicial</small>
+      <h3>Empiece los tres desde ya</h3>
+      <div class="n">$850.000 <span>de inicial</span></div>
+      <div class="n2">+ 16 cuotas de <b>$212.300</b></div>
+      <p>De contado, los tres suman $3.280.000. Financiado, al terminar de pagar, los tres son 100 % suyos.</p>
     </div>
-
-    <p class="notes">Precios de mercado: valores de referencia de agencias en Colombia para proyectos de alcance similar; pueden variar. La plataforma de pedidos con 4 negocios es un ejemplo ilustrativo.</p>
   </div>
-  <div class="pfoot"><b>Teddy Gutiérrez</b> · Propuesta Agencia Vectorial</div><div class="pnum">10</div>
+  <div class="foot"><span><b>Teddy Gutiérrez</b> · Agencia Vectorial</span><span>22</span></div>
 </section>
 
-<!-- ================= 11. CIERRE ================= -->
 <section class="page">
-  <div class="pad">
-    <div class="eyebrow">Por qué Agencia Vectorial</div>
-    <h2 class="h2">Construimos la parte digital<br>de negocios reales.</h2>
-    <p class="lead">Somos una agencia de páginas web en Medellín. Hacemos páginas, tiendas online, catálogos digitales y apps a la medida para negocios en toda Colombia.</p>
-    <div class="why">
-      <div><b>6</b><span>años construyendo soluciones digitales.</span></div>
-      <div><b>+50</b><span>páginas y catálogos entregados.</span></div>
-      <div><b>+100</b><span>negocios acompañados en Colombia.</span></div>
-      <div><b>1:1</b><span>Hecho a la medida, no plantillas.</span></div>
+  <div class="in top">
+    <div class="kick" style="color:var(--ok)">Lo que se ahorra</div>
+    <h2 class="h">En el mercado,<br>casi el doble.</h2>
+    <div class="cmp">
+      <div class="cr"><b class="t"><i style="background:var(--p1)"></i>Sector financiero</b>
+        <div class="bar m" style="width:48%"><span>Mercado</span><s>$1.200.000</s></div>
+        <div class="bar v" style="width:31.6%;background:var(--p1)"><span></span>$790.000</div>
+        <div class="sv">Ahorra $410.000</div></div>
+      <div class="cr"><b class="t"><i style="background:var(--p2)"></i>Mercados ocultos</b>
+        <div class="bar m" style="width:100%"><span>Mercado</span><s>$2.500.000</s></div>
+        <div class="bar v" style="width:60%;background:var(--p2)"><span></span>$1.500.000</div>
+        <div class="sv">Ahorra $1.000.000</div></div>
+      <div class="cr"><b class="t"><i style="background:var(--p3)"></i>Restaurante sostenible</b>
+        <div class="bar m" style="width:80%"><span>Mercado</span><s>$2.000.000</s></div>
+        <div class="bar v" style="width:39.6%;background:var(--p3)"><span></span>$990.000</div>
+        <div class="sv">Ahorra $1.010.000</div></div>
     </div>
-    <div class="eyebrow" style="margin-top:10mm">Siguientes pasos</div>
-    <div class="next">
-      <div class="nx"><i>01</i><div><b>Elegir proyectos y forma de pago</b><span>Uno, dos o los tres; pago único, a cuotas o el paquete con una sola inicial.</span></div></div>
-      <div class="nx"><i>02</i><div><b>Primer pago y envío de información</b><span>Logo, textos, fotos y productos o menú.</span></div></div>
-      <div class="nx"><i>03</i><div><b>Proyecto al aire</b><span>Desde 7 días, con capacitación incluida.</span></div></div>
+    <div class="save"><div><small>Ahorro total</small><b>$2.420.000</b><span>42 % menos que el mercado</span></div><div class="m"><s>$5.700.000</s><br>$3.280.000</div></div>
+    <div class="roi"><b>4</b><span>negocios pagando $60.000 al mes en Mercados Ocultos cubren la cuota del paquete.</span></div>
+    <p style="font-size:12.5px;color:#9A9BAA;margin-top:10px;line-height:1.4">Incluso financiado ($4.246.800) paga menos que el contado del mercado. Precios de mercado: referencia de agencias en Colombia para alcances similares; pueden variar.</p>
+  </div>
+  <div class="foot"><span><b>Teddy Gutiérrez</b> · Agencia Vectorial</span><span>23</span></div>
+</section>
+
+<section class="page">
+  <div class="in top">
+    <div class="kick" style="color:var(--muted)">Por dónde empezar</div>
+    <h2 class="h" style="font-size:40px">Nuestra recomendación.</h2>
+    <div class="road">
+      <div class="rd"><i style="background:var(--p1)">1</i><div><b>Sector financiero</b><span>El más rápido: en 7 días ya recibe solicitudes.</span></div></div>
+      <div class="rd"><i style="background:var(--p3)">2</i><div><b>Restaurante sostenible</b><span>Pedidos, reservas y visitas desde el primer día.</span></div></div>
+      <div class="rd"><i style="background:var(--p2)">3</i><div><b>Mercados ocultos</b><span>Arranca con negocios aliados y crece con ellos.</span></div></div>
     </div>
   </div>
   <div class="cta">
-    <div class="agency"><div class="av-logo"><i><svg><use href="#i-vector"/></svg></i>Agencia Vectorial</div><small>Páginas web · Catálogos · Apps</small></div>
-    <h2>Tres proyectos, <em>una sola inicial.</em> ¿Empezamos?</h2>
-    <div class="contact">
+    <div class="av" style="margin-bottom:18px"><i><svg><use href="#i-vector"/></svg></i>Agencia Vectorial</div>
+    <h2>Tres ideas, <em>una sola inicial.</em> ¿Empezamos?</h2>
+    <div class="ct">
       <div><svg><use href="#i-wa"/></svg><span><small>WhatsApp</small>324 729 0699</span></div>
       <div><svg><use href="#i-globe"/></svg><span><small>Web</small>agenciavectorial.com</span></div>
-      <div><svg><use href="#i-pin"/></svg><span><small>Desde</small>Medellín, Colombia</span></div>
     </div>
-    <div class="valid">Propuesta válida por 15 días · Noviembre 2026</div>
+    <div class="val">+50 páginas · +100 negocios · 6 años · Propuesta válida por 15 días</div>
   </div>
 </section>
 
