@@ -1,0 +1,1013 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Propuesta Teddy Gutiérrez</title>
+<style>
+@font-face{font-family:Archivo;font-weight:400;src:url(assets/fonts/archivo-400.woff2) format("woff2")}
+@font-face{font-family:Archivo;font-weight:600;src:url(assets/fonts/archivo-600.woff2) format("woff2")}
+@font-face{font-family:Archivo;font-weight:700;src:url(assets/fonts/archivo-700.woff2) format("woff2")}
+@font-face{font-family:Archivo;font-weight:800;src:url(assets/fonts/archivo-800.woff2) format("woff2")}
+@font-face{font-family:Archivo;font-weight:900;src:url(assets/fonts/archivo-900.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:400;src:url(assets/fonts/inter-400.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:500;src:url(assets/fonts/inter-500.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:600;src:url(assets/fonts/inter-600.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:700;src:url(assets/fonts/inter-700.woff2) format("woff2")}
+@font-face{font-family:Montserrat;font-weight:500;src:url(assets/fonts/montserrat-500.woff2) format("woff2")}
+@font-face{font-family:Montserrat;font-weight:600;src:url(assets/fonts/montserrat-600.woff2) format("woff2")}
+@font-face{font-family:Montserrat;font-weight:700;src:url(assets/fonts/montserrat-700.woff2) format("woff2")}
+@font-face{font-family:Montserrat;font-weight:800;src:url(assets/fonts/montserrat-800.woff2) format("woff2")}
+@font-face{font-family:Fraunces;font-weight:600;src:url(assets/fonts/fraunces-600.woff2) format("woff2")}
+@font-face{font-family:Fraunces;font-weight:700;src:url(assets/fonts/fraunces-700.woff2) format("woff2")}
+@font-face{font-family:Fraunces;font-weight:600;font-style:italic;src:url(assets/fonts/fraunces-600-italic.woff2) format("woff2")}
+
+:root{
+  --ink:#0F1020;--ink-2:#1A1B2E;--ink-3:#26283F;
+  --muted:#5E6072;--line:#E6E6EE;--soft:#F5F5F8;
+  --gold:#E8B04B;
+  /* P1 – línea financiera (inspiración Solventa) */
+  --p1:#6B2378;--p1-d:#3B1E4F;--p1-l:#F3E9F5;--p1-g:#3CB87A;
+  /* P2 – plataforma de pedidos */
+  --p2:#FF4A1C;--p2-d:#16161A;--p2-l:#FFF0EA;--p2-y:#FFC93C;
+  /* P3 – restaurante autosostenible */
+  --p3:#2F5D3A;--p3-d:#1F3A26;--p3-l:#F4EFE3;--p3-e:#C7834A;--p3-b:#3D8FA8;
+  --wa:#25D366;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#2A2B33}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+@page{size:A4;margin:0}
+.page{width:210mm;height:297mm;margin:10mm auto;background:#fff;position:relative;overflow:hidden;page-break-after:always;break-after:page}
+@media print{html,body{background:#fff}.page{margin:0}}
+h1,h2,h3,h4{font-family:Archivo,Inter,sans-serif;letter-spacing:-.02em}
+.pad{padding:16mm}
+.eyebrow{font:700 8.5pt Archivo,sans-serif;letter-spacing:.18em;text-transform:uppercase;display:flex;align-items:center;gap:8px;color:var(--muted)}
+.eyebrow::before{content:"";width:22px;height:3px;background:currentColor;display:inline-block}
+.h2{font-size:28pt;font-weight:900;line-height:1.02;margin:6px 0 10px}
+.lead{font-size:11pt;line-height:1.55;color:var(--muted);max-width:155mm}
+.pfoot{position:absolute;bottom:9mm;left:16mm;font:600 8pt Archivo;color:#9A9BAA;letter-spacing:.1em}
+.pfoot b{color:var(--ink)}
+.pnum{position:absolute;bottom:9mm;right:16mm;font:600 8pt Archivo;color:#9A9BAA;letter-spacing:.1em}
+.dark .pfoot b,.p2bg .pfoot b{color:#fff}
+.list{list-style:none;display:grid;gap:2.4mm}
+.list li{display:flex;gap:2.6mm;font-size:9.6pt;line-height:1.45;color:#33354A}
+.list li svg{flex:none;width:4.4mm;height:4.4mm;margin-top:.4mm}
+.list li b{color:var(--ink)}
+.ico{width:1em;height:1em;display:inline-block;vertical-align:middle}
+.tgmark{display:inline-flex;align-items:center;gap:3mm}
+.tgmark i{width:11mm;height:11mm;border-radius:3mm;background:linear-gradient(135deg,var(--gold),#C98A22);display:flex;align-items:center;justify-content:center;font:900 13pt Archivo;font-style:normal;color:var(--ink);letter-spacing:-.04em}
+.tgmark span{font:800 12pt Archivo;letter-spacing:-.01em;line-height:1}
+.tgmark span small{display:block;font:600 6.5pt Archivo;letter-spacing:.2em;text-transform:uppercase;color:#9A9BAA;margin-top:1.2mm}
+
+/* ===== mockups ===== */
+.phone{width:62mm;height:128mm;background:#0B0B10;border-radius:9mm;padding:2.6mm;outline:1px solid #2A2A35}
+.screen{width:100%;height:100%;background:#fff;border-radius:6.8mm;overflow:hidden;position:relative}
+.notch{position:absolute;top:2mm;left:50%;transform:translateX(-50%);width:17mm;height:4mm;background:#0B0B10;border-radius:99px;z-index:5}
+.browser{border-radius:4mm;overflow:hidden;border:1px solid #D9D9E3;background:#fff}
+.browser .bar{background:#ECECF2;padding:2.3mm 3.5mm;display:flex;align-items:center;gap:2mm}
+.browser .bar i{width:2.5mm;height:2.5mm;border-radius:50%;background:#FF5F57}
+.browser .bar i:nth-child(2){background:#FEBC2E}.browser .bar i:nth-child(3){background:#28C840}
+.browser .bar span{flex:1;margin-left:3mm;background:#fff;border-radius:1.5mm;padding:1.1mm 3mm;font-size:6.8pt;color:var(--muted)}
+
+/* ===== COVER ===== */
+.cover{background:var(--ink);color:#fff}
+.cover .mesh{position:absolute;inset:0;background:
+  radial-gradient(80mm 80mm at 85% 18%,rgba(107,35,120,.55),transparent 70%),
+  radial-gradient(70mm 70mm at 15% 70%,rgba(255,74,28,.28),transparent 70%),
+  radial-gradient(80mm 80mm at 90% 85%,rgba(47,93,58,.55),transparent 70%)}
+.cover .top{position:absolute;top:16mm;left:16mm;right:16mm;display:flex;justify-content:space-between;align-items:center}
+.cover .forby{font:600 7.5pt Archivo;letter-spacing:.16em;text-transform:uppercase;color:#9A9BAA;text-align:right;line-height:1.6}
+.cover .forby b{color:#fff;font-size:10pt;letter-spacing:.02em;text-transform:none}
+.cover h1{position:absolute;left:16mm;top:52mm;width:170mm;font-size:44pt;font-weight:900;line-height:.98}
+.cover h1 em{font-style:normal;background:linear-gradient(90deg,#C77BD6,#FF8A5C 50%,#7CC48C);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cover .sub{position:absolute;left:16mm;top:100mm;width:150mm;font-size:12pt;line-height:1.55;color:#C9CAD6}
+.cover .tiles{position:absolute;left:16mm;right:16mm;top:138mm;display:grid;grid-template-columns:repeat(3,1fr);gap:4mm}
+.tile{border-radius:5mm;padding:5mm;height:104mm;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.tile .n{font:900 30pt Archivo;opacity:.25;line-height:1}
+.tile h3{font-size:13.5pt;font-weight:800;line-height:1.1;margin-top:auto}
+.tile p{font-size:8.6pt;line-height:1.45;margin-top:2mm;opacity:.85}
+.tile .pr{margin-top:3.5mm;font:800 10pt Archivo;display:flex;justify-content:space-between;border-top:1px solid rgba(255,255,255,.25);padding-top:3mm}
+.tile.t1{background:linear-gradient(160deg,#8A2E9A,var(--p1-d))}
+.tile.t2{background:linear-gradient(160deg,#FF6A3D,#B62A0B)}
+.tile.t3{background:linear-gradient(160deg,#4C8A57,var(--p3-d))}
+.tile svg.art{position:absolute;right:-4mm;top:-4mm;width:34mm;height:34mm;opacity:.22}
+.cover .meta{position:absolute;left:16mm;right:16mm;bottom:16mm;display:flex;justify-content:space-between;border-top:1px solid #2C2E46;padding-top:5mm}
+.cover .meta div{font:600 7.5pt Archivo;letter-spacing:.14em;text-transform:uppercase;color:#8A8BA0}
+.cover .meta b{display:block;color:#fff;font-size:10.5pt;letter-spacing:.01em;text-transform:none;margin-top:1.2mm}
+
+/* ===== RESUMEN ===== */
+.rtable{margin-top:9mm;display:grid;gap:5mm}
+.rrow{display:grid;grid-template-columns:9mm 1fr 50mm;gap:5mm;align-items:center;border:1px solid var(--line);border-radius:4.5mm;padding:5mm 5.5mm;position:relative;overflow:hidden}
+.rrow::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2mm}
+.rrow.r1::before{background:var(--p1)}.rrow.r2::before{background:var(--p2)}.rrow.r3::before{background:var(--p3)}
+.rrow .num{font:900 20pt Archivo;color:#D5D6E0}
+.rrow h3{font-size:13pt;font-weight:800}
+.rrow h3 small{font:700 7.2pt Archivo;letter-spacing:.12em;text-transform:uppercase;padding:1mm 2.4mm;border-radius:99px;margin-left:2mm;vertical-align:middle}
+.r1 h3 small{background:var(--p1-l);color:var(--p1)}.r2 h3 small{background:var(--p2-l);color:#C2360F}.r3 h3 small{background:var(--p3-l);color:var(--p3)}
+.rrow p{font-size:9pt;color:var(--muted);line-height:1.45;margin-top:1.2mm}
+.rrow .tags{display:flex;gap:1.5mm;flex-wrap:wrap;margin-top:2.2mm}
+.rrow .tags span{font:600 7.2pt Inter;background:var(--soft);border-radius:1.5mm;padding:.9mm 2mm;color:#45475C}
+.rrow .price{text-align:right}
+.rrow .price b{display:block;font:900 17pt Archivo;letter-spacing:-.02em}
+.rrow .price span{display:block;font-size:7.8pt;color:var(--muted);line-height:1.45}
+.rrow .price i{font-style:normal;display:inline-block;margin-top:1.2mm;font:700 7.5pt Archivo;background:var(--ink);color:#fff;border-radius:99px;padding:.8mm 2.4mm}
+.promise{margin-top:9mm;display:grid;grid-template-columns:repeat(4,1fr);gap:4mm}
+.promise div{background:var(--soft);border-radius:3.5mm;padding:4.5mm}
+.promise svg{width:6mm;height:6mm;color:var(--ink)}
+.promise b{display:block;font:800 10.5pt Archivo;margin:2mm 0 .8mm}
+.promise span{font-size:8.2pt;color:var(--muted);line-height:1.4;display:block}
+
+/* ===== P1 – FINANCIERA (Montserrat, morado + verde) ===== */
+.f1{font-family:Montserrat,Inter,sans-serif}
+.f1 h1,.f1 h2,.f1 h3,.f1 h4{font-family:Montserrat,sans-serif;letter-spacing:-.01em}
+.p1hero{background:linear-gradient(135deg,var(--p1) 0%,#4A1A57 60%,var(--p1-d));color:#fff;padding:16mm 16mm 0;height:164mm;position:relative;overflow:hidden}
+.p1hero::after{content:"";position:absolute;width:120mm;height:120mm;border-radius:50%;right:-40mm;top:-40mm;background:radial-gradient(circle,rgba(60,184,122,.35),transparent 65%)}
+.p1hero .eyebrow{color:#D9B8E0}
+.p1hero .h2{font-weight:800;font-size:27pt;max-width:150mm}
+.p1hero .h2 em{font-style:normal;color:#7BE3AA}
+.p1hero .lead{color:#E2CFE6;max-width:150mm}
+.p1hero .browser{position:absolute;left:16mm;right:16mm;bottom:-6mm;z-index:2}
+.fsite-nav{background:#fff;display:flex;justify-content:space-between;align-items:center;padding:2.8mm 5mm;border-bottom:1px solid #EEE}
+.fsite-logo{display:flex;align-items:center;gap:2mm;font:800 8.5pt Montserrat;color:var(--p1)}
+.fsite-logo i{width:5.5mm;height:5.5mm;border-radius:1.6mm;background:var(--p1);color:#fff;display:flex;align-items:center;justify-content:center;font:800 6.5pt Montserrat;font-style:normal}
+.fsite-nav .links{display:flex;gap:3.5mm;font:600 6.4pt Montserrat;color:#55556A;align-items:center}
+.fsite-nav .links b{background:var(--p1-g);color:#fff;padding:1.3mm 2.6mm;border-radius:99px}
+.fsite-hero{display:grid;grid-template-columns:1.1fr 1fr;gap:5mm;padding:6mm 6mm 7mm;background:linear-gradient(180deg,#FBF6FC,#fff)}
+.fsite-hero h4{font:800 15pt Montserrat;color:var(--p1-d);line-height:1.1;letter-spacing:-.01em}
+.fsite-hero h4 em{font-style:normal;color:var(--p1)}
+.fsite-hero p{font-size:7pt;color:#66667A;line-height:1.5;margin-top:2mm}
+.fsite-hero .chips{display:flex;gap:1.5mm;margin-top:3mm;flex-wrap:wrap}
+.fsite-hero .chips span{font:700 6pt Montserrat;color:var(--p1);background:var(--p1-l);padding:1mm 2.2mm;border-radius:99px}
+.calc{background:#fff;border-radius:3.5mm;border:1px solid #EADCEE;padding:4mm;box-shadow:0 6px 16px rgba(107,35,120,.12)}
+.calc .t{font:800 7.6pt Montserrat;color:var(--p1-d)}
+.calc .lbl{display:flex;justify-content:space-between;font:600 6.2pt Montserrat;color:#77778A;margin-top:2.6mm}
+.calc .lbl b{color:var(--p1-d);font-weight:800}
+.slider{height:1.6mm;border-radius:99px;background:#EEE3F0;margin-top:1.6mm;position:relative}
+.slider span{position:absolute;left:0;top:0;bottom:0;border-radius:99px;background:var(--p1)}
+.slider span::after{content:"";position:absolute;right:-2mm;top:50%;transform:translateY(-50%);width:4mm;height:4mm;border-radius:50%;background:#fff;border:1.2mm solid var(--p1)}
+.calc .res{margin-top:3mm;background:var(--p1-l);border-radius:2mm;padding:2.4mm 3mm;display:flex;justify-content:space-between;align-items:center}
+.calc .res span{font:600 6pt Montserrat;color:#77778A}
+.calc .res b{font:800 11pt Montserrat;color:var(--p1)}
+.calc .btn{margin-top:2.6mm;background:var(--p1-g);color:#fff;text-align:center;border-radius:99px;font:800 7pt Montserrat;padding:2.2mm}
+.calc small{display:block;font-size:5.2pt;color:#9A9AAA;margin-top:1.8mm;line-height:1.35}
+
+.p1body{padding:14mm 16mm 0}
+.steps4{display:grid;grid-template-columns:repeat(4,1fr);gap:3.5mm;margin-top:5mm}
+.st4{background:var(--p1-l);border-radius:4mm;padding:4.5mm;position:relative}
+.st4 i{font:800 18pt Montserrat;font-style:normal;color:var(--p1);opacity:.35;position:absolute;top:3mm;right:4mm}
+.st4 svg{width:7mm;height:7mm;color:var(--p1)}
+.st4 b{display:block;font:800 9.6pt Montserrat;color:var(--p1-d);margin:2.5mm 0 1mm}
+.st4 span{font-size:8pt;color:#5F5370;line-height:1.4;display:block}
+
+.feat2{display:grid;grid-template-columns:1fr 1fr;gap:3.5mm;margin-top:6mm}
+.fcard{border:1px solid #ECE3EF;border-radius:4mm;padding:4.5mm;display:grid;grid-template-columns:10mm 1fr;gap:3.5mm}
+.fcard .ib{width:10mm;height:10mm;border-radius:3mm;background:var(--p1);display:flex;align-items:center;justify-content:center}
+.fcard .ib svg{width:5.6mm;height:5.6mm;color:#fff}
+.fcard .ib.g{background:var(--p1-g)}
+.fcard b{display:block;font:800 9.8pt Montserrat;color:var(--p1-d);margin-bottom:.8mm}
+.fcard span{font-size:8.3pt;color:var(--muted);line-height:1.42;display:block}
+.trust{margin-top:6mm;display:grid;grid-template-columns:62mm 1fr;gap:7mm;align-items:center}
+.p1phone .screen{background:#FBF6FC}
+.p1phone .ph-head{background:var(--p1);color:#fff;padding:9mm 4mm 4mm}
+.p1phone .ph-head b{font:800 9pt Montserrat;display:block}
+.p1phone .ph-head span{font-size:6.2pt;opacity:.85}
+.form{padding:3.5mm}
+.form .f{background:#fff;border:1px solid #E8DDEB;border-radius:2mm;padding:2.2mm 2.6mm;margin-bottom:2mm}
+.form .f small{display:block;font:600 5.2pt Montserrat;color:#99A;text-transform:uppercase;letter-spacing:.08em}
+.form .f b{font:700 7.4pt Montserrat;color:var(--p1-d)}
+.form .chk{display:flex;gap:1.6mm;align-items:flex-start;font-size:5.6pt;color:#66667A;line-height:1.35;margin:2.6mm 0}
+.form .chk i{flex:none;width:3mm;height:3mm;border-radius:.8mm;background:var(--p1-g);display:flex;align-items:center;justify-content:center;color:#fff;font-style:normal;font-size:5pt}
+.form .send{background:var(--wa);color:#fff;border-radius:99px;text-align:center;font:800 7pt Montserrat;padding:2.4mm;display:flex;align-items:center;justify-content:center;gap:1.5mm}
+.form .send svg{width:3.6mm;height:3.6mm}
+.form .ok{margin-top:3mm;background:#E6F7EE;border-radius:2mm;padding:2.4mm;font-size:5.8pt;color:#1E7A4D;line-height:1.4}
+
+/* investment strip used per project */
+.pinv{position:absolute;left:16mm;right:16mm;bottom:20mm;border-radius:5mm;display:grid;grid-template-columns:1fr 1fr 1fr;overflow:hidden}
+.pinv>div{padding:5mm 5.5mm}
+.pinv small{display:block;font:700 7pt Archivo;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.pinv b{display:block;font:900 19pt Archivo;letter-spacing:-.02em;margin-top:1mm}
+.pinv span{display:block;font-size:8pt;opacity:.85;margin-top:.8mm;line-height:1.35}
+.pinv.i1{background:var(--p1-d);color:#fff}.pinv.i1>div:first-child{background:var(--p1)}
+.pinv.i2{background:var(--p2-d);color:#fff}.pinv.i2>div:first-child{background:var(--p2)}
+.pinv.i3{background:var(--p3-d);color:#fff}.pinv.i3>div:first-child{background:var(--p3)}
+
+/* ===== P2 – PLATAFORMA DE PEDIDOS ===== */
+.p2bg{background:var(--p2-d);color:#fff}
+.p2bg .eyebrow{color:var(--p2)}
+.p2bg .lead{color:#B9B9C4}
+.p2bg .h2 em{font-style:normal;color:var(--p2)}
+.p2grid{display:grid;grid-template-columns:1fr 64mm;gap:8mm;margin-top:6mm;align-items:start}
+.problem{display:grid;gap:3.5mm}
+.pb{background:#222228;border:1px solid #2E2E36;border-radius:4mm;padding:4.5mm;display:grid;grid-template-columns:9mm 1fr;gap:3.5mm}
+.pb .ib{width:9mm;height:9mm;border-radius:2.6mm;background:var(--p2);display:flex;align-items:center;justify-content:center}
+.pb .ib.y{background:var(--p2-y)}
+.pb .ib svg{width:5mm;height:5mm;color:#fff}.pb .ib.y svg{color:#16161A}
+.pb b{display:block;font:800 10.5pt Archivo;margin-bottom:.8mm}
+.pb span{font-size:8.6pt;color:#B9B9C4;line-height:1.45;display:block}
+.p2phone .screen{background:#F6F6F8}
+.app2-head{background:var(--p2);color:#fff;padding:9mm 3.5mm 3.5mm}
+.app2-head .row{display:flex;justify-content:space-between;align-items:center}
+.app2-head b{font:900 9pt Archivo;letter-spacing:-.01em}
+.app2-head .loc{font-size:5.8pt;opacity:.9;margin-top:.6mm}
+.app2-head .search{margin-top:2.4mm;background:#fff;border-radius:2mm;padding:1.8mm 2.4mm;font-size:5.8pt;color:#999}
+.cat2{display:flex;gap:1.5mm;padding:2.6mm 3mm 1mm}
+.cat2 span{display:flex;flex-direction:column;align-items:center;gap:.8mm;font:700 5.2pt Archivo;color:#444}
+.cat2 span i{width:9mm;height:9mm;border-radius:2.6mm;background:#fff;display:flex;align-items:center;justify-content:center;font-style:normal;border:1px solid #EEE}
+.cat2 span i svg{width:5mm;height:5mm}
+.biz{margin:2mm 3mm;background:#fff;border-radius:2.6mm;overflow:hidden;border:1px solid #EEE}
+.biz .img{height:15mm;position:relative}
+.biz .img .pill{position:absolute;left:1.6mm;top:1.6mm;background:#fff;border-radius:99px;font:800 4.8pt Archivo;padding:.6mm 1.6mm;color:#16161A}
+.biz .img .sec{position:absolute;right:1.6mm;top:1.6mm;background:rgba(22,22,26,.8);color:#fff;border-radius:99px;font:700 4.6pt Archivo;padding:.6mm 1.6mm;display:flex;gap:.8mm;align-items:center}
+.biz .tx{padding:1.8mm 2.2mm;display:flex;justify-content:space-between;align-items:center}
+.biz .tx b{font:800 6.6pt Archivo;display:block;color:#16161A}
+.biz .tx span{font-size:5.2pt;color:#888}
+.biz .tx i{font-style:normal;font:800 5.4pt Archivo;color:var(--p2)}
+.food1{background:linear-gradient(135deg,#FFB547,#FF6A3D)}
+.food2{background:linear-gradient(135deg,#7AD1A3,#2E9E6A)}
+.food3{background:linear-gradient(135deg,#9AA7FF,#5B4BD6)}
+.food svg{position:absolute;right:3mm;bottom:1.5mm;width:12mm;height:12mm;opacity:.9}
+
+.actors{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin-top:6mm}
+.actor{border-radius:4.5mm;padding:5mm;border:1px solid var(--line);background:#fff}
+.actor .hd{display:flex;align-items:center;gap:3mm;margin-bottom:3.5mm}
+.actor .hd i{width:10mm;height:10mm;border-radius:3mm;display:flex;align-items:center;justify-content:center;font-style:normal}
+.actor .hd i svg{width:5.5mm;height:5.5mm;color:#fff}
+.actor .hd b{font:800 11pt Archivo;display:block;line-height:1.1}
+.actor .hd small{font:600 7pt Archivo;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.actor .list li{font-size:8.6pt}
+.a1 .list svg{color:var(--p2)}.a2 .list svg{color:#16161A}.a3 .list svg{color:#D9A21B}
+.a1 .hd i{background:var(--p2)}.a2 .hd i{background:#16161A}.a3 .hd i{background:var(--p2-y)}.a3 .hd i svg{color:#16161A}
+.status{margin-top:6mm;display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+.status::before{content:"";position:absolute;left:6mm;right:6mm;top:5mm;height:2px;background:repeating-linear-gradient(90deg,var(--p2) 0 4px,transparent 4px 8px)}
+.status div{position:relative;text-align:center;padding:0 1.5mm}
+.status div i{width:10mm;height:10mm;margin:0 auto;border-radius:50%;background:#fff;border:2px solid var(--p2);display:flex;align-items:center;justify-content:center;font-style:normal;position:relative;z-index:1}
+.status div i svg{width:5mm;height:5mm;color:var(--p2)}
+.status div:last-child i{background:var(--p2)}.status div:last-child i svg{color:#fff}
+.status b{display:block;font:800 8.6pt Archivo;margin-top:2mm}
+.status span{font-size:7.4pt;color:var(--muted);line-height:1.35;display:block;margin-top:.6mm}
+.money{margin-top:6mm;background:var(--p2-l);border-radius:4.5mm;padding:5mm 6mm;display:grid;grid-template-columns:1.15fr 1fr;gap:6mm;align-items:center}
+.money h3{font-size:12.5pt;font-weight:800;margin-bottom:2mm}
+.money .opts{display:grid;gap:1.8mm}
+.money .opts div{display:flex;gap:2mm;font-size:8.6pt;color:#4A3A35;line-height:1.4}
+.money .opts div b{color:#16161A}
+.money .opts svg{flex:none;width:4.2mm;height:4.2mm;color:var(--p2);margin-top:.3mm}
+.money .calcx{background:#fff;border-radius:3.5mm;padding:4.5mm;text-align:center}
+.money .calcx small{font:700 7pt Archivo;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.money .calcx .eq{font:700 9.5pt Archivo;margin:2mm 0 1mm;color:#16161A}
+.money .calcx b{display:block;font:900 22pt Archivo;color:var(--p2);letter-spacing:-.02em}
+.money .calcx span{font-size:7.2pt;color:var(--muted);line-height:1.35;display:block;margin-top:1mm}
+
+/* ===== P3 – RESTAURANTE AUTOSOSTENIBLE ===== */
+.p3bg{background:var(--p3-l)}
+.f3 h2,.f3 h3,.f3 h4{font-family:Fraunces,Georgia,serif;letter-spacing:-.01em}
+.f3 .h2{font-weight:700;font-size:29pt}
+.f3 .h2 em{font-style:italic;font-weight:600;color:var(--p3-e)}
+.f3 .eyebrow{color:var(--p3)}
+.journey{display:grid;grid-template-columns:repeat(4,1fr);gap:3.5mm;margin-top:7mm}
+.jr{background:#fff;border-radius:4.5mm;overflow:hidden;border:1px solid #E6DFCC}
+.jr .art{height:30mm;display:flex;align-items:center;justify-content:center;position:relative}
+.jr .art svg{width:20mm;height:20mm}
+.jr .art i{position:absolute;top:2.5mm;left:2.5mm;font:700 8pt Fraunces;font-style:italic;color:#fff;background:rgba(0,0,0,.25);border-radius:99px;padding:.6mm 2.2mm}
+.jr .tx{padding:3.5mm 4mm 4.5mm}
+.jr b{display:block;font:700 11pt Fraunces;color:var(--p3-d)}
+.jr span{font-size:8pt;color:#6A6553;line-height:1.42;display:block;margin-top:1mm}
+.a-huerta{background:linear-gradient(160deg,#7FB069,#3E7A3E)}
+.a-pesca{background:linear-gradient(160deg,#6FB7CF,#2C6E86)}
+.a-cocina{background:linear-gradient(160deg,#E2A15E,#B5652C)}
+.a-mesa{background:linear-gradient(160deg,#C9A27A,#7A5638)}
+.p3split{display:grid;grid-template-columns:64mm 1fr;gap:8mm;margin-top:7mm;align-items:start}
+.p3phone .screen{background:#FBF8F1}
+.r3-hero{height:40mm;background:linear-gradient(180deg,rgba(31,58,38,.15),rgba(31,58,38,.85)),linear-gradient(160deg,#7FB069,#2F5D3A);position:relative;padding:9mm 3.5mm 3mm;color:#fff;display:flex;flex-direction:column;justify-content:flex-end}
+.r3-hero b{font:700 11pt Fraunces;line-height:1.05}
+.r3-hero b em{font-style:italic;font-weight:600;color:#F4D7A8}
+.r3-hero span{font-size:5.6pt;opacity:.9;margin-top:1mm}
+.r3-hero svg{position:absolute;right:3mm;top:9mm;width:14mm;height:14mm;opacity:.5}
+.r3-tabs{display:flex;gap:1.4mm;padding:2.6mm 3mm 1.2mm}
+.r3-tabs span{font:700 5.4pt Inter;padding:1mm 2.2mm;border-radius:99px;background:#fff;border:1px solid #E6DFCC;color:#6A6553}
+.r3-tabs span.on{background:var(--p3);color:#fff;border-color:var(--p3)}
+.dish{display:grid;grid-template-columns:13mm 1fr;gap:2.2mm;background:#fff;margin:1.8mm 3mm;border-radius:2.4mm;padding:1.8mm;border:1px solid #EEE7D6}
+.dish .im{height:13mm;border-radius:1.8mm;display:flex;align-items:center;justify-content:center}
+.dish .im svg{width:8mm;height:8mm}
+.dish b{font:700 6.6pt Fraunces;color:var(--p3-d);display:block}
+.dish span{font-size:5.1pt;color:#7A7462;line-height:1.3;display:block;margin-top:.4mm}
+.dish .orig{display:inline-block;margin-top:.8mm;font:700 4.6pt Inter;color:var(--p3);background:#E8F1E4;border-radius:99px;padding:.4mm 1.4mm}
+.dish .pr{font:800 6.4pt Inter;color:var(--p3-d);margin-top:.6mm}
+.r3-cart{position:absolute;left:3mm;right:3mm;bottom:3mm;background:var(--p3-d);color:#fff;border-radius:2.6mm;padding:2.3mm 3mm;display:flex;justify-content:space-between;font:700 6pt Inter;align-items:center}
+.r3-cart span{background:#F4D7A8;color:var(--p3-d);border-radius:1.5mm;padding:.9mm 2mm}
+.sec3{display:grid;gap:3mm}
+.s3{background:#fff;border-radius:4mm;padding:4.2mm 4.6mm;display:grid;grid-template-columns:9mm 1fr;gap:3.5mm;border:1px solid #E6DFCC}
+.s3 .ib{width:9mm;height:9mm;border-radius:50%;background:var(--p3);display:flex;align-items:center;justify-content:center}
+.s3 .ib.e{background:var(--p3-e)}.s3 .ib.b{background:var(--p3-b)}
+.s3 .ib svg{width:5mm;height:5mm;color:#fff}
+.s3 b{display:block;font:700 10.5pt Fraunces;color:var(--p3-d);margin-bottom:.6mm}
+.s3 span{font-size:8.3pt;color:#6A6553;line-height:1.42;display:block}
+
+/* ===== INVERSIÓN CONSOLIDADA ===== */
+.invt{margin-top:7mm;border-radius:5mm;overflow:hidden;border:1px solid var(--line)}
+.invt table{width:100%;border-collapse:collapse}
+.invt th{background:var(--ink);color:#fff;font:700 7.6pt Archivo;letter-spacing:.1em;text-transform:uppercase;text-align:left;padding:3.4mm 4mm}
+.invt th:not(:first-child),.invt td:not(:first-child){text-align:right}
+.invt td:nth-child(3),.invt td:nth-child(4){white-space:nowrap}
+.invt td{padding:4.2mm 4mm;border-top:1px solid var(--line);font-size:9pt;color:#33354A;vertical-align:top}
+.invt td b{font:800 11pt Archivo;color:var(--ink)}
+.invt td .dot{display:inline-block;width:3mm;height:3mm;border-radius:50%;margin-right:2mm;vertical-align:middle}
+.invt td small{display:block;font-size:7.6pt;color:var(--muted);margin-top:.6mm}
+.invt tr.tot td{background:var(--soft);font-weight:700}
+.invt tr.tot td b{font-size:13pt}
+.payways{display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin-top:6mm}
+.pw{border-radius:4.5mm;padding:5.5mm}
+.pw.a{background:var(--ink);color:#fff}
+.pw.b{background:var(--soft)}
+.pw small{font:800 7.5pt Archivo;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.pw.b small{color:#8A6B1F}
+.pw h3{font-size:13pt;font-weight:800;margin:1.5mm 0 3mm}
+.pw .list li{font-size:8.8pt}
+.pw.a .list li{color:#D0D1DC}.pw.a .list li b{color:#fff}
+.includes{margin-top:6mm;display:grid;grid-template-columns:repeat(3,1fr);gap:3mm}
+.includes div{display:flex;gap:2.5mm;align-items:flex-start;font-size:8.6pt;color:#33354A;line-height:1.4}
+.includes svg{flex:none;width:4.6mm;height:4.6mm;color:var(--p1-g)}
+.notes{margin-top:6mm;font-size:7.8pt;color:var(--muted);line-height:1.55}
+
+/* ===== ROADMAP ===== */
+.road{margin-top:8mm;position:relative;display:grid;gap:5mm}
+.road::before{content:"";position:absolute;left:7mm;top:6mm;bottom:6mm;width:2px;background:linear-gradient(var(--p1),var(--p3) 50%,var(--p2))}
+.rd{display:grid;grid-template-columns:14mm 1fr;gap:5mm;position:relative}
+.rd i{width:14mm;height:14mm;border-radius:50%;display:flex;align-items:center;justify-content:center;font:900 12pt Archivo;font-style:normal;color:#fff;z-index:1}
+.rd .box{border:1px solid var(--line);border-radius:4.5mm;padding:4.5mm 5mm}
+.rd .box small{font:800 7.2pt Archivo;letter-spacing:.14em;text-transform:uppercase}
+.rd .box b{display:block;font:800 12pt Archivo;margin:1mm 0}
+.rd .box span{font-size:8.8pt;color:var(--muted);line-height:1.45;display:block}
+
+/* ===== CIERRE ===== */
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-top:7mm}
+.why div{border-top:3px solid var(--gold);padding-top:3.5mm}
+.why b{font:900 21pt Archivo;letter-spacing:-.03em;display:block}
+.why span{font-size:8.4pt;color:var(--muted);line-height:1.4;display:block;margin-top:1mm}
+.next{margin-top:9mm;display:grid;gap:3mm}
+.nx{display:grid;grid-template-columns:12mm 1fr;gap:4mm;align-items:center;background:var(--soft);border-radius:3.5mm;padding:4mm 5mm}
+.nx i{font:900 17pt Archivo;font-style:normal;color:var(--gold)}
+.nx b{font:800 10.5pt Archivo;display:block}
+.nx span{font-size:8.7pt;color:var(--muted);line-height:1.4}
+.cta{position:absolute;left:0;right:0;bottom:0;height:76mm;background:var(--ink);color:#fff;padding:12mm 16mm}
+.cta h2{font-size:25pt;font-weight:900;line-height:1.02;max-width:118mm}
+.cta h2 em{font-style:normal;color:var(--gold)}
+.cta .contact{display:flex;gap:4mm;margin-top:7mm}
+.cta .contact div{background:var(--ink-2);border:1px solid #2C2E46;border-radius:3mm;padding:3.4mm 4.5mm;font:700 9.6pt Archivo;display:flex;align-items:center;gap:3mm}
+.cta .contact svg{width:5.5mm;height:5.5mm;color:var(--gold)}
+.cta .contact small{display:block;font:600 6.4pt Archivo;letter-spacing:.14em;text-transform:uppercase;color:#8A8BA0}
+.cta .agency{position:absolute;right:16mm;top:12mm;text-align:right}
+.av-logo{font:900 13pt Archivo;display:flex;align-items:center;gap:2.5mm;justify-content:flex-end}
+.av-logo i{width:7mm;height:7mm;border-radius:2mm;background:linear-gradient(135deg,#9B6BFF,#6A2FE0);display:inline-flex;align-items:center;justify-content:center}
+.av-logo i svg{width:4.5mm;height:4.5mm;color:#fff}
+.cta .agency small{display:block;font:600 7pt Archivo;letter-spacing:.14em;text-transform:uppercase;color:#8A8BA0;margin-top:2mm}
+.cta .valid{position:absolute;right:16mm;top:27mm;font:600 7.4pt Archivo;color:#8A8BA0}
+
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin-top:7mm}
+.kpis div{border-top:3px solid var(--p1-g);padding-top:3mm}
+.kpis b{display:block;font:800 17pt Montserrat;color:var(--p1)}
+.kpis span{font-size:8.4pt;color:var(--muted);line-height:1.4;display:block;margin-top:.8mm}
+.arrive{display:grid;grid-template-columns:1fr 1.15fr;gap:5mm;margin-top:3.5mm;align-items:center}
+.bubble{background:#DCF8C6;border-radius:3mm 3mm 3mm .6mm;padding:4mm 4.5mm;font-size:8.4pt;line-height:1.55;color:#1F2A1F}
+.bubble small{display:block;text-align:right;font-size:6.8pt;color:#5D7A5D;margin-top:1mm}
+.msheet{border:1px solid #D7DCE2;border-radius:3mm;overflow:hidden;font-size:7.6pt}
+.msheet .h{background:#188038;color:#fff;font:700 7.6pt Inter;padding:2.2mm 3mm;display:flex;gap:2mm;align-items:center}
+.msheet .h svg{width:4mm;height:4mm}
+.msheet .r{display:grid;grid-template-columns:.7fr 1.2fr 1.1fr 1.1fr;border-top:1px solid #E8EAED}
+.msheet .r span{padding:1.8mm 2.4mm;border-right:1px solid #E8EAED}
+.msheet .r.th{background:#F1F3F4;color:#5F6368;font-weight:600}
+.s{font-style:normal;font:700 6.4pt Inter;padding:.6mm 1.8mm;border-radius:99px}
+.s.n{background:var(--p1-l);color:var(--p1)}.s.c{background:#FFF1D6;color:#9A5B00}.s.a{background:#E3F8EE;color:#0E7A47}
+.ideal{margin-top:6mm;display:flex;flex-wrap:wrap;gap:2mm;align-items:center}
+.ideal span{font:800 8pt Archivo;letter-spacing:.12em;text-transform:uppercase;color:var(--p2-y);margin-right:1mm}
+.ideal i{font-style:normal;font:600 8.6pt Inter;color:#E6E6EE;border:1px solid #3A3A44;border-radius:99px;padding:1.6mm 3.4mm}
+.r3web{margin-top:6mm}
+.r3w .nav{display:flex;align-items:center;gap:4mm;padding:2.8mm 5mm;background:#FBF8F1;border-bottom:1px solid #EEE7D6;font:600 6.6pt Inter;color:#6A6553}
+.r3w .nav b{font:700 10pt Fraunces;color:var(--p3-d);margin-right:auto}
+.r3w .nav em{font-style:normal;background:var(--p3);color:#fff;border-radius:99px;padding:1.2mm 3mm;font-weight:700}
+.r3w .hero{display:grid;grid-template-columns:1fr 1.05fr;gap:5mm;padding:5mm 5mm;background:var(--p3-d);color:#fff;align-items:center}
+.r3w h4{font:700 17pt Fraunces;line-height:1.05}
+.r3w h4 em{font-style:italic;font-weight:600;color:#F4D7A8}
+.r3w p{font-size:7.2pt;color:#CFDCCB;line-height:1.5;margin-top:2mm}
+.r3w .b{display:flex;gap:2mm;margin-top:3mm}
+.r3w .b span{font:700 6.8pt Inter;background:#F4D7A8;color:var(--p3-d);border-radius:99px;padding:1.6mm 3.2mm}
+.r3w .b span.o{background:transparent;border:1px solid #F4D7A8;color:#F4D7A8}
+.r3w .pics{display:grid;grid-template-columns:1.3fr 1fr;grid-template-rows:1fr 1fr;gap:2mm;height:30mm}
+.r3w .pics div{border-radius:2.5mm;display:flex;align-items:center;justify-content:center}
+.r3w .pics div:first-child{grid-row:span 2}
+.r3w .pics svg{width:12mm;height:12mm}
+.road3{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin-top:3.5mm}
+.road3 div{border-top:3px solid;background:var(--soft);border-radius:0 0 3mm 3mm;padding:3.5mm 4mm}
+.road3 small{font:800 7.2pt Archivo;letter-spacing:.12em;text-transform:uppercase}
+.road3 b{display:block;font:800 10pt Archivo;margin:1mm 0 .6mm}
+.road3 span{font-size:8pt;color:var(--muted);line-height:1.4;display:block}
+
+/* ===== VISTA CELULAR (solo pantalla) ===== */
+@media screen and (max-width:820px){
+  html,body{background:var(--ink)}
+  .page{width:100%;height:auto;margin:0;padding-bottom:56px}
+  .pad,.p1body{padding:34px 18px 8px}
+  .h2{font-size:30px}.h2 br{display:none}
+  .lead{font-size:15px;max-width:none}
+  .eyebrow{font-size:11px}
+  .pfoot,.pnum{bottom:20px;font-size:10px}.pfoot{left:18px}.pnum{right:18px}
+  .list li{font-size:14px}
+  .cover{padding:0 18px 70px;display:flex;flex-direction:column}
+  .cover .top,.cover h1,.cover .sub,.cover .tiles,.cover .meta{position:relative;inset:auto;left:auto;right:auto;top:auto;bottom:auto;width:auto}
+  .cover .top{margin-top:28px;flex-wrap:wrap;gap:14px}.cover .forby{text-align:left}
+  .cover h1{font-size:40px;margin-top:40px}
+  .cover .sub{font-size:16px;margin-top:18px}
+  .cover .tiles{grid-template-columns:1fr;margin-top:26px}
+  .tile{height:auto;min-height:170px}.tile h3{font-size:20px;margin-top:14px}.tile p{font-size:14px}.tile .pr{font-size:15px}
+  .cover .meta{margin-top:30px;flex-wrap:wrap;gap:14px}.cover .meta b{font-size:15px}
+  .rrow{grid-template-columns:1fr;gap:10px}.rrow .num{display:none}.rrow .price{text-align:left}
+  .rrow h3{font-size:18px}.rrow p{font-size:14px}.rrow .price b{font-size:24px}.rrow .price span{font-size:12px}
+  .promise,.why{grid-template-columns:1fr 1fr}
+  .promise b{font-size:15px}.promise span{font-size:13px}
+  .p1hero{height:auto;padding:34px 18px 26px}
+  .p1hero .h2{font-size:30px}
+  .p1hero .browser{position:relative;left:auto;right:auto;bottom:auto;margin-top:24px}
+  .fsite-hero{grid-template-columns:1fr}.fsite-nav .links span{display:none}
+  .fsite-hero h4{font-size:22px}.fsite-hero p{font-size:12px}
+  .calc .t{font-size:13px}.calc .lbl{font-size:11px}.calc .res b{font-size:20px}.calc .res span{font-size:11px}.calc .btn{font-size:13px}.calc small{font-size:10px}
+  .steps4{grid-template-columns:1fr 1fr}.st4 b{font-size:15px}.st4 span{font-size:13px}
+  .feat2,.trust,.p2grid,.actors,.p3split,.payways,.includes,.money{grid-template-columns:1fr}
+  .fcard b,.pb b,.s3 b{font-size:16px}.fcard span,.pb span,.s3 span{font-size:14px}
+  .phone{width:250px;height:520px;margin:0 auto;border-radius:36px;padding:10px}.screen{border-radius:28px}
+  .pinv{position:relative;left:auto;right:auto;bottom:auto;margin:26px 18px 0;grid-template-columns:1fr}
+  .pinv b{font-size:26px}.pinv span{font-size:13px}.pinv small{font-size:11px}
+  .status{grid-template-columns:1fr 1fr 1fr;gap:16px 4px}.status::before{display:none}
+  .status b{font-size:13px}.status span{font-size:11.5px}
+  .actor .hd b{font-size:17px}.actor .list li{font-size:14px}
+  .money .calcx b{font-size:30px}.money h3{font-size:18px}.money .opts div{font-size:14px}
+  .journey{grid-template-columns:1fr 1fr}.jr b{font-size:16px}.jr span{font-size:13px}
+  .f3 .h2{font-size:32px}
+  .invt{overflow-x:auto}.invt table{min-width:560px}.invt td,.invt th{font-size:12px}
+  .pw h3{font-size:18px}.includes div,.notes{font-size:13px}
+  .rd .box b{font-size:17px}.rd .box span{font-size:14px}
+  .why b{font-size:28px}.why span{font-size:13px}
+  .nx b{font-size:16px}.nx span{font-size:14px}
+  .cta{position:relative;height:auto;padding:36px 18px 50px;margin-top:30px}
+  .cta .agency{position:static;text-align:left;margin-bottom:20px}.av-logo{justify-content:flex-start}
+  .cta h2{font-size:28px}.cta .contact{flex-direction:column}.cta .contact div{font-size:16px}
+  .cta .valid{position:static;display:block;margin-top:16px;font-size:11px}
+  .kpis,.arrive,.road3,.r3w .hero{grid-template-columns:1fr}
+  .r3pad{margin-top:0!important}
+  .kpis b{font-size:24px}.kpis span,.road3 span{font-size:13px}.road3 b{font-size:16px}
+  .bubble{font-size:13px}.msheet{font-size:11px}.msheet .h{font-size:12px}
+  .ideal i{font-size:13px}.ideal span{font-size:11px}
+  .r3w .nav span{display:none}.r3w h4{font-size:24px}.r3w p{font-size:13px}
+  .page:last-child .pfoot{display:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+<defs>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="currentColor" opacity=".15"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-calc" viewBox="0 0 24 24"><rect x="4" y="2.5" width="16" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="7" y="5.5" width="10" height="4" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 13h.01M12 13h.01M16 13h.01M8 17h.01M12 17h.01M16 17h.01" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-form" viewBox="0 0 24 24"><rect x="4" y="2.5" width="16" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2.5a9.5 9.5 0 00-8.2 14.3L2.5 21.5l4.8-1.3A9.5 9.5 0 1012 2.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.6 7.8c.3-.6.6-.6.9-.6h.6c.2 0 .5 0 .7.6l.8 1.9c.1.3 0 .5-.1.7l-.6.7c-.2.2-.2.4 0 .7.5.9 1.4 1.9 2.6 2.5.3.2.5.1.7-.1l.7-.9c.2-.2.4-.3.7-.2l1.9.9c.3.1.4.3.4.5 0 .6-.3 1.6-1.3 2-.9.4-2.2.4-4.3-.7-2.1-1.1-3.6-3.2-4-4-.5-.9-.7-2.2.2-3.4z" fill="currentColor"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.5l8 3v6c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10v-6l8-3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.5 12l2.4 2.4L15.8 9.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 10.5V7.5a4 4 0 018 0v3" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="15.5" r="1.5" fill="currentColor"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 21c1-4.2 4.2-6.5 8-6.5s7 2.3 8 6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="17" cy="9" r="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M17.5 14c2.2.3 3.6 2 4 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9L12 2.8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9.5 9.5a2.5 2.5 0 114 2c-.9.6-1.5 1.2-1.5 2.3M12 17h.01" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3l9.5 17h-19L12 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10v4.5M12 17.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 2.5h8l4 4V21.5H6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 2.5v4h4M9 12h6M9 16h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/></symbol>
+  <symbol id="i-money" viewBox="0 0 24 24"><rect x="2.5" y="6" width="19" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M6 9.5v5M18 9.5v5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10.5 18.5h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M3 9l1.5-5h15L21 9M3 9h18M3 9c0 1.7 1.3 3 3 3s3-1.3 3-3m0 0c0 1.7 1.3 3 3 3s3-1.3 3-3m0 0c0 1.7 1.3 3 3 3s3-1.3 3-3M5 12v8h14v-8M10 20v-5h4v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-cart" viewBox="0 0 24 24"><path d="M2 3h3l2.4 12.2a1.5 1.5 0 001.5 1.2h9.4a1.5 1.5 0 001.5-1.2L21 7H6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="20.5" r="1.4" fill="currentColor"/><circle cx="18" cy="20.5" r="1.4" fill="currentColor"/></symbol>
+  <symbol id="i-bike" viewBox="0 0 24 24"><circle cx="5.5" cy="17" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="18.5" cy="17" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5.5 17l4-8h5l4 8M9.5 9L8 6H6M14.5 9l-3 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-chef" viewBox="0 0 24 24"><path d="M7 14.5V20h10v-5.5M7 14.5a4 4 0 01-.6-7.9A5 5 0 0112 3a5 5 0 015.6 3.6 4 4 0 01-.6 7.9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M7 17h10" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z M3 7.5l9 4.5 9-4.5M12 12v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-2 4 2 4H5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M5 2.5h14v19l-2.3-1.5-2.4 1.5-2.3-1.5-2.3 1.5-2.4-1.5L5 21.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.5 8h7M8.5 12h7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 21h18M6 17v-5M11 17V7M16 17v-8M21 17V4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14 9l2 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-eyeoff" viewBox="0 0 24 24"><path d="M3 3l18 18M10.6 5.2A9.8 9.8 0 0112 5c6.4 0 10 7 10 7a17 17 0 01-3.2 4.1M6.6 6.6C3.9 8.4 2 12 2 12s3.6 7 10 7c1.6 0 3-.4 4.3-1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-9 6-14 15-14 0 9-5 15-14 15M5 19c3-4 6-6.5 10-8.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-fish" viewBox="0 0 24 24"><path d="M2.5 12c3-4.5 7-6 10.5-6 4.5 0 7.5 3 8.5 6-1 3-4 6-8.5 6-3.5 0-7.5-1.5-10.5-6zM2.5 12L1 8.5M2.5 12L1 15.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="16.5" cy="11" r="1.2" fill="currentColor"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 8.5l5.5 3.5-5.5 3.5z" fill="currentColor"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="16.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 12h19M12 2.5c2.6 2.6 3.8 5.8 3.8 9.5s-1.2 6.9-3.8 9.5c-2.6-2.6-3.8-5.8-3.8-9.5S9.4 5.1 12 2.5z" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3.5 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-vector" viewBox="0 0 24 24"><path d="M4 5l8 15 8-15" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-sheet" viewBox="0 0 24 24"><rect x="3.5" y="3" width="17" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 9h17M3.5 15h17M10 9v12" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <!-- food art -->
+  <symbol id="a-burger" viewBox="0 0 48 48"><path d="M8 22c0-8 7-13 16-13s16 5 16 13z" fill="#FFE2B8"/><rect x="6" y="24" width="36" height="5" rx="2.5" fill="#6B3A1E"/><path d="M6 31h36l-3 3H9z" fill="#7BD07A"/><path d="M8 35h32c0 3-2 5-5 5H13c-3 0-5-2-5-5z" fill="#FFE2B8"/></symbol>
+  <symbol id="a-bowl" viewBox="0 0 48 48"><path d="M5 22h38c0 10-8.5 17-19 17S5 32 5 22z" fill="#fff"/><circle cx="16" cy="18" r="5" fill="#FF8A5C"/><circle cx="25" cy="15" r="5" fill="#9BE07F"/><circle cx="33" cy="19" r="4.5" fill="#FFD25C"/></symbol>
+  <symbol id="a-coffee" viewBox="0 0 48 48"><path d="M9 17h26v12c0 7-5.5 12-13 12S9 36 9 29z" fill="#fff"/><path d="M35 21h3a5 5 0 010 10h-3" fill="none" stroke="#fff" stroke-width="3"/><path d="M17 6c-2 3 2 4 0 7M24 6c-2 3 2 4 0 7" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/></symbol>
+  <symbol id="a-sprout" viewBox="0 0 64 64"><path d="M10 52h44" stroke="#fff" stroke-width="3" stroke-linecap="round"/><path d="M32 52V30" stroke="#fff" stroke-width="3"/><path d="M32 34c-12 0-16-8-16-16 10 0 16 6 16 16zM32 30c0-12 7-18 18-18 0 11-7 18-18 18z" fill="#fff"/></symbol>
+  <symbol id="a-fish" viewBox="0 0 64 64"><path d="M6 32c8-12 18-16 28-16 12 0 20 8 24 16-4 8-12 16-24 16-10 0-20-4-28-16z" fill="#fff"/><path d="M6 32L1 22M6 32L1 42" stroke="#fff" stroke-width="3" stroke-linecap="round"/><circle cx="46" cy="29" r="3" fill="#2C6E86"/><path d="M8 54c6-3 10 3 16 0s10 3 16 0 10 3 16 0" stroke="#fff" stroke-width="2.5" fill="none" opacity=".7"/></symbol>
+  <symbol id="a-pan" viewBox="0 0 64 64"><ellipse cx="28" cy="38" rx="20" ry="8" fill="#fff"/><path d="M48 36l14-4" stroke="#fff" stroke-width="4" stroke-linecap="round"/><path d="M20 22c-3 4 3 6 0 10M28 18c-3 4 3 6 0 10M36 22c-3 4 3 6 0 10" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round"/></symbol>
+  <symbol id="a-plate" viewBox="0 0 64 64"><circle cx="32" cy="34" r="22" fill="#fff"/><circle cx="32" cy="34" r="15" fill="none" stroke="#E6D6C2" stroke-width="2"/><path d="M22 32c4-6 16-6 20 0-4 5-16 5-20 0z" fill="#E2A15E"/><path d="M26 39c2-3 10-3 12 0" stroke="#7FB069" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M6 10v14M10 10v14M8 24v30M58 10c-4 2-4 10 0 14v30" stroke="#fff" stroke-width="2.5" stroke-linecap="round" fill="none"/></symbol>
+  <symbol id="a-salad" viewBox="0 0 48 48"><path d="M5 22h38c0 10-8.5 17-19 17S5 32 5 22z" fill="#FBF8F1" stroke="#2F5D3A" stroke-width="1.5"/><path d="M12 22c0-6 5-9 9-6M20 22c1-7 8-9 11-5M28 22c2-5 8-6 10-2" fill="#7FB069"/><circle cx="17" cy="19" r="2.5" fill="#E2604A"/></symbol>
+  <symbol id="a-fishplate" viewBox="0 0 48 48"><ellipse cx="24" cy="30" rx="20" ry="10" fill="#FBF8F1" stroke="#2C6E86" stroke-width="1.5"/><path d="M10 29c5-6 11-8 16-8 6 0 10 4 12 8-2 4-6 7-12 7-5 0-11-2-16-7z" fill="#E2A15E"/><circle cx="33" cy="28" r="1.4" fill="#5B3A1E"/></symbol>
+  <symbol id="a-juice" viewBox="0 0 48 48"><path d="M13 12h22l-3 30H16z" fill="#FFC86B" stroke="#C7834A" stroke-width="1.5"/><path d="M25 12l6-9" stroke="#2F5D3A" stroke-width="2.5" stroke-linecap="round"/><circle cx="33" cy="12" r="5" fill="#7FB069"/></symbol>
+</defs>
+</svg>
+
+<!-- ================= 1. PORTADA ================= -->
+<section class="page cover">
+  <div class="mesh"></div>
+  <div class="top">
+    <div class="tgmark"><i>TG</i><span>Teddy Gutiérrez<small>Portafolio de proyectos</small></span></div>
+    <div class="forby">Propuesta comercial<br><b>Agencia Vectorial</b></div>
+  </div>
+  <h1>Tres ideas.<br><em>Tres negocios digitales.</em></h1>
+  <p class="sub">Una propuesta unificada para llevar a internet los tres proyectos de Teddy Gutiérrez: créditos que generan confianza, una plataforma de pedidos que protege a los negocios y un restaurante que cuenta su historia del cultivo a la mesa.</p>
+
+  <div class="tiles">
+    <div class="tile t1">
+      <svg class="art"><use href="#i-calc"/></svg>
+      <span class="n">01</span>
+      <h3>Micrositio de créditos</h3>
+      <p>Calculadora, solicitud en línea y confianza para convertir visitas en clientes.</p>
+      <div class="pr"><span>Contado</span><span>$790.000</span></div>
+    </div>
+    <div class="tile t2">
+      <svg class="art"><use href="#i-bike"/></svg>
+      <span class="n">02</span>
+      <h3>Plataforma de pedidos para negocios</h3>
+      <p>Catálogos, pedidos y domicilios para negocios que quieren vender sin exponerse.</p>
+      <div class="pr"><span>Contado</span><span>$1.500.000</span></div>
+    </div>
+    <div class="tile t3">
+      <svg class="art"><use href="#i-leaf"/></svg>
+      <span class="n">03</span>
+      <h3>Restaurante autosostenible</h3>
+      <p>Micrositio + catálogo digital que muestra la huerta, la pesca y el menú.</p>
+      <div class="pr"><span>Contado</span><span>$990.000</span></div>
+    </div>
+  </div>
+
+  <div class="meta">
+    <div>Preparado para<b>Teddy Gutiérrez</b></div>
+    <div>Fecha<b>Noviembre 2026</b></div>
+    <div>Modalidad<b>Pago único o a cuotas</b></div>
+  </div>
+</section>
+
+<!-- ================= 2. RESUMEN ================= -->
+<section class="page">
+  <div class="pad">
+    <div class="eyebrow">La propuesta en un minuto</div>
+    <h2 class="h2">Tres proyectos, cada uno<br>con su precio y su plazo.</h2>
+    <p class="lead">Cada proyecto es independiente: pueden arrancar con uno y sumar los demás cuando quieran. Todos son a la medida, quedan a su nombre y se pagan una sola vez.</p>
+
+    <div class="rtable">
+      <div class="rrow r1">
+        <span class="num">01</span>
+        <div>
+          <h3>Micrositio de créditos <small>Financiero</small></h3>
+          <p>Página que genera confianza, calcula la cuota y recibe solicitudes para que Teddy contacte a cada cliente.</p>
+          <div class="tags"><span>Calculadora de crédito</span><span>Solicitud a WhatsApp</span><span>Requisitos y FAQ</span><span>Aviso legal</span></div>
+        </div>
+        <div class="price"><b>$790.000</b><span>o $250.000 + 8 cuotas de $99.900</span><i>Entrega en 7 días</i></div>
+      </div>
+      <div class="rrow r2">
+        <span class="num">02</span>
+        <div>
+          <h3>Plataforma de pedidos <small>B2B · Negocios</small></h3>
+          <p>Directorio de negocios con su propio catálogo, carrito, pedidos y domicilios, administrado por Teddy.</p>
+          <div class="tags"><span>Multinegocio</span><span>Panel de pedidos</span><span>Accesos por negocio</span><span>Mensualidad o comisión</span></div>
+        </div>
+        <div class="price"><b>$1.500.000</b><span>o $350.000 + 16 cuotas de $99.900</span><i>Entrega en 20 días</i></div>
+      </div>
+      <div class="rrow r3">
+        <span class="num">03</span>
+        <div>
+          <h3>Restaurante autosostenible <small>Experiencia</small></h3>
+          <p>Micrositio + catálogo digital: el proceso del cultivo y la pesca, el menú con precios y pedidos.</p>
+          <div class="tags"><span>Historia del proceso</span><span>Menú digital</span><span>Pedidos y reservas</span><span>Galería y video</span></div>
+        </div>
+        <div class="price"><b>$990.000</b><span>o $250.000 + 10 cuotas de $99.900</span><i>Entrega en 7 días</i></div>
+      </div>
+    </div>
+
+    <div class="promise">
+      <div><svg><use href="#i-key"/></svg><b>100 % suyo</b><span>Cada proyecto queda a nombre de Teddy.</span></div>
+      <div><svg><use href="#i-money"/></svg><b>Pago único</b><span>Sin mensualidades de plataforma.</span></div>
+      <div><svg><use href="#i-globe"/></svg><b>Dominio y hosting</b><span>Incluidos el primer año.</span></div>
+      <div><svg><use href="#i-star"/></svg><b>A la medida</b><span>Diseño propio, nada de plantillas.</span></div>
+    </div>
+  </div>
+  <div class="pfoot"><b>Teddy Gutiérrez</b> · Propuesta Agencia Vectorial</div><div class="pnum">02</div>
+</section>
+
+<!-- ================= 3. P1 HERO ================= -->
+<section class="page f1">
+  <div class="p1hero">
+    <div class="eyebrow">Proyecto 01 · Micrositio de créditos</div>
+    <h2 class="h2">Que lo encuentren, <em>confíen</em> y le pidan el crédito.</h2>
+    <p class="lead">En los préstamos, la confianza lo es todo. Este micrositio presenta su marca con la seriedad de una fintech: el cliente simula su crédito y le envía la solicitud lista para que usted lo contacte.</p>
+
+    <div class="browser">
+      <div class="bar"><i></i><i></i><i></i><span>gremiofinanciero.com</span></div>
+      <div class="fsite-nav">
+        <div class="fsite-logo"><i>GF</i>Gremio Financiero</div>
+        <div class="links"><span>Cómo funciona</span><span>Requisitos</span><span>Preguntas</span><span>Contacto</span><b>Solicitar crédito</b></div>
+      </div>
+      <div class="fsite-hero">
+        <div>
+          <h4>Tu crédito, <em>rápido y sin enredos.</em></h4>
+          <p>Simula tu préstamo, conoce tu cuota y envía tu solicitud en minutos. Un asesor te contacta el mismo día.</p>
+          <div class="chips"><span>Respuesta el mismo día</span><span>Tasas claras</span><span>Sin pagos por adelantado</span></div>
+        </div>
+        <div class="calc">
+          <div class="t">Simula tu crédito</div>
+          <div class="lbl"><span>¿Cuánto necesitas?</span><b>$1.000.000</b></div>
+          <div class="slider"><span style="width:38%"></span></div>
+          <div class="lbl"><span>¿En cuántas cuotas?</span><b>6 meses</b></div>
+          <div class="slider"><span style="width:45%"></span></div>
+          <div class="res"><span>Cuota mensual aprox.</span><b>$178.500</b></div>
+          <div class="btn">Solicitar ahora</div>
+          <small>Valores de ejemplo. Sujeto a estudio de crédito. Tasa dentro de los límites legales vigentes.</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p1body" style="padding-top:16mm">
+    <div class="eyebrow" style="color:var(--p1)">Así funciona para su cliente</div>
+    <div class="steps4">
+      <div class="st4"><i>1</i><svg><use href="#i-calc"/></svg><b>Simula</b><span>Elige monto y plazo y ve su cuota al instante.</span></div>
+      <div class="st4"><i>2</i><svg><use href="#i-form"/></svg><b>Solicita</b><span>Llena un formulario corto con sus datos.</span></div>
+      <div class="st4"><i>3</i><svg><use href="#i-wa"/></svg><b>Lo contactan</b><span>La solicitud llega a su WhatsApp y su base de datos.</span></div>
+      <div class="st4"><i>4</i><svg><use href="#i-money"/></svg><b>Recibe</b><span>Usted estudia el caso y desembolsa.</span></div>
+    </div>
+    <div class="kpis">
+      <div><b>24/7</b><span>Recibe solicitudes aunque esté ocupado o dormido.</span></div>
+      <div><b>1 base</b><span>Todos sus prospectos ordenados en Google Sheets.</span></div>
+      <div><b>+ confianza</b><span>Una marca seria vende más que un perfil o un volante.</span></div>
+    </div>
+    <p style="font-size:7.4pt;color:#9A9BAA;margin-top:5mm">Línea gráfica inspirada en el estilo de las fintech de crédito en línea (morado, verde y tipografía redondeada), adaptada a la marca de Teddy Gutiérrez.</p>
+  </div>
+  <div class="pfoot"><b>Teddy Gutiérrez</b> · Propuesta Agencia Vectorial</div><div class="pnum">03</div>
+</section>
+
+<!-- ================= 4. P1 FUNCIONES + INVERSIÓN ================= -->
+<section class="page f1">
+  <div class="p1body">
+    <div class="eyebrow" style="color:var(--p1)">Proyecto 01 · Lo que incluye</div>
+    <h2 class="h2" style="font-size:25pt;color:var(--p1-d)">Todo lo que necesita una marca de créditos para vender confianza.</h2>
+
+    <div class="trust">
+      <div class="phone p1phone"><div class="screen">
+        <div class="notch"></div>
+        <div class="ph-head"><b>Solicita tu crédito</b><span>Te respondemos el mismo día</span></div>
+        <div class="form">
+          <div class="f"><small>Monto y plazo</small><b>$1.000.000 · 6 cuotas</b></div>
+          <div class="f"><small>Nombre completo</small><b>Carolina Martínez</b></div>
+          <div class="f"><small>Cédula</small><b>1.045.***.***</b></div>
+          <div class="f"><small>Celular</small><b>300 *** ** 12</b></div>
+          <div class="f"><small>Ocupación</small><b>Independiente</b></div>
+          <div class="chk"><i><svg style="width:2.4mm;height:2.4mm;color:#fff"><use href="#i-check"/></svg></i>Autorizo el tratamiento de mis datos personales (Ley 1581 de 2012).</div>
+          <div class="send"><svg><use href="#i-wa"/></svg>Enviar solicitud</div>
+          <div class="ok">Solicitud recibida. Un asesor de Gremio Financiero te escribirá por WhatsApp.</div>
+        </div>
+      </div></div>
+
+      <div class="feat2" style="margin-top:0">
+        <div class="fcard"><div class="ib"><svg><use href="#i-calc"/></svg></div><div><b>Calculadora de crédito</b><span>Monto y plazo ajustables; usted define tasas, montos y plazos.</span></div></div>
+        <div class="fcard"><div class="ib g"><svg><use href="#i-form"/></svg></div><div><b>Solicitud en línea</b><span>Llega a su WhatsApp y queda guardada en Google Sheets.</span></div></div>
+        <div class="fcard"><div class="ib"><svg><use href="#i-doc"/></svg></div><div><b>Requisitos claros</b><span>Qué documentos se piden y cómo es el proceso.</span></div></div>
+        <div class="fcard"><div class="ib g"><svg><use href="#i-star"/></svg></div><div><b>Testimonios</b><span>Clientes reales que ya recibieron su crédito.</span></div></div>
+        <div class="fcard"><div class="ib"><svg><use href="#i-help"/></svg></div><div><b>Preguntas frecuentes</b><span>Responde las dudas antes de que escriban.</span></div></div>
+        <div class="fcard"><div class="ib g"><svg><use href="#i-alert"/></svg></div><div><b>Guía antifraude</b><span>“Nunca pedimos dinero por adelantado”: genera confianza.</span></div></div>
+        <div class="fcard"><div class="ib"><svg><use href="#i-lock"/></svg></div><div><b>Datos protegidos</b><span>Autorización de datos personales y aviso legal visibles.</span></div></div>
+        <div class="fcard"><div class="ib g"><svg><use href="#i-globe"/></svg></div><div><b>Listo para Google</b><span>Estructura para aparecer cuando busquen “créditos”.</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p1body" style="padding-top:0">
+    <div class="eyebrow" style="color:var(--p1);margin-top:6mm">Así le llega cada solicitud</div>
+    <div class="arrive">
+      <div class="bubble"><b>Nueva solicitud · Gremio Financiero</b><br>Carolina Martínez · CC 1.045.***.***<br>Monto: $1.000.000 · Plazo: 6 cuotas<br>Ocupación: Independiente · Barranquilla<small>9:14 a. m.</small></div>
+      <div class="msheet">
+        <div class="h"><svg><use href="#i-sheet"/></svg>Solicitudes de crédito</div>
+        <div class="r th"><span>Fecha</span><span>Nombre</span><span>Monto</span><span>Estado</span></div>
+        <div class="r"><span>08/11</span><span>Carolina M.</span><span>$1.000.000</span><span><i class="s n">Nueva</i></span></div>
+        <div class="r"><span>07/11</span><span>Jorge P.</span><span>$600.000</span><span><i class="s c">Contactado</i></span></div>
+        <div class="r"><span>07/11</span><span>Luisa R.</span><span>$2.000.000</span><span><i class="s a">Aprobado</i></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pinv i1">
+    <div><small>Pago único</small><b>$790.000</b><span>50 % al iniciar · 50 % al entregar</span></div>
+    <div><small>A cuotas</small><b>$250.000</b><span>de inicial + 8 cuotas de $99.900</span></div>
+    <div><small>Entrega</small><b>7 días</b><span>Dominio y hosting el primer año</span></div>
+  </div>
+  <div class="pfoot"><b>Teddy Gutiérrez</b> · Propuesta Agencia Vectorial</div><div class="pnum">04</div>
+</section>
+
+<!-- ================= 5. P2 CONCEPTO ================= -->
+<section class="page p2bg">
+  <div class="pad">
+    <div class="eyebrow">Proyecto 02 · Plataforma de pedidos</div>
+    <h2 class="h2">Vender sin exponerse.<br><em>Pedir sin complicarse.</em></h2>
+    <p class="lead">En Barranquilla muchos restaurantes y negocios pequeños prefieren no exhibirse por miedo a la extorsión. Esta plataforma les da una vitrina digital para vender su menú y sus productos, recibir pedidos y despachar a domicilio, sin depender de un local a la vista.</p>
+
+    <div class="p2grid">
+      <div class="problem">
+        <div class="pb"><div class="ib"><svg><use href="#i-eyeoff"/></svg></div><div><b>Marca visible, dirección protegida</b><span>El cliente ve el negocio, su menú y sus precios. La ubicación exacta solo la conoce quien despacha.</span></div></div>
+        <div class="pb"><div class="ib y"><svg><use href="#i-store"/></svg></div><div><b>Cada negocio con su catálogo</b><span>Logo, fotos, menú, precios, horarios y zonas de entrega, dentro del mismo estilo de la plataforma.</span></div></div>
+        <div class="pb"><div class="ib"><svg><use href="#i-cart"/></svg></div><div><b>El cliente arma su pedido</b><span>Elige el negocio, agrega productos al carrito y envía el pedido en segundos.</span></div></div>
+        <div class="pb"><div class="ib y"><svg><use href="#i-bike"/></svg></div><div><b>Domicilios organizados</b><span>Cada pedido con su estado, dirección de entrega y valor del domicilio.</span></div></div>
+        <div class="pb"><div class="ib"><svg><use href="#i-key"/></svg></div><div><b>Teddy tiene el control</b><span>Da y quita accesos, aprueba negocios y define cuánto cobra a cada uno.</span></div></div>
+      </div>
+
+      <div class="phone p2phone"><div class="screen">
+        <div class="notch"></div>
+        <div class="app2-head">
+          <div class="row"><b>Negocios Ocultos</b><svg class="ico" style="width:14px;height:14px;color:#fff"><use href="#i-cart"/></svg></div>
+          <div class="loc">Entregar en: Barrio El Prado, Barranquilla</div>
+          <div class="search">¿Qué se te antoja hoy?</div>
+        </div>
+        <div class="cat2">
+          <span><i><svg style="color:#FF4A1C"><use href="#i-chef"/></svg></i>Comida</span>
+          <span><i><svg style="color:#2E9E6A"><use href="#i-leaf"/></svg></i>Saludable</span>
+          <span><i><svg style="color:#5B4BD6"><use href="#i-box"/></svg></i>Tiendas</span>
+          <span><i><svg style="color:#C7834A"><use href="#i-store"/></svg></i>Postres</span>
+        </div>
+        <div class="biz"><div class="img food food1"><span class="pill">25–35 min</span><span class="sec">Entrega protegida</span><svg><use href="#a-burger"/></svg></div><div class="tx"><div><b>La Parrilla del Barrio</b><span>Hamburguesas · Domicilio $4.000</span></div><i>4,8</i></div></div>
+        <div class="biz"><div class="img food food2"><span class="pill">20–30 min</span><svg><use href="#a-bowl"/></svg></div><div class="tx"><div><b>Verde Bowl</b><span>Saludable · Domicilio $3.500</span></div><i>4,9</i></div></div>
+        <div class="biz"><div class="img food food3"><span class="pill">15–25 min</span><svg><use href="#a-coffee"/></svg></div><div class="tx"><div><b>Café de la Esquina</b><span>Café y postres · Domicilio $3.000</span></div><i>4,7</i></div></div>
+      </div></div>
+    </div>
+    <div class="ideal">
+      <span>Ideal para:</span><i>Restaurantes</i><i>Comidas rápidas</i><i>Panaderías</i><i>Cocinas ocultas</i><i>Tiendas de barrio</i><i>Emprendimientos desde casa</i>
+    </div>
+    <p style="font-size:7.4pt;color:#77778A;margin-top:5mm">“Negocios Ocultos” es el nombre de trabajo del proyecto; los negocios del ejemplo son ilustrativos.</p>
+  </div>
+  <div class="pfoot"><b>Teddy Gutiérrez</b> · Propuesta Agencia Vectorial</div><div class="pnum">05</div>
+</section>
+
+<!-- ================= 6. P2 CÓMO FUNCIONA + NEGOCIO ================= -->
+<section class="page">
+  <div class="pad">
+    <div class="eyebrow" style="color:var(--p2)">Proyecto 02 · Cómo funciona</div>
+    <h2 class="h2">Tres tipos de usuario,<br>una sola plataforma.</h2>
+
+    <div class="actors">
+      <div class="actor a1">
+        <div class="hd"><i><svg><use href="#i-user"/></svg></i><div><small>Para</small><b>El cliente</b></div></div>
+        <ul class="list" style="color:var(--p2)">
+          <li><svg><use href="#i-check"/></svg><span>Explora negocios por categoría.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Ve el menú con fotos y precios.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Arma su pedido en un carrito.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Paga en línea o contraentrega.</span></li>
+        </ul>
+      </div>
+      <div class="actor a2">
+        <div class="hd"><i><svg><use href="#i-store"/></svg></i><div><small>Para</small><b>El negocio</b></div></div>
+        <ul class="list" style="color:#16161A">
+          <li><svg><use href="#i-check"/></svg><span>Acceso propio con usuario.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Actualiza menú, precios y horarios.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Recibe y gestiona sus pedidos.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Marca cada pedido como despachado.</span></li>
+        </ul>
+      </div>
+      <div class="actor a3">
+        <div class="hd"><i><svg><use href="#i-key"/></svg></i><div><small>Para</small><b>Teddy (admin)</b></div></div>
+        <ul class="list" style="color:#B8860B">
+          <li><svg><use href="#i-check"/></svg><span>Aprueba y activa negocios.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Da o suspende accesos.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Ve todos los pedidos y ventas.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Controla pagos de cada negocio.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="eyebrow" style="color:var(--p2);margin-top:8mm">El recorrido de cada pedido</div>
+    <div class="status">
+      <div><i><svg><use href="#i-receipt"/></svg></i><b>Recibido</b><span>Llega al negocio al instante.</span></div>
+      <div><i><svg><use href="#i-check"/></svg></i><b>Confirmado</b><span>El negocio lo acepta.</span></div>
+      <div><i><svg><use href="#i-chef"/></svg></i><b>Preparando</b><span>Se alista el pedido.</span></div>
+      <div><i><svg><use href="#i-bike"/></svg></i><b>En camino</b><span>Sale con el domiciliario.</span></div>
+      <div><i><svg><use href="#i-flag"/></svg></i><b>Entregado</b><span>Pedido cerrado.</span></div>
+    </div>
+
+    <div class="money">
+      <div>
+        <h3>Un negocio para Teddy, no solo una página</h3>
+        <div class="opts">
+          <div><svg><use href="#i-check"/></svg><span><b>Mensualidad</b> fija por cada negocio en la plataforma.</span></div>
+          <div><svg><use href="#i-check"/></svg><span><b>Comisión</b> por pedido, si lo prefiere.</span></div>
+          <div><svg><use href="#i-check"/></svg><span><b>Destacados:</b> cobro extra por aparecer primero.</span></div>
+        </div>
+      </div>
+      <div class="calcx">
+        <small>Ejemplo ilustrativo</small>
+        <div class="eq">25 negocios × $60.000 al mes</div>
+        <b>$1.500.000/mes</b>
+        <span>La plataforma podría pagarse con el primer mes de mensualidades.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pinv i2">
+    <div><small>Pago único</small><b>$1.500.000</b><span>50 % al iniciar · 50 % al entregar</span></div>
+    <div><small>A cuotas</small><b>$350.000</b><span>de inicial + 16 cuotas de $99.900</span></div>
+    <div><small>Entrega</small><b>20 días</b><span>Dominio y hosting el primer año</span></div>
+  </div>
+  <div class="pfoot"><b>Teddy Gutiérrez</b> · Propuesta Agencia Vectorial</div><div class="pnum">06</div>
+</section>
+
+<!-- ================= 7. P3 EXPERIENCIA ================= -->
+<section class="page p3bg f3">
+  <div class="pad">
+    <div class="eyebrow">Proyecto 03 · Restaurante autosostenible</div>
+    <h2 class="h2">Del cultivo y el estanque<br><em>directo a la mesa.</em></h2>
+    <p class="lead" style="color:#6A6553">Un restaurante que cultiva su propia comida merece una página que lo cuente. Fusionamos un micrositio, que muestra el proceso y la experiencia, con un catálogo digital, donde está el menú y se hacen los pedidos.</p>
+
+    <div class="journey">
+      <div class="jr"><div class="art a-huerta"><i>01</i><svg><use href="#a-sprout"/></svg></div><div class="tx"><b>La huerta</b><span>Lo que sembramos y cosechamos cada temporada.</span></div></div>
+      <div class="jr"><div class="art a-pesca"><i>02</i><svg><use href="#a-fish"/></svg></div><div class="tx"><b>La pescadería</b><span>Nuestros estanques y la pesca del día.</span></div></div>
+      <div class="jr"><div class="art a-cocina"><i>03</i><svg><use href="#a-pan"/></svg></div><div class="tx"><b>La cocina</b><span>Recetas que respetan el producto fresco.</span></div></div>
+      <div class="jr"><div class="art a-mesa"><i>04</i><svg><use href="#a-plate"/></svg></div><div class="tx"><b>La mesa</b><span>El plato final y la experiencia de comer aquí.</span></div></div>
+    </div>
+
+    <div class="p3split">
+      <div class="phone p3phone"><div class="screen">
+        <div class="notch"></div>
+        <div class="r3-hero"><svg><use href="#a-sprout"/></svg><b>Raíz · <em>cocina de origen</em></b><span>Cultivamos lo que servimos</span></div>
+        <div class="r3-tabs"><span>Nuestra historia</span><span class="on">Menú</span><span>Reservas</span></div>
+        <div class="dish"><div class="im" style="background:#E8F1E4"><svg><use href="#a-salad"/></svg></div><div><b>Ensalada de la huerta</b><span>Hojas cosechadas esta mañana</span><span class="orig">De nuestra huerta</span><div class="pr">$24.000</div></div></div>
+        <div class="dish"><div class="im" style="background:#E3F0F4"><svg><use href="#a-fishplate"/></svg></div><div><b>Mojarra del estanque</b><span>Con patacón y arroz de coco</span><span class="orig" style="color:#2C6E86;background:#E3F0F4">Pesca del día</span><div class="pr">$38.000</div></div></div>
+        <div class="dish"><div class="im" style="background:#FBEBD3"><svg><use href="#a-juice"/></svg></div><div><b>Jugo de la finca</b><span>Fruta de temporada</span><span class="orig">De nuestra huerta</span><div class="pr">$9.000</div></div></div>
+        <div class="r3-cart">2 platos · $62.000<span>Pedir</span></div>
+      </div></div>
+
+      <div class="sec3">
+        <div class="s3"><div class="ib"><svg><use href="#i-leaf"/></svg></div><div><b>Nuestra historia</b><span>Quiénes son, la filosofía autosostenible y por qué cultivan lo que sirven.</span></div></div>
+        <div class="s3"><div class="ib b"><svg><use href="#i-play"/></svg></div><div><b>El proceso en fotos y video</b><span>Siembra, cosecha, pesca y cocina: la experiencia antes de llegar.</span></div></div>
+        <div class="s3"><div class="ib e"><svg><use href="#i-receipt"/></svg></div><div><b>Menú digital con origen</b><span>Cada plato con foto, precio y una etiqueta que dice de dónde viene.</span></div></div>
+        <div class="s3"><div class="ib"><svg><use href="#i-cart"/></svg></div><div><b>Pedidos por WhatsApp</b><span>El cliente arma su pedido y llega listo al restaurante.</span></div></div>
+        <div class="s3"><div class="ib b"><svg><use href="#i-cal"/></svg></div><div><b>Reservas y experiencias</b><span>Reserva de mesa o visitas guiadas a la huerta y los estanques.</span></div></div>
+        <div class="s3"><div class="ib e"><svg><use href="#i-pin"/></svg></div><div><b>Ubicación y Google</b><span>Mapa, horarios y estructura para aparecer en búsquedas.</span></div></div>
+      </div>
+    </div>
+    <p style="font-size:7.4pt;color:#8F8873;margin-top:4mm">“Raíz” es un nombre de ejemplo para visualizar la propuesta; se usará la marca real del restaurante.</p>
+  </div>
+
+  <div class="pfoot"><b>Teddy Gutiérrez</b> · Propuesta Agencia Vectorial</div><div class="pnum">07</div>
+</section>
+
+<!-- ================= 8. P3 INCLUYE + INVERSIÓN ================= -->
+<section class="page p3bg f3">
+  <div class="pad">
+    <div class="eyebrow">Proyecto 03 · Lo que incluye</div>
+    <h2 class="h2">Una experiencia que se ve,<br><em>se antoja y se pide.</em></h2>
+    <p class="lead" style="color:#6A6553">Plan Catálogo Digital con funciones de micrositio: la historia que enamora y el menú que vende, en un solo lugar.</p>
+
+    <div class="payways" style="margin-top:8mm">
+      <div class="pw" style="background:#fff;border:1px solid #E6DFCC">
+        <small style="color:var(--p3)">Micrositio · la experiencia</small>
+        <h3 style="font-family:Fraunces">Contar el proceso</h3>
+        <ul class="list" style="color:var(--p3)">
+          <li><svg><use href="#i-check"/></svg><span>Portada con la propuesta del restaurante.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Recorrido: huerta, pescadería, cocina y mesa.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Galería de fotos y videos del proceso.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Sección de reservas y visitas.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Ubicación, horarios y redes sociales.</span></li>
+        </ul>
+      </div>
+      <div class="pw" style="background:var(--p3-d);color:#fff">
+        <small style="color:#F4D7A8">Catálogo · el menú</small>
+        <h3 style="font-family:Fraunces">Vender el plato</h3>
+        <ul class="list" style="color:#F4D7A8">
+          <li style="color:#DCE6DA"><svg><use href="#i-check"/></svg><span>Hasta <b style="color:#fff">100 productos</b> por categorías.</span></li>
+          <li style="color:#DCE6DA"><svg><use href="#i-check"/></svg><span>Foto, descripción, precio y origen de cada plato.</span></li>
+          <li style="color:#DCE6DA"><svg><use href="#i-check"/></svg><span>Carrito y pedido directo a WhatsApp.</span></li>
+          <li style="color:#DCE6DA"><svg><use href="#i-check"/></svg><span>Actualización fácil desde Google Sheets.</span></li>
+          <li style="color:#DCE6DA"><svg><use href="#i-check"/></svg><span>Productos de la finca para llevar (opcional).</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="journey" style="grid-template-columns:repeat(3,1fr);margin-top:6mm">
+      <div class="s3"><div class="ib"><svg><use href="#i-phone"/></svg></div><div><b>Pensada para celular</b><span>Rápida y fácil de usar desde cualquier teléfono.</span></div></div>
+      <div class="s3"><div class="ib e"><svg><use href="#i-star"/></svg></div><div><b>Diseño a la medida</b><span>Con la identidad del restaurante, no una plantilla.</span></div></div>
+      <div class="s3"><div class="ib b"><svg><use href="#i-key"/></svg></div><div><b>100 % suya</b><span>Dominio y hosting el primer año.</span></div></div>
+    </div>
+  </div>
+
+  <div class="pad r3pad" style="padding-top:0;margin-top:-12mm">
+    <div class="browser r3web">
+      <div class="bar"><i></i><i></i><i></i><span>raizrestaurante.com</span></div>
+      <div class="r3w">
+        <div class="nav"><b>Raíz</b><span>Historia</span><span>Proceso</span><span>Menú</span><span>Reservas</span><em>Pedir ahora</em></div>
+        <div class="hero"><div><h4>Cultivamos lo que <em>servimos.</em></h4><p>Huerta propia, pesca del día y cocina de origen. Ven a vivir la experiencia o pide a domicilio.</p><div class="b"><span>Ver menú</span><span class="o">Reservar mesa</span></div></div>
+          <div class="pics"><div class="a-huerta"><svg><use href="#a-sprout"/></svg></div><div class="a-pesca"><svg><use href="#a-fish"/></svg></div><div class="a-mesa"><svg><use href="#a-plate"/></svg></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pinv i3">
+    <div><small>Pago único</small><b>$990.000</b><span>50 % al iniciar · 50 % al entregar</span></div>
+    <div><small>A cuotas</small><b>$250.000</b><span>de inicial + 10 cuotas de $99.900</span></div>
+    <div><small>Entrega</small><b>7 días</b><span>Dominio y hosting el primer año</span></div>
+  </div>
+  <div class="pfoot"><b>Teddy Gutiérrez</b> · Propuesta Agencia Vectorial</div><div class="pnum">08</div>
+</section>
+
+<!-- ================= 9. INVERSIÓN CONSOLIDADA ================= -->
+<section class="page">
+  <div class="pad">
+    <div class="eyebrow">Inversión</div>
+    <h2 class="h2">Precios claros.<br>Un pago y es suyo para siempre.</h2>
+    <p class="lead">Cada proyecto se contrata por separado. Elija pago único o a cuotas; en ambos casos el proyecto queda 100 % a su nombre.</p>
+
+    <div class="invt">
+      <table>
+        <tr><th>Proyecto</th><th>Pago único</th><th>A cuotas</th><th>Entrega</th></tr>
+        <tr><td><span class="dot" style="background:var(--p1)"></span><b>01 · Micrositio de créditos</b><small>Calculadora, solicitud, requisitos, FAQ y aviso legal</small></td><td><b>$790.000</b></td><td>$250.000 + 8 × $99.900</td><td>7 días</td></tr>
+        <tr><td><span class="dot" style="background:var(--p2)"></span><b>02 · Plataforma de pedidos</b><small>Multinegocio, pedidos, domicilios y panel de administración</small></td><td><b>$1.500.000</b></td><td>$350.000 + 16 × $99.900</td><td>20 días</td></tr>
+        <tr><td><span class="dot" style="background:var(--p3)"></span><b>03 · Restaurante autosostenible</b><small>Micrositio de experiencia + catálogo digital del menú</small></td><td><b>$990.000</b></td><td>$250.000 + 10 × $99.900</td><td>7 días</td></tr>
+        <tr class="tot"><td><b>Los tres proyectos</b></td><td><b>$3.280.000</b></td><td>Según cada proyecto</td><td>—</td></tr>
+      </table>
+    </div>
+
+    <div class="payways">
+      <div class="pw a">
+        <small>Pago único · mejor precio</small>
+        <h3>Se paga una vez</h3>
+        <ul class="list" style="color:var(--gold)">
+          <li><svg><use href="#i-check"/></svg><span><b>50 %</b> al iniciar y <b>50 %</b> al entregar.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Sin mensualidades de plataforma.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Sin comisiones nuestras por sus ventas.</span></li>
+        </ul>
+      </div>
+      <div class="pw b">
+        <small>A cuotas</small>
+        <h3>Empiece con la inicial</h3>
+        <ul class="list" style="color:#B8860B">
+          <li><svg><use href="#i-check"/></svg><span>Cuotas mensuales de <b>$99.900</b>.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Soporte y ajustes incluidos durante el plan.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Al terminar de pagar, <b>100 % suyo</b>.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="includes">
+      <div><svg><use href="#i-check"/></svg><span>Diseño a la medida</span></div>
+      <div><svg><use href="#i-check"/></svg><span>Dominio y hosting el primer año</span></div>
+      <div><svg><use href="#i-check"/></svg><span>Versión para celular y computador</span></div>
+      <div><svg><use href="#i-check"/></svg><span>Botón y pedidos por WhatsApp</span></div>
+      <div><svg><use href="#i-check"/></svg><span>Capacitación para administrarlo</span></div>
+      <div><svg><use href="#i-check"/></svg><span>Soporte después de entregar</span></div>
+    </div>
+
+    <div class="eyebrow" style="margin-top:7mm">Hoja de ruta sugerida</div>
+    <div class="road3">
+      <div style="border-top-color:var(--p1)"><small style="color:var(--p1)">1 · Primero</small><b>Micrositio de créditos</b><span>El más rápido y el que antes genera clientes.</span></div>
+      <div style="border-top-color:var(--p3)"><small style="color:var(--p3)">2 · Después</small><b>Restaurante</b><span>Muestra el proceso y recibe pedidos y reservas.</span></div>
+      <div style="border-top-color:var(--p2)"><small style="color:var(--p2)">3 · Luego</small><b>Plataforma de pedidos</b><span>Arranca con negocios aliados y crece con ellos.</span></div>
+    </div>
+
+    <p class="notes">Valores en pesos colombianos (COP). Desde el segundo año, solo la renovación anual de dominio y hosting. Las comisiones de pasarelas de pago las cobra cada pasarela. Los plazos de entrega cuentan desde que recibimos la información completa (logo, textos, fotos y productos). Propuesta válida por 15 días calendario.</p>
+  </div>
+  <div class="pfoot"><b>Teddy Gutiérrez</b> · Propuesta Agencia Vectorial</div><div class="pnum">09</div>
+</section>
+
+<!-- ================= 11. CIERRE ================= -->
+<section class="page">
+  <div class="pad">
+    <div class="eyebrow">Por qué Agencia Vectorial</div>
+    <h2 class="h2">Construimos la parte digital<br>de negocios reales.</h2>
+    <p class="lead">Somos una agencia de páginas web en Medellín. Hacemos páginas, tiendas online, catálogos digitales y apps a la medida para negocios en toda Colombia.</p>
+    <div class="why">
+      <div><b>6</b><span>años construyendo soluciones digitales.</span></div>
+      <div><b>+50</b><span>páginas y catálogos entregados.</span></div>
+      <div><b>+100</b><span>negocios acompañados en Colombia.</span></div>
+      <div><b>1:1</b><span>Hecho a la medida, no plantillas.</span></div>
+    </div>
+    <div class="eyebrow" style="margin-top:10mm">Siguientes pasos</div>
+    <div class="next">
+      <div class="nx"><i>01</i><div><b>Elegir proyecto y forma de pago</b><span>Uno, dos o los tres; pago único o a cuotas.</span></div></div>
+      <div class="nx"><i>02</i><div><b>Primer pago y envío de información</b><span>Logo, textos, fotos y productos o menú.</span></div></div>
+      <div class="nx"><i>03</i><div><b>Proyecto al aire</b><span>Desde 7 días, con capacitación incluida.</span></div></div>
+    </div>
+  </div>
+  <div class="cta">
+    <div class="agency"><div class="av-logo"><i><svg><use href="#i-vector"/></svg></i>Agencia Vectorial</div><small>Páginas web · Catálogos · Apps</small></div>
+    <h2>¿Empezamos por el <em>primer proyecto</em> esta semana?</h2>
+    <div class="contact">
+      <div><svg><use href="#i-wa"/></svg><span><small>WhatsApp</small>324 729 0699</span></div>
+      <div><svg><use href="#i-globe"/></svg><span><small>Web</small>agenciavectorial.com</span></div>
+      <div><svg><use href="#i-pin"/></svg><span><small>Desde</small>Medellín, Colombia</span></div>
+    </div>
+    <div class="valid">Propuesta válida por 15 días · Noviembre 2026</div>
+  </div>
+</section>
+
+</body>
+</html>
