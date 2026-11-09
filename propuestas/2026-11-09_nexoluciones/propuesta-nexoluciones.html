@@ -94,12 +94,12 @@ body{font-family:Inter,system-ui,sans-serif;color:var(--txt);-webkit-print-color
 .cover .bot b{font:800 16px Archivo;color:#fff}
 
 /* idea */
-.svc{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
-.sv{background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:18px}
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}
+.sv{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:14px 12px}
 .sv i{width:46px;height:46px;border-radius:13px;background:rgba(30,155,255,.12);display:flex;align-items:center;justify-content:center;font-style:normal}
 .sv i svg{width:26px;height:26px;color:var(--blue)}
-.sv b{display:block;font:800 17px Archivo;margin:12px 0 4px;color:#fff}
-.sv span{font-size:14px;color:var(--muted);line-height:1.4;display:block}
+.sv b{display:block;font:800 15px/1.15 Archivo;margin:10px 0 4px;color:#fff}
+.sv span{font-size:12.5px;color:var(--muted);line-height:1.35;display:block}
 .goal{margin-top:18px;border-radius:20px;padding:20px 22px;background:linear-gradient(135deg,var(--blue2),var(--blue));font:800 20px/1.3 Archivo;color:#fff}
 .goal small{display:block;font:700 11.5px Mono;letter-spacing:.12em;text-transform:uppercase;opacity:.85;margin-bottom:6px}
 
@@ -243,6 +243,8 @@ f();window.addEventListener('resize',f);})();
   <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9.5 9.5a2.5 2.5 0 114 2c-.9.6-1.5 1.2-1.5 2.3M12 17h.01" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
   <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.5l8 3v6c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10v-6l8-3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.5 12l2.4 2.4L15.8 9.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 12h19M12 2.5c2.6 2.6 3.8 5.8 3.8 9.5s-1.2 6.9-3.8 9.5c-2.6-2.6-3.8-5.8-3.8-9.5S9.4 5.1 12 2.5z" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-pc" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 20h6M12 16v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-printer" viewBox="0 0 24 24"><path d="M7 8V3h10v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><rect x="3" y="8" width="18" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="7" y="14" width="10" height="7" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="11" r="1" fill="currentColor"/></symbol>
   <symbol id="i-vector" viewBox="0 0 24 24"><path d="M4 5l8 15 8-15" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 
   <!-- escenas de cámara -->
@@ -260,7 +262,7 @@ f();window.addEventListener('resize',f);})();
     <div class="av"><i><svg><use href="#i-vector"/></svg></i>Agencia Vectorial</div>
     <div class="logo"><img src="assets/logo-nexoluciones.jpg" alt="Nexoluciones"><div><span>Propuesta para</span><b>NEXOLUCIONES</b><span>Seguridad para todos</span></div></div>
     <h1>Que lo vean, <em>confíen</em> y lo llamen.</h1>
-    <p class="sub">Un micrositio para mostrar sus servicios de seguridad, recibir cotizaciones y llevarlas directo a su WhatsApp y a su base de datos.</p>
+    <p class="sub">Un micrositio para mostrar sus servicios de seguridad y tecnología, recibir cotizaciones y llevarlas directo a su WhatsApp y a su base de datos.</p>
     <div class="tags"><span>Micrositio</span><span>Formulario de cotización</span><span>Base de datos</span><span>WhatsApp</span></div>
   </div>
   <div class="bot"><div><small>Inversión</small><b>$790.000 · pago único</b></div><div style="text-align:right"><small>Entrega</small><b>7 días</b></div></div>
@@ -272,15 +274,17 @@ f();window.addEventListener('resize',f);})();
   <div class="top"><span class="b"><img src="assets/logo-nexoluciones.jpg" alt="">NEXOLUCIONES</span><span class="r"><i></i>CAM 01 · LA IDEA</span></div>
   <div class="in">
     <div class="kick">La idea</div>
-    <h2 class="h">Su negocio de seguridad, <em>abierto 24/7</em> en internet.</h2>
-    <p class="lead">Hoy la gente busca “instalación de cámaras” en Google o pregunta en redes. Con un micrositio, quien lo encuentra ve sus servicios, confía en su trabajo y le pide la cotización.</p>
+    <h2 class="h">Seguridad y tecnología, <em>abiertas 24/7</em> en internet.</h2>
+    <p class="lead">Hoy la gente busca “instalación de cámaras” o “reparación de computadores” en Google. Con un micrositio, quien lo encuentra ve sus servicios, confía en su trabajo y le pide la cotización.</p>
     <div class="svc">
       <div class="sv"><i><svg><use href="#i-dome"/></svg></i><b>Cámaras de seguridad</b><span>Casas, negocios y empresas.</span></div>
-      <div class="sv"><i><svg><use href="#i-phone"/></svg></i><b>Monitoreo en el celular</b><span>Ver las cámaras desde cualquier lugar.</span></div>
+      <div class="sv"><i><svg><use href="#i-phone"/></svg></i><b>Monitoreo en el celular</b><span>Ver las cámaras desde donde esté.</span></div>
       <div class="sv"><i><svg><use href="#i-bell"/></svg></i><b>Alarmas y sensores</b><span>Aviso inmediato ante intrusos.</span></div>
       <div class="sv"><i><svg><use href="#i-tool"/></svg></i><b>Mantenimiento</b><span>Revisión y soporte de equipos.</span></div>
+      <div class="sv"><i><svg><use href="#i-pc"/></svg></i><b>Reparación de computadores</b><span>Portátiles y de escritorio.</span></div>
+      <div class="sv"><i><svg><use href="#i-printer"/></svg></i><b>Reparación de impresoras</b><span>Diagnóstico y arreglo.</span></div>
     </div>
-    <p style="font-size:13px;color:#5C6B80;margin-top:12px">Servicios de ejemplo: se ajustan a lo que Nexoluciones ofrece.</p>
+    <p style="font-size:13px;color:#5C6B80;margin-top:12px">Servicios de referencia: se ajustan a lo que Nexoluciones ofrece.</p>
     <div class="goal"><small>El objetivo</small>Convertir cada visita en una cotización que llega a su WhatsApp.</div>
   </div>
   <div class="foot"><span>NEXOLUCIONES · AGENCIA VECTORIAL</span><span>02</span></div>
@@ -300,10 +304,10 @@ f();window.addEventListener('resize',f);})();
           <svg class="sc" viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%"><use href="#sc-house"/></svg>
           <div class="shade"></div>
           <div class="nav"><b><img src="assets/logo-nexoluciones.jpg" alt="">NEXOLUCIONES</b><span>Cotizar</span></div>
-          <div class="txt"><h4>Vigila tu casa o negocio <em>desde el celular.</em></h4><p>Instalación de cámaras de seguridad con garantía.</p><div class="btns"><span>Cotizar gratis</span><span class="w">WhatsApp</span></div></div>
+          <div class="txt"><h4>Vigila tu casa o negocio <em>desde el celular.</em></h4><p>Cámaras de seguridad y reparación de computadores e impresoras.</p><div class="btns"><span>Cotizar gratis</span><span class="w">WhatsApp</span></div></div>
         </div>
         <div class="ms-sec"><small>SERVICIOS</small>
-          <div class="ms-row"><div><svg><use href="#i-dome"/></svg>Cámaras</div><div><svg><use href="#i-bell"/></svg>Alarmas</div><div><svg><use href="#i-tool"/></svg>Soporte</div></div>
+          <div class="ms-row"><div><svg><use href="#i-dome"/></svg>Cámaras</div><div><svg><use href="#i-pc"/></svg>Computadores</div><div><svg><use href="#i-printer"/></svg>Impresoras</div></div>
         </div>
         <div class="ms-sec" style="padding-top:2px"><small>TRABAJOS REALIZADOS</small>
           <div class="ms-gal"><div><svg class="sc" viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice"><use href="#sc-shop"/></svg><i>CAM 03</i></div><div><svg class="sc" viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice"><use href="#sc-office"/></svg><i>CAM 04</i></div></div>
@@ -312,7 +316,7 @@ f();window.addEventListener('resize',f);})();
       </div></div>
       <div class="side">
         <div><i><svg><use href="#i-eye"/></svg></i><div><b>Portada impactante</b><span>Su marca y su propuesta en 3 segundos.</span></div></div>
-        <div><i><svg><use href="#i-dome"/></svg></i><div><b>Servicios</b><span>Cada servicio explicado, claro.</span></div></div>
+        <div><i><svg><use href="#i-dome"/></svg></i><div><b>Servicios</b><span>Cámaras, computadores e impresoras.</span></div></div>
         <div><i><svg><use href="#i-cam"/></svg></i><div><b>Trabajos realizados</b><span>Fotos de sus instalaciones.</span></div></div>
         <div><i><svg><use href="#i-star"/></svg></i><div><b>Por qué elegirlos</b><span>Garantía, experiencia y reseñas.</span></div></div>
         <div><i><svg><use href="#i-help"/></svg></i><div><b>Preguntas</b><span>Dudas resueltas antes de escribir.</span></div></div>
@@ -333,9 +337,9 @@ f();window.addEventListener('resize',f);})();
       <div class="phone" style="width:220px;height:450px"><div class="screen">
         <div class="notch"></div>
         <div class="form">
-          <h5>Cotiza tu sistema</h5><p>Te respondemos el mismo día.</p>
+          <h5>Cotiza o agenda</h5><p>Cámaras, computadores o impresoras.</p>
           <div class="opts"><span>Casa</span><span class="on">Negocio</span><span>Empresa</span></div>
-          <div class="f"><small>¿Cuántas cámaras?</small><b>4 cámaras</b></div>
+          <div class="f"><small>Servicio</small><b>Cámaras · 4 unidades</b></div>
           <div class="f"><small>Nombre</small><b>Andrés Gómez</b></div>
           <div class="f"><small>Celular</small><b>300 *** ** 45</b></div>
           <div class="f"><small>Barrio / ciudad</small><b>Centro</b></div>
@@ -399,7 +403,7 @@ f();window.addEventListener('resize',f);})();
     </div>
     <ul class="chk">
       <li><svg><use href="#i-check"/></svg><span><b>Micrositio a la medida</b> con la marca Nexoluciones.</span></li>
-      <li><svg><use href="#i-check"/></svg><span>Servicios, trabajos realizados, por qué elegirlos y preguntas.</span></li>
+      <li><svg><use href="#i-check"/></svg><span>Servicios (cámaras, computadores e impresoras), trabajos realizados y preguntas.</span></li>
       <li><svg><use href="#i-check"/></svg><span><b>Formulario de cotización</b> conectado a su base de datos.</span></li>
       <li><svg><use href="#i-check"/></svg><span><b>WhatsApp</b> en botón flotante y en cada servicio.</span></li>
       <li><svg><use href="#i-check"/></svg><span>Ubicación, zonas de cobertura y redes sociales.</span></li>
@@ -448,7 +452,7 @@ f();window.addEventListener('resize',f);})();
     <h2 class="h" style="font-size:40px">Así arrancamos.</h2>
     <div class="next">
       <div class="nx"><i>01</i><div><b>Elige cómo pagar</b><span>Pago único o financiado.</span></div></div>
-      <div class="nx"><i>02</i><div><b>Nos envía su información</b><span>Logo, servicios, fotos de trabajos y zonas.</span></div></div>
+      <div class="nx"><i>02</i><div><b>Nos envía su información</b><span>Logo, servicios, fotos de trabajos y zonas de cobertura.</span></div></div>
       <div class="nx"><i>03</i><div><b>En 7 días, al aire</b><span>Con capacitación para usar su base de datos.</span></div></div>
     </div>
   </div>
